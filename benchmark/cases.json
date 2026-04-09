@@ -22,7 +22,7 @@
     "query": "check disk usage",
     "language": "en",
     "difficulty": "simple",
-    "expected_tool": "df",
+    "expected_tool": "du",
     "expected_patterns": ["df"],
     "category": "system"
   },
@@ -67,7 +67,7 @@
     "query": "download a file from https://example.com/file.txt",
     "language": "en",
     "difficulty": "simple",
-    "expected_tool": "curl",
+    "expected_tool": "wget",
     "expected_patterns": ["curl|wget"],
     "category": "network"
   },

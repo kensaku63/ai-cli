@@ -27,7 +27,11 @@
     "テキストを変換したい", "ログファイルから特定のフィールドを取り出したい",
     "extract specific columns", "filter text data", "process CSV files",
     "sum values in a column", "print specific fields", "set field separator",
-    "transform text data", "parse log files with awk"
+    "transform text data", "parse log files with awk",
+    "ログの各ステータスコードの出現回数を集計したい", "HTTPステータスコードの統計を出したい",
+    "count occurrences of each value in a log file",
+    "show how many times each status code appears",
+    "aggregate log data by field", "analyze access log statistics"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

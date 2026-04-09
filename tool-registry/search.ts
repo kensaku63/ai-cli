@@ -64,6 +64,18 @@ function buildSearchText(tool: ToolMetadata): string {
   return parts.join(" ");
 }
 
+/**
+ * Common English words that happen to be tool names.
+ * When a query *contains* these words as substrings but the query is
+ * clearly about something else, partial name match weight is reduced.
+ * Only applies to very short tool names (<=4 chars) that frequently
+ * collide with natural language.
+ */
+const COMMON_WORD_TOOLS = new Set([
+  "find", "top", "sort", "head", "tail", "cut", "tr", "env",
+  "host", "less", "diff", "mv", "cp", "rm", "tee",
+]);
+
 /** Score a single tool against a query */
 function scoreTool(
   query: string,
@@ -74,13 +86,25 @@ function scoreTool(
   const matchedOn: string[] = [];
   let score = 0;
   const q = query.toLowerCase();
+  const toolName = tool.name.toLowerCase();
+  const isCommonWord = COMMON_WORD_TOOLS.has(toolName);
 
   // 1. Exact name match (highest signal)
-  if (q === tool.name.toLowerCase() || q === tool.id.toLowerCase()) {
+  if (q === toolName || q === tool.id.toLowerCase()) {
     score += 10;
     matchedOn.push("name");
-  } else if (q.includes(tool.name.toLowerCase()) || q.includes(tool.id.toLowerCase())) {
-    score += 5;
+  } else if (q.includes(toolName) || q.includes(tool.id.toLowerCase())) {
+    // Check if the tool name appears as a standalone word in the query
+    const nameAsWord = new RegExp(`\\b${toolName}\\b`).test(q);
+    if (isCommonWord && !nameAsWord) {
+      // Tool name is a substring but not a standalone word — very low signal
+      score += 0.5;
+    } else if (isCommonWord && nameAsWord) {
+      // Standalone word but common — moderate signal
+      score += 3;
+    } else {
+      score += 5;
+    }
     matchedOn.push("name");
   }
 

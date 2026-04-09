@@ -16,7 +16,10 @@
   ],
   "intents": [
     "ファイルをコピーしたい", "ディレクトリをコピーしたい", "ファイルを複製したい",
-    "copy a file", "copy directory recursively", "duplicate file"
+    "copy a file", "copy directory recursively", "duplicate file",
+    "ファイルが存在しなければテンプレートからコピーしたい",
+    "copy template file if target does not exist",
+    "backup a file before modifying"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

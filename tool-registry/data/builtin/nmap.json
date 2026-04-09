@@ -24,7 +24,8 @@
     "check if a port is open",
     "detect service versions",
     "run a network security scan",
-    "identify operating system of a host"
+    "identify operating system of a host",
+    "scan network ports", "port scanning"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

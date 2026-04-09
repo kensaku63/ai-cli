@@ -16,7 +16,10 @@
   ],
   "intents": [
     "ファイルを削除したい", "ディレクトリを削除したい", "不要なファイルを消したい",
-    "delete a file", "remove a directory", "clean up files"
+    "delete a file", "remove a directory", "clean up files",
+    "distフォルダを削除してリビルドしたい",
+    "delete build output directory and rebuild",
+    "remove directory then run build command"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

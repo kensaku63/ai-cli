@@ -17,7 +17,11 @@
     "JSONをパースしたい", "JSONからフィールドを抽出したい", "JSONを整形したい",
     "JSONデータをフィルタリングしたい", "JSONを変換したい",
     "parse JSON", "extract fields from JSON", "pretty print JSON",
-    "filter JSON data", "transform JSON"
+    "filter JSON data", "transform JSON",
+    "package.jsonの依存パッケージ名を一覧したい", "JSONをソートして整形したい",
+    "list dependency names from package.json",
+    "convert JSON to sorted pretty-printed format",
+    "query JSON file with jq"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

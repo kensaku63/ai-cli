@@ -24,7 +24,10 @@
     "パッケージをインストールしたい", "npm scriptsを実行したい", "依存関係を更新したい",
     "プロジェクトを初期化したい", "パッケージを公開したい",
     "install npm package", "run npm script", "update dependencies",
-    "initialize node project", "publish package"
+    "initialize node project", "publish package",
+    "テストを実行してから次の操作をしたい", "ビルドしてからデプロイしたい",
+    "run tests then deploy if they pass", "build and deploy to production",
+    "run npm test and check results"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

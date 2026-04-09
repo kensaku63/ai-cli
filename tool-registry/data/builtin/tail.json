@@ -16,7 +16,10 @@
   "intents": [
     "ファイルの末尾を見たい", "ログをリアルタイムで追跡したい", "最後の数行を表示したい",
     "show last lines of file", "follow log file in real time",
-    "tail a log file", "watch file for changes"
+    "tail a log file", "watch file for changes",
+    "syslogの最後のN行を表示したい", "ログファイルをリアルタイム監視してエラーを検知したい",
+    "show last N lines of syslog", "watch log file for errors",
+    "monitor log file and filter by keyword"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

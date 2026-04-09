@@ -23,7 +23,10 @@
     "check file character count",
     "get byte size of a file",
     "count lines of code",
-    "how many lines in this file"
+    "how many lines in this file",
+    "プロジェクトの全ファイルの行数を合計したい", "ファイル数を数えたい",
+    "count total lines across all files", "count the number of files",
+    "sum up all lines in a project"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"
