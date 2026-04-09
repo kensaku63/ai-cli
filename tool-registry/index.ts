@@ -3,7 +3,8 @@
  */
 
 export { Registry } from "./registry.js";
-export { searchTools } from "./search.js";
+export { searchTools, SearchEngine } from "./search.js";
+export { EmbeddingIndex, cosineSimilarity } from "./embeddings.js";
 export type {
   ToolMetadata,
   ToolType,
