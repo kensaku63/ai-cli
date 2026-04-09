@@ -196,6 +196,66 @@ function matchPipeTemplate(query: string): PipeTemplate | null {
   return null;
 }
 
+// ─── Intent Decomposer ───
+
+/**
+ * Decompose a multi-action query into sub-intents.
+ * Returns the original query as a single-element array if no decomposition is possible.
+ *
+ * Conservative: only splits when there is a clear sequential connector
+ * AND the second part starts with an action indicator.
+ */
+function decomposeIntent(query: string): string[] {
+  // Skip short queries
+  if (query.length < 15) return [query];
+
+  // Japanese action verbs that indicate the second part is a distinct action
+  const jaActionStart = /^(?:それ|その|結果|出力|ログ|一覧|リスト|ファイル|内容|データ|レコード|コード|テスト|ビルド|デプロイ|インストール)/;
+  const jaActionVerb = /(?:表示|実行|確認|保存|削除|作成|コピー|移動|変換|取得|抽出|出力|送信|更新|検索|監視|比較|圧縮|展開|インストール|ビルド|デプロイ|起動|停止|ソート|フィルタ|集計|カウント)/;
+
+  // --- Japanese decomposition (conservative) ---
+
+  // 「AしてからBする」「Aした後Bする」 — strong sequential signal
+  const jaSeqStrong = query.match(/^(.{6,}?)(?:してから|した後で?|した結果を?)(.{6,})$/);
+  if (jaSeqStrong) {
+    const second = jaSeqStrong[2].trim();
+    if (jaActionVerb.test(second)) {
+      return [jaSeqStrong[1].trim(), second];
+    }
+  }
+
+  // 「AしつつBする」「AしながらBする」 — concurrent signal
+  const jaConcurrent = query.match(/^(.{6,}?)(?:しつつ|しながら)(.{6,})$/);
+  if (jaConcurrent) {
+    const second = jaConcurrent[2].trim();
+    if (jaActionVerb.test(second)) {
+      return [jaConcurrent[1].trim(), second];
+    }
+  }
+
+  // 「Aして、Bする」 — only with explicit comma separator AND action verb in second part
+  const jaComma = query.match(/^(.{6,}?)して[、,]\s*(.{8,})$/);
+  if (jaComma) {
+    const second = jaComma[2].trim();
+    // Require the second part to contain a clear action verb
+    if (jaActionVerb.test(second) && (jaActionStart.test(second) || /[をにへで]/.test(second.slice(0, 10)))) {
+      return [jaComma[1].trim(), second];
+    }
+  }
+
+  // --- English decomposition (conservative) ---
+
+  // "A, then B" / "A and then B" — strong sequential signal
+  const enThen = query.match(/^(.{8,}?)(?:,?\s+and then\s+|,\s+then\s+)(.{8,})$/i);
+  if (enThen) return [enThen[1].trim(), enThen[2].trim()];
+
+  // "if A, B" / "if A then B" — conditional
+  const enIf = query.match(/^if\s+(.{6,?})[,;]\s*(?:then\s+)?(.{6,})$/i);
+  if (enIf) return [enIf[1].trim(), enIf[2].trim()];
+
+  return [query];
+}
+
 // ─── Engine ───
 
 export class AiCliEngine {
@@ -247,13 +307,51 @@ export class AiCliEngine {
       }
     }
 
-    // Default: standard search
-    const results = searchTools(query, this.registry.all(), { limit: topK });
-    return results.map((r) => ({
+    // Default: standard search first
+    const allTools = this.registry.all();
+    const results = searchTools(query, allTools, { limit: topK });
+    const standard = results.map((r) => ({
       tool: r.tool,
       confidence: r.score,
       matchedOn: r.matchedOn,
     }));
+
+    // Phase 2: If standard search confidence is low, try intent decomposition
+    // as a fallback to find better-matching tools via sub-queries.
+    const LOW_CONFIDENCE = 6;
+    if (standard.length > 0 && standard[0].confidence < LOW_CONFIDENCE) {
+      const subIntents = decomposeIntent(query);
+      if (subIntents.length > 1) {
+        const subResults = subIntents.map((sub) =>
+          searchTools(sub, allTools, { limit: topK }),
+        );
+
+        // Merge: collect unique tools from all sub-intents
+        const seen = new Set<string>();
+        const merged: ToolCandidate[] = [];
+
+        for (const subs of subResults) {
+          for (const r of subs) {
+            if (seen.has(r.tool.id)) continue;
+            seen.add(r.tool.id);
+            merged.push({
+              tool: r.tool,
+              confidence: r.score,
+              matchedOn: [...r.matchedOn, "decomposed"],
+            });
+          }
+        }
+
+        merged.sort((a, b) => b.confidence - a.confidence);
+
+        // Only use decomposed result if it found a higher-confidence match
+        if (merged.length > 0 && merged[0].confidence > standard[0].confidence) {
+          return merged.slice(0, topK);
+        }
+      }
+    }
+
+    return standard;
   }
 
   /**
