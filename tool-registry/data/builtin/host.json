@@ -19,7 +19,11 @@
   "intents": [
     "ドメインのIPアドレスを調べたい", "逆引きDNSをしたい", "MXレコードを確認したい",
     "resolve hostname to IP", "reverse DNS lookup",
-    "check MX records", "DNS resolution"
+    "check MX records", "DNS resolution",
+    "DNS lookup simple", "resolve hostname",
+    "ホスト名からIPを調べたい", "ドメインのDNSレコードを確認したい",
+    "IPアドレスからドメイン名を逆引きしたい", "look up IP address for domain",
+    "find DNS records for domain", "メールサーバーのMXレコードを調べたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

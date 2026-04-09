@@ -21,7 +21,11 @@
   "intents": [
     "pnpmでパッケージをインストールしたい", "pnpmで依存関係を追加したい",
     "install package with pnpm", "add dependency with pnpm",
-    "run pnpm script", "fast npm alternative"
+    "run pnpm script", "fast npm alternative",
+    "install packages with pnpm", "pnpmでパッケージを追加したい", "pnpm workspace",
+    "pnpmワークスペースでモノレポ管理したい", "pnpmでスクリプトを実行したい",
+    "pnpm run dev", "remove package with pnpm",
+    "pnpmで依存関係を更新したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

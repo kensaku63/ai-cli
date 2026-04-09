@@ -26,7 +26,14 @@
     "ファイルのアクセス制御を設定したい", "セキュリティのため権限を制限したい",
     "change file permissions", "make a file executable", "remove write permission",
     "change permissions recursively", "set file mode", "restrict file access",
-    "add execute permission to a script"
+    "add execute permission to a script",
+    "change file permissions",
+    "ファイルの権限を変更したい",
+    "make script executable",
+    "ファイルを読み取り専用にしたい",
+    "set permissions to 755",
+    "grant read write access to a file",
+    "他のユーザーからのアクセスを制限したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -20,7 +20,11 @@
   "intents": [
     "URLの生存確認をしたい", "Webサイトの技術スタックを検出したい", "HTTPレスポンスを一括確認したい",
     "probe URLs for HTTP response", "detect web technologies",
-    "bulk HTTP status check", "web reconnaissance"
+    "bulk HTTP status check", "web reconnaissance",
+    "probe URLs for status", "fast HTTP scanner",
+    "複数URLのステータスコードを一括チェックしたい", "Webサイトが生きているか確認したい",
+    "URLリストの生死確認をしたい", "check which URLs are alive",
+    "scan URLs for HTTP status codes", "HTTPヘッダーを一括取得したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -31,7 +31,11 @@
     "ワークフローの実行状況を確認したい", "リリースを作成したい", "PRをチェックアウトしたい",
     "create a pull request", "merge a PR", "list open issues",
     "create a new repository", "check workflow status", "view pull request details",
-    "create a GitHub release", "clone a repo with gh", "check CI status"
+    "create a GitHub release", "clone a repo with gh", "check CI status",
+    "create pull request from CLI", "GitHubのissueを作成したい", "list PRs",
+    "PRの一覧を表示したい", "GitHub Actionsの結果を確認したい",
+    "review pull request on GitHub", "gh pr create from terminal",
+    "GitHubリポジトリをクローンしたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

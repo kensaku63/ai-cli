@@ -23,7 +23,14 @@
     "make a symlink to a file",
     "create a shortcut to a directory",
     "overwrite an existing link",
-    "link files together"
+    "link files together",
+    "create symbolic link",
+    "シンボリックリンクを作成したい",
+    "make symlink",
+    "ファイルのエイリアスを作りたい",
+    "create a soft link to a file",
+    "ディレクトリにリンクを張りたい",
+    "point one path to another"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

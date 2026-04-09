@@ -16,7 +16,15 @@
     "ファイルを同期したい", "ディレクトリをバックアップしたい", "差分コピーしたい",
     "リモートとファイルを同期したい", "ミラーリングしたい",
     "sync files", "backup directory", "incremental copy",
-    "sync with remote server", "mirror directory"
+    "sync with remote server", "mirror directory",
+    "sync files between servers",
+    "リモートとファイルを同期したい",
+    "incremental backup",
+    "変更されたファイルだけコピーしたい",
+    "copy only changed files to remote",
+    "サーバー間でディレクトリを同期したい",
+    "efficient file transfer with delta sync",
+    "ローカルとリモートのフォルダを一致させたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

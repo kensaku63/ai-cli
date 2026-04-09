@@ -19,7 +19,11 @@
     "kintoneのレコードをエクスポートしたい", "kintoneにデータをインポートしたい",
     "kintoneをCLIで操作したい",
     "export kintone records", "import data to kintone",
-    "manage kintone from command line"
+    "manage kintone from command line",
+    "kintoneにデータを取り込みたい", "kintoneレコードをエクスポートしたい",
+    "kintoneのデータをCSVで出力したい", "kintoneアプリにCSVをインポートしたい",
+    "kintoneのレコードを一括削除したい", "サイボウズkintoneのデータを操作したい",
+    "bulk import records to kintone", "download kintone data as CSV"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -18,7 +18,11 @@
   "intents": [
     "リストから対話的に選択したい", "コマンドの出力をフィルタしたい", "履歴からインクリメンタル検索したい",
     "interactively select from list", "filter command output",
-    "incremental search from history", "fuzzy find from piped input"
+    "incremental search from history", "fuzzy find from piped input",
+    "interactive filter selection", "一覧からインタラクティブに選びたい",
+    "pipe output through selector", "パイプの結果を絞り込みたい",
+    "pecoで候補を絞り込みたい", "select item from piped list interactively",
+    "対話的にファイルを選択したい", "choose from list with fuzzy search"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

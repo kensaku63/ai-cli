@@ -23,7 +23,11 @@
     "Cloudflare Workersにデプロイしたい", "エッジでサーバーレス関数を動かしたい",
     "Workers KVを操作したい", "D1データベースにクエリしたい", "R2にファイルをアップロードしたい",
     "deploy to Cloudflare Workers", "run serverless on edge",
-    "manage Workers KV", "query D1 database", "upload to R2 storage"
+    "manage Workers KV", "query D1 database", "upload to R2 storage",
+    "deploy Cloudflare Worker", "Workersをデプロイしたい", "Cloudflare Pages deploy",
+    "Cloudflareのローカル開発サーバーを起動したい", "wrangler devでテストしたい",
+    "Workerのログをストリーミングしたい", "deploy edge function to Cloudflare",
+    "Cloudflare D1にSQLを実行したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

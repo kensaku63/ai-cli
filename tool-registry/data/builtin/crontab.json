@@ -17,7 +17,11 @@
   "intents": [
     "定期実行のジョブを設定したい", "cronジョブを一覧したい", "スケジュールタスクを作成したい",
     "schedule a recurring job", "list cron jobs", "create scheduled task",
-    "edit crontab", "set up periodic execution"
+    "edit crontab", "set up periodic execution",
+    "schedule recurring task", "edit cron jobs",
+    "毎日定時にスクリプトを実行したい", "定期的にバックアップを自動実行したい",
+    "cronの設定を確認したい", "run a script on a schedule",
+    "automate periodic tasks", "毎時間ごとにコマンドを実行したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

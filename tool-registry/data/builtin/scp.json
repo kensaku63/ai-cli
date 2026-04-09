@@ -15,7 +15,14 @@
     "リモートサーバーにファイルを転送したい", "サーバーからファイルをダウンロードしたい",
     "SSH経由でコピーしたい", "ファイルをアップロードしたい",
     "copy files to remote server", "download files from server",
-    "transfer files over SSH", "secure file copy"
+    "transfer files over SSH", "secure file copy",
+    "copy file to remote server",
+    "リモートにファイルを転送したい",
+    "download file from server",
+    "サーバーからファイルを取得したい",
+    "send file to another machine via SSH",
+    "リモートマシンとファイルをやり取りしたい",
+    "upload file to server securely"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

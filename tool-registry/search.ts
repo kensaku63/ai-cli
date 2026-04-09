@@ -65,15 +65,23 @@ function buildSearchText(tool: ToolMetadata): string {
 }
 
 /**
- * Common English words that happen to be tool names.
- * When a query *contains* these words as substrings but the query is
- * clearly about something else, partial name match weight is reduced.
- * Only applies to very short tool names (<=4 chars) that frequently
- * collide with natural language.
+ * Tool names that collide with common English/natural-language words.
+ * When a query contains these as substrings (but the query is about
+ * something else), partial name match weight is heavily reduced.
+ *
+ * Criteria for inclusion:
+ *   - Very short names (≤4 chars) that appear inside longer words
+ *     (e.g., "dig" inside "digital", "node" inside "node_modules")
+ *   - Common verbs/nouns that users naturally type in queries
+ *     (e.g., "find files", "sort by date", "go to directory")
  */
 const COMMON_WORD_TOOLS = new Set([
+  // Original set
   "find", "top", "sort", "head", "tail", "cut", "tr", "env",
   "host", "less", "diff", "mv", "cp", "rm", "tee",
+  // Added: high false-positive tools from 527-case benchmark
+  "dig", "nc", "go", "node", "ln", "wc", "du", "fd", "bat",
+  "exa", "pip", "patch", "screen", "delta",
 ]);
 
 /** Score a single tool against a query */
@@ -94,14 +102,20 @@ function scoreTool(
     score += 10;
     matchedOn.push("name");
   } else if (q.includes(toolName) || q.includes(tool.id.toLowerCase())) {
-    // Check if the tool name appears as a standalone word in the query
-    const nameAsWord = new RegExp(`\\b${toolName}\\b`).test(q);
+    // Check if the tool name appears as a standalone word in the query.
+    // For non-ASCII queries (e.g. Japanese), \b doesn't work, so also
+    // check that the char before/after the match is non-alphanumeric.
+    const nameAsWord = new RegExp(`(?:^|[\\s\\p{P}])${toolName}(?:$|[\\s\\p{P}])`, "u").test(q)
+      || new RegExp(`\\b${toolName}\\b`).test(q);
     if (isCommonWord && !nameAsWord) {
-      // Tool name is a substring but not a standalone word — very low signal
-      score += 0.5;
+      // Tool name is a substring but not a standalone word — negligible signal
+      score += 0.2;
     } else if (isCommonWord && nameAsWord) {
       // Standalone word but common — moderate signal
       score += 3;
+    } else if (!nameAsWord) {
+      // Non-common tool but still just a substring — reduced signal
+      score += 1.5;
     } else {
       score += 5;
     }
@@ -125,12 +139,17 @@ function scoreTool(
     matchedOn.push("intents");
   }
 
-  // 3. Subcommand name match
+  // 3. Subcommand name match (require standalone word for short names)
   for (const sub of tool.subcommands) {
-    if (q.includes(sub.name.toLowerCase())) {
-      score += 3;
-      matchedOn.push(`subcommand:${sub.name}`);
-      break;
+    const subName = sub.name.toLowerCase();
+    if (subName.length <= 2 || subName.startsWith("(")) continue; // skip very short or meta names like "(default)"
+    if (q.includes(subName)) {
+      const subAsWord = new RegExp(`\\b${subName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(q);
+      if (subAsWord || subName.length > 4) {
+        score += 3;
+        matchedOn.push(`subcommand:${sub.name}`);
+        break;
+      }
     }
   }
 

@@ -26,7 +26,14 @@
     "sort file contents",
     "重複行を見つけたい", "データを並べ替えてから重複を検出したい",
     "find duplicate lines in a file", "sort and deduplicate data",
-    "sort output by size or count"
+    "sort output by size or count",
+    "sort file contents",
+    "行を並べ替えたい",
+    "sort output alphabetically or numerically",
+    "出力結果を昇順・降順に並べたい",
+    "order lines in a text file",
+    "ファイルの内容をソートして表示したい",
+    "sort by numeric value"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -26,7 +26,11 @@
     "コンテナに入りたい", "デプロイメントをスケールしたい", "リソースを削除したい",
     "get kubernetes pods", "deploy to kubernetes", "deploy application to kubernetes",
     "view pod logs", "exec into container", "scale deployment",
-    "apply kubernetes manifest"
+    "apply kubernetes manifest",
+    "get pods in namespace", "Kubernetesリソースを管理したい", "k8sクラスタの状態を見たい",
+    "describe kubernetes resource", "namespace内のサービス一覧を取得したい",
+    "list kubernetes nodes", "kubectlでコンテキストを切り替えたい",
+    "rollout status of deployment"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

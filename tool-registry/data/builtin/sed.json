@@ -15,7 +15,15 @@
     "テキストを置換したい", "ファイル内の文字列を一括置換したい", "特定の行を削除したい",
     "正規表現で置換したい", "テキストを変換したい",
     "find and replace text", "substitute string in file", "delete lines matching pattern",
-    "regex replace in file", "transform text stream"
+    "regex replace in file", "transform text stream",
+    "find and replace text in file",
+    "ファイル内の文字列を置換したい",
+    "stream edit",
+    "ファイルの特定行を書き換えたい",
+    "edit file in place from command line",
+    "一括で文字列を変更したい",
+    "delete specific lines from a file",
+    "insert text at a specific line number"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

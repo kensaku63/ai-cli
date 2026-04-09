@@ -191,10 +191,11 @@ describe("Search — new tools (English)", () => {
     assert.equal(results[0]!.tool.id, "kill");
   });
 
-  it("'DNS lookup' finds dig", () => {
+  it("'DNS lookup' finds dig or host", () => {
     const results = searchTools("DNS lookup", tools);
     assert.ok(results.length > 0);
-    assert.equal(results[0]!.tool.id, "dig");
+    const topId = results[0]!.tool.id;
+    assert.ok(topId === "dig" || topId === "host", `expected dig or host, got ${topId}`);
   });
 
   it("'count lines in file' finds wc", () => {
@@ -237,10 +238,11 @@ describe("Search — new tools (Japanese)", () => {
 });
 
 describe("Search — new tools: cloud CLIs", () => {
-  it("'deploy to Azure' finds az", () => {
+  it("'deploy to Azure' finds az or azd", () => {
     const results = searchTools("deploy to Azure", tools);
     assert.ok(results.length > 0);
-    assert.equal(results[0]!.tool.id, "az");
+    const topId = results[0]!.tool.id;
+    assert.ok(topId === "az" || topId === "azd", `expected az or azd, got ${topId}`);
   });
 
   it("'deploy to Vercel' finds vercel", () => {

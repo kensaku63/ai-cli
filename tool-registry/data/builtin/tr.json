@@ -17,7 +17,11 @@
   "intents": [
     "文字を大文字に変換したい", "特定の文字を削除したい", "文字を置換したい",
     "convert to uppercase", "delete characters from text",
-    "replace characters", "squeeze repeated characters"
+    "replace characters", "squeeze repeated characters",
+    "convert uppercase to lowercase", "大文字を小文字に変換したい",
+    "テキストから改行を削除したい", "文字の置き換えをしたい",
+    "スペースをタブに変換したい", "translate characters in text",
+    "remove specific characters from string", "連続するスペースを1つにまとめたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

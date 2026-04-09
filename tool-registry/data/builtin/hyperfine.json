@@ -20,7 +20,11 @@
   "intents": [
     "コマンドの実行時間を計測したい", "2つのコマンドの速度を比較したい", "ベンチマークを取りたい",
     "benchmark command execution time", "compare command performance",
-    "measure execution speed", "performance benchmarking"
+    "measure execution speed", "performance benchmarking",
+    "benchmark command speed", "compare execution times",
+    "どっちのコマンドが速いか比較したい", "コマンドのパフォーマンスを統計的に計測したい",
+    "処理速度を正確に測定したい", "which command is faster",
+    "time a command with warmup", "export benchmark results"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

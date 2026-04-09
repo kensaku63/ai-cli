@@ -20,7 +20,11 @@
   "intents": [
     "DigitalOceanのDropletを作成したい", "DOのKubernetesを管理したい",
     "create DigitalOcean droplet", "manage DO Kubernetes",
-    "create DigitalOcean database", "deploy to DigitalOcean"
+    "create DigitalOcean database", "deploy to DigitalOcean",
+    "manage DigitalOcean resources", "create droplet",
+    "DOのサーバーを立てたい", "DigitalOceanのリソースを管理したい",
+    "クラウドサーバーをDOで作成したい", "list my DigitalOcean droplets",
+    "manage DO App Platform", "DigitalOceanの認証を設定したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

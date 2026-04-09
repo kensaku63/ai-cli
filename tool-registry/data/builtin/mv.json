@@ -15,7 +15,11 @@
   ],
   "intents": [
     "ファイルを移動したい", "ファイル名を変更したい", "ディレクトリをリネームしたい",
-    "move a file", "rename a file", "move directory"
+    "move a file", "rename a file", "move directory",
+    "move or rename file", "ファイルを別のフォルダに移したい", "rename file",
+    "フォルダ名を変更したい", "ファイルの配置を変えたい",
+    "move files to another directory", "batch rename files",
+    "ディレクトリを移動したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

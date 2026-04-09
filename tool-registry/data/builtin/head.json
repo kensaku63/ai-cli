@@ -16,7 +16,15 @@
   "intents": [
     "ファイルの先頭を見たい", "最初の数行を表示したい",
     "show first lines of file", "preview file contents",
-    "display top of file"
+    "display top of file",
+    "show first N lines",
+    "ファイルの先頭を表示したい",
+    "preview file contents",
+    "ファイルの中身をちょっとだけ確認したい",
+    "peek at the beginning of a file",
+    "先頭の数行だけ見たい",
+    "show top lines of output",
+    "check what a file looks like"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

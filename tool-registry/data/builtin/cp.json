@@ -19,7 +19,14 @@
     "copy a file", "copy directory recursively", "duplicate file",
     "ファイルが存在しなければテンプレートからコピーしたい",
     "copy template file if target does not exist",
-    "backup a file before modifying"
+    "backup a file before modifying",
+    "copy files",
+    "ファイルを複製したい",
+    "duplicate directory recursively",
+    "フォルダごとコピーしたい",
+    "make a copy of a file",
+    "ファイルのバックアップを取りたい",
+    "copy multiple files to another directory"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

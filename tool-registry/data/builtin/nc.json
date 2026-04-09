@@ -20,7 +20,11 @@
   "intents": [
     "ポートが開いているか確認したい", "TCP接続をテストしたい", "ネットワークでデータを送りたい",
     "test if port is open", "test TCP connection", "transfer file over network",
-    "listen on a port", "port scan with netcat"
+    "listen on a port", "port scan with netcat",
+    "test port connection", "send data to socket",
+    "サーバーのポートに接続できるか確認したい", "ソケット通信をテストしたい",
+    "ネットワーク越しにファイルを転送したい", "check if a remote port is open",
+    "create a simple TCP server", "ポートスキャンしたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"
