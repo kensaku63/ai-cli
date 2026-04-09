@@ -1,16 +1,36 @@
 {
   "name": "ai-cli-bridge",
   "version": "0.1.0",
-  "description": "MCP server bridge — Claude Code connects to ai-cli as a single tool router",
+  "description": "MCP server bridge — Claude Code connects to ai-cli as a single tool router. 90K tokens → 500 tokens (99.4% reduction).",
   "type": "module",
   "bin": {
     "ai-cli-bridge": "./dist/claude-bridge/src/index.js"
   },
+  "main": "./dist/claude-bridge/src/index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "tsc && cp -r ../tool-registry/data dist/tool-registry/",
-    "start": "node dist/claude-bridge/src/index.js",
-    "dev": "tsc --watch"
+    "prepublishOnly": "npm run build",
+    "start": "node dist/claude-bridge/src/index.js"
   },
+  "keywords": [
+    "mcp",
+    "claude",
+    "claude-code",
+    "ai-cli",
+    "tool-router",
+    "natural-language",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kensaku63/ai-cli.git",
+    "directory": "claude-bridge"
+  },
+  "homepage": "https://github.com/kensaku63/ai-cli/tree/main/claude-bridge",
+  "bugs": "https://github.com/kensaku63/ai-cli/issues",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0"
   },
