@@ -10,12 +10,17 @@ import type {
   ToolMetadata,
   SearchResult,
 } from "./tool-registry/index.js";
+import { Provisioner } from "./auto-provision/index.js";
+import { checkInstalled } from "./auto-provision/index.js";
+import type { ProvisionResult, ProvisionOptions, ConfirmInfo } from "./auto-provision/index.js";
 
 // ─── Public Types ───
 
 export interface ExecuteOptions {
   dryRun?: boolean;
   autoApprove?: boolean;
+  /** Confirmation callback for auto-provision — return true to proceed */
+  confirm?: (info: ConfirmInfo) => Promise<boolean>;
   timeout?: number;
   stdin?: string;
   format?: "json" | "text";
@@ -33,6 +38,12 @@ export interface ExecuteResult {
     confidence: number;
     candidatesConsidered: number;
     executionTimeMs: number;
+    /** Set when auto-provision was triggered */
+    provision?: {
+      status: ProvisionResult["status"];
+      manager?: string;
+      packageName?: string;
+    };
   };
 }
 
@@ -110,7 +121,56 @@ export class AiCliEngine {
 
     const topMatch = candidates[0]!;
 
-    // 2. Generate command via LLM
+    // 2. Resolve — ensure tool is installed (auto-provision if needed)
+    const resolveResult = await this.resolve(topMatch.tool, options);
+
+    if (resolveResult) {
+      const provisionMeta = {
+        status: resolveResult.status,
+        manager: resolveResult.manager,
+        packageName: resolveResult.packageName,
+      };
+
+      if (resolveResult.status === "cancelled") {
+        return {
+          tool: { id: topMatch.tool.id, name: topMatch.tool.name, version: topMatch.tool.version },
+          command: "",
+          status: "cancelled",
+          exitCode: 0,
+          output: "",
+          stderr: `Installation of ${topMatch.tool.name} was cancelled by user.`,
+          metadata: {
+            discoveryMethod: "semantic_search",
+            confidence: topMatch.confidence,
+            candidatesConsidered: candidates.length,
+            executionTimeMs: Date.now() - startTime,
+            provision: provisionMeta,
+          },
+        };
+      }
+
+      if (resolveResult.status === "no_manager" ||
+          resolveResult.status === "install_failed" ||
+          resolveResult.status === "verify_failed") {
+        return {
+          tool: { id: topMatch.tool.id, name: topMatch.tool.name, version: topMatch.tool.version },
+          command: "",
+          status: "error",
+          exitCode: 1,
+          output: resolveResult.output ?? "",
+          stderr: resolveResult.error ?? `Failed to provision ${topMatch.tool.name}: ${resolveResult.status}`,
+          metadata: {
+            discoveryMethod: "semantic_search",
+            confidence: topMatch.confidence,
+            candidatesConsidered: candidates.length,
+            executionTimeMs: Date.now() - startTime,
+            provision: provisionMeta,
+          },
+        };
+      }
+    }
+
+    // 3. Generate command via LLM (was step 2)
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
       throw new Error("ANTHROPIC_API_KEY is required for execute()");
@@ -128,7 +188,7 @@ export class AiCliEngine {
       { role: "user", content: userMsg },
     ]);
 
-    // 3. Dry-run: just return the plan
+    // 4. Dry-run: just return the plan
     if (options.dryRun) {
       return {
         tool: { id: topMatch.tool.id, name: topMatch.tool.name, version: topMatch.tool.version },
@@ -146,7 +206,7 @@ export class AiCliEngine {
       };
     }
 
-    // 4. Execute
+    // 5. Execute
     const timeoutMs = options.timeout ?? 30_000;
     const result = await runCommand(command, options.stdin ?? "", timeoutMs);
 
@@ -181,6 +241,34 @@ export class AiCliEngine {
         executionTimeMs: Date.now() - startTime,
       },
     };
+  }
+
+  /**
+   * Resolve — ensure the selected tool is installed.
+   * Returns ProvisionResult if provisioning was attempted, null if already installed.
+   */
+  private async resolve(
+    tool: ToolMetadata,
+    options: ExecuteOptions,
+  ): Promise<ProvisionResult | null> {
+    // Check if tool is already installed
+    if (tool.install.check) {
+      const installed = await checkInstalled(tool.install.check);
+      if (installed) return null; // Already available, no action needed
+    } else {
+      // No check command → assume installed (can't verify)
+      return null;
+    }
+
+    // Tool is not installed — attempt auto-provision
+    const provisioner = new Provisioner();
+    const provisionOpts: ProvisionOptions = {
+      autoApprove: options.autoApprove,
+      confirm: options.confirm,
+      timeout: 120_000,
+    };
+
+    return provisioner.provision(tool, provisionOpts);
   }
 
   /**

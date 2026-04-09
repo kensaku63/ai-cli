@@ -5,6 +5,7 @@
  */
 
 import { execFile } from "node:child_process";
+import type { InstallInfo } from "../tool-registry/schema.js";
 
 export type PackageManager = "brew" | "apt" | "npm" | "pip" | "cargo" | "choco";
 
@@ -74,7 +75,7 @@ export function checkInstalled(checkCmd: string): Promise<boolean> {
  * Priority: brew > apt > npm > pip > cargo > choco
  */
 export function selectManager(
-  toolInstall: Record<string, string | undefined>,
+  toolInstall: InstallInfo,
   available: DetectedManager[],
 ): { manager: PackageManager; packageName: string } | null {
   const priority: PackageManager[] = ["brew", "apt", "npm", "pip", "cargo", "choco"];

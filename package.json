@@ -11,9 +11,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "node --import tsx --test tool-registry/search.test.ts",
+    "test": "node --import tsx --test tool-registry/search.test.ts auto-provision/auto-provision.test.ts engine-resolve.test.ts",
     "test:semantic": "node --import tsx --test tool-registry/search-semantic.test.ts",
-    "test:all": "node --import tsx --test tool-registry/search.test.ts tool-registry/search-semantic.test.ts",
+    "test:all": "node --import tsx --test tool-registry/search.test.ts tool-registry/search-semantic.test.ts auto-provision/auto-provision.test.ts engine-resolve.test.ts",
     "dev": "tsx ai-cli.ts"
   },
   "dependencies": {
