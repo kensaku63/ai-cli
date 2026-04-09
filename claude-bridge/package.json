@@ -7,6 +7,8 @@
     "ai-cli-bridge": "./dist/claude-bridge/src/index.js"
   },
   "main": "./dist/claude-bridge/src/index.js",
+  "types": "./dist/claude-bridge/src/index.d.ts",
+  "author": "kensaku63",
   "files": [
     "dist/"
   ],
