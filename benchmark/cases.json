@@ -5,7 +5,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "find",
-    "expected_patterns": ["ls"],
+    "expected_patterns": [
+      "ls"
+    ],
     "category": "filesystem"
   },
   {
@@ -14,7 +16,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "date",
-    "expected_patterns": ["date"],
+    "expected_patterns": [
+      "date"
+    ],
     "category": "system"
   },
   {
@@ -23,7 +27,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "du",
-    "expected_patterns": ["df"],
+    "expected_patterns": [
+      "df"
+    ],
     "category": "system"
   },
   {
@@ -32,7 +38,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "ps",
-    "expected_patterns": ["ps"],
+    "expected_patterns": [
+      "ps"
+    ],
     "category": "system"
   },
   {
@@ -41,7 +49,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "env",
-    "expected_patterns": ["pwd"],
+    "expected_patterns": [
+      "pwd"
+    ],
     "category": "filesystem"
   },
   {
@@ -50,7 +60,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "uname",
-    "expected_patterns": ["uname"],
+    "expected_patterns": [
+      "uname"
+    ],
     "category": "system"
   },
   {
@@ -59,7 +71,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "mkdir",
-    "expected_patterns": ["mkdir.*test"],
+    "expected_patterns": [
+      "mkdir.*test"
+    ],
     "category": "filesystem"
   },
   {
@@ -68,7 +82,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "wget",
-    "expected_patterns": ["curl|wget"],
+    "expected_patterns": [
+      "curl|wget"
+    ],
     "category": "network"
   },
   {
@@ -77,7 +93,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "git",
-    "expected_patterns": ["git log"],
+    "expected_patterns": [
+      "git log"
+    ],
     "category": "vcs"
   },
   {
@@ -86,7 +104,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "lsof",
-    "expected_patterns": ["lsof.*3000|netstat.*3000|ss.*3000"],
+    "expected_patterns": [
+      "lsof.*3000|netstat.*3000|ss.*3000"
+    ],
     "category": "network"
   },
   {
@@ -95,7 +115,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "ping",
-    "expected_patterns": ["ping.*google\\.com"],
+    "expected_patterns": [
+      "ping.*google\\.com"
+    ],
     "category": "network"
   },
   {
@@ -104,7 +126,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "tar",
-    "expected_patterns": ["tar.*czf|tar.*-czf"],
+    "expected_patterns": [
+      "tar.*czf|tar.*-czf"
+    ],
     "category": "filesystem"
   },
   {
@@ -113,7 +137,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "find",
-    "expected_patterns": ["ls"],
+    "expected_patterns": [
+      "ls"
+    ],
     "category": "filesystem"
   },
   {
@@ -122,7 +148,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "date",
-    "expected_patterns": ["date"],
+    "expected_patterns": [
+      "date"
+    ],
     "category": "system"
   },
   {
@@ -131,7 +159,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "df",
-    "expected_patterns": ["df"],
+    "expected_patterns": [
+      "df"
+    ],
     "category": "system"
   },
   {
@@ -140,7 +170,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "ps",
-    "expected_patterns": ["ps"],
+    "expected_patterns": [
+      "ps"
+    ],
     "category": "system"
   },
   {
@@ -149,7 +181,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "git",
-    "expected_patterns": ["git status"],
+    "expected_patterns": [
+      "git status"
+    ],
     "category": "vcs"
   },
   {
@@ -158,7 +192,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "docker",
-    "expected_patterns": ["docker ps|docker container ls"],
+    "expected_patterns": [
+      "docker ps|docker container ls"
+    ],
     "category": "container"
   },
   {
@@ -167,7 +203,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "npm",
-    "expected_patterns": ["npm install.*express|npm i.*express"],
+    "expected_patterns": [
+      "npm install.*express|npm i.*express"
+    ],
     "category": "package"
   },
   {
@@ -176,7 +214,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "cp",
-    "expected_patterns": ["cp.*src\\.txt.*dest\\.txt"],
+    "expected_patterns": [
+      "cp.*src\\.txt.*dest\\.txt"
+    ],
     "category": "filesystem"
   },
   {
@@ -185,7 +225,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "find",
-    "expected_patterns": ["find.*\\.ts.*size|find.*-name.*\\.ts"],
+    "expected_patterns": [
+      "find.*\\.ts.*size|find.*-name.*\\.ts"
+    ],
     "category": "filesystem"
   },
   {
@@ -194,7 +236,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "tail",
-    "expected_patterns": ["tail.*-n\\s*50|tail.*-50"],
+    "expected_patterns": [
+      "tail.*-n\\s*50|tail.*-50"
+    ],
     "category": "filesystem"
   },
   {
@@ -203,7 +247,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "grep",
-    "expected_patterns": ["grep.*TODO.*\\.js|rg.*TODO.*\\.js"],
+    "expected_patterns": [
+      "grep.*TODO.*\\.js|rg.*TODO.*\\.js"
+    ],
     "category": "search"
   },
   {
@@ -212,7 +258,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "git",
-    "expected_patterns": ["git checkout -b feature/login|git switch -c feature/login"],
+    "expected_patterns": [
+      "git checkout -b feature/login|git switch -c feature/login"
+    ],
     "category": "vcs"
   },
   {
@@ -221,7 +269,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "docker",
-    "expected_patterns": ["docker run.*-p.*8080.*nginx"],
+    "expected_patterns": [
+      "docker run.*-p.*8080.*nginx"
+    ],
     "category": "container"
   },
   {
@@ -230,7 +280,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "chmod",
-    "expected_patterns": ["chmod.*755.*deploy\\.sh"],
+    "expected_patterns": [
+      "chmod.*755.*deploy\\.sh"
+    ],
     "category": "filesystem"
   },
   {
@@ -239,7 +291,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "du",
-    "expected_patterns": ["du.*sort"],
+    "expected_patterns": [
+      "du.*sort"
+    ],
     "category": "filesystem"
   },
   {
@@ -248,7 +302,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "curl",
-    "expected_patterns": ["curl.*-X\\s*POST|curl.*--data|curl.*-d"],
+    "expected_patterns": [
+      "curl.*-X\\s*POST|curl.*--data|curl.*-d"
+    ],
     "category": "network"
   },
   {
@@ -257,7 +313,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "kill",
-    "expected_patterns": ["kill|lsof.*8080|fuser.*8080"],
+    "expected_patterns": [
+      "kill|lsof.*8080|fuser.*8080"
+    ],
     "category": "system"
   },
   {
@@ -266,7 +324,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "git",
-    "expected_patterns": ["git clone.*user/project.*myproject"],
+    "expected_patterns": [
+      "git clone.*user/project.*myproject"
+    ],
     "category": "vcs"
   },
   {
@@ -275,7 +335,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "find",
-    "expected_patterns": ["find.*size.*100M|find.*-size\\s*\\+100"],
+    "expected_patterns": [
+      "find.*size.*100M|find.*-size\\s*\\+100"
+    ],
     "category": "filesystem"
   },
   {
@@ -284,7 +346,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "tail",
-    "expected_patterns": ["tail.*-n\\s*100|tail.*-100"],
+    "expected_patterns": [
+      "tail.*-n\\s*100|tail.*-100"
+    ],
     "category": "filesystem"
   },
   {
@@ -293,7 +357,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "grep",
-    "expected_patterns": ["grep.*import requests.*\\.py|rg.*import requests.*\\.py"],
+    "expected_patterns": [
+      "grep.*import requests.*\\.py|rg.*import requests.*\\.py"
+    ],
     "category": "search"
   },
   {
@@ -302,7 +368,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "lsof",
-    "expected_patterns": ["lsof.*3000|kill|fuser.*3000"],
+    "expected_patterns": [
+      "lsof.*3000|kill|fuser.*3000"
+    ],
     "category": "system"
   },
   {
@@ -311,7 +379,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "redis-cli",
-    "expected_patterns": ["redis-cli.*KEYS|redis-cli.*keys"],
+    "expected_patterns": [
+      "redis-cli.*KEYS|redis-cli.*keys"
+    ],
     "category": "database"
   },
   {
@@ -320,7 +390,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "docker",
-    "expected_patterns": ["docker build.*-t.*myapp"],
+    "expected_patterns": [
+      "docker build.*-t.*myapp"
+    ],
     "category": "container"
   },
   {
@@ -329,7 +401,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "ssh",
-    "expected_patterns": ["ssh-keygen.*ed25519"],
+    "expected_patterns": [
+      "ssh-keygen.*ed25519"
+    ],
     "category": "security"
   },
   {
@@ -338,7 +412,9 @@
     "language": "ja",
     "difficulty": "compound",
     "expected_tool": "du",
-    "expected_patterns": ["du.*-h|du.*--human"],
+    "expected_patterns": [
+      "du.*-h|du.*--human"
+    ],
     "category": "filesystem"
   },
   {
@@ -347,7 +423,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "find",
-    "expected_patterns": ["ls.*wc|find.*wc"],
+    "expected_patterns": [
+      "ls.*wc|find.*wc"
+    ],
     "category": "filesystem"
   },
   {
@@ -356,7 +434,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "du",
-    "expected_patterns": ["sort|head.*10|du"],
+    "expected_patterns": [
+      "sort|head.*10|du"
+    ],
     "category": "filesystem"
   },
   {
@@ -365,7 +445,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "find",
-    "expected_patterns": ["find.*sort.*uniq|awk.*sort.*uniq"],
+    "expected_patterns": [
+      "find.*sort.*uniq|awk.*sort.*uniq"
+    ],
     "category": "filesystem"
   },
   {
@@ -374,7 +456,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "awk",
-    "expected_patterns": ["awk|cut|sort.*uniq.*-c"],
+    "expected_patterns": [
+      "awk|cut|sort.*uniq.*-c"
+    ],
     "category": "text"
   },
   {
@@ -383,7 +467,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "git",
-    "expected_patterns": ["git branch.*sort|git for-each-ref.*sort"],
+    "expected_patterns": [
+      "git branch.*sort|git for-each-ref.*sort"
+    ],
     "category": "vcs"
   },
   {
@@ -392,7 +478,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "grep",
-    "expected_patterns": ["grep.*-[oEP].*@|awk.*@"],
+    "expected_patterns": [
+      "grep.*-[oEP].*@|awk.*@"
+    ],
     "category": "text"
   },
   {
@@ -401,7 +489,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "ps",
-    "expected_patterns": ["ps.*sort|top.*-n"],
+    "expected_patterns": [
+      "ps.*sort|top.*-n"
+    ],
     "category": "system"
   },
   {
@@ -410,7 +500,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "sort",
-    "expected_patterns": ["sort.*uniq.*-d"],
+    "expected_patterns": [
+      "sort.*uniq.*-d"
+    ],
     "category": "text"
   },
   {
@@ -419,7 +511,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "find",
-    "expected_patterns": ["find.*\\.log|du.*\\.log|wc"],
+    "expected_patterns": [
+      "find.*\\.log|du.*\\.log|wc"
+    ],
     "category": "filesystem"
   },
   {
@@ -428,7 +522,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "find",
-    "expected_patterns": ["ls.*-t|find.*sort|stat"],
+    "expected_patterns": [
+      "ls.*-t|find.*sort|stat"
+    ],
     "category": "filesystem"
   },
   {
@@ -437,7 +533,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "find",
-    "expected_patterns": ["ls.*wc|find.*wc"],
+    "expected_patterns": [
+      "ls.*wc|find.*wc"
+    ],
     "category": "filesystem"
   },
   {
@@ -446,7 +544,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "grep",
-    "expected_patterns": ["grep.*500.*access\\.log|awk.*500"],
+    "expected_patterns": [
+      "grep.*500.*access\\.log|awk.*500"
+    ],
     "category": "text"
   },
   {
@@ -455,7 +555,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "docker",
-    "expected_patterns": ["docker stats|docker ps.*sort"],
+    "expected_patterns": [
+      "docker stats|docker ps.*sort"
+    ],
     "category": "container"
   },
   {
@@ -464,7 +566,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "wc",
-    "expected_patterns": ["wc.*-l|find.*wc|cloc"],
+    "expected_patterns": [
+      "wc.*-l|find.*wc|cloc"
+    ],
     "category": "text"
   },
   {
@@ -473,7 +577,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "jq",
-    "expected_patterns": ["jq.*dependencies|cat.*package\\.json.*jq"],
+    "expected_patterns": [
+      "jq.*dependencies|cat.*package\\.json.*jq"
+    ],
     "category": "text"
   },
   {
@@ -482,7 +588,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "cut",
-    "expected_patterns": ["cut.*-f.*2|awk.*\\$2|sort.*uniq"],
+    "expected_patterns": [
+      "cut.*-f.*2|awk.*\\$2|sort.*uniq"
+    ],
     "category": "text"
   },
   {
@@ -491,7 +599,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "git",
-    "expected_patterns": ["git diff.*\\.ts|git status.*grep.*\\.ts"],
+    "expected_patterns": [
+      "git diff.*\\.ts|git status.*grep.*\\.ts"
+    ],
     "category": "vcs"
   },
   {
@@ -500,7 +610,9 @@
     "language": "ja",
     "difficulty": "pipe",
     "expected_tool": "env",
-    "expected_patterns": ["echo.*PATH.*tr.*:|printenv.*PATH.*tr"],
+    "expected_patterns": [
+      "echo.*PATH.*tr.*:|printenv.*PATH.*tr"
+    ],
     "category": "system"
   },
   {
@@ -509,7 +621,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "node",
-    "expected_patterns": ["node.*--version|which.*node|command.*-v.*node"],
+    "expected_patterns": [
+      "node.*--version|which.*node|command.*-v.*node"
+    ],
     "category": "runtime"
   },
   {
@@ -518,7 +632,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "rm",
-    "expected_patterns": ["rm.*dist|\\[.*-d.*dist|test.*-d.*dist"],
+    "expected_patterns": [
+      "rm.*dist|\\[.*-d.*dist|test.*-d.*dist"
+    ],
     "category": "build"
   },
   {
@@ -527,7 +643,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "pg_dump",
-    "expected_patterns": ["pg_dump|mysqldump|cp.*\\.sql|mv.*\\.sql"],
+    "expected_patterns": [
+      "pg_dump|mysqldump|cp.*\\.sql|mv.*\\.sql"
+    ],
     "category": "database"
   },
   {
@@ -536,7 +654,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "docker",
-    "expected_patterns": ["docker.*info|systemctl.*docker|service.*docker"],
+    "expected_patterns": [
+      "docker.*info|systemctl.*docker|service.*docker"
+    ],
     "category": "container"
   },
   {
@@ -545,7 +665,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "mv",
-    "expected_patterns": ["mv.*\\.jpeg.*\\.jpg|rename.*jpeg.*jpg|for.*\\.jpeg"],
+    "expected_patterns": [
+      "mv.*\\.jpeg.*\\.jpg|rename.*jpeg.*jpg|for.*\\.jpeg"
+    ],
     "category": "filesystem"
   },
   {
@@ -554,7 +676,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "tail",
-    "expected_patterns": ["tail.*-f.*syslog.*grep|tail.*-F.*error"],
+    "expected_patterns": [
+      "tail.*-f.*syslog.*grep|tail.*-F.*error"
+    ],
     "category": "monitoring"
   },
   {
@@ -563,7 +687,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "npm",
-    "expected_patterns": ["npm test.*&&|npm run test.*&&"],
+    "expected_patterns": [
+      "npm test.*&&|npm run test.*&&"
+    ],
     "category": "build"
   },
   {
@@ -572,7 +698,9 @@
     "language": "en",
     "difficulty": "conditional",
     "expected_tool": "find",
-    "expected_patterns": ["find.*-mtime.*0|find.*-mmin.*1440|find.*-newer"],
+    "expected_patterns": [
+      "find.*-mtime.*0|find.*-mmin.*1440|find.*-newer"
+    ],
     "category": "filesystem"
   },
   {
@@ -581,7 +709,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "node",
-    "expected_patterns": ["node.*--version|node.*-v"],
+    "expected_patterns": [
+      "node.*--version|node.*-v"
+    ],
     "category": "runtime"
   },
   {
@@ -590,7 +720,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "rm",
-    "expected_patterns": ["rm.*dist.*&&.*npm run build|rm.*-rf.*dist"],
+    "expected_patterns": [
+      "rm.*dist.*&&.*npm run build|rm.*-rf.*dist"
+    ],
     "category": "build"
   },
   {
@@ -599,7 +731,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "lsof",
-    "expected_patterns": ["lsof.*3000|netstat.*3000|kill|fuser"],
+    "expected_patterns": [
+      "lsof.*3000|netstat.*3000|kill|fuser"
+    ],
     "category": "network"
   },
   {
@@ -608,7 +742,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "cp",
-    "expected_patterns": ["cp.*\\.env\\.example.*\\.env|test.*-f|\\.env"],
+    "expected_patterns": [
+      "cp.*\\.env\\.example.*\\.env|test.*-f|\\.env"
+    ],
     "category": "filesystem"
   },
   {
@@ -617,7 +753,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "find",
-    "expected_patterns": ["find.*-mtime|find.*-newer|find.*-mmin"],
+    "expected_patterns": [
+      "find.*-mtime|find.*-newer|find.*-mmin"
+    ],
     "category": "filesystem"
   },
   {
@@ -626,7 +764,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "git",
-    "expected_patterns": ["git submodule.*update|git submodule.*foreach"],
+    "expected_patterns": [
+      "git submodule.*update|git submodule.*foreach"
+    ],
     "category": "vcs"
   },
   {
@@ -635,7 +775,9 @@
     "language": "ja",
     "difficulty": "conditional",
     "expected_tool": "npm",
-    "expected_patterns": ["npm test|npm run test|git diff"],
+    "expected_patterns": [
+      "npm test|npm run test|git diff"
+    ],
     "category": "build"
   },
   {
@@ -644,7 +786,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "openssl",
-    "expected_patterns": ["openssl.*req.*-x509|openssl.*genrsa"],
+    "expected_patterns": [
+      "openssl.*req.*-x509|openssl.*genrsa"
+    ],
     "category": "security"
   },
   {
@@ -653,7 +797,9 @@
     "language": "en",
     "difficulty": "compound",
     "expected_tool": "psql",
-    "expected_patterns": ["psql.*-U.*admin.*mydb|psql.*mydb.*admin"],
+    "expected_patterns": [
+      "psql.*-U.*admin.*mydb|psql.*mydb.*admin"
+    ],
     "category": "database"
   },
   {
@@ -662,7 +808,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "netstat",
-    "expected_patterns": ["netstat|ss|awk.*sort.*uniq"],
+    "expected_patterns": [
+      "netstat|ss|awk.*sort.*uniq"
+    ],
     "category": "network"
   },
   {
@@ -671,7 +819,9 @@
     "language": "en",
     "difficulty": "pipe",
     "expected_tool": "jq",
-    "expected_patterns": ["jq.*-S|jq.*sort"],
+    "expected_patterns": [
+      "jq.*-S|jq.*sort"
+    ],
     "category": "text"
   },
   {
@@ -680,7 +830,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "base64",
-    "expected_patterns": ["base64|echo.*base64"],
+    "expected_patterns": [
+      "base64|echo.*base64"
+    ],
     "category": "text"
   },
   {
@@ -689,7 +841,9 @@
     "language": "en",
     "difficulty": "simple",
     "expected_tool": "dig",
-    "expected_patterns": ["dig.*example\\.com|nslookup.*example\\.com|host.*example\\.com"],
+    "expected_patterns": [
+      "dig.*example\\.com|nslookup.*example\\.com|host.*example\\.com"
+    ],
     "category": "network"
   },
   {
@@ -698,7 +852,9 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "uname",
-    "expected_patterns": ["hostname|uname.*-n"],
+    "expected_patterns": [
+      "hostname|uname.*-n"
+    ],
     "category": "system"
   },
   {
@@ -707,7 +863,4937 @@
     "language": "ja",
     "difficulty": "simple",
     "expected_tool": "tmux",
-    "expected_patterns": ["tmux.*new|tmux.*new-session"],
+    "expected_patterns": [
+      "tmux.*new|tmux.*new-session"
+    ],
     "category": "terminal"
+  },
+  {
+    "id": "simple-en-015",
+    "query": "Run the site.yml playbook on all production servers",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ansible",
+    "expected_patterns": [
+      "ansible-playbook.*site\\.yml"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "compound-ja-009",
+    "query": "Ansibleでwebサーバーグループにpingを送信して接続確認したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "ansible",
+    "expected_patterns": [
+      "ansible.*web.*-m.*ping"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-en-009",
+    "query": "Encrypt the secrets.yml file using Ansible Vault and then run the deploy playbook",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "ansible",
+    "expected_patterns": [
+      "ansible-vault.*encrypt.*secrets\\.yml.*&&.*ansible-playbook"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "pipe-ja-009",
+    "query": "Ansibleのインベントリに登録されたホスト一覧をgrepで特定のIPだけ抽出したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ansible",
+    "expected_patterns": [
+      "ansible.*--list-hosts|ansible.*inventory.*grep"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "compound-en-013",
+    "query": "Create a new resource group called myapp-rg in East US on Azure",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "az",
+    "expected_patterns": [
+      "az group create.*--name.*myapp-rg.*--location.*eastus"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-010",
+    "query": "Azureで仮想マシンの一覧を表示して、Running状態のものだけ抽出したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "az",
+    "expected_patterns": [
+      "az vm list.*grep.*Running|az vm list.*--query"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-010",
+    "query": "AKSクラスタmyaksのクレデンシャルを取得して、kubectlで接続できるようにしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "az",
+    "expected_patterns": [
+      "az aks get-credentials.*--name.*myaks"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-en-010",
+    "query": "Create an Azure web app and deploy it only if the resource group already exists",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "az",
+    "expected_patterns": [
+      "az group show.*&&.*az webapp create"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-016",
+    "query": "Build the Rust project in release mode",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "cargo",
+    "expected_patterns": [
+      "cargo build.*--release"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-011",
+    "query": "Rustプロジェクトにserdeクレートをfeaturesのderiveを有効にして追加したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "cargo",
+    "expected_patterns": [
+      "cargo add.*serde.*--features.*derive|cargo add.*serde.*-F.*derive"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-en-011",
+    "query": "Run cargo test and if all tests pass, publish the crate to crates.io",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "cargo",
+    "expected_patterns": [
+      "cargo test.*&&.*cargo publish"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "pipe-ja-011",
+    "query": "cargo benchの実行結果をhyperfineと比較して、結果をresults.jsonにエクスポートしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "cargo",
+    "expected_patterns": [
+      "cargo bench|hyperfine.*cargo"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-014",
+    "query": "Copy the entire config directory recursively to /tmp/config-backup preserving permissions",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "cp",
+    "expected_patterns": [
+      "cp.*-[ra].*config.*/tmp/config-backup"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-008",
+    "query": "もしdist/フォルダが存在しなければ、template/dist/からコピーして作成したい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "cp",
+    "expected_patterns": [
+      "test.*-d.*dist|\\[.*-d.*dist|cp.*-r.*template/dist"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-013",
+    "query": "Copy all .json files from src/ to backup/ directory",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "cp",
+    "expected_patterns": [
+      "find.*\\.json.*cp|cp.*src/.*\\.json.*backup|xargs.*cp"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-012",
+    "query": "設定ファイルをコピーするとき、すでに存在する場合は上書きしないようにしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "cp",
+    "expected_patterns": [
+      "cp.*-n|cp.*--no-clobber"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-015",
+    "query": "Extract the third field from a colon-delimited /etc/passwd file",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "cut",
+    "expected_patterns": [
+      "cut.*-d.*:.*-f.*3.*/etc/passwd"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-012",
+    "query": "TSVファイルの1列目と3列目だけ取り出してソートしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "cut",
+    "expected_patterns": [
+      "cut.*-f.*1.*3.*sort"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-017",
+    "query": "Extract the first 10 characters from each line in data.txt",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "cut",
+    "expected_patterns": [
+      "cut.*-c.*1-10.*data\\.txt"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-013",
+    "query": "access.logからスペース区切りで7番目のフィールド(URL)を抽出し、ユニークなURLの出現回数を集計したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "cut",
+    "expected_patterns": [
+      "cut.*-d.*-f.*7|awk.*\\$7|sort.*uniq.*-c"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-018",
+    "query": "Compare config.yml and config.yml.bak in unified diff format",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "diff",
+    "expected_patterns": [
+      "diff.*-u.*config\\.yml.*config\\.yml\\.bak"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-ja-013",
+    "query": "本番環境と開発環境のnginx設定ファイルの違いを確認したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "diff",
+    "expected_patterns": [
+      "diff.*nginx"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-016",
+    "query": "Compare the src/ and src-backup/ directories recursively and only show file names that differ",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "diff",
+    "expected_patterns": [
+      "diff.*-r.*-q.*src.*src-backup|diff.*--recursive.*--brief"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-014",
+    "query": "2つのファイルの差分をパッチファイルとして保存し、別のマシンで適用したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "diff",
+    "expected_patterns": [
+      "diff.*-u.*>.*\\.patch|diff.*patch"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-017",
+    "query": "List all DigitalOcean droplets in the NYC1 region",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "doctl",
+    "expected_patterns": [
+      "doctl compute droplet list|doctl.*droplet.*list"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-014",
+    "query": "DigitalOceanでUbuntu 22.04のDropletを新規作成したい（s-1vcpu-1gb、nyc1リージョン）",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "doctl",
+    "expected_patterns": [
+      "doctl compute droplet create.*--size.*s-1vcpu.*--region.*nyc1.*--image.*ubuntu"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-en-012",
+    "query": "Create a DigitalOcean Kubernetes cluster and then get the kubeconfig",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "doctl",
+    "expected_patterns": [
+      "doctl kubernetes cluster create.*&&.*doctl kubernetes cluster kubeconfig"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-015",
+    "query": "DOのDroplet一覧を取得して、IPアドレスだけ抽出したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "doctl",
+    "expected_patterns": [
+      "doctl compute droplet list.*--format|doctl.*droplet.*awk|doctl.*grep"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-015",
+    "query": "NODE_ENVをproductionに設定してnpm startを実行したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "env",
+    "expected_patterns": [
+      "env.*NODE_ENV=production.*npm start|NODE_ENV=production.*npm start"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-014",
+    "query": "List all environment variables containing AWS and sort them alphabetically",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "env",
+    "expected_patterns": [
+      "env.*grep.*AWS.*sort|printenv.*grep.*AWS.*sort"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-015",
+    "query": "Find all empty directories under /var/log and remove them",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": [
+      "find.*/var/log.*-type d.*-empty.*-delete|find.*-empty.*rmdir"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-016",
+    "query": "node_modulesを除外して、プロジェクト内の.envファイルをすべて探したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "find",
+    "expected_patterns": [
+      "find.*-name.*\\.env.*-not.*node_modules|find.*-name.*\\.env.*--exclude"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-016",
+    "query": "Use fzf to interactively select a git branch to checkout",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "fzf",
+    "expected_patterns": [
+      "git branch.*fzf|fzf.*git checkout|git branch.*\\|.*fzf"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-016",
+    "query": "プロセス一覧からfzfで選択してkillしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "fzf",
+    "expected_patterns": [
+      "ps.*fzf.*kill|fzf.*kill"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-018",
+    "query": "Interactively find and open a file using fzf with preview",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "fzf",
+    "expected_patterns": [
+      "fzf.*--preview"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "pipe-ja-017",
+    "query": "fzfでコマンド履歴をあいまい検索して再実行したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "fzf",
+    "expected_patterns": [
+      "history.*fzf|fc.*fzf|CTRL-R|fzf.*history"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-en-019",
+    "query": "Clone the repository github.com/microsoft/vscode using ghq",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ghq",
+    "expected_patterns": [
+      "ghq get.*microsoft/vscode"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-018",
+    "query": "ghqで管理しているリポジトリ一覧をfzfで絞り込んでディレクトリに移動したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ghq",
+    "expected_patterns": [
+      "ghq list.*fzf|ghq.*root.*fzf|cd.*ghq"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-en-017",
+    "query": "List all local repositories managed by ghq and filter for Go projects",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "ghq",
+    "expected_patterns": [
+      "ghq list.*grep|ghq list.*go"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-019",
+    "query": "ghqのルートディレクトリ内のリポジトリ数を数えたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ghq",
+    "expected_patterns": [
+      "ghq list.*wc|ghq list.*-l"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "simple-en-020",
+    "query": "Build the project with Gradle and run all tests",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "gradle",
+    "expected_patterns": [
+      "gradle build|gradle test|gradlew build|gradlew test"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "pipe-ja-020",
+    "query": "Gradleの依存関係ツリーを表示して、特定のライブラリがどこから来ているか確認したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "gradle",
+    "expected_patterns": [
+      "gradle dependencies.*grep|gradlew dependencies.*grep"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-019",
+    "query": "Run gradle clean build in release configuration and skip tests",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "gradle",
+    "expected_patterns": [
+      "gradle.*clean.*build.*-x.*test|gradlew.*clean.*build.*-x.*test"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-009",
+    "query": "Gradleのテストが成功したらアーティファクトをpublishしたい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "gradle",
+    "expected_patterns": [
+      "gradle.*test.*&&.*gradle.*publish|gradlew.*test.*&&.*gradlew.*publish"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-020",
+    "query": "Show the last 100 log entries for the Heroku app myapi",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "heroku",
+    "expected_patterns": [
+      "heroku logs.*-n.*100.*--app.*myapi|heroku logs.*--tail.*myapi"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-017",
+    "query": "Herokuアプリのweb dynoを3つにスケールしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "heroku",
+    "expected_patterns": [
+      "heroku ps:scale.*web=3|heroku scale.*web=3"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-en-013",
+    "query": "Check Heroku app status and if it's crashed, restart the dynos",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "heroku",
+    "expected_patterns": [
+      "heroku ps.*&&.*heroku restart|heroku ps.*heroku dyno"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-021",
+    "query": "Herokuの環境変数一覧をgrepでDATABASEに関連するものだけ抽出したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "heroku",
+    "expected_patterns": [
+      "heroku config.*grep.*DATABASE|heroku config.*\\|.*grep"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-021",
+    "query": "Benchmark the execution time of 'python sort.py' with 10 warmup runs",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "hyperfine",
+    "expected_patterns": [
+      "hyperfine.*--warmup.*10.*python sort\\.py"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-ja-011",
+    "query": "ripgrepとgrepの検索速度を比較ベンチマークしたい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "hyperfine",
+    "expected_patterns": [
+      "hyperfine.*rg|hyperfine.*grep.*rg"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-022",
+    "query": "Compare the performance of fd vs find for searching .ts files and export results to JSON",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "hyperfine",
+    "expected_patterns": [
+      "hyperfine.*fd.*find.*--export-json|hyperfine.*\\.ts"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-022",
+    "query": "ベンチマーク結果をMarkdown形式にエクスポートして、パフォーマンスレポートを作りたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "hyperfine",
+    "expected_patterns": [
+      "hyperfine.*--export-markdown|hyperfine.*\\.md"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-023",
+    "query": "Show nginx service logs from the last 2 hours",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "journalctl",
+    "expected_patterns": [
+      "journalctl.*-u.*nginx.*--since.*2 hours ago|journalctl.*-u.*nginx.*--since"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-ja-018",
+    "query": "systemdのジャーナルでエラーレベル以上のログだけリアルタイムで追跡したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "journalctl",
+    "expected_patterns": [
+      "journalctl.*-p.*err.*-f|journalctl.*--priority.*err.*--follow"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-en-018",
+    "query": "View logs for the postgresql service since yesterday and grep for connection errors",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "journalctl",
+    "expected_patterns": [
+      "journalctl.*-u.*postgresql.*--since.*yesterday.*grep|journalctl.*postgresql.*\\|.*grep"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-023",
+    "query": "今回のブート以降のカーネルログだけ確認して、WARNING行を数えたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "journalctl",
+    "expected_patterns": [
+      "journalctl.*-b.*-k.*grep.*WARNING.*wc|journalctl.*--boot.*grep"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-024",
+    "query": "View the large log file /var/log/app.log starting from line 500",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "less",
+    "expected_patterns": [
+      "less.*\\+500.*/var/log/app\\.log"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-ja-019",
+    "query": "大きなCSVファイルをlessで行番号付きで閲覧したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "less",
+    "expected_patterns": [
+      "less.*-N|less.*--LINE-NUMBERS"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-019",
+    "query": "Pipe the output of docker logs into less for paginated viewing",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "less",
+    "expected_patterns": [
+      "docker logs.*\\|.*less"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-024",
+    "query": "grepの検索結果が大量なので、lessにパイプして閲覧したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "less",
+    "expected_patterns": [
+      "grep.*\\|.*less"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-025",
+    "query": "Start a local Kubernetes cluster with 4GB memory and 2 CPUs using minikube",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "minikube",
+    "expected_patterns": [
+      "minikube start.*--memory.*4.*--cpus.*2|minikube start.*--cpus.*2.*--memory.*4"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "conditional-ja-010",
+    "query": "minikubeクラスタのステータスを確認して、停止していたら起動したい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "minikube",
+    "expected_patterns": [
+      "minikube status.*&&|minikube status.*\\|\\||minikube start"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-en-026",
+    "query": "Open the Kubernetes dashboard in minikube and get the service URL for my-service",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "minikube",
+    "expected_patterns": [
+      "minikube dashboard|minikube service.*my-service"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "pipe-ja-025",
+    "query": "minikubeのアドオン一覧を表示して、有効になっているものだけフィルタしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "minikube",
+    "expected_patterns": [
+      "minikube addons list.*grep.*enabled|minikube addons.*\\|.*grep"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-en-027",
+    "query": "Connect to MySQL on host db.example.com as user root and select the production database",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "mysql",
+    "expected_patterns": [
+      "mysql.*-h.*db\\.example\\.com.*-u.*root.*production"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-ja-012",
+    "query": "MySQLでusersテーブルのレコード数を確認したい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "mysql",
+    "expected_patterns": [
+      "mysql.*-e.*SELECT.*COUNT.*users|mysql.*-e.*count"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-020",
+    "query": "Execute a SQL file against the staging MySQL database and log the output",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "mysql",
+    "expected_patterns": [
+      "mysql.*staging.*<.*\\.sql|mysql.*source|mysql.*<.*>.*log"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "conditional-ja-011",
+    "query": "MySQLのデータベースが存在するか確認して、なければ新規作成したい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "mysql",
+    "expected_patterns": [
+      "mysql.*-e.*CREATE DATABASE.*IF NOT EXISTS|mysql.*SHOW DATABASES.*&&"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-en-021",
+    "query": "Show all listening TCP ports with their process names",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "netstat",
+    "expected_patterns": [
+      "netstat.*-[tlnp]|netstat.*--listen|ss.*-[tlnp]"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-026",
+    "query": "ポート8080で接続しているクライアントのIPアドレスを一覧にしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "netstat",
+    "expected_patterns": [
+      "netstat.*8080.*awk|netstat.*8080.*grep|ss.*8080"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-en-021",
+    "query": "Count the number of ESTABLISHED connections grouped by remote IP",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "netstat",
+    "expected_patterns": [
+      "netstat.*ESTABLISHED.*awk.*sort.*uniq|ss.*established"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-027",
+    "query": "ネットワーク統計情報を表示して、TCP接続のステータス別に集計したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "netstat",
+    "expected_patterns": [
+      "netstat.*-an.*awk.*sort.*uniq|netstat.*grep.*tcp"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-028",
+    "query": "Scan https://example.com for critical and high severity vulnerabilities using nuclei",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "nuclei",
+    "expected_patterns": [
+      "nuclei.*-u.*example\\.com.*-s.*critical.*high|nuclei.*-severity"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-ja-020",
+    "query": "targets.txtに記載された複数のURLを一括でnucleiスキャンしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "nuclei",
+    "expected_patterns": [
+      "nuclei.*-l.*targets\\.txt|nuclei.*-list.*targets"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "conditional-en-014",
+    "query": "Update nuclei templates first, then scan the target with only CVE templates",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "nuclei",
+    "expected_patterns": [
+      "nuclei.*-ut.*&&.*nuclei.*-u|nuclei.*-update-templates.*&&.*nuclei.*-tags.*cve"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-ja-028",
+    "query": "nucleiのスキャン結果からcriticalだけ抽出して、Slack通知用にフォーマットしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "nuclei",
+    "expected_patterns": [
+      "nuclei.*grep.*critical|nuclei.*-s.*critical|nuclei.*\\|.*grep"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-029",
+    "query": "Dump the production PostgreSQL database to a custom-format archive file",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "pg_dump",
+    "expected_patterns": [
+      "pg_dump.*-Fc.*production|pg_dump.*--format=custom"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-021",
+    "query": "PostgreSQLのusersテーブルだけをSQLファイルにエクスポートしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "pg_dump",
+    "expected_patterns": [
+      "pg_dump.*-t.*users.*>|pg_dump.*--table.*users"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-022",
+    "query": "Dump the database, compress it with gzip, and upload to S3",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "pg_dump",
+    "expected_patterns": [
+      "pg_dump.*\\|.*gzip|pg_dump.*gz|pg_dump.*aws.*s3"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "conditional-ja-012",
+    "query": "既存のバックアップをリネームしてからpg_dumpで新しいダンプを取得したい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "pg_dump",
+    "expected_patterns": [
+      "mv.*\\.sql.*&&.*pg_dump|mv.*backup.*&&.*pg_dump"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-en-030",
+    "query": "Run an nginx container on port 8080 with Podman in detached mode",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "podman",
+    "expected_patterns": [
+      "podman run.*-d.*-p.*8080.*nginx"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "pipe-ja-029",
+    "query": "Podmanで動作中のコンテナ一覧を表示して、メモリ使用量順にソートしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "podman",
+    "expected_patterns": [
+      "podman ps|podman stats.*sort"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "conditional-en-015",
+    "query": "Build a container image from the Containerfile and push it to the registry if the build succeeds",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "podman",
+    "expected_patterns": [
+      "podman build.*&&.*podman push"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-ja-022",
+    "query": "Podmanで停止中の古いコンテナをすべて削除したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "podman",
+    "expected_patterns": [
+      "podman.*prune|podman rm.*-a|podman container prune"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "simple-en-022",
+    "query": "Start a simple HTTP server on port 9000 using Python",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "python",
+    "expected_patterns": [
+      "python.*-m.*http\\.server.*9000|python3.*-m.*http\\.server.*9000"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "conditional-ja-013",
+    "query": "Pythonで仮想環境を作成してアクティベートし、requirements.txtをインストールしたい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "python",
+    "expected_patterns": [
+      "python.*-m.*venv.*&&.*source.*activate.*&&.*pip install|python3.*-m.*venv"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "pipe-en-023",
+    "query": "Use Python one-liner to convert CSV to JSON from stdin",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "python",
+    "expected_patterns": [
+      "python.*-c.*csv.*json|python3.*-c.*import"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "simple-ja-013",
+    "query": "JSONファイルをPythonのjson.toolモジュールで整形して表示したい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "python",
+    "expected_patterns": [
+      "python.*-m.*json\\.tool|python3.*-m.*json\\.tool"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "compound-en-031",
+    "query": "Sync the local ./dist/ directory to the remote server 10.0.1.5:/var/www/html/ with delete",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "rsync",
+    "expected_patterns": [
+      "rsync.*-a.*--delete.*dist.*10\\.0\\.1\\.5.*/var/www"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-023",
+    "query": "ローカルのプロジェクトをリモートサーバーに差分だけ同期したい（node_modulesは除外）",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "rsync",
+    "expected_patterns": [
+      "rsync.*--exclude.*node_modules|rsync.*-a.*--exclude"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-en-016",
+    "query": "Rsync files to remote, but only if the SSH connection test succeeds first",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "rsync",
+    "expected_patterns": [
+      "ssh.*&&.*rsync|rsync.*-e.*ssh"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-ja-030",
+    "query": "rsyncの転送結果のログを保存しながら大きなバックアップを転送したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "rsync",
+    "expected_patterns": [
+      "rsync.*--log-file|rsync.*tee|rsync.*>.*log"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-023",
+    "query": "Download the /var/log/app.log file from server 192.168.1.100 to the current directory",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "scp",
+    "expected_patterns": [
+      "scp.*192\\.168\\.1\\.100.*/var/log/app\\.log"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-ja-014",
+    "query": "ローカルのdeploy.tarをリモートサーバーuser@prod:/tmp/にアップロードしたい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "scp",
+    "expected_patterns": [
+      "scp.*deploy\\.tar.*user@prod.*/tmp"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-032",
+    "query": "Copy the entire /etc/nginx/ directory recursively from the remote server to local backup",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "scp",
+    "expected_patterns": [
+      "scp.*-r.*/etc/nginx"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-031",
+    "query": "複数のサーバーからログファイルをscpで順番にダウンロードしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "scp",
+    "expected_patterns": [
+      "scp|for.*scp|xargs.*scp"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-024",
+    "query": "Query the users table in the app.db SQLite database",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "sqlite3",
+    "expected_patterns": [
+      "sqlite3.*app\\.db.*SELECT.*users|sqlite3.*app\\.db.*'SELECT"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-024",
+    "query": "CSVファイルをSQLiteにインポートしてクエリで集計したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "sqlite3",
+    "expected_patterns": [
+      "sqlite3.*\\.import.*\\.csv|sqlite3.*import.*csv"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-024",
+    "query": "Dump all data from the SQLite database analytics.db as SQL insert statements",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "sqlite3",
+    "expected_patterns": [
+      "sqlite3.*analytics\\.db.*\\.dump|sqlite3.*analytics\\.db.*dump"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "conditional-ja-014",
+    "query": "SQLiteデータベースが存在するか確認して、なければスキーマを作成して初期化したい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "sqlite3",
+    "expected_patterns": [
+      "test.*-f|\\[.*-f|sqlite3.*CREATE TABLE|sqlite3.*<.*schema"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-025",
+    "query": "Follow the application log at /var/log/app/output.log and highlight ERROR lines",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "tail",
+    "expected_patterns": [
+      "tail.*-f.*/var/log/app/output\\.log.*grep.*ERROR|tail.*-f.*\\|.*grep"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-032",
+    "query": "Nginxのアクセスログを監視して、ステータスコード5xxのリクエストだけリアルタイムで表示したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tail",
+    "expected_patterns": [
+      "tail.*-f.*access.*grep.*5[0-9]|tail.*-f.*nginx.*grep"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-en-026",
+    "query": "Show the last 200 lines of /var/log/auth.log and search for failed login attempts",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "tail",
+    "expected_patterns": [
+      "tail.*-n.*200.*/var/log/auth.*grep.*[Ff]ail|tail.*200.*auth\\.log.*grep"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-ja-025",
+    "query": "複数のログファイルを同時にtailしてリアルタイム監視したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "tail",
+    "expected_patterns": [
+      "tail.*-f.*\\.log.*\\.log|tail.*-f.*multiple|multitail"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-033",
+    "query": "Initialize Terraform in the current directory and generate an execution plan",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "terraform",
+    "expected_patterns": [
+      "terraform init.*&&.*terraform plan|terraform init"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-ja-015",
+    "query": "Terraformの設定ファイルをフォーマットしてからバリデーションしたい",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "terraform",
+    "expected_patterns": [
+      "terraform fmt.*&&.*terraform validate"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "compound-en-034",
+    "query": "Apply Terraform changes with auto-approve targeting only the aws_instance resource",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "terraform",
+    "expected_patterns": [
+      "terraform apply.*-auto-approve.*-target.*aws_instance"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "pipe-ja-033",
+    "query": "Terraformのplanの出力をファイルに保存して、あとでapplyしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "terraform",
+    "expected_patterns": [
+      "terraform plan.*-out|terraform apply.*\\.tfplan|terraform plan.*>"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "simple-en-025",
+    "query": "Convert all lowercase letters to uppercase in report.txt",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "tr",
+    "expected_patterns": [
+      "tr.*a-z.*A-Z.*report\\.txt|cat.*report\\.txt.*tr.*a-z.*A-Z"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-034",
+    "query": "ファイル内の改行をスペースに変換して一行にまとめたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tr",
+    "expected_patterns": [
+      "tr.*\\\\n.*' '|tr.*'\\\\n'.*' '|cat.*tr"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-027",
+    "query": "Remove all digits from the input file and save to cleaned.txt",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "tr",
+    "expected_patterns": [
+      "tr.*-d.*0-9|tr.*-d.*\\[:digit:\\]"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-035",
+    "query": "CSVファイルのカンマ区切りをタブ区切りに変換したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tr",
+    "expected_patterns": [
+      "tr.*,.*\\\\t|tr.*','.*'\\\\t'|sed.*s/,/\\\\t/"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-026",
+    "query": "Show only duplicate lines in sorted-access.log with their count",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "uniq",
+    "expected_patterns": [
+      "uniq.*-[cd].*sorted-access\\.log|uniq.*--count.*--repeated"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-036",
+    "query": "ログファイルをソートしてから重複行を除去して、ユニークなエントリだけ表示したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "uniq",
+    "expected_patterns": [
+      "sort.*uniq|sort.*\\|.*uniq"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-028",
+    "query": "Count how many times each error message appears in errors.log after sorting",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "uniq",
+    "expected_patterns": [
+      "sort.*errors\\.log.*uniq.*-c|sort.*\\|.*uniq.*-c"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-037",
+    "query": "IPアドレスのリストから重複しているアドレスだけ表示したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "uniq",
+    "expected_patterns": [
+      "sort.*uniq.*-d|sort.*\\|.*uniq.*-d"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-029",
+    "query": "Count the number of lines in all Python files in the src/ directory",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "wc",
+    "expected_patterns": [
+      "find.*\\.py.*wc.*-l|wc.*-l.*src/.*\\.py|cat.*\\.py.*wc"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-ja-015",
+    "query": "README.mdの単語数を数えたい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "wc",
+    "expected_patterns": [
+      "wc.*-w.*README\\.md"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-030",
+    "query": "Count the number of running Docker containers",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "wc",
+    "expected_patterns": [
+      "docker ps.*wc.*-l|docker.*\\|.*wc"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-038",
+    "query": "grepの検索結果が何行あるか数えたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "wc",
+    "expected_patterns": [
+      "grep.*wc.*-l|grep.*-c|grep.*\\|.*wc"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-031",
+    "query": "Find all .tmp files and delete them using xargs",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "xargs",
+    "expected_patterns": [
+      "find.*\\.tmp.*xargs.*rm|find.*\\.tmp.*-print0.*xargs.*-0.*rm"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-026",
+    "query": "ファイル一覧を受け取って、それぞれに対してgzip圧縮を並列実行したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "xargs",
+    "expected_patterns": [
+      "xargs.*-P.*gzip|xargs.*--max-procs.*gzip|xargs.*parallel.*gzip"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-032",
+    "query": "Pipe a list of URLs from urls.txt and download each one with curl using xargs in parallel",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "xargs",
+    "expected_patterns": [
+      "cat.*urls\\.txt.*xargs.*-P.*curl|xargs.*-n.*1.*-P.*curl"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-039",
+    "query": "gitで変更されたファイルの一覧をxargsでeslintに渡してリントしたい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "xargs",
+    "expected_patterns": [
+      "git diff.*--name-only.*xargs.*eslint|git.*xargs.*lint"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-en-027",
+    "query": "Install nginx on this Ubuntu server",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "apt",
+    "expected_patterns": [
+      "apt.*install.*nginx"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-en-017",
+    "query": "Search for available Redis packages and install the matching one",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "apt",
+    "expected_patterns": [
+      "apt.*search.*redis.*&&.*apt.*install|apt.*install.*redis"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "simple-ja-016",
+    "query": "インストール済みパッケージの一覧を表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "apt",
+    "expected_patterns": [
+      "apt.*list.*--installed"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-ja-016",
+    "query": "aptのパッケージリストを更新してからcurlをインストールして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "apt",
+    "expected_patterns": [
+      "apt.*update.*&&.*apt.*install.*curl"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "pipe-en-033",
+    "query": "Decode this base64 string: dGVzdGluZzEyMw==",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "base64",
+    "expected_patterns": [
+      "echo.*dGVzdGluZzEyMw==.*base64.*-d|base64.*-d"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-040",
+    "query": "ファイルconfig.yamlをBase64エンコードしてoutput.txtに保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "base64",
+    "expected_patterns": [
+      "base64.*config\\.yaml.*output\\.txt|cat.*config\\.yaml.*base64"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-035",
+    "query": "Recursively make all .sh files in scripts/ executable",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "chmod",
+    "expected_patterns": [
+      "chmod.*\\+x.*scripts/|find.*scripts.*chmod.*\\+x"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-027",
+    "query": "webディレクトリ以下の全ファイルからグループと他ユーザーの書き込み権限を除去して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "chmod",
+    "expected_patterns": [
+      "chmod.*-R.*go-w.*web|find.*web.*chmod.*go-w"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-036",
+    "query": "Add a cron job to run /opt/backup.sh every day at 3:00 AM",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "cron",
+    "expected_patterns": [
+      "crontab|0 3 \\* \\* \\*|backup\\.sh"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-034",
+    "query": "List all active cron jobs and filter ones related to database",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "cron",
+    "expected_patterns": [
+      "crontab.*-l.*grep.*database|crontab.*-l.*grep.*db"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-ja-028",
+    "query": "毎週月曜の9時にログローテーションスクリプトを実行するcronジョブを設定して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "cron",
+    "expected_patterns": [
+      "crontab|0 9 \\* \\* 1"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-ja-041",
+    "query": "現在設定されているcronジョブの数を数えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "cron",
+    "expected_patterns": [
+      "crontab.*-l.*wc.*-l"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-037",
+    "query": "Show the current date in ISO 8601 format",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "date",
+    "expected_patterns": [
+      "date.*\\+.*%Y-%m-%d|date.*--iso|date.*-I"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-035",
+    "query": "Generate a timestamped backup filename like backup-2026-04-09.tar.gz using date",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "date",
+    "expected_patterns": [
+      "date.*\\+.*%Y-%m-%d|\\$\\(date|`date"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-017",
+    "query": "現在のUNIXタイムスタンプを取得して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "date",
+    "expected_patterns": [
+      "date.*\\+%s"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-ja-029",
+    "query": "今日の日付をファイル名に使える形式（YYYYMMDD）で出力して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "date",
+    "expected_patterns": [
+      "date.*\\+.*%Y%m%d"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-038",
+    "query": "Look up MX records for gmail.com using Google DNS",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "dig",
+    "expected_patterns": [
+      "dig.*MX.*gmail\\.com.*@8\\.8|dig.*@8\\.8.*gmail\\.com.*MX"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-ja-030",
+    "query": "api.example.jpのTXTレコードを短縮形式で確認して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "dig",
+    "expected_patterns": [
+      "dig.*TXT.*api\\.example\\.jp.*\\+short|dig.*\\+short.*api\\.example\\.jp.*TXT"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-en-036",
+    "query": "Show the top 5 largest subdirectories under /var/log with human-readable sizes",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "du",
+    "expected_patterns": [
+      "du.*-h.*/var/log.*sort.*head|du.*sort.*head.*5"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-031",
+    "query": "node_modulesを除外してプロジェクトのディスク使用量をサブディレクトリ別に表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "du",
+    "expected_patterns": [
+      "du.*--exclude.*node_modules|du.*-h.*-d.*1"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-039",
+    "query": "Show all files in src/ as a tree with git status",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "exa",
+    "expected_patterns": [
+      "eza.*--tree.*--git.*src|eza.*src.*--tree"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-037",
+    "query": "List files with eza and pipe through grep to show only TypeScript files",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "exa",
+    "expected_patterns": [
+      "eza.*\\|.*grep.*\\.ts|eza.*grep.*\\.ts"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-018",
+    "query": "プロジェクトのファイル構造をアイコン付きのツリー表示で見せて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "exa",
+    "expected_patterns": [
+      "eza.*--tree.*--icons|eza.*--icons.*--tree"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-032",
+    "query": "隠しファイルも含めて長い形式でファイル一覧を表示して（ezaで）",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "exa",
+    "expected_patterns": [
+      "eza.*-la|eza.*-l.*-a|eza.*--all.*-l"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-040",
+    "query": "Deploy only hosting to the staging project",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "firebase",
+    "expected_patterns": [
+      "firebase deploy.*--only hosting|firebase deploy.*--only.*hosting.*--project"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-041",
+    "query": "Start the Firestore and Auth emulators locally",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "firebase",
+    "expected_patterns": [
+      "firebase emulators:start.*--only.*firestore.*auth|firebase emulators:start"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-ja-019",
+    "query": "Cloud Functionsのログを確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "firebase",
+    "expected_patterns": [
+      "firebase functions:log|firebase.*functions.*log"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-017",
+    "query": "Firebaseプロジェクトを初期化してからホスティングにデプロイして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "firebase",
+    "expected_patterns": [
+      "firebase init.*&&.*firebase deploy|firebase deploy"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-042",
+    "query": "Compile main.c with optimization level O2 and link the math library",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "gcc",
+    "expected_patterns": [
+      "gcc.*-O2.*-lm.*main\\.c|gcc.*main\\.c.*-O2.*-lm"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-en-018",
+    "query": "Compile all .c files in src/ into an executable and run it if compilation succeeds",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "gcc",
+    "expected_patterns": [
+      "gcc.*src/.*&&.*\\./|gcc.*-o"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-033",
+    "query": "server.cをデバッグ情報付きでコンパイルして実行ファイル名をserverにして",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "gcc",
+    "expected_patterns": [
+      "gcc.*-g.*-o.*server.*server\\.c|gcc.*server\\.c.*-g.*-o.*server"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-018",
+    "query": "C++のプログラムapp.cppをC++17でコンパイルして、成功したら実行して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "gcc",
+    "expected_patterns": [
+      "g\\+\\+.*-std=c\\+\\+17.*app\\.cpp.*&&|g\\+\\+.*app\\.cpp"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-043",
+    "query": "Show the last 5 commits on the develop branch with diffs",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "git",
+    "expected_patterns": [
+      "git log.*-5.*-p.*develop|git log.*develop.*-5.*--patch"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-042",
+    "query": "mainブランチとの差分ファイルのうち追加されたものだけ一覧して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "git",
+    "expected_patterns": [
+      "git diff.*--name-only.*--diff-filter=A.*main|git diff.*main.*--diff-filter"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-en-038",
+    "query": "Find all lines containing 'FIXME' in Ruby files under app/ and count them",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "grep",
+    "expected_patterns": [
+      "grep.*-rc.*FIXME.*app/.*\\.rb|grep.*FIXME.*app/.*wc"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "compound-ja-034",
+    "query": "設定ファイルconf/からポート番号の記述を正規表現で検索して行番号付きで表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "grep",
+    "expected_patterns": [
+      "grep.*-rn.*port.*conf/|grep.*-n.*[0-9].*conf/"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "simple-en-028",
+    "query": "Resolve the IP address of cdn.shopify.com",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "host",
+    "expected_patterns": [
+      "host.*cdn\\.shopify\\.com"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-044",
+    "query": "Check the mail server records for company.co.jp",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "host",
+    "expected_patterns": [
+      "host.*-t.*MX.*company\\.co\\.jp|host.*MX.*company\\.co\\.jp"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-ja-020",
+    "query": "192.168.1.1のホスト名を逆引きして",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "host",
+    "expected_patterns": [
+      "host.*192\\.168\\.1\\.1"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-043",
+    "query": "複数のドメインのIPを一括で調べて結果をファイルに保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "host",
+    "expected_patterns": [
+      "host.*>|for.*host|xargs.*host"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-045",
+    "query": "Monitor disk I/O statistics for device sda every 2 seconds",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "iostat",
+    "expected_patterns": [
+      "iostat.*-d.*sda.*2|iostat.*sda.*2"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-en-039",
+    "query": "Show extended I/O stats and pipe to a log file for later analysis",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "iostat",
+    "expected_patterns": [
+      "iostat.*-x.*>|iostat.*-x.*tee"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-ja-021",
+    "query": "全デバイスのI/O統計を拡張表示で確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "iostat",
+    "expected_patterns": [
+      "iostat.*-x"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-044",
+    "query": "ディスクI/Oを5秒おきに3回測定して、スループットが高いデバイスを特定して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "iostat",
+    "expected_patterns": [
+      "iostat.*5.*3|iostat.*-x.*sort"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-en-040",
+    "query": "Extract all user names from users.json where age is greater than 30",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "jq",
+    "expected_patterns": [
+      "jq.*select.*age.*>.*30.*name|jq.*users\\.json"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-045",
+    "query": "APIレスポンスのJSONから特定フィールドだけ抜き出してCSV形式に変換して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "jq",
+    "expected_patterns": [
+      "jq.*-r.*@csv|jq.*\\|.*join"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-029",
+    "query": "Create a symbolic link from ~/.config/nvim to ~/dotfiles/nvim",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ln",
+    "expected_patterns": [
+      "ln.*-s.*dotfiles/nvim.*/\\.config/nvim"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-046",
+    "query": "Force overwrite a symlink pointing /usr/local/bin/python3 to /opt/python3.11/bin/python3",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ln",
+    "expected_patterns": [
+      "ln.*-sf.*/opt/python3\\.11.*python3|ln.*-snf"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-022",
+    "query": "dotfilesディレクトリの.zshrcへのシンボリックリンクをホームに作って",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "ln",
+    "expected_patterns": [
+      "ln.*-s.*dotfiles.*\\.zshrc"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-019",
+    "query": "既存のリンクがあれば上書きして、/var/www/currentを最新リリースディレクトリに向けて",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "ln",
+    "expected_patterns": [
+      "ln.*-sf.*/var/www/current|ln.*-snf.*/var/www"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-047",
+    "query": "Create the nested directory structure src/components/ui with parents",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "mkdir",
+    "expected_patterns": [
+      "mkdir.*-p.*src/components/ui"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-035",
+    "query": "プロジェクトのディレクトリ構造（src, tests, docs）をまとめて作成して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "mkdir",
+    "expected_patterns": [
+      "mkdir.*-p.*src.*tests.*docs|mkdir.*src.*tests.*docs"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-048",
+    "query": "Dump the production database named shopdb with user dbadmin to a compressed file",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "mysqldump",
+    "expected_patterns": [
+      "mysqldump.*-u.*dbadmin.*shopdb|mysqldump.*shopdb.*>"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-041",
+    "query": "Backup only the users and orders tables from the ecommerce database and gzip the output",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "mysqldump",
+    "expected_patterns": [
+      "mysqldump.*ecommerce.*users.*orders.*gzip|mysqldump.*ecommerce.*\\|.*gzip"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-036",
+    "query": "本番MySQLのappdbをスキーマのみダンプして",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "mysqldump",
+    "expected_patterns": [
+      "mysqldump.*--no-data.*appdb|mysqldump.*-d.*appdb"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-ja-046",
+    "query": "全データベースをバックアップしてタイムスタンプ付きファイル名で保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "mysqldump",
+    "expected_patterns": [
+      "mysqldump.*--all-databases.*>|mysqldump.*date"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-en-049",
+    "query": "Scan the top 1000 ports on 192.168.1.100 with service version detection",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "nmap",
+    "expected_patterns": [
+      "nmap.*-sV.*192\\.168\\.1\\.100|nmap.*192\\.168\\.1\\.100.*-sV"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-050",
+    "query": "Scan the 10.0.0.0/24 subnet for live hosts and save results to scan.xml",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "nmap",
+    "expected_patterns": [
+      "nmap.*-sn.*10\\.0\\.0\\.0/24.*-oX|nmap.*10\\.0\\.0\\.0/24.*scan\\.xml"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-ja-037",
+    "query": "サーバー203.0.113.50のポート22,80,443が開いているか確認して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "nmap",
+    "expected_patterns": [
+      "nmap.*-p.*22,80,443.*203\\.0\\.113\\.50|nmap.*-p.*22.*203\\.0"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-ja-047",
+    "query": "ローカルネットワークをスキャンして開いているポートがあるホストの数を数えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "nmap",
+    "expected_patterns": [
+      "nmap.*192\\.168|nmap.*grep.*wc|nmap.*-sn"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-051",
+    "query": "Test TLS connection to api.stripe.com on port 443 and show the certificate chain",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "openssl",
+    "expected_patterns": [
+      "openssl.*s_client.*-connect.*api\\.stripe\\.com:443"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-ja-048",
+    "query": "証明書ファイルserver.crtの有効期限を確認して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "openssl",
+    "expected_patterns": [
+      "openssl.*x509.*-in.*server\\.crt.*-enddate|openssl.*x509.*-noout.*-dates"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-052",
+    "query": "Send 10 pings to 10.0.0.1 with a 0.5 second interval",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ping",
+    "expected_patterns": [
+      "ping.*-c.*10.*-i.*0\\.5.*10\\.0\\.0\\.1|ping.*10\\.0\\.0\\.1.*-c.*10"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "conditional-ja-020",
+    "query": "サーバー群の死活監視をして、応答がないものだけ表示して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "ping",
+    "expected_patterns": [
+      "ping.*-c.*\\|\\||for.*ping|ping.*&&"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-030",
+    "query": "Show all Node.js processes running on this machine",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "procs",
+    "expected_patterns": [
+      "procs.*node"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-053",
+    "query": "Display a process tree and highlight processes using more than 50% CPU",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "procs",
+    "expected_patterns": [
+      "procs.*--tree|procs.*--sortd.*cpu"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-ja-023",
+    "query": "nginxに関連するプロセスを検索して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "procs",
+    "expected_patterns": [
+      "procs.*nginx"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-049",
+    "query": "メモリ使用量の多い順にプロセスを並べて上位10件だけ表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "procs",
+    "expected_patterns": [
+      "procs.*--sortd.*mem|procs.*sort.*head"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-054",
+    "query": "Connect to Redis at redis.staging.internal on port 6380 and get the value of session:abc123",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "redis-cli",
+    "expected_patterns": [
+      "redis-cli.*-h.*redis\\.staging.*-p.*6380.*GET.*session:abc123"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "conditional-en-019",
+    "query": "Flush all keys in Redis database 2 only if the key count is confirmed",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "redis-cli",
+    "expected_patterns": [
+      "redis-cli.*-n.*2.*FLUSHDB|redis-cli.*DBSIZE.*&&"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-ja-050",
+    "query": "Redisのキーをパターンuser:*で検索して件数を数えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "redis-cli",
+    "expected_patterns": [
+      "redis-cli.*KEYS.*user:\\*.*wc|redis-cli.*SCAN|redis-cli.*keys.*user"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-ja-024",
+    "query": "Redisサーバーのメモリ使用状況を確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "redis-cli",
+    "expected_patterns": [
+      "redis-cli.*INFO.*memory|redis-cli.*info"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-en-031",
+    "query": "Run the Ruby script migrate.rb with verbose output",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ruby",
+    "expected_patterns": [
+      "ruby.*migrate\\.rb|ruby.*-v.*migrate\\.rb"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "compound-en-055",
+    "query": "Execute a one-liner to calculate the SHA256 hash of a string using Ruby",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ruby",
+    "expected_patterns": [
+      "ruby.*-e.*Digest.*SHA256|ruby.*-e.*sha256|ruby.*-rdigest"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "conditional-ja-021",
+    "query": "Rubyのバージョンを確認して、2.7以上ならスクリプトを実行して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "ruby",
+    "expected_patterns": [
+      "ruby.*--version.*&&|ruby.*-v.*&&.*ruby"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "pipe-ja-051",
+    "query": "RubyのワンライナーでCSVファイルの行数を集計して表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ruby",
+    "expected_patterns": [
+      "ruby.*-e.*CSV|ruby.*-e.*readlines|ruby.*-ne"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "simple-en-032",
+    "query": "Create a named screen session called deploy-monitor",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "screen",
+    "expected_patterns": [
+      "screen.*-S.*deploy-monitor"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "conditional-en-020",
+    "query": "List all screen sessions and reattach to the most recent one",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "screen",
+    "expected_patterns": [
+      "screen.*-ls.*&&.*screen.*-r|screen.*-r|screen.*-ls"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-ja-025",
+    "query": "デタッチされたscreenセッションに再接続して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "screen",
+    "expected_patterns": [
+      "screen.*-r|screen.*-R"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "conditional-ja-022",
+    "query": "screenセッション一覧を確認して、使っていないセッションを終了して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "screen",
+    "expected_patterns": [
+      "screen.*-ls.*&&.*screen.*-X.*quit|screen.*-ls|screen.*kill"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "compound-en-056",
+    "query": "Set up SSH port forwarding from local port 5432 to remote db.internal:5432 via bastion.example.com",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ssh",
+    "expected_patterns": [
+      "ssh.*-L.*5432:db\\.internal:5432.*bastion|ssh.*-L.*5432"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-ja-038",
+    "query": "リモートサーバーapp01にポート2222でSSH接続して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "ssh",
+    "expected_patterns": [
+      "ssh.*-p.*2222.*app01|ssh.*app01.*-p.*2222"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-057",
+    "query": "Extract backup.tar.bz2 to the /opt/restore directory",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "tar",
+    "expected_patterns": [
+      "tar.*xjf.*backup\\.tar\\.bz2.*-C.*/opt/restore|tar.*-xjf"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-023",
+    "query": "アーカイブdata.tar.gzの中身をまず確認してから展開して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "tar",
+    "expected_patterns": [
+      "tar.*-tf.*data\\.tar\\.gz.*&&.*tar.*-xzf|tar.*tzf.*data\\.tar\\.gz"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-en-021",
+    "query": "List all tmux sessions and kill the one named old-dev",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "tmux",
+    "expected_patterns": [
+      "tmux.*ls.*&&.*tmux.*kill-session.*-t.*old-dev|tmux.*kill-session.*old-dev"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "compound-ja-039",
+    "query": "tmuxウィンドウを左右に分割してそれぞれでコマンドを実行して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "tmux",
+    "expected_patterns": [
+      "tmux.*split-window.*-h|tmux.*split.*-h"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-en-033",
+    "query": "Trace the network route to cloudflare.com showing each hop's latency",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "traceroute",
+    "expected_patterns": [
+      "traceroute.*cloudflare\\.com"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-058",
+    "query": "Trace the route to 8.8.4.4 using TCP on port 443 instead of ICMP",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "traceroute",
+    "expected_patterns": [
+      "traceroute.*-T.*-p.*443.*8\\.8\\.4\\.4|traceroute.*8\\.8\\.4\\.4.*-T"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-052",
+    "query": "api.example.comまでの経路を追跡して、遅延が大きいホップを特定して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "traceroute",
+    "expected_patterns": [
+      "traceroute.*api\\.example\\.com|traceroute.*sort|traceroute.*grep"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-ja-040",
+    "query": "東京リージョンのサーバーとUSサーバーへの経路を比較して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "traceroute",
+    "expected_patterns": [
+      "traceroute"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-034",
+    "query": "Initialize a new Vagrant environment with Ubuntu 22.04 box",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "vagrant",
+    "expected_patterns": [
+      "vagrant.*init.*ubuntu.*22"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-en-022",
+    "query": "Start the VM and SSH into it if it boots successfully",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "vagrant",
+    "expected_patterns": [
+      "vagrant.*up.*&&.*vagrant.*ssh"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-ja-024",
+    "query": "Vagrant仮想マシンの状態を確認して、起動中なら停止して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "vagrant",
+    "expected_patterns": [
+      "vagrant.*status.*&&.*vagrant.*halt|vagrant.*halt|vagrant.*status"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-ja-025",
+    "query": "開発用VMを破棄してから新しく立ち上げ直して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "vagrant",
+    "expected_patterns": [
+      "vagrant.*destroy.*&&.*vagrant.*up|vagrant.*destroy.*-f.*&&"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "compound-en-059",
+    "query": "Download the Node.js 20 binary tarball from https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz and save it as node20.tar.xz",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "wget",
+    "expected_patterns": [
+      "wget.*-O.*node20\\.tar\\.xz.*nodejs\\.org|wget.*nodejs\\.org.*-O"
+    ],
+    "category": "http"
+  },
+  {
+    "id": "compound-ja-041",
+    "query": "URLリストファイルurls.txtから全ファイルを一括ダウンロードして",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "wget",
+    "expected_patterns": [
+      "wget.*-i.*urls\\.txt"
+    ],
+    "category": "http"
+  },
+  {
+    "id": "simple-en-035",
+    "query": "Install react and react-dom as dependencies using yarn",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "yarn",
+    "expected_patterns": [
+      "yarn.*add.*react.*react-dom"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-en-023",
+    "query": "Run the test script and if it passes, run the build script with yarn",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "yarn",
+    "expected_patterns": [
+      "yarn.*test.*&&.*yarn.*build|yarn.*run.*test.*&&"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-042",
+    "query": "yarnのワークスペースで@app/apiパッケージにaxiosを追加して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "yarn",
+    "expected_patterns": [
+      "yarn.*workspace.*@app/api.*add.*axios"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "pipe-ja-053",
+    "query": "yarnでインストール済みパッケージの中で脆弱性があるものを確認して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "yarn",
+    "expected_patterns": [
+      "yarn.*audit|yarn.*npm.*audit"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "simple-ja-026",
+    "query": "CSVファイル sales.csv の3列目の売上を合計して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "awk",
+    "expected_patterns": [
+      "awk.*-F.*,.*\\{sum\\+?=?\\$3\\}.*END"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-042",
+    "query": "extract unique IP addresses from access.log and count how many requests each made",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "awk",
+    "expected_patterns": [
+      "awk.*\\$1.*sort.*uniq"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-036",
+    "query": "display the file src/main.rs with syntax highlighting",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "bat",
+    "expected_patterns": [
+      "bat.*src/main\\.rs"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-ja-027",
+    "query": "config.yamlを行番号付きで表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "bat",
+    "expected_patterns": [
+      "bat.*config\\.yaml"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "compound-en-060",
+    "query": "show all modified lines in index.ts compared to the last Git commit",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "bat",
+    "expected_patterns": [
+      "bat.*-d.*index\\.ts"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "pipe-ja-054",
+    "query": "JSONファイルの中身をプレーンテキストとして装飾なしで出力したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "bat",
+    "expected_patterns": [
+      "bat.*-p|bat.*--plain|bat.*-l.*json"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-en-037",
+    "query": "change the owner of /var/www/html to the user www-data",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "chown",
+    "expected_patterns": [
+      "chown.*www-data.*/var/www/html"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-043",
+    "query": "/opt/appディレクトリ以下の全ファイルの所有者をdeployユーザーに再帰的に変更して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "chown",
+    "expected_patterns": [
+      "chown.*-R.*deploy.*/opt/app"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-061",
+    "query": "set owner to nginx and group to webapps for all files under /srv/static",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "chown",
+    "expected_patterns": [
+      "chown.*-R.*nginx:webapps.*/srv/static|chown.*-R.*nginx\\.webapps.*/srv/static"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-ja-055",
+    "query": "findで.logファイルを探して、それぞれの所有者をsyslogに変えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "chown",
+    "expected_patterns": [
+      "find.*\\.log.*chown.*syslog|fd.*\\.log.*chown.*syslog|xargs.*chown.*syslog"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-038",
+    "query": "list my current cron jobs",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "crontab",
+    "expected_patterns": [
+      "crontab.*-l"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-028",
+    "query": "現在設定されているcronジョブを確認したい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "crontab",
+    "expected_patterns": [
+      "crontab.*-l"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-062",
+    "query": "schedule a backup script /home/deploy/backup.sh to run every day at 3 AM",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "crontab",
+    "expected_patterns": [
+      "crontab|0 3 \\* \\* \\*.*backup\\.sh"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "conditional-ja-026",
+    "query": "cronジョブを編集して、毎週月曜の9時にreport.shを実行するように設定して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "crontab",
+    "expected_patterns": [
+      "crontab.*-e|0 9 \\* \\* 1.*report\\.sh"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-043",
+    "query": "show the current git diff with syntax highlighting",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "delta",
+    "expected_patterns": [
+      "git diff.*\\|.*delta"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-056",
+    "query": "Gitの差分を横並びで見たい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "delta",
+    "expected_patterns": [
+      "git diff.*\\|.*delta.*-s|git diff.*\\|.*delta.*--side-by-side"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "compound-en-063",
+    "query": "compare two files old.conf and new.conf with delta",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "delta",
+    "expected_patterns": [
+      "delta.*old\\.conf.*new\\.conf|diff.*old\\.conf.*new\\.conf.*\\|.*delta"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-057",
+    "query": "git blameの出力をハイライト付きで表示して、app.tsのファイルで",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "delta",
+    "expected_patterns": [
+      "git blame.*app\\.ts.*\\|.*delta"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "simple-en-039",
+    "query": "show recent kernel messages with human-readable timestamps",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "dmesg",
+    "expected_patterns": [
+      "dmesg.*-T"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-ja-044",
+    "query": "カーネルログからエラーレベルのメッセージだけ表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "dmesg",
+    "expected_patterns": [
+      "dmesg.*--level.*err|dmesg.*-l.*err"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-044",
+    "query": "show kernel messages related to USB devices",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "dmesg",
+    "expected_patterns": [
+      "dmesg.*\\|.*grep.*-i.*usb|dmesg.*\\|.*rg.*usb"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-029",
+    "query": "カーネルのメッセージをリアルタイムで監視したい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "dmesg",
+    "expected_patterns": [
+      "dmesg.*-w|dmesg.*--follow"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-en-040",
+    "query": "run a SQL query to get the top 10 rows from data.csv sorted by revenue",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "duckdb",
+    "expected_patterns": [
+      "duckdb.*-c.*SELECT.*FROM.*read_csv|duckdb.*-c.*SELECT.*FROM.*data\\.csv"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-045",
+    "query": "Parquetファイル events.parquet から2024年1月以降のレコードを抽出して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "duckdb",
+    "expected_patterns": [
+      "duckdb.*-c.*SELECT.*FROM.*events\\.parquet|duckdb.*-c.*SELECT.*FROM.*read_parquet"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-en-064",
+    "query": "join two CSV files users.csv and orders.csv on user_id and export the result as Parquet",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "duckdb",
+    "expected_patterns": [
+      "duckdb.*-c.*JOIN.*user_id|duckdb.*users\\.csv.*orders\\.csv"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "pipe-ja-058",
+    "query": "logs.jsonをSQLで集計して、ステータスコードごとの件数を出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "duckdb",
+    "expected_patterns": [
+      "duckdb.*-c.*SELECT.*COUNT.*GROUP BY|duckdb.*read_json.*logs\\.json"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-en-041",
+    "query": "find all TypeScript files in the src directory",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "fd",
+    "expected_patterns": [
+      "fd.*-e.*ts.*src|fd.*\\.ts.*src"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "simple-ja-030",
+    "query": "プロジェクト内の.envファイルを全て探して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "fd",
+    "expected_patterns": [
+      "fd.*\\.env|fd.*-e.*env"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "compound-en-065",
+    "query": "find all PNG images larger than 1MB in the assets folder",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "fd",
+    "expected_patterns": [
+      "fd.*-e.*png.*-S|fd.*\\.png.*--size"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "pipe-ja-059",
+    "query": "拡張子が.logのファイルを見つけて、それぞれ削除して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "fd",
+    "expected_patterns": [
+      "fd.*-e.*log.*-x.*rm|fd.*\\.log.*--exec.*rm|fd.*\\.log.*xargs.*rm"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "simple-en-042",
+    "query": "deploy my app to Fly.io",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "flyctl",
+    "expected_patterns": [
+      "flyctl deploy|fly deploy"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-ja-031",
+    "query": "Fly.ioアプリのログをリアルタイムで見たい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "flyctl",
+    "expected_patterns": [
+      "flyctl logs|fly logs"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-066",
+    "query": "scale my Fly app to 3 instances and set the secret DATABASE_URL",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "flyctl",
+    "expected_patterns": [
+      "flyctl scale.*count.*3|fly scale.*3|flyctl secrets.*DATABASE_URL"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-027",
+    "query": "Flyアプリのステータスを確認して、問題があればログを表示して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "flyctl",
+    "expected_patterns": [
+      "flyctl status.*&&.*flyctl logs|fly status.*&&.*fly logs"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-043",
+    "query": "list all Compute Engine instances in my GCP project",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "gcloud",
+    "expected_patterns": [
+      "gcloud compute instances list"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-046",
+    "query": "Cloud Runにmy-apiサービスをデプロイして",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "gcloud",
+    "expected_patterns": [
+      "gcloud run deploy.*my-api"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-067",
+    "query": "upload the file backup.tar.gz to the GCS bucket gs://my-backups/",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "gcloud",
+    "expected_patterns": [
+      "gcloud storage cp.*backup\\.tar\\.gz.*gs://my-backups|gsutil cp.*backup\\.tar\\.gz"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-060",
+    "query": "GCPの認証をして、プロジェクトをmy-projectに設定して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "gcloud",
+    "expected_patterns": [
+      "gcloud auth login.*&&.*gcloud config set project.*my-project|gcloud auth.*gcloud config"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-044",
+    "query": "run all Go tests in the current project with verbose output",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "go",
+    "expected_patterns": [
+      "go test.*-v.*\\./\\.\\.\\."
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-047",
+    "query": "Goモジュールを初期化して依存関係を整理して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "go",
+    "expected_patterns": [
+      "go mod init.*&&.*go mod tidy|go mod init"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-068",
+    "query": "build the Go program in cmd/server/main.go for Linux AMD64",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "go",
+    "expected_patterns": [
+      "GOOS=linux.*GOARCH=amd64.*go build|go build.*cmd/server"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-028",
+    "query": "Goコードをフォーマットしてから静的解析を実行して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "go",
+    "expected_patterns": [
+      "go fmt.*&&.*go vet"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-en-045",
+    "query": "show the first 20 lines of server.log",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "head",
+    "expected_patterns": [
+      "head.*-n.*20.*server\\.log|head.*-20.*server\\.log"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-ja-032",
+    "query": "data.csvの先頭5行を表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "head",
+    "expected_patterns": [
+      "head.*-n.*5.*data\\.csv|head.*-5.*data\\.csv"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-069",
+    "query": "show the first 100 bytes of the binary file firmware.bin",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "head",
+    "expected_patterns": [
+      "head.*-c.*100.*firmware\\.bin"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-061",
+    "query": "ログファイルをソートして上位10件だけ表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "head",
+    "expected_patterns": [
+      "sort.*\\|.*head.*-n.*10|sort.*\\|.*head.*-10"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-046",
+    "query": "launch the interactive process monitor",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "htop",
+    "expected_patterns": [
+      "htop"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-ja-048",
+    "query": "deployユーザーのプロセスだけをモニタリングしたい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "htop",
+    "expected_patterns": [
+      "htop.*-u.*deploy"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-070",
+    "query": "show the process tree sorted by memory usage",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "htop",
+    "expected_patterns": [
+      "htop.*-t.*-s.*MEM|htop.*-t|htop.*--tree.*--sort"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "conditional-ja-029",
+    "query": "htopが入っていなければインストールして起動して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "htop",
+    "expected_patterns": [
+      "which htop.*||.*apt.*install.*htop|htop.*||.*apt.*install|command -v htop"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-en-047",
+    "query": "list all current firewall rules with line numbers",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "iptables",
+    "expected_patterns": [
+      "iptables.*-L.*-n.*--line-numbers|iptables.*-L.*--line"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-ja-049",
+    "query": "ポート443のHTTPS通信を許可するファイアウォールルールを追加して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "iptables",
+    "expected_patterns": [
+      "iptables.*-A.*INPUT.*--dport.*443.*-j.*ACCEPT"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-071",
+    "query": "block all incoming traffic from IP 192.168.1.100",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "iptables",
+    "expected_patterns": [
+      "iptables.*-A.*INPUT.*-s.*192\\.168\\.1\\.100.*-j.*DROP|iptables.*-A.*INPUT.*-s.*192\\.168\\.1\\.100.*-j.*REJECT"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-ja-062",
+    "query": "ポート8080への通信をポート80にリダイレクトするNATルールを設定して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "iptables",
+    "expected_patterns": [
+      "iptables.*-t.*nat.*PREROUTING.*--dport.*8080.*REDIRECT.*--to-port.*80|iptables.*-t.*nat.*PREROUTING.*8080.*80"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "simple-ja-033",
+    "query": "PID 42195のプロセスを強制終了して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "kill",
+    "expected_patterns": [
+      "kill.*-9.*42195"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-045",
+    "query": "send SIGHUP to the nginx master process to reload its configuration",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "kill",
+    "expected_patterns": [
+      "kill.*-HUP.*nginx|pgrep.*nginx.*kill.*-HUP"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-046",
+    "query": "show all network connections established by the java process",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "lsof",
+    "expected_patterns": [
+      "lsof.*-i.*-c.*java|lsof.*-i.*\\|.*grep.*java"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "conditional-ja-030",
+    "query": "ポート5432を使っているプロセスのPIDを調べて終了させて",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "lsof",
+    "expected_patterns": [
+      "lsof.*-i.*:5432.*kill|lsof.*-t.*-i.*:5432.*xargs.*kill"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-en-072",
+    "query": "connect to the MongoDB instance at localhost:27017 and query the users collection",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "mongosh",
+    "expected_patterns": [
+      "mongosh.*localhost:27017|mongosh.*--eval.*db\\.users|mongosh.*127\\.0\\.0\\.1"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-050",
+    "query": "MongoDBのproductionデータベースに接続して全コレクションを表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "mongosh",
+    "expected_patterns": [
+      "mongosh.*production|mongosh.*--eval.*show collections|mongosh.*--eval.*db\\.getCollectionNames"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-en-073",
+    "query": "find all documents in the orders collection where status is 'pending' and total is over 100",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "mongosh",
+    "expected_patterns": [
+      "mongosh.*--eval.*db\\.orders\\.find|mongosh.*orders.*pending"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "conditional-ja-031",
+    "query": "MongoDBが起動しているか確認して、起動していれば接続して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "mongosh",
+    "expected_patterns": [
+      "mongosh.*&&|nc.*-z.*27017.*&&.*mongosh|pgrep.*mongo.*&&.*mongosh"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-en-048",
+    "query": "check if port 22 is open on server 10.0.1.5",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "nc",
+    "expected_patterns": [
+      "nc.*-zv.*10\\.0\\.1\\.5.*22"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-ja-034",
+    "query": "ポート8080でリッスンしてHTTPリクエストを受け付けて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "nc",
+    "expected_patterns": [
+      "nc.*-l.*8080"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-074",
+    "query": "scan ports 1-1024 on host 192.168.0.1",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "nc",
+    "expected_patterns": [
+      "nc.*-zv.*192\\.168\\.0\\.1.*1-1024"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "conditional-ja-032",
+    "query": "ポート3306が空いていたらMySQLに接続して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "nc",
+    "expected_patterns": [
+      "nc.*-z.*3306.*&&.*mysql|nc.*-z.*localhost.*3306"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-075",
+    "query": "run the server.js file in watch mode so it restarts on changes",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "node",
+    "expected_patterns": [
+      "node.*--watch.*server\\.js"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "compound-ja-051",
+    "query": "Node.jsのテストランナーでtest/ディレクトリのテストを実行して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "node",
+    "expected_patterns": [
+      "node.*--test.*test/"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "simple-en-049",
+    "query": "apply the patch file fix-typo.patch to the current directory",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "patch",
+    "expected_patterns": [
+      "patch.*-p[01].*<.*fix-typo\\.patch|patch.*fix-typo\\.patch"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-ja-035",
+    "query": "security-fix.patchをsrc/ディレクトリに適用して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "patch",
+    "expected_patterns": [
+      "patch.*-p.*<.*security-fix\\.patch|patch.*security-fix\\.patch"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-076",
+    "query": "reverse the previously applied patch hotfix.patch",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "patch",
+    "expected_patterns": [
+      "patch.*-R.*hotfix\\.patch"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-063",
+    "query": "git diffの出力をパッチとして保存して、別のブランチに適用して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "patch",
+    "expected_patterns": [
+      "git diff.*>.*\\.patch.*&&.*patch|git diff.*\\|.*patch"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-050",
+    "query": "install the requests library for Python",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "pip",
+    "expected_patterns": [
+      "pip.*install.*requests"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "pipe-ja-064",
+    "query": "現在インストールされているPythonパッケージをrequirements.txtに書き出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "pip",
+    "expected_patterns": [
+      "pip.*freeze.*>.*requirements\\.txt"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-en-024",
+    "query": "install all packages from requirements.txt and then verify flask is installed",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "pip",
+    "expected_patterns": [
+      "pip.*install.*-r.*requirements\\.txt.*&&.*pip.*show.*flask"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "compound-ja-052",
+    "query": "古くなったPythonパッケージを一覧表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "pip",
+    "expected_patterns": [
+      "pip.*list.*--outdated"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "compound-ja-053",
+    "query": "rootユーザーが実行しているプロセスのPIDとコマンドを表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "ps",
+    "expected_patterns": [
+      "ps.*-u.*root|ps.*-U.*root"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-047",
+    "query": "find all python processes and show their PIDs",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "ps",
+    "expected_patterns": [
+      "ps.*aux.*\\|.*grep.*python|ps.*-ef.*\\|.*grep.*python|pgrep.*python"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-en-051",
+    "query": "search for the string TODO in all JavaScript files under src/",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ripgrep",
+    "expected_patterns": [
+      "rg.*TODO.*src/.*--type.*js|rg.*-t.*js.*TODO.*src/|rg.*TODO.*src/.*-g.*\\.js"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "simple-ja-036",
+    "query": "プロジェクト内でconsole.logを使っている箇所を全て見つけて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "ripgrep",
+    "expected_patterns": [
+      "rg.*console\\.log"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "compound-en-077",
+    "query": "find all files containing 'password' but exclude the node_modules directory",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ripgrep",
+    "expected_patterns": [
+      "rg.*password.*--glob.*!node_modules|rg.*password.*-g.*!node_modules"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "pipe-ja-065",
+    "query": "APIキーっぽい文字列をソースコードから検索して、ファイル名だけ表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ripgrep",
+    "expected_patterns": [
+      "rg.*-l.*api.key|rg.*--files-with-matches.*API|rg.*-l.*[A-Za-z0-9]"
+    ],
+    "category": "search"
+  },
+  {
+    "id": "simple-en-052",
+    "query": "compile main.rs into an executable",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "rustc",
+    "expected_patterns": [
+      "rustc.*main\\.rs"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-033",
+    "query": "Rustのソースコードhello.rsをコンパイルして実行して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "rustc",
+    "expected_patterns": [
+      "rustc.*hello\\.rs.*&&.*\\./hello"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-078",
+    "query": "compile lib.rs using the 2021 edition with optimizations",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "rustc",
+    "expected_patterns": [
+      "rustc.*--edition.*2021.*-O.*lib\\.rs|rustc.*--edition.*2021.*lib\\.rs"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-ja-037",
+    "query": "Rustコンパイラのバージョンを確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "rustc",
+    "expected_patterns": [
+      "rustc.*--version"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-en-053",
+    "query": "replace all occurrences of 'localhost' with '0.0.0.0' in config.yml",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "sed",
+    "expected_patterns": [
+      "sed.*s/localhost/0\\.0\\.0\\.0/g.*config\\.yml|sed.*-i.*s/localhost/0\\.0\\.0\\.0/g"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-066",
+    "query": "ファイルからコメント行（#で始まる行）を全て削除して表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "sed",
+    "expected_patterns": [
+      "sed.*/^#/d|sed.*'/^\\s*#/d'"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-054",
+    "query": "start the local Supabase development environment",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "supabase",
+    "expected_patterns": [
+      "supabase start"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-054",
+    "query": "Supabaseのデータベーススキーマからtypescript型を生成して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "supabase",
+    "expected_patterns": [
+      "supabase gen types typescript|supabase gen types"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-079",
+    "query": "create a new migration called add-profiles-table and push it to the remote project",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "supabase",
+    "expected_patterns": [
+      "supabase migration new.*add-profiles-table.*&&.*supabase db push|supabase migration new"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-034",
+    "query": "Edge Functionのhello-worldをデプロイして、ログを確認して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "supabase",
+    "expected_patterns": [
+      "supabase functions deploy.*hello-world.*&&|supabase functions deploy"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-055",
+    "query": "capture all HTTP traffic on port 80",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "tcpdump",
+    "expected_patterns": [
+      "tcpdump.*port 80|tcpdump.*-i.*port.*80"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-ja-055",
+    "query": "eth0インターフェースのパケットをキャプチャしてcapture.pcapに保存して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "tcpdump",
+    "expected_patterns": [
+      "tcpdump.*-i.*eth0.*-w.*capture\\.pcap"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-080",
+    "query": "capture DNS traffic and show only packets to or from 8.8.8.8",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "tcpdump",
+    "expected_patterns": [
+      "tcpdump.*port 53.*host 8\\.8\\.8\\.8|tcpdump.*host 8\\.8\\.8\\.8.*port 53"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-067",
+    "query": "ポート443のトラフィックをキャプチャして、IPアドレスでソートして集計して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tcpdump",
+    "expected_patterns": [
+      "tcpdump.*port 443.*\\|.*sort|tcpdump.*-r.*\\|.*awk.*sort"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-056",
+    "query": "count lines of code in this project by language",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "tokei",
+    "expected_patterns": [
+      "tokei"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-056",
+    "query": "プロジェクトのTypeScriptとRustのコード行数だけ表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "tokei",
+    "expected_patterns": [
+      "tokei.*-t.*TypeScript.*Rust|tokei.*-t.*Rust.*TypeScript"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-081",
+    "query": "show code statistics sorted by number of lines of code",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "tokei",
+    "expected_patterns": [
+      "tokei.*--sort.*code|tokei.*-s.*code"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "pipe-ja-068",
+    "query": "src/ディレクトリのコード行数を数えて、結果をファイルに保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tokei",
+    "expected_patterns": [
+      "tokei.*src/.*>|tokei.*src.*\\|.*tee"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-en-057",
+    "query": "scan the Docker image node:18-alpine for vulnerabilities",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "trivy",
+    "expected_patterns": [
+      "trivy image.*node:18-alpine"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "simple-ja-038",
+    "query": "カレントディレクトリのプロジェクトの脆弱性をスキャンして",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "trivy",
+    "expected_patterns": [
+      "trivy fs.*\\.|trivy fs"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-082",
+    "query": "scan the Terraform files in infra/ for misconfigurations and show only HIGH and CRITICAL issues",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "trivy",
+    "expected_patterns": [
+      "trivy config.*infra/.*--severity.*HIGH.*CRITICAL|trivy config.*infra/"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "conditional-ja-035",
+    "query": "Dockerイメージをスキャンして、CRITICALな脆弱性があればビルドを失敗させて",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "trivy",
+    "expected_patterns": [
+      "trivy image.*--exit-code.*1.*--severity.*CRITICAL|trivy image.*--severity.*CRITICAL.*&&"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "simple-en-058",
+    "query": "deploy this project to Vercel production",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "vercel",
+    "expected_patterns": [
+      "vercel deploy.*--prod|vercel.*--prod"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "compound-ja-057",
+    "query": "Vercelの環境変数にDATABASE_URLを追加して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "vercel",
+    "expected_patterns": [
+      "vercel env.*add.*DATABASE_URL|vercel env.*DATABASE_URL"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-en-025",
+    "query": "pull the latest environment variables from Vercel and then start the dev server",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "vercel",
+    "expected_patterns": [
+      "vercel pull.*&&.*vercel dev"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "simple-ja-039",
+    "query": "Vercelにデプロイしたアプリのランタイムログを確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "vercel",
+    "expected_patterns": [
+      "vercel logs"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "simple-en-059",
+    "query": "look up the registration info for the domain example.com",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "whois",
+    "expected_patterns": [
+      "whois.*example\\.com"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-ja-040",
+    "query": "github.comのドメイン登録情報を調べて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "whois",
+    "expected_patterns": [
+      "whois.*github\\.com"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-060",
+    "query": "check who owns IP address 1.1.1.1",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "whois",
+    "expected_patterns": [
+      "whois.*1\\.1\\.1\\.1"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "pipe-ja-069",
+    "query": "ドメインの有効期限を調べて、期限が近ければ警告を出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "whois",
+    "expected_patterns": [
+      "whois.*\\|.*grep.*-i.*expir|whois.*\\|.*grep.*Date"
+    ],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-083",
+    "query": "create a ZIP archive of the entire project directory excluding node_modules",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "zip",
+    "expected_patterns": [
+      "zip.*-r.*-x.*node_modules|zip.*-r.*--exclude.*node_modules"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-041",
+    "query": "distフォルダをrelease.zipとして圧縮して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "zip",
+    "expected_patterns": [
+      "zip.*-r.*release\\.zip.*dist"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-084",
+    "query": "create a password-protected ZIP of the secrets directory",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "zip",
+    "expected_patterns": [
+      "zip.*-e.*-r.*secrets|zip.*-re.*secrets|zip.*--encrypt.*secrets"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-ja-070",
+    "query": "findで見つけた全てのCSVファイルをまとめてdata.zipに圧縮して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "zip",
+    "expected_patterns": [
+      "find.*\\.csv.*\\|.*zip|fd.*\\.csv.*\\|.*zip|find.*\\.csv.*xargs.*zip.*data\\.zip"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-061",
+    "query": "upload the backup.tar.gz file to S3 bucket my-backups",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "aws",
+    "expected_patterns": [
+      "aws s3 cp.*backup\\.tar\\.gz.*s3://my-backups"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-058",
+    "query": "Lambda関数user-authのログを直近5分間取得して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "aws",
+    "expected_patterns": [
+      "aws (logs|lambda).*user-auth"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-en-048",
+    "query": "list all EC2 instances and filter only running ones with jq",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "aws",
+    "expected_patterns": [
+      "aws ec2 describe-instances.*jq|aws ec2 describe-instances.*running"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-071",
+    "query": "S3バケットのファイル一覧を取得してサイズ順にソートして",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "aws",
+    "expected_patterns": [
+      "aws s3.*ls.*sort"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-062",
+    "query": "install the latest version of ffmpeg with homebrew",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "brew",
+    "expected_patterns": [
+      "brew install.*ffmpeg"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "simple-ja-042",
+    "query": "Homebrewでインストール済みのパッケージを全部アップグレードして",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "brew",
+    "expected_patterns": [
+      "brew upgrade"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "pipe-en-049",
+    "query": "search for font casks in homebrew and pick one interactively",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "brew",
+    "expected_patterns": [
+      "brew search.*font.*peco|brew search.*font.*fzf"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-ja-036",
+    "query": "brewの古いパッケージを確認して、あればアップグレードして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "brew",
+    "expected_patterns": [
+      "brew outdated.*&&.*brew upgrade|brew upgrade"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "simple-en-063",
+    "query": "export all records from kintone app 42 to a CSV file",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "cli-kintone",
+    "expected_patterns": [
+      "cli-kintone record export.*--app 42"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-ja-043",
+    "query": "kintoneアプリ15にdata.csvをインポートして",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "cli-kintone",
+    "expected_patterns": [
+      "cli-kintone record import.*--app 15.*data\\.csv|cli-kintone record import.*data\\.csv.*--app 15"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-en-050",
+    "query": "export kintone records from app 100 and filter rows containing Tokyo with grep",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "cli-kintone",
+    "expected_patterns": [
+      "cli-kintone record export.*--app 100.*grep.*Tokyo|cli-kintone.*\\|.*grep.*Tokyo"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-037",
+    "query": "kintoneアプリ30のレコードをエクスポートして、件数が0でなければbackup.csvに保存して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "cli-kintone",
+    "expected_patterns": [
+      "cli-kintone record export.*--app 30"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-064",
+    "query": "show disk usage of the home directory with a visual bar chart",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "dust",
+    "expected_patterns": [
+      "dust.*~|dust.*/home"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-059",
+    "query": "node_modulesディレクトリの容量を階層2までで確認したい",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "dust",
+    "expected_patterns": [
+      "dust.*-d.*2.*node_modules|dust.*node_modules.*-d.*2"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-051",
+    "query": "scan /var/log for large directories and save the output to disk-report.txt",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "dust",
+    "expected_patterns": [
+      "dust.*/var/log.*tee|dust.*/var/log.*>"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-038",
+    "query": "プロジェクトのディスク使用量を調べて、1GBを超えていたら警告を出して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "dust",
+    "expected_patterns": [
+      "dust"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-065",
+    "query": "convert video.mov to MP4 format",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ffmpeg",
+    "expected_patterns": [
+      "ffmpeg.*-i.*video\\.mov.*\\.mp4"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-ja-060",
+    "query": "プレゼン動画のpresentation.mp4から音声だけ抽出してaudio.mp3として保存して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "ffmpeg",
+    "expected_patterns": [
+      "ffmpeg.*-i.*presentation\\.mp4.*-vn.*audio\\.mp3"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-085",
+    "query": "resize input.mp4 to 1280x720 and then extract a 30 second clip starting at 2 minutes",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "ffmpeg",
+    "expected_patterns": [
+      "ffmpeg.*-i.*input\\.mp4.*scale.*1280.*720|ffmpeg.*-ss.*02:00|ffmpeg.*-t.*30"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "pipe-ja-072",
+    "query": "screencapture.mp4をGIFに変換して、fps10、幅320pxにリサイズして",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "ffmpeg",
+    "expected_patterns": [
+      "ffmpeg.*-i.*screencapture\\.mp4.*fps.*10.*scale.*320.*\\.gif"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "simple-en-066",
+    "query": "list all recent deals in freee accounting",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "freee-cli",
+    "expected_patterns": [
+      "freee deals list|freee deal"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-ja-073",
+    "query": "freeeの請求書一覧を取得して、未入金のものだけ抽出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "freee-cli",
+    "expected_patterns": [
+      "freee invoices.*grep|freee invoices.*jq"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-en-052",
+    "query": "export freee invoices and count total unpaid amount with jq",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "freee-cli",
+    "expected_patterns": [
+      "freee invoices.*jq|freee.*\\|.*jq"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-ja-044",
+    "query": "freee会計の口座情報を一覧表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "freee-cli",
+    "expected_patterns": [
+      "freee walletables list|freee walletable"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-067",
+    "query": "create a pull request with title 'Add login feature' for the current branch",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "gh",
+    "expected_patterns": [
+      "gh pr create.*--title.*Add login"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "compound-ja-061",
+    "query": "Issue一覧からbugラベルのものだけ表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "gh",
+    "expected_patterns": [
+      "gh issue list.*--label.*bug"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-en-053",
+    "query": "list open PRs and filter the ones assigned to me with grep",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "gh",
+    "expected_patterns": [
+      "gh pr list.*grep|gh pr list.*--assignee"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "conditional-ja-039",
+    "query": "CIが通ったらPR #42をsquashマージして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "gh",
+    "expected_patterns": [
+      "gh pr.*merge.*42.*--squash|gh run.*&&.*gh pr merge"
+    ],
+    "category": "vcs"
+  },
+  {
+    "id": "simple-en-068",
+    "query": "extract all names from users.json using gojq",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "gojq",
+    "expected_patterns": [
+      "gojq.*\\.name|gojq.*\\[\\].*name.*users\\.json"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-ja-062",
+    "query": "config.yamlからdatabase.hostの値をgojqで取得して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "gojq",
+    "expected_patterns": [
+      "gojq.*--yaml-input.*database.*host.*config\\.yaml|gojq.*\\.database\\.host"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-054",
+    "query": "pipe curl output into gojq to extract the response status and message fields",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "gojq",
+    "expected_patterns": [
+      "curl.*\\|.*gojq.*status.*message|curl.*\\|.*gojq"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "conditional-ja-040",
+    "query": "APIレスポンスのJSONをgojqで整形して、エラーがあればステータスコードを表示して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "gojq",
+    "expected_patterns": [
+      "gojq.*error|gojq.*status"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-086",
+    "query": "install nginx ingress controller with helm in the ingress-nginx namespace",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "helm",
+    "expected_patterns": [
+      "helm install.*ingress-nginx|helm install.*nginx.*-n.*ingress"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "simple-ja-045",
+    "query": "Helmリポジトリにbitnamiを追加して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "helm",
+    "expected_patterns": [
+      "helm repo add.*bitnami"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "pipe-en-055",
+    "query": "list all helm releases and filter ones in the production namespace",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "helm",
+    "expected_patterns": [
+      "helm list.*-n.*production|helm list.*grep.*production|helm list.*--namespace.*production"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "conditional-ja-041",
+    "query": "my-appリリースが存在するか確認して、あればアップグレード、なければインストールして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "helm",
+    "expected_patterns": [
+      "helm upgrade.*--install.*my-app|helm list.*&&.*helm upgrade"
+    ],
+    "category": "devops"
+  },
+  {
+    "id": "simple-en-069",
+    "query": "probe the list of URLs in targets.txt for live HTTP responses",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "httpx",
+    "expected_patterns": [
+      "httpx.*targets\\.txt|cat.*targets\\.txt.*httpx"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-ja-063",
+    "query": "URLリストのurls.txtからステータスコードとタイトルを一括取得して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "httpx",
+    "expected_patterns": [
+      "httpx.*-status-code.*-title|cat.*urls\\.txt.*httpx"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-en-056",
+    "query": "scan subdomains.txt with httpx and pipe results to grep for 200 status codes",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "httpx",
+    "expected_patterns": [
+      "httpx.*subdomains\\.txt.*grep.*200|cat.*subdomains.*httpx.*grep"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "pipe-ja-074",
+    "query": "example.comのサブドメインをhttpxでプローブして、応答のある技術スタックを検出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "httpx",
+    "expected_patterns": [
+      "httpx.*-tech-detect|httpx.*example\\.com"
+    ],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-087",
+    "query": "run the application.jar file with 512MB max heap size",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "java",
+    "expected_patterns": [
+      "java.*-Xmx512[mM].*application\\.jar|java.*-jar.*application\\.jar.*-Xmx"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "simple-ja-046",
+    "query": "Javaのバージョンを確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "java",
+    "expected_patterns": [
+      "java.*--version|java.*-version"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "conditional-en-026",
+    "query": "compile all Java files in src/ and then run the Main class",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "java",
+    "expected_patterns": [
+      "javac.*src/.*&&.*java.*Main|javac.*\\.java.*&&.*java"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "pipe-ja-075",
+    "query": "server.jarを起動して、ログ出力をserver.logにも保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "java",
+    "expected_patterns": [
+      "java.*-jar.*server\\.jar.*tee.*server\\.log|java.*server\\.jar.*>.*server\\.log"
+    ],
+    "category": "runtime"
+  },
+  {
+    "id": "simple-en-070",
+    "query": "get all pods in the production namespace",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "kubectl",
+    "expected_patterns": [
+      "kubectl get pods.*-n.*production|kubectl get pods.*--namespace.*production"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-ja-064",
+    "query": "api-serverデプロイメントのレプリカ数を5に変更して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "kubectl",
+    "expected_patterns": [
+      "kubectl scale.*--replicas.*5.*api-server|kubectl scale.*api-server.*--replicas.*5"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "pipe-en-057",
+    "query": "get pod logs from the web-app pod and grep for ERROR lines",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "kubectl",
+    "expected_patterns": [
+      "kubectl logs.*web-app.*grep.*ERROR|kubectl logs.*web-app.*\\|.*grep"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "conditional-ja-042",
+    "query": "staging環境のPodが全てRunningか確認して、そうでなければdescribeで詳細を見て",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "kubectl",
+    "expected_patterns": [
+      "kubectl get pods.*-n.*staging|kubectl describe.*pod"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-en-088",
+    "query": "build the project using 8 parallel jobs",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "make",
+    "expected_patterns": [
+      "make.*-j.*8|make.*-j8"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-043",
+    "query": "makeでcleanしてからビルドし直して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "make",
+    "expected_patterns": [
+      "make clean.*&&.*make|make clean.*make"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-089",
+    "query": "do a dry run of make install to see what commands would execute",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "make",
+    "expected_patterns": [
+      "make.*-n.*install|make.*--dry-run.*install"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "pipe-ja-076",
+    "query": "makeの出力をビルドログとしてbuild.logにも保存しつつ画面にも表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "make",
+    "expected_patterns": [
+      "make.*\\|.*tee.*build\\.log|make.*tee.*build\\.log"
+    ],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-090",
+    "query": "deploy the dist folder to Netlify production",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "netlify",
+    "expected_patterns": [
+      "netlify deploy.*--prod.*--dir.*dist|netlify deploy.*--dir.*dist.*--prod"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-ja-047",
+    "query": "Netlifyのローカル開発サーバーを起動して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "netlify",
+    "expected_patterns": [
+      "netlify dev"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-091",
+    "query": "set the environment variable API_KEY to abc123 on the Netlify site",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "netlify",
+    "expected_patterns": [
+      "netlify env:set.*API_KEY.*abc123|netlify env.*set.*API_KEY"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-044",
+    "query": "ビルドが成功したらNetlifyにプロダクションデプロイして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "netlify",
+    "expected_patterns": [
+      "npm run build.*&&.*netlify deploy.*--prod|&&.*netlify deploy"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "pipe-en-058",
+    "query": "interactively select a git branch to checkout using peco",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "peco",
+    "expected_patterns": [
+      "git branch.*peco|git branch.*\\|.*peco"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "pipe-ja-077",
+    "query": "コマンド履歴からpecoで検索して実行したい",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "peco",
+    "expected_patterns": [
+      "history.*peco|fc.*peco|HISTFILE.*peco"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-en-071",
+    "query": "list all running processes and interactively pick one to kill",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "peco",
+    "expected_patterns": [
+      "ps.*peco.*kill|ps.*\\|.*peco"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "compound-ja-065",
+    "query": "docker imagesの一覧からpecoで選んで削除して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "peco",
+    "expected_patterns": [
+      "docker images.*peco.*docker rmi|docker images.*\\|.*peco"
+    ],
+    "category": "terminal"
+  },
+  {
+    "id": "simple-en-072",
+    "query": "add typescript as a dev dependency using pnpm",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "pnpm",
+    "expected_patterns": [
+      "pnpm add.*-D.*typescript|pnpm add.*typescript.*--save-dev"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "simple-ja-048",
+    "query": "pnpmで全依存関係をインストールして",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "pnpm",
+    "expected_patterns": [
+      "pnpm install|pnpm i"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-en-027",
+    "query": "run pnpm lint and if it passes run pnpm build",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "pnpm",
+    "expected_patterns": [
+      "pnpm.*lint.*&&.*pnpm.*build|pnpm run lint.*&&.*pnpm run build"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "pipe-ja-078",
+    "query": "pnpmでテストを実行して、結果をtest-results.logにも保存して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "pnpm",
+    "expected_patterns": [
+      "pnpm.*test.*tee.*test-results\\.log|pnpm run test.*\\|.*tee"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "simple-en-073",
+    "query": "initialize a new SAM project with Python 3.12 runtime",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "sam",
+    "expected_patterns": [
+      "sam init.*python|sam init"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-ja-045",
+    "query": "SAMでビルドしてからデプロイして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "sam",
+    "expected_patterns": [
+      "sam build.*&&.*sam deploy|sam build.*sam deploy"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-en-092",
+    "query": "invoke the ProcessOrder Lambda function locally with event.json as input",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "sam",
+    "expected_patterns": [
+      "sam local invoke.*ProcessOrder.*-e.*event\\.json|sam local invoke.*ProcessOrder.*--event"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-066",
+    "query": "Lambda関数payment-handlerのCloudWatchログをリアルタイムで確認して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "sam",
+    "expected_patterns": [
+      "sam logs.*-n.*payment-handler.*--tail|sam logs.*payment-handler"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-074",
+    "query": "restart the nginx service",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "systemctl",
+    "expected_patterns": [
+      "systemctl restart.*nginx"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-049",
+    "query": "PostgreSQLサービスを自動起動に設定して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "systemctl",
+    "expected_patterns": [
+      "systemctl enable.*postgresql"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-059",
+    "query": "list all failed services and show their detailed status",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "systemctl",
+    "expected_patterns": [
+      "systemctl.*--failed|systemctl list-units.*failed|systemctl.*grep.*failed"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "conditional-ja-046",
+    "query": "nginxのステータスを確認して、停止していたら起動して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "systemctl",
+    "expected_patterns": [
+      "systemctl.*status.*nginx.*&&|systemctl.*is-active.*nginx|systemctl start.*nginx"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-093",
+    "query": "run the deploy script and save its output to deploy.log while watching it",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "tee",
+    "expected_patterns": [
+      ".*\\|.*tee.*deploy\\.log"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-079",
+    "query": "テストの実行結果を画面に表示しつつresults.txtに追記して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tee",
+    "expected_patterns": [
+      ".*\\|.*tee.*-a.*results\\.txt"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-060",
+    "query": "pipe make output through tee to build.log and also count error lines with grep",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "tee",
+    "expected_patterns": [
+      "make.*\\|.*tee.*build\\.log.*grep|tee.*build\\.log"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-080",
+    "query": "curlのレスポンスをresponse.jsonに保存しつつ、jqで整形して表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "tee",
+    "expected_patterns": [
+      "curl.*\\|.*tee.*response\\.json.*jq|tee.*response\\.json"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-094",
+    "query": "show virtual memory statistics every 2 seconds for 10 iterations",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "vmstat",
+    "expected_patterns": [
+      "vmstat.*2.*10|vmstat 2 10"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-ja-050",
+    "query": "スワップの使用状況をvmstatで確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "vmstat",
+    "expected_patterns": [
+      "vmstat.*-s|vmstat"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-en-061",
+    "query": "monitor vmstat output every 5 seconds and log it to performance.log",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "vmstat",
+    "expected_patterns": [
+      "vmstat.*5.*\\|.*tee.*performance\\.log|vmstat.*5.*>.*performance\\.log"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "pipe-ja-081",
+    "query": "vmstatでディスクI/O統計を表示して、書き込みが多いデバイスを特定して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "vmstat",
+    "expected_patterns": [
+      "vmstat.*-d.*sort|vmstat.*-d"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-en-075",
+    "query": "deploy the current Cloudflare Worker to production",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "wrangler",
+    "expected_patterns": [
+      "wrangler deploy|wrangler publish"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-067",
+    "query": "Workers KVのnamespace mykvにキーuser:1の値を設定して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "wrangler",
+    "expected_patterns": [
+      "wrangler kv.*key.*put.*mykv.*user:1|wrangler kv.*put.*--binding.*mykv"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "conditional-en-028",
+    "query": "deploy the worker only if wrangler dev runs without errors",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "wrangler",
+    "expected_patterns": [
+      "wrangler.*&&.*wrangler deploy|wrangler dev.*&&"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "compound-ja-068",
+    "query": "D1データベースmydbにSQLクエリを実行してユーザーテーブルの件数を確認して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "wrangler",
+    "expected_patterns": [
+      "wrangler d1 execute.*mydb.*SELECT.*COUNT|wrangler d1.*mydb.*--command"
+    ],
+    "category": "cloud"
+  },
+  {
+    "id": "simple-en-076",
+    "query": "jump to the project directory matching 'myapp'",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "zoxide",
+    "expected_patterns": [
+      "z.*myapp|zoxide query.*myapp"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-051",
+    "query": "最近よく使うディレクトリをインタラクティブに選択して移動して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "zoxide",
+    "expected_patterns": [
+      "zi|zoxide query.*-i"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-062",
+    "query": "list all directories tracked by zoxide sorted by score and pick one",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "zoxide",
+    "expected_patterns": [
+      "zoxide query.*-l.*sort|zoxide query.*--list|zi"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-069",
+    "query": "zoxideのデータベースから/old/projectのパスを削除して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "zoxide",
+    "expected_patterns": [
+      "zoxide remove.*/old/project"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-095",
+    "query": "execute a bash shell inside the running postgres-db container",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "docker",
+    "expected_patterns": [
+      "docker exec.*-it.*postgres-db.*bash|docker exec.*-it.*postgres-db.*sh"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "simple-ja-052",
+    "query": "docker composeでバックグラウンドで全サービスを起動して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "docker",
+    "expected_patterns": [
+      "docker compose up.*-d|docker-compose up.*-d"
+    ],
+    "category": "container"
+  },
+  {
+    "id": "compound-en-096",
+    "query": "send a PUT request to https://api.example.com/users/5 with Authorization bearer token",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "curl",
+    "expected_patterns": [
+      "curl.*-X.*PUT.*api\\.example\\.com/users/5.*-H.*Authorization.*Bearer|curl.*-H.*Bearer"
+    ],
+    "category": "http"
+  },
+  {
+    "id": "pipe-ja-082",
+    "query": "curlでhttps://example.com/data.jsonを取得してjqで整形して表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "curl",
+    "expected_patterns": [
+      "curl.*example\\.com/data\\.json.*\\|.*jq"
+    ],
+    "category": "http"
+  },
+  {
+    "id": "compound-en-097",
+    "query": "publish the package to npm registry with public access",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "npm",
+    "expected_patterns": [
+      "npm publish.*--access.*public"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "conditional-ja-047",
+    "query": "npmでlintを実行して問題なければビルドして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "npm",
+    "expected_patterns": [
+      "npm run lint.*&&.*npm run build"
+    ],
+    "category": "package"
+  },
+  {
+    "id": "compound-en-098",
+    "query": "remove all .tmp files in the current directory recursively",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "rm",
+    "expected_patterns": [
+      "find.*\\.tmp.*rm|rm.*\\.tmp|find.*-name.*\\.tmp.*-delete"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-048",
+    "query": "node_modulesを削除してからpnpm installをやり直して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "rm",
+    "expected_patterns": [
+      "rm.*-rf.*node_modules.*&&.*pnpm install"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-077",
+    "query": "check if the system is running on ARM or x86 architecture",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "uname",
+    "expected_patterns": [
+      "uname.*-m|uname.*--machine|arch"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-053",
+    "query": "カーネルのバージョン番号だけ表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "uname",
+    "expected_patterns": [
+      "uname.*-r|uname.*--kernel-release"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-099",
+    "query": "sort the CSV file sales.csv by the third column numerically in descending order",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "sort",
+    "expected_patterns": [
+      "sort.*-t.*-k.*3.*-n.*-r.*sales\\.csv|sort.*-k3.*-rn"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-083",
+    "query": "access.logのIPアドレスをソートしてユニークな数をカウントして",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "sort",
+    "expected_patterns": [
+      "sort.*uniq.*-c.*access\\.log|awk.*access\\.log.*sort.*uniq"
+    ],
+    "category": "text"
+  },
+  {
+    "id": "compound-en-100",
+    "query": "run the migration script migrate.sql against the staging database on db.example.com",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "psql",
+    "expected_patterns": [
+      "psql.*-h.*db\\.example\\.com.*-f.*migrate\\.sql|psql.*migrate\\.sql.*db\\.example"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "simple-ja-054",
+    "query": "PostgreSQLのデータベース一覧を表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "psql",
+    "expected_patterns": [
+      "psql.*-l|psql.*--list"
+    ],
+    "category": "database"
+  },
+  {
+    "id": "compound-en-101",
+    "query": "show filesystem types alongside disk usage in human-readable format",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "df",
+    "expected_patterns": [
+      "df.*-hT|df.*-Th|df.*-h.*-T"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "compound-ja-070",
+    "query": "/homeパーティションのinode使用率を確認して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "df",
+    "expected_patterns": [
+      "df.*-i.*/home|df.*--inodes.*/home"
+    ],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-063",
+    "query": "show the top CPU-consuming processes in batch mode for scripting",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "top",
+    "expected_patterns": [
+      "top.*-bn1|top.*-b.*-n.*1"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "compound-ja-071",
+    "query": "特定ユーザーwww-dataのプロセスだけtopで監視して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "top",
+    "expected_patterns": [
+      "top.*-u.*www-data"
+    ],
+    "category": "monitoring"
+  },
+  {
+    "id": "simple-en-078",
+    "query": "rename config.yaml.bak back to config.yaml",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "mv",
+    "expected_patterns": [
+      "mv.*config\\.yaml\\.bak.*config\\.yaml"
+    ],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-072",
+    "query": "srcディレクトリ内の全.tsxファイルをcomponentsフォルダに移動して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "mv",
+    "expected_patterns": [
+      "mv.*src/.*\\.tsx.*components|mv.*\\.tsx.*components/"
+    ],
+    "category": "filesystem"
   }
 ]
