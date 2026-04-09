@@ -1,0 +1,26 @@
+{
+  "id": "pg_dump",
+  "name": "pg_dump",
+  "type": "cli",
+  "categories": ["database", "backup"],
+  "tags": ["postgresql", "backup", "dump", "export", "migration"],
+  "description": "PostgreSQL database backup utility — extract a database into a SQL script or archive",
+  "description_ja": "PostgreSQLデータベースバックアップユーティリティ — SQLスクリプトまたはアーカイブにエクスポート",
+  "install": {
+    "brew": "libpq",
+    "apt": "postgresql-client",
+    "check": "pg_dump --version"
+  },
+  "subcommands": [
+    { "name": "dump", "description": "Dump a database to stdout", "usage": "pg_dump <dbname> > backup.sql" },
+    { "name": "custom", "description": "Dump in custom archive format", "usage": "pg_dump -Fc <dbname> > backup.dump" },
+    { "name": "table", "description": "Dump specific tables only", "usage": "pg_dump -t <table> <dbname>" }
+  ],
+  "intents": [
+    "PostgreSQLのバックアップを取りたい", "データベースをダンプしたい", "テーブルをエクスポートしたい",
+    "backup PostgreSQL database", "dump database to SQL",
+    "export specific table from Postgres"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

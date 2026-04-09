@@ -1,0 +1,29 @@
+{
+  "id": "sam",
+  "name": "sam",
+  "type": "cli",
+  "categories": ["cloud", "devops"],
+  "tags": ["aws", "serverless", "lambda", "cloudformation", "deployment"],
+  "description": "AWS Serverless Application Model CLI — build, test, and deploy serverless applications",
+  "description_ja": "AWSサーバーレスアプリケーションモデルCLI — サーバーレスアプリのビルド・テスト・デプロイ",
+  "install": {
+    "brew": "aws-sam-cli",
+    "pip": "aws-sam-cli",
+    "check": "sam --version"
+  },
+  "subcommands": [
+    { "name": "init", "description": "Initialize a new SAM project", "usage": "sam init" },
+    { "name": "build", "description": "Build the serverless application", "usage": "sam build" },
+    { "name": "deploy", "description": "Deploy to AWS", "usage": "sam deploy --guided" },
+    { "name": "local", "description": "Run Lambda locally", "usage": "sam local invoke <function>" },
+    { "name": "logs", "description": "Fetch Lambda logs", "usage": "sam logs -n <function> --tail" }
+  ],
+  "intents": [
+    "Lambda関数をデプロイしたい", "サーバーレスアプリをローカルでテストしたい",
+    "AWS SAMプロジェクトを作成したい",
+    "deploy Lambda function", "test serverless app locally",
+    "create SAM project", "deploy serverless to AWS"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

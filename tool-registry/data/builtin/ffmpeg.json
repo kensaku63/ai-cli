@@ -1,0 +1,30 @@
+{
+  "id": "ffmpeg",
+  "name": "ffmpeg",
+  "type": "cli",
+  "categories": ["media"],
+  "tags": ["video", "audio", "conversion", "encoding", "streaming", "multimedia"],
+  "description": "Universal media converter — transcode, stream, filter, and manipulate audio/video files",
+  "description_ja": "万能メディアコンバータ — 音声/動画ファイルの変換、ストリーミング、フィルタ処理",
+  "install": {
+    "brew": "ffmpeg",
+    "apt": "ffmpeg",
+    "choco": "ffmpeg",
+    "check": "ffmpeg -version"
+  },
+  "subcommands": [
+    { "name": "convert", "description": "Convert between media formats", "usage": "ffmpeg -i input.mp4 output.avi" },
+    { "name": "extract", "description": "Extract audio from video", "usage": "ffmpeg -i video.mp4 -vn audio.mp3" },
+    { "name": "resize", "description": "Resize video", "usage": "ffmpeg -i input.mp4 -vf scale=1280:720 output.mp4" },
+    { "name": "trim", "description": "Cut a portion of media", "usage": "ffmpeg -i input.mp4 -ss 00:01:00 -to 00:02:00 output.mp4" },
+    { "name": "gif", "description": "Convert video to GIF", "usage": "ffmpeg -i input.mp4 -vf 'fps=10,scale=320:-1' output.gif" }
+  ],
+  "intents": [
+    "動画を変換したい", "音声を抽出したい", "動画をリサイズしたい",
+    "動画をGIFに変換したい", "動画をトリミングしたい",
+    "convert video format", "extract audio from video", "resize video",
+    "create GIF from video", "trim video clip"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

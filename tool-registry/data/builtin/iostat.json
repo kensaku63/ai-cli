@@ -1,0 +1,26 @@
+{
+  "id": "iostat",
+  "name": "iostat",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["disk", "io", "performance", "statistics", "storage"],
+  "description": "Report CPU and I/O statistics for devices and partitions",
+  "description_ja": "デバイスとパーティションのCPU・I/O統計をレポート",
+  "install": {
+    "apt": "sysstat",
+    "brew": "sysstat",
+    "check": "iostat -V 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "interval", "description": "Report statistics every N seconds", "usage": "iostat <seconds>" },
+    { "name": "extended", "description": "Show extended statistics", "usage": "iostat -x" },
+    { "name": "device", "description": "Show specific device stats", "usage": "iostat -d <device>" }
+  ],
+  "intents": [
+    "ディスクI/Oの負荷を確認したい", "ストレージのパフォーマンスを見たい",
+    "check disk I/O performance", "monitor storage throughput",
+    "disk statistics", "I/O bottleneck diagnosis"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

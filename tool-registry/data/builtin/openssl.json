@@ -1,0 +1,29 @@
+{
+  "id": "openssl",
+  "name": "openssl",
+  "type": "cli",
+  "categories": ["security", "network"],
+  "tags": ["ssl", "tls", "certificate", "encryption", "crypto", "https"],
+  "description": "Cryptography and SSL/TLS toolkit — generate certificates, encrypt data, test connections",
+  "description_ja": "暗号化・SSL/TLSツールキット — 証明書生成、データ暗号化、接続テスト",
+  "install": {
+    "brew": "openssl",
+    "apt": "openssl",
+    "check": "openssl version"
+  },
+  "subcommands": [
+    { "name": "genrsa", "description": "Generate an RSA private key", "usage": "openssl genrsa -out key.pem 2048" },
+    { "name": "req", "description": "Generate a certificate signing request", "usage": "openssl req -new -key key.pem -out csr.pem" },
+    { "name": "x509", "description": "Display or sign certificates", "usage": "openssl x509 -in cert.pem -text" },
+    { "name": "s_client", "description": "Test SSL/TLS connection", "usage": "openssl s_client -connect <host>:443" },
+    { "name": "enc", "description": "Encrypt or decrypt data", "usage": "openssl enc -aes-256-cbc -in <file>" }
+  ],
+  "intents": [
+    "SSL証明書を作成したい", "TLS接続をテストしたい", "データを暗号化したい",
+    "秘密鍵を生成したい", "証明書の中身を確認したい",
+    "generate SSL certificate", "test TLS connection", "encrypt file",
+    "create private key", "verify certificate"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

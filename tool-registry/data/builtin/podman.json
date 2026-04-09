@@ -1,0 +1,29 @@
+{
+  "id": "podman",
+  "name": "podman",
+  "type": "cli",
+  "categories": ["container", "devops"],
+  "tags": ["container", "podman", "daemonless", "rootless", "oci"],
+  "description": "Daemonless container engine — Docker-compatible CLI for managing OCI containers without a daemon",
+  "description_ja": "デーモンレスコンテナエンジン — デーモン不要でOCIコンテナを管理するDocker互換CLI",
+  "install": {
+    "brew": "podman",
+    "apt": "podman",
+    "check": "podman --version"
+  },
+  "subcommands": [
+    { "name": "run", "description": "Run a container", "usage": "podman run [options] <image>" },
+    { "name": "build", "description": "Build an image from Containerfile", "usage": "podman build -t <tag> <path>" },
+    { "name": "ps", "description": "List containers", "usage": "podman ps [-a]" },
+    { "name": "images", "description": "List images", "usage": "podman images" },
+    { "name": "pod", "description": "Manage pods", "usage": "podman pod create --name <name>" }
+  ],
+  "intents": [
+    "Podmanでコンテナを起動したい", "デーモンレスでコンテナを動かしたい",
+    "rootlessコンテナを実行したい",
+    "run container with Podman", "daemonless container",
+    "rootless container", "build image with Podman"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

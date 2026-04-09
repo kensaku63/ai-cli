@@ -1,0 +1,30 @@
+{
+  "id": "heroku",
+  "name": "heroku",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["heroku", "paas", "cloud", "deployment", "hosting"],
+  "description": "CLI for creating, deploying, and managing Heroku applications",
+  "description_ja": "Herokuアプリケーションの作成・デプロイ・管理CLI",
+  "install": {
+    "brew": "heroku/brew/heroku",
+    "npm": "heroku",
+    "check": "heroku --version"
+  },
+  "subcommands": [
+    { "name": "create", "description": "Create a new Heroku app", "usage": "heroku create [<name>]" },
+    { "name": "apps", "description": "List your Heroku apps", "usage": "heroku apps" },
+    { "name": "logs", "description": "Display recent log output", "usage": "heroku logs --tail" },
+    { "name": "config", "description": "Display config vars for an app", "usage": "heroku config" },
+    { "name": "ps", "description": "List dynos for an app", "usage": "heroku ps" },
+    { "name": "run", "description": "Run a one-off process inside a Heroku dyno", "usage": "heroku run <command>" },
+    { "name": "addons", "description": "Manage add-ons", "usage": "heroku addons:create <service>" }
+  ],
+  "intents": [
+    "Herokuにデプロイしたい", "Herokuアプリを作成したい", "Herokuのログを見たい",
+    "deploy to Heroku", "create Heroku app", "view Heroku logs",
+    "scale Heroku dynos", "manage Heroku config vars"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

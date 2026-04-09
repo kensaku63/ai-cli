@@ -1,0 +1,26 @@
+{
+  "id": "gcc",
+  "name": "gcc",
+  "type": "cli",
+  "categories": ["compiler", "development"],
+  "tags": ["c", "c++", "compiler", "gnu", "systems", "programming"],
+  "description": "GNU Compiler Collection — compile C, C++, and other languages into native executables",
+  "description_ja": "GNU Compiler Collection — C、C++等のソースコードをネイティブ実行ファイルにコンパイル",
+  "install": {
+    "brew": "gcc",
+    "apt": "gcc",
+    "check": "gcc --version"
+  },
+  "subcommands": [
+    { "name": "compile", "description": "Compile a C source file", "usage": "gcc -o <output> <source.c>" },
+    { "name": "cpp", "description": "Compile a C++ source file", "usage": "g++ -o <output> <source.cpp>" },
+    { "name": "optimize", "description": "Compile with optimization", "usage": "gcc -O2 -o <output> <source.c>" }
+  ],
+  "intents": [
+    "Cのコードをコンパイルしたい", "C++をビルドしたい", "GCCでコンパイルしたい",
+    "compile C code", "build C++ program", "compile with GCC",
+    "link libraries with GCC"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

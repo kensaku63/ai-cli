@@ -1,0 +1,24 @@
+{
+  "id": "vmstat",
+  "name": "vmstat",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["memory", "cpu", "io", "swap", "performance", "statistics"],
+  "description": "Report virtual memory statistics — CPU, memory, I/O, and swap usage over time",
+  "description_ja": "仮想メモリ統計のレポート — CPU、メモリ、I/O、スワップの使用状況を時系列で表示",
+  "install": {
+    "check": "vmstat --version"
+  },
+  "subcommands": [
+    { "name": "interval", "description": "Report statistics every N seconds", "usage": "vmstat <seconds>" },
+    { "name": "disk", "description": "Display disk statistics", "usage": "vmstat -d" },
+    { "name": "summary", "description": "Display event counter summary", "usage": "vmstat -s" }
+  ],
+  "intents": [
+    "メモリの使用状況を確認したい", "システムのI/O負荷を見たい", "スワップの状態を確認したい",
+    "check memory usage over time", "monitor system I/O",
+    "check swap usage", "virtual memory statistics"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "cp",
+  "name": "cp",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["copy", "file", "directory", "backup", "duplicate"],
+  "description": "Copy files and directories",
+  "description_ja": "ファイルとディレクトリのコピー",
+  "install": {
+    "check": "cp --version"
+  },
+  "subcommands": [
+    { "name": "copy", "description": "Copy a file", "usage": "cp <source> <dest>" },
+    { "name": "recursive", "description": "Copy a directory recursively", "usage": "cp -r <source-dir> <dest-dir>" },
+    { "name": "preserve", "description": "Copy preserving attributes", "usage": "cp -a <source> <dest>" }
+  ],
+  "intents": [
+    "ファイルをコピーしたい", "ディレクトリをコピーしたい", "ファイルを複製したい",
+    "copy a file", "copy directory recursively", "duplicate file"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

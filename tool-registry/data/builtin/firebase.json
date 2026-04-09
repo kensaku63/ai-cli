@@ -1,0 +1,28 @@
+{
+  "id": "firebase",
+  "name": "firebase",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["firebase", "google", "hosting", "database", "authentication", "serverless"],
+  "description": "CLI for managing Firebase projects including hosting, Firestore, and Cloud Functions",
+  "description_ja": "Firebaseプロジェクト（ホスティング、Firestore、Cloud Functions）を管理するCLI",
+  "install": {
+    "npm": "firebase-tools",
+    "check": "firebase --version"
+  },
+  "subcommands": [
+    { "name": "deploy", "description": "Deploy Firebase project resources", "usage": "firebase deploy [--only hosting]" },
+    { "name": "serve", "description": "Start local server for Firebase Hosting", "usage": "firebase serve" },
+    { "name": "init", "description": "Initialize a Firebase project", "usage": "firebase init" },
+    { "name": "emulators", "description": "Start Firebase emulators", "usage": "firebase emulators:start" },
+    { "name": "firestore", "description": "Manage Firestore", "usage": "firebase firestore:indexes" },
+    { "name": "functions", "description": "Manage Cloud Functions", "usage": "firebase functions:log" }
+  ],
+  "intents": [
+    "Firebaseにデプロイしたい", "Firestoreを管理したい", "Cloud Functionsをデプロイしたい",
+    "deploy to Firebase", "manage Firestore", "deploy Cloud Functions",
+    "start Firebase emulator", "initialize Firebase project"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

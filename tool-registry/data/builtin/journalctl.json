@@ -1,0 +1,27 @@
+{
+  "id": "journalctl",
+  "name": "journalctl",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["systemd", "journal", "logs", "linux", "debugging"],
+  "description": "Query and display messages from the systemd journal (system and service logs)",
+  "description_ja": "systemdジャーナル（システム・サービスログ）のクエリと表示",
+  "install": {
+    "check": "journalctl --version"
+  },
+  "subcommands": [
+    { "name": "follow", "description": "Follow new journal entries in real time", "usage": "journalctl -f" },
+    { "name": "unit", "description": "Show logs for a specific service", "usage": "journalctl -u <service>" },
+    { "name": "since", "description": "Show logs since a specific time", "usage": "journalctl --since '1 hour ago'" },
+    { "name": "boot", "description": "Show logs from current boot", "usage": "journalctl -b" },
+    { "name": "priority", "description": "Filter by priority level", "usage": "journalctl -p err" }
+  ],
+  "intents": [
+    "システムログを見たい", "サービスのログを確認したい", "ログをリアルタイムで追跡したい",
+    "エラーログだけ見たい",
+    "view system logs", "check service logs", "follow journal in real time",
+    "filter logs by priority", "show logs since yesterday"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

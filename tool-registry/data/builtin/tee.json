@@ -1,0 +1,23 @@
+{
+  "id": "tee",
+  "name": "tee",
+  "type": "cli",
+  "categories": ["text-processing"],
+  "tags": ["pipe", "output", "redirect", "file", "logging"],
+  "description": "Read from stdin and write to both stdout and files simultaneously",
+  "description_ja": "標準入力から読み取り、標準出力とファイルの両方に同時に書き込む",
+  "install": {
+    "check": "tee --version"
+  },
+  "subcommands": [
+    { "name": "write", "description": "Write output to file and stdout", "usage": "command | tee <file>" },
+    { "name": "append", "description": "Append to file instead of overwriting", "usage": "command | tee -a <file>" }
+  ],
+  "intents": [
+    "出力をファイルと画面の両方に送りたい", "パイプの途中でファイルに保存したい",
+    "write output to file and screen", "pipe output to both file and stdout",
+    "save command output while displaying it"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

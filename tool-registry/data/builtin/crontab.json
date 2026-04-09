@@ -1,0 +1,24 @@
+{
+  "id": "crontab",
+  "name": "crontab",
+  "type": "cli",
+  "categories": ["system", "automation"],
+  "tags": ["cron", "schedule", "automation", "jobs", "timer"],
+  "description": "Manage user cron jobs — schedule commands to run periodically",
+  "description_ja": "ユーザーのcronジョブ管理 — コマンドを定期的に実行するスケジュール",
+  "install": {
+    "check": "crontab -l 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "list", "description": "List current cron jobs", "usage": "crontab -l" },
+    { "name": "edit", "description": "Edit cron jobs", "usage": "crontab -e" },
+    { "name": "remove", "description": "Remove all cron jobs", "usage": "crontab -r" }
+  ],
+  "intents": [
+    "定期実行のジョブを設定したい", "cronジョブを一覧したい", "スケジュールタスクを作成したい",
+    "schedule a recurring job", "list cron jobs", "create scheduled task",
+    "edit crontab", "set up periodic execution"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

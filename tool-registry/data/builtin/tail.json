@@ -1,0 +1,23 @@
+{
+  "id": "tail",
+  "name": "tail",
+  "type": "cli",
+  "categories": ["text-processing", "monitoring"],
+  "tags": ["text", "file", "logs", "follow", "output"],
+  "description": "Output the last part of files — display final lines or follow a file in real time",
+  "description_ja": "ファイルの末尾部分を出力 — 最後のN行を表示、またはリアルタイムで追跡",
+  "install": {
+    "check": "tail --version"
+  },
+  "subcommands": [
+    { "name": "lines", "description": "Show last N lines", "usage": "tail -n <N> <file>" },
+    { "name": "follow", "description": "Follow file in real time (like log tailing)", "usage": "tail -f <file>" }
+  ],
+  "intents": [
+    "ファイルの末尾を見たい", "ログをリアルタイムで追跡したい", "最後の数行を表示したい",
+    "show last lines of file", "follow log file in real time",
+    "tail a log file", "watch file for changes"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "date",
+  "name": "date",
+  "type": "cli",
+  "categories": ["system"],
+  "tags": ["time", "date", "timestamp", "format", "clock"],
+  "description": "Display or set the system date and time with custom formatting",
+  "description_ja": "システムの日付・時刻をカスタムフォーマットで表示または設定",
+  "install": {
+    "check": "date --version 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "display", "description": "Display current date/time", "usage": "date" },
+    { "name": "format", "description": "Display with custom format", "usage": "date '+%Y-%m-%d %H:%M:%S'" },
+    { "name": "epoch", "description": "Show Unix timestamp", "usage": "date +%s" },
+    { "name": "convert", "description": "Convert date string", "usage": "date -d '2024-01-01'" }
+  ],
+  "intents": [
+    "現在の日時を表示したい", "UNIXタイムスタンプを取得したい", "日付をフォーマットしたい",
+    "show current date and time", "get Unix timestamp",
+    "format date string", "convert date format"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

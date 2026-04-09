@@ -1,0 +1,29 @@
+{
+  "id": "flyctl",
+  "name": "flyctl",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["fly.io", "edge", "deployment", "hosting", "containers"],
+  "description": "CLI for deploying and managing applications on Fly.io's global edge network",
+  "description_ja": "Fly.ioグローバルエッジネットワークへのアプリケーションデプロイ・管理CLI",
+  "install": {
+    "brew": "flyctl",
+    "check": "flyctl version"
+  },
+  "subcommands": [
+    { "name": "launch", "description": "Create and configure a new app from source code", "usage": "flyctl launch" },
+    { "name": "deploy", "description": "Deploy an application", "usage": "flyctl deploy" },
+    { "name": "apps", "description": "Manage Fly applications", "usage": "flyctl apps list" },
+    { "name": "status", "description": "Show app status", "usage": "flyctl status" },
+    { "name": "logs", "description": "View app logs", "usage": "flyctl logs" },
+    { "name": "scale", "description": "Scale app resources", "usage": "flyctl scale count <n>" },
+    { "name": "secrets", "description": "Manage app secrets", "usage": "flyctl secrets set <KEY>=<VALUE>" }
+  ],
+  "intents": [
+    "Fly.ioにデプロイしたい", "エッジにデプロイしたい", "Flyアプリをスケールしたい",
+    "deploy to Fly.io", "deploy to edge", "scale Fly app",
+    "view Fly.io logs", "create Fly app"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

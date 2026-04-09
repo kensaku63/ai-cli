@@ -1,0 +1,26 @@
+{
+  "id": "host",
+  "name": "host",
+  "type": "cli",
+  "categories": ["network"],
+  "tags": ["dns", "lookup", "domain", "network", "resolution"],
+  "description": "DNS lookup utility — resolve hostnames to IP addresses and vice versa",
+  "description_ja": "DNS検索ユーティリティ — ホスト名からIPアドレスへの解決（およびその逆）",
+  "install": {
+    "apt": "dnsutils",
+    "brew": "bind",
+    "check": "host -V 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "lookup", "description": "Look up a hostname", "usage": "host <hostname>" },
+    { "name": "reverse", "description": "Reverse DNS lookup", "usage": "host <ip-address>" },
+    { "name": "type", "description": "Query specific record type", "usage": "host -t MX <domain>" }
+  ],
+  "intents": [
+    "ドメインのIPアドレスを調べたい", "逆引きDNSをしたい", "MXレコードを確認したい",
+    "resolve hostname to IP", "reverse DNS lookup",
+    "check MX records", "DNS resolution"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

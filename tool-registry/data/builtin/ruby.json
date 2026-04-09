@@ -1,0 +1,26 @@
+{
+  "id": "ruby",
+  "name": "ruby",
+  "type": "cli",
+  "categories": ["runtime", "development"],
+  "tags": ["ruby", "scripting", "programming", "rails", "gems"],
+  "description": "Ruby interpreter — run Ruby scripts and manage Ruby applications",
+  "description_ja": "Rubyインタプリタ — Rubyスクリプトの実行とRubyアプリケーションの管理",
+  "install": {
+    "brew": "ruby",
+    "apt": "ruby-full",
+    "check": "ruby --version"
+  },
+  "subcommands": [
+    { "name": "run", "description": "Run a Ruby script", "usage": "ruby <script.rb>" },
+    { "name": "eval", "description": "Evaluate Ruby code", "usage": "ruby -e '<code>'" },
+    { "name": "irb", "description": "Interactive Ruby shell", "usage": "irb" }
+  ],
+  "intents": [
+    "Rubyスクリプトを実行したい", "Rubyのコードを評価したい", "IRBを起動したい",
+    "run Ruby script", "execute Ruby code", "start Ruby REPL",
+    "check Ruby version"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

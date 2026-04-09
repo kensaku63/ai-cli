@@ -1,0 +1,23 @@
+{
+  "id": "head",
+  "name": "head",
+  "type": "cli",
+  "categories": ["text-processing"],
+  "tags": ["text", "file", "preview", "lines", "output"],
+  "description": "Output the first part of files — display the first N lines or bytes",
+  "description_ja": "ファイルの先頭部分を出力 — 最初のN行またはNバイトを表示",
+  "install": {
+    "check": "head --version"
+  },
+  "subcommands": [
+    { "name": "lines", "description": "Show first N lines", "usage": "head -n <N> <file>" },
+    { "name": "bytes", "description": "Show first N bytes", "usage": "head -c <N> <file>" }
+  ],
+  "intents": [
+    "ファイルの先頭を見たい", "最初の数行を表示したい",
+    "show first lines of file", "preview file contents",
+    "display top of file"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

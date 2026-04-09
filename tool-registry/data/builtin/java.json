@@ -1,0 +1,26 @@
+{
+  "id": "java",
+  "name": "java",
+  "type": "cli",
+  "categories": ["runtime", "development"],
+  "tags": ["java", "jvm", "runtime", "programming", "enterprise"],
+  "description": "Java runtime and compiler — run Java applications and compile .java source files",
+  "description_ja": "Javaランタイムとコンパイラ — Javaアプリケーションの実行と.javaファイルのコンパイル",
+  "install": {
+    "brew": "openjdk",
+    "apt": "default-jdk",
+    "check": "java --version"
+  },
+  "subcommands": [
+    { "name": "run", "description": "Run a Java class or JAR", "usage": "java -jar <file.jar>" },
+    { "name": "compile", "description": "Compile Java source files", "usage": "javac <file.java>" },
+    { "name": "version", "description": "Show Java version", "usage": "java --version" }
+  ],
+  "intents": [
+    "Javaプログラムを実行したい", "Javaをコンパイルしたい", "JARファイルを実行したい",
+    "run Java program", "compile Java code", "execute JAR file",
+    "check Java version"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

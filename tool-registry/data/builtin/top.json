@@ -1,0 +1,24 @@
+{
+  "id": "top",
+  "name": "top",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["process", "cpu", "memory", "monitoring", "performance"],
+  "description": "Real-time display of system processes — CPU usage, memory usage, and process management",
+  "description_ja": "システムプロセスのリアルタイム表示 — CPU使用率、メモリ使用率、プロセス管理",
+  "install": {
+    "check": "top -v 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "batch", "description": "Run in batch mode for scripting", "usage": "top -bn1" },
+    { "name": "user", "description": "Show processes for a specific user", "usage": "top -u <user>" },
+    { "name": "pid", "description": "Monitor specific process IDs", "usage": "top -p <pid>" }
+  ],
+  "intents": [
+    "CPU使用率を確認したい", "メモリ使用量を監視したい", "プロセスの負荷を見たい",
+    "check CPU usage", "monitor memory usage", "view process load",
+    "top resource consuming processes"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

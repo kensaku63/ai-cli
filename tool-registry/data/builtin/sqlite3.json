@@ -1,0 +1,28 @@
+{
+  "id": "sqlite3",
+  "name": "sqlite3",
+  "type": "cli",
+  "categories": ["database"],
+  "tags": ["sqlite", "database", "sql", "embedded", "lightweight"],
+  "description": "Command-line interface for SQLite — lightweight embedded SQL database engine",
+  "description_ja": "SQLite軽量組み込みSQLデータベースエンジンのコマンドラインインターフェース",
+  "install": {
+    "brew": "sqlite",
+    "apt": "sqlite3",
+    "check": "sqlite3 --version"
+  },
+  "subcommands": [
+    { "name": "open", "description": "Open or create a database file", "usage": "sqlite3 <database.db>" },
+    { "name": "execute", "description": "Execute SQL from command line", "usage": "sqlite3 <db> 'SELECT ...'" },
+    { "name": "dump", "description": "Dump database as SQL", "usage": "sqlite3 <db> .dump" },
+    { "name": "import", "description": "Import CSV data", "usage": "sqlite3 <db> '.import file.csv table'" }
+  ],
+  "intents": [
+    "SQLiteデータベースを開きたい", "SQLiteでクエリを実行したい", "SQLiteのデータをダンプしたい",
+    "CSVをSQLiteにインポートしたい",
+    "open SQLite database", "query SQLite", "dump SQLite data",
+    "import CSV into SQLite"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

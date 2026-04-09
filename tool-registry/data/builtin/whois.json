@@ -1,0 +1,25 @@
+{
+  "id": "whois",
+  "name": "whois",
+  "type": "cli",
+  "categories": ["network"],
+  "tags": ["domain", "registration", "dns", "lookup", "network"],
+  "description": "Query WHOIS databases for domain registration, IP allocation, and ownership information",
+  "description_ja": "ドメイン登録情報、IP割り当て、所有者情報をWHOISデータベースで検索",
+  "install": {
+    "apt": "whois",
+    "brew": "whois",
+    "check": "whois --version 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "domain", "description": "Look up domain registration", "usage": "whois <domain>" },
+    { "name": "ip", "description": "Look up IP address allocation", "usage": "whois <ip-address>" }
+  ],
+  "intents": [
+    "ドメインの所有者を調べたい", "ドメインの登録情報を確認したい", "IPアドレスの所有者を調べたい",
+    "check domain registration", "domain ownership lookup",
+    "IP address owner lookup", "WHOIS query"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

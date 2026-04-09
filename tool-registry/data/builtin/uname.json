@@ -1,0 +1,24 @@
+{
+  "id": "uname",
+  "name": "uname",
+  "type": "cli",
+  "categories": ["system"],
+  "tags": ["system", "os", "kernel", "info", "architecture"],
+  "description": "Print system information — kernel name, version, architecture, and hostname",
+  "description_ja": "システム情報の表示 — カーネル名、バージョン、アーキテクチャ、ホスト名",
+  "install": {
+    "check": "uname --version 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "all", "description": "Print all system information", "usage": "uname -a" },
+    { "name": "kernel", "description": "Print kernel name", "usage": "uname -s" },
+    { "name": "machine", "description": "Print machine hardware name", "usage": "uname -m" }
+  ],
+  "intents": [
+    "OSの情報を確認したい", "カーネルバージョンを見たい", "アーキテクチャを確認したい",
+    "check OS version", "show kernel version", "system architecture info",
+    "what OS am I running"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

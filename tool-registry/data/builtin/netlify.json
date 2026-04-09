@@ -1,0 +1,27 @@
+{
+  "id": "netlify",
+  "name": "netlify",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["netlify", "jamstack", "frontend", "deployment", "hosting", "serverless"],
+  "description": "CLI for deploying and managing Netlify sites and serverless functions",
+  "description_ja": "Netlifyサイトとサーバーレス関数のデプロイ・管理CLI",
+  "install": {
+    "npm": "netlify-cli",
+    "check": "netlify --version"
+  },
+  "subcommands": [
+    { "name": "deploy", "description": "Deploy the current project to Netlify", "usage": "netlify deploy [--prod]" },
+    { "name": "dev", "description": "Start a local development server", "usage": "netlify dev" },
+    { "name": "init", "description": "Initialize a new Netlify site", "usage": "netlify init" },
+    { "name": "env", "description": "Manage environment variables", "usage": "netlify env:set <key> <value>" },
+    { "name": "functions", "description": "Manage serverless functions", "usage": "netlify functions:create <name>" }
+  ],
+  "intents": [
+    "Netlifyにデプロイしたい", "静的サイトをデプロイしたい", "Netlify Functionsを作成したい",
+    "deploy to Netlify", "deploy static site", "create Netlify function",
+    "deploy JAMstack site"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

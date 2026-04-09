@@ -1,0 +1,26 @@
+{
+  "id": "mysqldump",
+  "name": "mysqldump",
+  "type": "cli",
+  "categories": ["database", "backup"],
+  "tags": ["mysql", "backup", "dump", "export", "migration"],
+  "description": "MySQL database backup utility — dump database structure and data to SQL",
+  "description_ja": "MySQLデータベースバックアップユーティリティ — データベース構造とデータをSQLにダンプ",
+  "install": {
+    "brew": "mysql-client",
+    "apt": "mysql-client",
+    "check": "mysqldump --version"
+  },
+  "subcommands": [
+    { "name": "dump", "description": "Dump a database", "usage": "mysqldump -u <user> -p <dbname> > backup.sql" },
+    { "name": "tables", "description": "Dump specific tables", "usage": "mysqldump <dbname> <table1> <table2>" },
+    { "name": "all", "description": "Dump all databases", "usage": "mysqldump --all-databases > backup.sql" }
+  ],
+  "intents": [
+    "MySQLのバックアップを取りたい", "MySQLデータベースをダンプしたい",
+    "backup MySQL database", "dump MySQL to SQL file",
+    "export MySQL data"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

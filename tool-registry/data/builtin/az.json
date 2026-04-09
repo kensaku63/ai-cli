@@ -1,0 +1,33 @@
+{
+  "id": "az",
+  "name": "az",
+  "type": "cli",
+  "categories": ["cloud", "devops"],
+  "tags": ["azure", "cloud", "microsoft", "infrastructure", "deployment"],
+  "description": "Azure CLI for managing Microsoft Azure resources and services",
+  "description_ja": "Microsoft Azureリソースとサービスを管理するCLI",
+  "install": {
+    "brew": "azure-cli",
+    "pip": "azure-cli",
+    "choco": "azure-cli",
+    "check": "az --version"
+  },
+  "subcommands": [
+    { "name": "login", "description": "Log in to Azure", "usage": "az login" },
+    { "name": "vm", "description": "Manage Azure Virtual Machines", "usage": "az vm create --resource-group <rg> --name <name>" },
+    { "name": "group", "description": "Manage resource groups", "usage": "az group create --name <name> --location <loc>" },
+    { "name": "storage", "description": "Manage Azure Storage accounts", "usage": "az storage account create --name <name>" },
+    { "name": "aks", "description": "Manage Azure Kubernetes Service", "usage": "az aks create --resource-group <rg> --name <name>" },
+    { "name": "webapp", "description": "Manage web apps", "usage": "az webapp create --resource-group <rg> --name <name>" },
+    { "name": "acr", "description": "Manage Azure Container Registries", "usage": "az acr create --name <name> --sku Basic" },
+    { "name": "network", "description": "Manage Azure Network resources", "usage": "az network vnet create --name <name>" }
+  ],
+  "intents": [
+    "Azureにデプロイしたい", "Azure VMを作成したい", "Azureにログインしたい",
+    "Azureのリソースグループを管理したい", "AKSクラスタを作成したい",
+    "deploy to Azure", "create Azure VM", "manage Azure resources",
+    "create AKS cluster", "Azure storage account"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

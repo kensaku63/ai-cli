@@ -1,0 +1,22 @@
+{
+  "id": "mv",
+  "name": "mv",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["move", "rename", "file", "directory"],
+  "description": "Move or rename files and directories",
+  "description_ja": "ファイルとディレクトリの移動またはリネーム",
+  "install": {
+    "check": "mv --version"
+  },
+  "subcommands": [
+    { "name": "move", "description": "Move a file or directory", "usage": "mv <source> <dest>" },
+    { "name": "rename", "description": "Rename a file", "usage": "mv <oldname> <newname>" }
+  ],
+  "intents": [
+    "ファイルを移動したい", "ファイル名を変更したい", "ディレクトリをリネームしたい",
+    "move a file", "rename a file", "move directory"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

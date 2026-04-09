@@ -1,0 +1,22 @@
+{
+  "id": "mkdir",
+  "name": "mkdir",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["directory", "create", "folder", "filesystem"],
+  "description": "Create directories — make one or more new directories",
+  "description_ja": "ディレクトリの作成 — 1つ以上の新しいディレクトリを作成",
+  "install": {
+    "check": "mkdir --version"
+  },
+  "subcommands": [
+    { "name": "create", "description": "Create a directory", "usage": "mkdir <dirname>" },
+    { "name": "parents", "description": "Create directory with parents", "usage": "mkdir -p <path/to/dir>" }
+  ],
+  "intents": [
+    "ディレクトリを作成したい", "フォルダを作りたい", "ネストしたディレクトリを作成したい",
+    "create a directory", "make a folder", "create nested directories"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

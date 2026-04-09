@@ -13,8 +13,8 @@ before(async () => {
 });
 
 describe("Registry", () => {
-  it("loads all 50 builtin tools", () => {
-    assert.equal(tools.length, 50);
+  it("loads all 108 builtin tools", () => {
+    assert.equal(tools.length, 108);
   });
 
   it("each tool has required fields", () => {
@@ -233,6 +233,84 @@ describe("Search — new tools (Japanese)", () => {
     const results = searchTools("ファイルの権限を変更したい", tools);
     assert.ok(results.length > 0);
     assert.equal(results[0]!.tool.id, "chmod");
+  });
+});
+
+describe("Search — new tools: cloud CLIs", () => {
+  it("'deploy to Azure' finds az", () => {
+    const results = searchTools("deploy to Azure", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "az");
+  });
+
+  it("'deploy to Vercel' finds vercel", () => {
+    const results = searchTools("deploy to Vercel", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "vercel");
+  });
+
+  it("'Firebaseにデプロイしたい' finds firebase", () => {
+    const results = searchTools("Firebaseにデプロイしたい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "firebase");
+  });
+
+  it("'deploy serverless to AWS' finds sam", () => {
+    const results = searchTools("deploy serverless to AWS", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "sam");
+  });
+});
+
+describe("Search — new tools: database CLIs", () => {
+  it("'connect to PostgreSQL' finds psql", () => {
+    const results = searchTools("connect to PostgreSQL", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "psql");
+  });
+
+  it("'MySQLに接続したい' finds mysql", () => {
+    const results = searchTools("MySQLに接続したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "mysql");
+  });
+
+  it("'connect to Redis' finds redis-cli", () => {
+    const results = searchTools("connect to Redis", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "redis-cli");
+  });
+
+  it("'query SQLite database' finds sqlite3", () => {
+    const results = searchTools("query SQLite database", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "sqlite3");
+  });
+});
+
+describe("Search — new tools: monitoring/system", () => {
+  it("'view system logs' finds journalctl", () => {
+    const results = searchTools("view system logs", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "journalctl");
+  });
+
+  it("'find process using port' finds lsof", () => {
+    const results = searchTools("find process using port", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "lsof");
+  });
+
+  it("'convert video format' finds ffmpeg", () => {
+    const results = searchTools("convert video format", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "ffmpeg");
+  });
+
+  it("'generate SSL certificate' finds openssl", () => {
+    const results = searchTools("generate SSL certificate", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "openssl");
   });
 });
 

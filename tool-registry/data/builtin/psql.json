@@ -1,0 +1,28 @@
+{
+  "id": "psql",
+  "name": "psql",
+  "type": "cli",
+  "categories": ["database"],
+  "tags": ["postgresql", "postgres", "database", "sql", "query"],
+  "description": "Interactive terminal for PostgreSQL — run queries, manage schemas, import/export data",
+  "description_ja": "PostgreSQLの対話型ターミナル — クエリ実行、スキーマ管理、データのインポート/エクスポート",
+  "install": {
+    "brew": "libpq",
+    "apt": "postgresql-client",
+    "check": "psql --version"
+  },
+  "subcommands": [
+    { "name": "connect", "description": "Connect to a PostgreSQL database", "usage": "psql -h <host> -U <user> -d <dbname>" },
+    { "name": "execute", "description": "Execute a SQL command", "usage": "psql -c 'SELECT ...' <dbname>" },
+    { "name": "file", "description": "Execute commands from a file", "usage": "psql -f <file.sql> <dbname>" },
+    { "name": "list", "description": "List databases", "usage": "psql -l" }
+  ],
+  "intents": [
+    "PostgreSQLに接続したい", "SQLクエリを実行したい", "データベースの一覧を見たい",
+    "テーブルを作成したい", "PostgreSQLのデータをエクスポートしたい",
+    "connect to PostgreSQL", "run SQL query", "list databases",
+    "create table in Postgres", "export PostgreSQL data"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

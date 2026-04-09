@@ -1,0 +1,29 @@
+{
+  "id": "yarn",
+  "name": "yarn",
+  "type": "cli",
+  "categories": ["package-manager", "development"],
+  "tags": ["javascript", "npm", "package-manager", "node", "dependencies"],
+  "description": "Fast, reliable JavaScript package manager with workspaces and plug-n-play support",
+  "description_ja": "ワークスペースとPlug'n'Play対応の高速・信頼性の高いJavaScriptパッケージマネージャ",
+  "install": {
+    "npm": "yarn",
+    "brew": "yarn",
+    "check": "yarn --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install all dependencies", "usage": "yarn install" },
+    { "name": "add", "description": "Add a package", "usage": "yarn add <package>" },
+    { "name": "remove", "description": "Remove a package", "usage": "yarn remove <package>" },
+    { "name": "run", "description": "Run a script defined in package.json", "usage": "yarn run <script>" },
+    { "name": "workspace", "description": "Manage workspaces", "usage": "yarn workspace <name> <command>" }
+  ],
+  "intents": [
+    "yarnでパッケージをインストールしたい", "yarnで依存関係を追加したい",
+    "yarnスクリプトを実行したい", "ワークスペースを管理したい",
+    "install package with yarn", "add dependency with yarn",
+    "run yarn script", "manage yarn workspaces"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

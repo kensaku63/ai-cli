@@ -1,0 +1,23 @@
+{
+  "id": "rm",
+  "name": "rm",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["delete", "remove", "file", "directory", "cleanup"],
+  "description": "Remove files and directories",
+  "description_ja": "ファイルとディレクトリの削除",
+  "install": {
+    "check": "rm --version"
+  },
+  "subcommands": [
+    { "name": "file", "description": "Remove a file", "usage": "rm <file>" },
+    { "name": "recursive", "description": "Remove directory recursively", "usage": "rm -r <dir>" },
+    { "name": "interactive", "description": "Prompt before removal", "usage": "rm -i <file>" }
+  ],
+  "intents": [
+    "ファイルを削除したい", "ディレクトリを削除したい", "不要なファイルを消したい",
+    "delete a file", "remove a directory", "clean up files"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

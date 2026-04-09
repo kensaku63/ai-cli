@@ -1,0 +1,27 @@
+{
+  "id": "iptables",
+  "name": "iptables",
+  "type": "cli",
+  "categories": ["network", "security"],
+  "tags": ["firewall", "linux", "network", "security", "filtering"],
+  "description": "Linux kernel firewall — configure packet filtering rules, NAT, and port forwarding",
+  "description_ja": "Linuxカーネルファイアウォール — パケットフィルタリングルール、NAT、ポートフォワーディングの設定",
+  "install": {
+    "apt": "iptables",
+    "check": "iptables --version"
+  },
+  "subcommands": [
+    { "name": "list", "description": "List all rules", "usage": "iptables -L -n" },
+    { "name": "append", "description": "Append a rule to a chain", "usage": "iptables -A INPUT -p tcp --dport <port> -j ACCEPT" },
+    { "name": "delete", "description": "Delete a rule", "usage": "iptables -D INPUT <num>" },
+    { "name": "nat", "description": "Configure NAT rules", "usage": "iptables -t nat -A PREROUTING ..." }
+  ],
+  "intents": [
+    "ファイアウォールルールを設定したい", "ポートを開放したい", "ポートをブロックしたい",
+    "NATを設定したい",
+    "configure firewall rules", "open port in firewall",
+    "block port", "set up NAT", "port forwarding"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

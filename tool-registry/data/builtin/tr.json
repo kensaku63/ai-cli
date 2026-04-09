@@ -1,0 +1,24 @@
+{
+  "id": "tr",
+  "name": "tr",
+  "type": "cli",
+  "categories": ["text-processing"],
+  "tags": ["text", "translate", "characters", "transform", "replace"],
+  "description": "Translate, squeeze, or delete characters from standard input",
+  "description_ja": "標準入力から文字を変換、圧縮、または削除",
+  "install": {
+    "check": "tr --version"
+  },
+  "subcommands": [
+    { "name": "translate", "description": "Translate characters", "usage": "echo 'text' | tr 'a-z' 'A-Z'" },
+    { "name": "delete", "description": "Delete specific characters", "usage": "echo 'text' | tr -d '<chars>'" },
+    { "name": "squeeze", "description": "Squeeze repeated characters", "usage": "echo 'text' | tr -s ' '" }
+  ],
+  "intents": [
+    "文字を大文字に変換したい", "特定の文字を削除したい", "文字を置換したい",
+    "convert to uppercase", "delete characters from text",
+    "replace characters", "squeeze repeated characters"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
