@@ -1,0 +1,28 @@
+{
+  "id": "ghq",
+  "name": "ghq",
+  "type": "cli",
+  "categories": ["development", "vcs"],
+  "tags": ["repository", "git", "clone", "management", "golang", "japanese"],
+  "description": "Remote repository management tool — clone repos into a structured local directory tree (go get-like layout)",
+  "description_ja": "リモートリポジトリ管理ツール — go getと同様の構造でリポジトリをローカルにクローン・管理",
+  "install": {
+    "brew": "ghq",
+    "go": "github.com/x-motemen/ghq@latest",
+    "check": "ghq --version"
+  },
+  "subcommands": [
+    { "name": "get", "description": "Clone or update a repository", "usage": "ghq get <repo-url>" },
+    { "name": "list", "description": "List local repositories", "usage": "ghq list" },
+    { "name": "root", "description": "Show the root directory for repositories", "usage": "ghq root" },
+    { "name": "create", "description": "Create a new repository", "usage": "ghq create <name>" }
+  ],
+  "intents": [
+    "リポジトリを整理して管理したい", "ghqでクローンしたい", "ローカルのリポジトリ一覧を見たい",
+    "リポジトリをgo get形式で取得したい",
+    "manage repositories in structured directory", "clone repo with ghq",
+    "list all local repositories", "organize git repositories"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

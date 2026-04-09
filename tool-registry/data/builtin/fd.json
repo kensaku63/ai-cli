@@ -1,0 +1,28 @@
+{
+  "id": "fd",
+  "name": "fd",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["find", "search", "file", "fast", "regex", "rust"],
+  "description": "Simple, fast alternative to find — user-friendly syntax, smart defaults, and colorized output",
+  "description_ja": "findのシンプルで高速な代替 — ユーザーフレンドリーな構文、スマートなデフォルト、カラー出力",
+  "install": {
+    "brew": "fd",
+    "apt": "fd-find",
+    "cargo": "fd-find",
+    "check": "fd --version"
+  },
+  "subcommands": [
+    { "name": "search", "description": "Search for files matching a pattern", "usage": "fd <pattern>" },
+    { "name": "type", "description": "Filter by type (file, directory, etc.)", "usage": "fd -t f <pattern>" },
+    { "name": "extension", "description": "Filter by file extension", "usage": "fd -e <ext>" },
+    { "name": "exec", "description": "Execute command on results", "usage": "fd <pattern> -x <command>" }
+  ],
+  "intents": [
+    "ファイルを高速に検索したい", "findの代わりを使いたい", "拡張子でファイルを探したい",
+    "fast file search", "find alternative", "search files by extension",
+    "find files matching pattern"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

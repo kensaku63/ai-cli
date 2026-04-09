@@ -1,0 +1,29 @@
+{
+  "id": "bat",
+  "name": "bat",
+  "type": "cli",
+  "categories": ["text-processing"],
+  "tags": ["cat", "syntax-highlighting", "viewer", "file", "git-integration"],
+  "description": "A cat clone with syntax highlighting, line numbers, and Git integration",
+  "description_ja": "シンタックスハイライト、行番号、Git統合を持つcatの代替ツール",
+  "install": {
+    "brew": "bat",
+    "apt": "bat",
+    "cargo": "bat",
+    "check": "bat --version"
+  },
+  "subcommands": [
+    { "name": "view", "description": "View file with syntax highlighting", "usage": "bat <file>" },
+    { "name": "plain", "description": "View without decorations", "usage": "bat -p <file>" },
+    { "name": "diff", "description": "Show only modified lines (Git)", "usage": "bat -d <file>" },
+    { "name": "language", "description": "Force a specific language for highlighting", "usage": "bat -l <lang> <file>" }
+  ],
+  "intents": [
+    "ファイルをシンタックスハイライト付きで見たい", "catの代わりに使いたい",
+    "ファイルを行番号付きで表示したい",
+    "view file with syntax highlighting", "cat alternative with colors",
+    "display file with line numbers and Git changes"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

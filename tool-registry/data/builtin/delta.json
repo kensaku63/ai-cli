@@ -1,0 +1,27 @@
+{
+  "id": "delta",
+  "name": "delta",
+  "type": "cli",
+  "categories": ["development", "text-processing"],
+  "tags": ["diff", "git", "syntax-highlighting", "pager", "side-by-side"],
+  "description": "Syntax-highlighting pager for git, diff, and grep output — side-by-side view and line numbers",
+  "description_ja": "git、diff、grep出力のシンタックスハイライトページャ — 並列表示と行番号",
+  "install": {
+    "brew": "git-delta",
+    "cargo": "git-delta",
+    "check": "delta --version"
+  },
+  "subcommands": [
+    { "name": "diff", "description": "View diff with highlighting", "usage": "git diff | delta" },
+    { "name": "side", "description": "Side-by-side view", "usage": "git diff | delta -s" },
+    { "name": "blame", "description": "Highlighted git blame", "usage": "git blame <file> | delta" }
+  ],
+  "intents": [
+    "diffを見やすく表示したい", "Gitの差分をシンタックスハイライト付きで見たい",
+    "並列diffを表示したい",
+    "pretty diff output", "syntax highlighted git diff",
+    "side-by-side diff view"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

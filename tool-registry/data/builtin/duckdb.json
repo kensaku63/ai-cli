@@ -1,0 +1,28 @@
+{
+  "id": "duckdb",
+  "name": "duckdb",
+  "type": "cli",
+  "categories": ["database", "data"],
+  "tags": ["analytics", "sql", "olap", "parquet", "csv", "in-process"],
+  "description": "In-process analytical SQL database — query CSV, Parquet, JSON files directly with SQL without a server",
+  "description_ja": "インプロセス分析SQLデータベース — サーバー不要でCSV、Parquet、JSONファイルを直接SQLクエリ",
+  "install": {
+    "brew": "duckdb",
+    "pip": "duckdb",
+    "check": "duckdb --version"
+  },
+  "subcommands": [
+    { "name": "query", "description": "Execute SQL query", "usage": "duckdb -c 'SELECT * FROM read_csv(\"data.csv\")'" },
+    { "name": "parquet", "description": "Query Parquet files", "usage": "duckdb -c 'SELECT * FROM \"data.parquet\"'" },
+    { "name": "database", "description": "Open or create a database", "usage": "duckdb <database.db>" },
+    { "name": "json", "description": "Query JSON files", "usage": "duckdb -c 'SELECT * FROM read_json(\"data.json\")'" }
+  ],
+  "intents": [
+    "CSVをSQLで分析したい", "Parquetファイルをクエリしたい", "サーバーレスでSQLを実行したい",
+    "大量データを高速に集計したい", "JSONファイルにSQLを実行したい",
+    "analyze CSV with SQL", "query Parquet files", "serverless SQL analytics",
+    "fast aggregation on large data", "SQL on JSON files"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

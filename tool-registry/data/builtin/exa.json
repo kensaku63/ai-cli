@@ -1,0 +1,29 @@
+{
+  "id": "exa",
+  "name": "eza",
+  "type": "cli",
+  "categories": ["file-management"],
+  "tags": ["ls", "listing", "tree", "icons", "git-status", "rust"],
+  "description": "Modern replacement for ls — file listing with colors, icons, tree view, and Git status",
+  "description_ja": "lsの最新代替 — カラー、アイコン、ツリービュー、Git状態付きのファイル一覧",
+  "install": {
+    "brew": "eza",
+    "apt": "eza",
+    "cargo": "eza",
+    "check": "eza --version"
+  },
+  "subcommands": [
+    { "name": "list", "description": "List files with details", "usage": "eza -l" },
+    { "name": "tree", "description": "Display as tree", "usage": "eza --tree" },
+    { "name": "git", "description": "Show Git status for each file", "usage": "eza -l --git" },
+    { "name": "icons", "description": "Show file type icons", "usage": "eza --icons" }
+  ],
+  "intents": [
+    "ファイル一覧をツリーで見たい", "lsの代わりにカラフルな一覧を表示したい",
+    "Gitの状態付きでファイルを一覧したい",
+    "list files as tree", "ls alternative with colors and icons",
+    "file listing with Git status"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

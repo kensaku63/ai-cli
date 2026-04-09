@@ -1,0 +1,25 @@
+{
+  "id": "freee-cli",
+  "name": "freee",
+  "type": "cli",
+  "categories": ["saas", "finance"],
+  "tags": ["freee", "accounting", "invoice", "japan", "business", "api"],
+  "description": "freee CLI — manage freee accounting data (invoices, deals, walletables) from the command line",
+  "description_ja": "freee CLI — freee会計データ（請求書、取引、口座）をコマンドラインで管理",
+  "install": {
+    "pip": "freee-cli",
+    "check": "freee --version"
+  },
+  "subcommands": [
+    { "name": "deals", "description": "Manage deals/transactions", "usage": "freee deals list" },
+    { "name": "invoices", "description": "Manage invoices", "usage": "freee invoices list" },
+    { "name": "walletables", "description": "Manage bank accounts", "usage": "freee walletables list" }
+  ],
+  "intents": [
+    "freeeの取引データを取得したい", "freeeの請求書を管理したい", "freee会計をCLIで操作したい",
+    "export freee accounting data", "manage freee invoices",
+    "freee API from command line"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

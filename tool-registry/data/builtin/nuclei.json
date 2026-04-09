@@ -1,0 +1,27 @@
+{
+  "id": "nuclei",
+  "name": "nuclei",
+  "type": "cli",
+  "categories": ["security"],
+  "tags": ["vulnerability", "scanner", "templates", "web", "pentest", "automation"],
+  "description": "Template-based vulnerability scanner — fast and customizable scanning using community-maintained templates",
+  "description_ja": "テンプレートベース脆弱性スキャナ — コミュニティ管理のテンプレートで高速・カスタマイズ可能なスキャン",
+  "install": {
+    "brew": "nuclei",
+    "go": "github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest",
+    "check": "nuclei -version"
+  },
+  "subcommands": [
+    { "name": "scan", "description": "Scan a target URL", "usage": "nuclei -u <url>" },
+    { "name": "list", "description": "Scan a list of targets", "usage": "nuclei -l <urls.txt>" },
+    { "name": "templates", "description": "Update templates", "usage": "nuclei -ut" },
+    { "name": "severity", "description": "Filter by severity", "usage": "nuclei -u <url> -s critical,high" }
+  ],
+  "intents": [
+    "Webサイトの脆弱性をスキャンしたい", "テンプレートベースでセキュリティテストしたい",
+    "scan website for vulnerabilities", "template-based security scanning",
+    "automated vulnerability assessment", "pentest automation"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

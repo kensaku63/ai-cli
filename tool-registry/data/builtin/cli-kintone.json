@@ -1,0 +1,26 @@
+{
+  "id": "cli-kintone",
+  "name": "cli-kintone",
+  "type": "cli",
+  "categories": ["saas", "data"],
+  "tags": ["kintone", "cybozu", "export", "import", "japan", "business"],
+  "description": "CLI tool for Cybozu kintone — import/export records and manage kintone apps from the command line",
+  "description_ja": "サイボウズkintoneのCLIツール — レコードのインポート/エクスポートとアプリ管理をコマンドラインで実行",
+  "install": {
+    "npm": "@kintone/cli-kintone",
+    "check": "cli-kintone --version"
+  },
+  "subcommands": [
+    { "name": "export", "description": "Export records from kintone app", "usage": "cli-kintone record export --app <id> --base-url <url>" },
+    { "name": "import", "description": "Import records to kintone app", "usage": "cli-kintone record import --app <id> --file-path data.csv" },
+    { "name": "delete", "description": "Delete records", "usage": "cli-kintone record delete --app <id>" }
+  ],
+  "intents": [
+    "kintoneのレコードをエクスポートしたい", "kintoneにデータをインポートしたい",
+    "kintoneをCLIで操作したい",
+    "export kintone records", "import data to kintone",
+    "manage kintone from command line"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
