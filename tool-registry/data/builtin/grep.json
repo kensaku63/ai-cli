@@ -1,0 +1,32 @@
+{
+  "id": "grep",
+  "name": "grep",
+  "type": "cli",
+  "categories": ["search", "text"],
+  "tags": ["search", "pattern", "regex", "match", "filter", "line"],
+  "description": "Search for patterns in files using regular expressions",
+  "description_ja": "正規表現を使ってファイル内のパターンを検索",
+  "install": {
+    "apt": "grep",
+    "check": "grep --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルの中から文字列を検索したい",
+    "正規表現でパターンを検索したい",
+    "特定の文字列を含む行を抽出したい",
+    "再帰的にディレクトリ内を検索したい",
+    "一致しない行をフィルタしたい",
+    "ファイル内の特定パターンを数えたい",
+    "大文字小文字を無視して検索したい",
+    "search for a string in files",
+    "find lines matching a pattern",
+    "search files using regex",
+    "filter lines containing a keyword",
+    "recursively search directory for text",
+    "count matching lines in a file",
+    "case insensitive search in files"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "chown",
+  "name": "chown",
+  "type": "cli",
+  "categories": ["filesystem", "permissions"],
+  "tags": ["owner", "group", "permission", "file", "user", "chown"],
+  "description": "Change file owner and group",
+  "description_ja": "ファイルの所有者とグループを変更",
+  "install": {
+    "apt": "coreutils",
+    "check": "chown --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルの所有者を変更したい",
+    "ファイルのグループを変更したい",
+    "ディレクトリの所有者を再帰的に変更したい",
+    "ファイルの権限を別のユーザーに移したい",
+    "所有者とグループを同時に変更したい",
+    "change file owner",
+    "change file group ownership",
+    "recursively change owner of a directory",
+    "transfer file ownership to another user",
+    "change owner and group at once"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "patch",
+  "name": "patch",
+  "type": "cli",
+  "categories": ["text", "development"],
+  "tags": ["patch", "apply", "diff", "update", "fix"],
+  "description": "Apply a diff file (patch) to an original file",
+  "description_ja": "差分ファイル（パッチ）をオリジナルファイルに適用",
+  "install": {
+    "apt": "patch",
+    "check": "patch --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "パッチファイルを適用したい",
+    "差分ファイルを当てたい",
+    "パッチを元に戻したい",
+    "diffの出力をファイルに適用したい",
+    "コードにパッチを適用したい",
+    "apply a patch file",
+    "apply diff output to a file",
+    "reverse a patch",
+    "update files using a patch",
+    "apply code changes from a diff"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

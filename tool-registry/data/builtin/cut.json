@@ -1,0 +1,29 @@
+{
+  "id": "cut",
+  "name": "cut",
+  "type": "cli",
+  "categories": ["text", "utility"],
+  "tags": ["column", "field", "delimiter", "extract", "csv", "tsv"],
+  "description": "Remove sections from each line of files, extracting columns or fields",
+  "description_ja": "ファイルの各行から特定のカラムやフィールドを抽出",
+  "install": {
+    "apt": "coreutils",
+    "check": "cut --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "特定のカラムだけを抽出したい",
+    "CSVの特定フィールドを取り出したい",
+    "区切り文字で分割して列を選びたい",
+    "タブ区切りファイルから列を抽出したい",
+    "文字位置で切り出したい",
+    "TSVの特定列だけ表示したい",
+    "extract a specific column from a file",
+    "get fields from a CSV file",
+    "split lines by delimiter and select columns",
+    "extract columns from tab-separated data",
+    "cut characters by position"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

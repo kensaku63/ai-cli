@@ -1,0 +1,32 @@
+{
+  "id": "ping",
+  "name": "ping",
+  "type": "cli",
+  "categories": ["network", "diagnostic"],
+  "tags": ["network", "ping", "connectivity", "latency", "icmp"],
+  "description": "Send ICMP echo requests to test network connectivity and measure latency",
+  "description_ja": "ICMPエコーリクエストを送信してネットワーク接続性を確認し、遅延を測定するツール",
+  "install": {
+    "brew": "inetutils",
+    "apt": "iputils-ping",
+    "check": "ping -c 1 localhost"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Ping a host", "usage": "ping <host>" },
+    { "name": "-c", "description": "Stop after sending N packets", "usage": "ping -c <count> <host>" },
+    { "name": "-i", "description": "Set interval between packets", "usage": "ping -i <seconds> <host>" },
+    { "name": "-t", "description": "Set TTL value", "usage": "ping -t <ttl> <host>" },
+    { "name": "-s", "description": "Set packet size", "usage": "ping -s <size> <host>" },
+    { "name": "-W", "description": "Set timeout for each reply", "usage": "ping -W <seconds> <host>" }
+  ],
+  "intents": [
+    "ネットワーク接続を確認したい", "サーバーに疎通確認したい", "レイテンシを測定したい",
+    "ホストが生きているか確認したい", "パケットロスを調べたい", "ネットワーク遅延を確認したい",
+    "pingで応答時間を測りたい",
+    "check network connectivity", "ping a server", "measure latency to a host",
+    "check if a host is reachable", "test network connection", "measure packet loss",
+    "check response time"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "netstat",
+  "name": "netstat",
+  "type": "cli",
+  "categories": ["network", "diagnostic"],
+  "tags": ["network", "port", "connection", "listening", "socket", "tcp"],
+  "description": "Display network connections, routing tables, interface statistics, and more",
+  "description_ja": "ネットワーク接続・ルーティングテーブル・インターフェース統計を表示",
+  "install": {
+    "apt": "net-tools",
+    "check": "netstat --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "開いているポートを確認したい",
+    "リスニング中のポートを表示したい",
+    "現在のネットワーク接続を確認したい",
+    "どのプロセスがポートを使っているか調べたい",
+    "TCP接続の状態を確認したい",
+    "ネットワーク統計を表示したい",
+    "check open ports",
+    "list listening ports",
+    "show active network connections",
+    "find which process is using a port",
+    "display TCP connection status",
+    "view network statistics"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "python",
+  "name": "python",
+  "type": "cli",
+  "categories": ["language", "development"],
+  "tags": ["python", "script", "interpreter", "repl"],
+  "description": "Python programming language interpreter for running scripts and interactive sessions",
+  "description_ja": "スクリプト実行や対話型セッション用のPythonプログラミング言語インタプリタ",
+  "install": {
+    "brew": "python",
+    "apt": "python3",
+    "check": "python3 --version"
+  },
+  "subcommands": [
+    { "name": "<script>", "description": "Run a Python script file", "usage": "python <script.py>" },
+    { "name": "-c", "description": "Execute a Python command string", "usage": "python -c '<code>'" },
+    { "name": "-m", "description": "Run a module as a script", "usage": "python -m <module>" },
+    { "name": "(repl)", "description": "Start interactive REPL", "usage": "python" },
+    { "name": "-m venv", "description": "Create a virtual environment", "usage": "python -m venv <dir>" },
+    { "name": "-m http.server", "description": "Start a simple HTTP server", "usage": "python -m http.server [<port>]" },
+    { "name": "-m json.tool", "description": "Pretty-print JSON", "usage": "python -m json.tool <file>" }
+  ],
+  "intents": [
+    "Pythonスクリプトを実行したい", "Python対話モードを起動したい", "仮想環境を作成したい",
+    "Pythonモジュールを実行したい", "簡易HTTPサーバーを起動したい", "Pythonのバージョンを確認したい",
+    "JSONを整形したい",
+    "run a Python script", "start Python REPL", "create a virtual environment",
+    "run a Python module", "start a simple HTTP server", "check Python version",
+    "execute Python one-liner"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "gh",
+  "name": "gh",
+  "type": "cli",
+  "categories": ["development", "github"],
+  "tags": ["github", "pull-request", "issue", "repo", "workflow"],
+  "description": "GitHub CLI for managing repositories, pull requests, issues, and workflows from the terminal",
+  "description_ja": "ターミナルからGitHubリポジトリ、プルリクエスト、Issue、ワークフローを管理するCLIツール",
+  "install": {
+    "brew": "gh",
+    "apt": "gh",
+    "check": "gh --version"
+  },
+  "subcommands": [
+    { "name": "pr create", "description": "Create a pull request", "usage": "gh pr create [--title <title>] [--body <body>]" },
+    { "name": "pr list", "description": "List pull requests", "usage": "gh pr list [--state <state>]" },
+    { "name": "pr merge", "description": "Merge a pull request", "usage": "gh pr merge [<number>] [--squash|--rebase|--merge]" },
+    { "name": "pr checkout", "description": "Check out a pull request locally", "usage": "gh pr checkout <number>" },
+    { "name": "pr view", "description": "View a pull request", "usage": "gh pr view [<number>] [--web]" },
+    { "name": "issue create", "description": "Create an issue", "usage": "gh issue create [--title <title>] [--body <body>]" },
+    { "name": "issue list", "description": "List issues", "usage": "gh issue list [--state <state>] [--label <label>]" },
+    { "name": "repo clone", "description": "Clone a repository", "usage": "gh repo clone <owner/repo>" },
+    { "name": "repo create", "description": "Create a new repository", "usage": "gh repo create <name> [--public|--private]" },
+    { "name": "run list", "description": "List workflow runs", "usage": "gh run list [--workflow <name>]" },
+    { "name": "run view", "description": "View a workflow run", "usage": "gh run view <run-id>" },
+    { "name": "release create", "description": "Create a release", "usage": "gh release create <tag> [--title <title>]" }
+  ],
+  "intents": [
+    "プルリクエストを作成したい", "PRをマージしたい", "Issueを作成したい",
+    "Issue一覧を確認したい", "PRのレビューをしたい", "リポジトリを作成したい",
+    "ワークフローの実行状況を確認したい", "リリースを作成したい", "PRをチェックアウトしたい",
+    "create a pull request", "merge a PR", "list open issues",
+    "create a new repository", "check workflow status", "view pull request details",
+    "create a GitHub release", "clone a repo with gh", "check CI status"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "chmod",
+  "name": "chmod",
+  "type": "cli",
+  "categories": ["filesystem", "permissions"],
+  "tags": ["permission", "mode", "access", "file", "security"],
+  "description": "Change file and directory access permissions using symbolic or numeric modes",
+  "description_ja": "シンボリックまたは数値モードを使用してファイルやディレクトリのアクセス権限を変更するツール",
+  "install": {
+    "brew": null,
+    "apt": null,
+    "check": "chmod --help"
+  },
+  "subcommands": [
+    { "name": "(numeric)", "description": "Set permissions using octal notation", "usage": "chmod <mode> <file>" },
+    { "name": "+x", "description": "Add execute permission", "usage": "chmod +x <file>" },
+    { "name": "-w", "description": "Remove write permission", "usage": "chmod -w <file>" },
+    { "name": "u+r", "description": "Add read permission for owner", "usage": "chmod u+r <file>" },
+    { "name": "-R", "description": "Change permissions recursively", "usage": "chmod -R <mode> <dir>" },
+    { "name": "a+x", "description": "Add execute permission for all", "usage": "chmod a+x <file>" },
+    { "name": "go-rwx", "description": "Remove all permissions for group and others", "usage": "chmod go-rwx <file>" }
+  ],
+  "intents": [
+    "ファイルの権限を変更したい", "実行権限を付与したい", "書き込み権限を削除したい",
+    "パーミッションを再帰的に変更したい", "スクリプトを実行可能にしたい",
+    "ファイルのアクセス制御を設定したい", "セキュリティのため権限を制限したい",
+    "change file permissions", "make a file executable", "remove write permission",
+    "change permissions recursively", "set file mode", "restrict file access",
+    "add execute permission to a script"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

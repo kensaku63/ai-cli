@@ -1,0 +1,30 @@
+{
+  "id": "sort",
+  "name": "sort",
+  "type": "cli",
+  "categories": ["text", "utility"],
+  "tags": ["sort", "order", "alphabetical", "numeric", "reverse", "unique"],
+  "description": "Sort lines of text files alphabetically, numerically, or in reverse order",
+  "description_ja": "テキストファイルの行をアルファベット順・数値順・逆順などでソート",
+  "install": {
+    "apt": "coreutils",
+    "check": "sort --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "テキストをアルファベット順にソートしたい",
+    "数値順に並べ替えたい",
+    "逆順にソートしたい",
+    "重複を除いてソートしたい",
+    "特定のカラムでソートしたい",
+    "ファイルの中身を並べ替えたい",
+    "sort lines alphabetically",
+    "sort numbers in a file",
+    "reverse sort order",
+    "sort and remove duplicates",
+    "sort by a specific column",
+    "sort file contents"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

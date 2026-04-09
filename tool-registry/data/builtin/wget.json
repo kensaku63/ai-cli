@@ -1,0 +1,34 @@
+{
+  "id": "wget",
+  "name": "wget",
+  "type": "cli",
+  "categories": ["network", "download"],
+  "tags": ["download", "http", "ftp", "mirror", "recursive"],
+  "description": "Non-interactive network downloader for retrieving files via HTTP, HTTPS, and FTP",
+  "description_ja": "HTTP、HTTPS、FTP経由でファイルをダウンロードする非対話型ネットワークダウンローダー",
+  "install": {
+    "brew": "wget",
+    "apt": "wget",
+    "check": "wget --version"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Download a file from URL", "usage": "wget <url>" },
+    { "name": "-O", "description": "Save to a specific filename", "usage": "wget -O <file> <url>" },
+    { "name": "-r", "description": "Recursive download", "usage": "wget -r <url>" },
+    { "name": "-c", "description": "Continue an interrupted download", "usage": "wget -c <url>" },
+    { "name": "-q", "description": "Quiet mode (no output)", "usage": "wget -q <url>" },
+    { "name": "--mirror", "description": "Mirror a website", "usage": "wget --mirror <url>" },
+    { "name": "-i", "description": "Download URLs from a file", "usage": "wget -i <file>" },
+    { "name": "--limit-rate", "description": "Limit download speed", "usage": "wget --limit-rate=<rate> <url>" }
+  ],
+  "intents": [
+    "ファイルをダウンロードしたい", "Webサイトをミラーリングしたい", "再帰的にダウンロードしたい",
+    "ダウンロードを再開したい", "ファイル名を指定してダウンロードしたい", "複数URLをまとめてダウンロードしたい",
+    "ダウンロード速度を制限したい",
+    "download a file from URL", "mirror a website", "recursive download",
+    "resume an interrupted download", "save file with specific name", "batch download from file",
+    "limit download speed"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

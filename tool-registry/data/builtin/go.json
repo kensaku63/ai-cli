@@ -1,0 +1,35 @@
+{
+  "id": "go",
+  "name": "go",
+  "type": "cli",
+  "categories": ["language", "development"],
+  "tags": ["go", "golang", "build", "compile", "module"],
+  "description": "Go programming language toolchain for building, testing, and managing Go projects",
+  "description_ja": "Goプロジェクトのビルド、テスト、管理を行うGoプログラミング言語ツールチェーン",
+  "install": {
+    "brew": "go",
+    "apt": "golang-go",
+    "check": "go version"
+  },
+  "subcommands": [
+    { "name": "build", "description": "Compile packages and dependencies", "usage": "go build [<packages>]" },
+    { "name": "run", "description": "Compile and run a Go program", "usage": "go run <file.go>" },
+    { "name": "test", "description": "Run tests", "usage": "go test [./...]" },
+    { "name": "mod init", "description": "Initialize a new module", "usage": "go mod init <module>" },
+    { "name": "mod tidy", "description": "Add missing and remove unused modules", "usage": "go mod tidy" },
+    { "name": "get", "description": "Download and install packages", "usage": "go get <package>" },
+    { "name": "fmt", "description": "Format Go source code", "usage": "go fmt [./...]" },
+    { "name": "vet", "description": "Report likely mistakes in packages", "usage": "go vet [./...]" },
+    { "name": "install", "description": "Compile and install packages", "usage": "go install <package>" }
+  ],
+  "intents": [
+    "Goプログラムをビルドしたい", "Goプログラムを実行したい", "Goのテストを実行したい",
+    "モジュールを初期化したい", "依存関係を整理したい", "Goコードをフォーマットしたい",
+    "パッケージをインストールしたい", "コードの静的解析をしたい",
+    "build a Go program", "run Go code", "run Go tests",
+    "initialize a Go module", "tidy Go dependencies", "format Go code",
+    "install a Go package", "vet Go code for errors"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

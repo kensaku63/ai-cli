@@ -1,0 +1,30 @@
+{
+  "id": "ln",
+  "name": "ln",
+  "type": "cli",
+  "categories": ["filesystem", "utility"],
+  "tags": ["link", "symlink", "symbolic", "hardlink", "shortcut"],
+  "description": "Create hard and symbolic links between files",
+  "description_ja": "ファイル間のハードリンクやシンボリックリンクを作成",
+  "install": {
+    "apt": "coreutils",
+    "check": "ln --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "シンボリックリンクを作成したい",
+    "ハードリンクを作りたい",
+    "ファイルへのショートカットを作りたい",
+    "既存のリンクを上書きしたい",
+    "ディレクトリへのシンボリックリンクを張りたい",
+    "リンクを更新したい",
+    "create a symbolic link",
+    "create a hard link",
+    "make a symlink to a file",
+    "create a shortcut to a directory",
+    "overwrite an existing link",
+    "link files together"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

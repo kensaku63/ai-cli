@@ -1,0 +1,36 @@
+{
+  "id": "dig",
+  "name": "dig",
+  "type": "cli",
+  "categories": ["network", "dns"],
+  "tags": ["dns", "lookup", "domain", "nameserver", "resolve"],
+  "description": "DNS lookup utility for querying DNS name servers and diagnosing DNS issues",
+  "description_ja": "DNSネームサーバーへの問い合わせとDNS問題の診断を行うDNSルックアップユーティリティ",
+  "install": {
+    "brew": "bind",
+    "apt": "dnsutils",
+    "check": "dig -v"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Query DNS for a domain", "usage": "dig <domain>" },
+    { "name": "A", "description": "Query A records (IPv4)", "usage": "dig <domain> A" },
+    { "name": "AAAA", "description": "Query AAAA records (IPv6)", "usage": "dig <domain> AAAA" },
+    { "name": "MX", "description": "Query MX (mail) records", "usage": "dig <domain> MX" },
+    { "name": "NS", "description": "Query NS (nameserver) records", "usage": "dig <domain> NS" },
+    { "name": "CNAME", "description": "Query CNAME records", "usage": "dig <domain> CNAME" },
+    { "name": "TXT", "description": "Query TXT records", "usage": "dig <domain> TXT" },
+    { "name": "+short", "description": "Show concise output", "usage": "dig <domain> +short" },
+    { "name": "+trace", "description": "Trace DNS delegation path", "usage": "dig <domain> +trace" },
+    { "name": "-x", "description": "Reverse DNS lookup", "usage": "dig -x <ip>" }
+  ],
+  "intents": [
+    "DNSレコードを調べたい", "ドメインのIPアドレスを確認したい", "MXレコードを確認したい",
+    "ネームサーバーを調べたい", "逆引きDNSを確認したい", "DNS解決の経路を追跡したい",
+    "TXTレコードを確認したい",
+    "lookup DNS records", "find IP address of a domain", "check MX records",
+    "query nameservers", "reverse DNS lookup", "trace DNS resolution path",
+    "check TXT records for a domain"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

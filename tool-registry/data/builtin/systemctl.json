@@ -1,0 +1,40 @@
+{
+  "id": "systemctl",
+  "name": "systemctl",
+  "type": "cli",
+  "categories": ["system", "service"],
+  "tags": ["systemd", "service", "daemon", "start", "stop", "enable", "status"],
+  "description": "Control the systemd system and service manager",
+  "description_ja": "systemdのシステムおよびサービスマネージャを制御",
+  "install": {
+    "apt": "systemd",
+    "check": "systemctl --version"
+  },
+  "subcommands": [
+    { "name": "start", "description": "Start a service", "usage": "systemctl start <service>" },
+    { "name": "stop", "description": "Stop a service", "usage": "systemctl stop <service>" },
+    { "name": "restart", "description": "Restart a service", "usage": "systemctl restart <service>" },
+    { "name": "status", "description": "Show runtime status of a service", "usage": "systemctl status <service>" },
+    { "name": "enable", "description": "Enable a service to start at boot", "usage": "systemctl enable <service>" },
+    { "name": "disable", "description": "Disable a service from starting at boot", "usage": "systemctl disable <service>" },
+    { "name": "list-units", "description": "List loaded units", "usage": "systemctl list-units [--type=service]" }
+  ],
+  "intents": [
+    "サービスを起動したい",
+    "サービスを停止したい",
+    "サービスの状態を確認したい",
+    "サービスを再起動したい",
+    "自動起動を有効にしたい",
+    "自動起動を無効にしたい",
+    "稼働中のサービス一覧を見たい",
+    "start a service",
+    "stop a service",
+    "check service status",
+    "restart a service",
+    "enable a service at boot",
+    "disable a service",
+    "list running services"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
