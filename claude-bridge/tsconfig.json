@@ -4,12 +4,12 @@
     "module": "Node16",
     "moduleResolution": "Node16",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "..",
     "strict": true,
     "skipLibCheck": true,
     "declaration": true,
     "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "../engine.ts", "../tool-registry/**/*.ts"]
 }

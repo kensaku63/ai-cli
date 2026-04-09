@@ -9,7 +9,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import { AiCliEngine } from "./engine-mock.js";
+import { AiCliEngine } from "../../engine.js";
+import type { ToolCandidate } from "../../engine.js";
 import { formatOutput, formatError } from "./formatter.js";
 
 const engine = new AiCliEngine();
@@ -68,7 +69,7 @@ server.registerTool(
 
       return {
         content: [{ type: "text" as const, text: `${header}\n\n${output}` }],
-        isError: result.status === "error",
+        isError: result.status === "error" || result.status === "no_tool_found",
       };
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
@@ -114,8 +115,8 @@ server.registerTool(
       }
 
       const lines = candidates.map(
-        (c, i) =>
-          `${i + 1}. **${c.tool.name}** (confidence: ${c.confidence.toFixed(2)})\n   ${c.tool.description}\n   Reason: ${c.reason}`,
+        (c: ToolCandidate, i: number) =>
+          `${i + 1}. **${c.tool.name}** (confidence: ${c.confidence.toFixed(2)})\n   ${c.tool.description}\n   Matched on: ${c.matchedOn.join(", ")}`,
       );
 
       return {
@@ -161,12 +162,11 @@ server.registerTool(
         .describe("If true, only show locally installed tools"),
     },
   },
-  async ({ search, category, installed_only }) => {
+  async ({ search, category, installed_only: _installed_only }) => {
     try {
       const tools = await engine.catalog({
-        search,
         category,
-        installedOnly: installed_only,
+        ...(search ? { tag: search } : {}),
       });
 
       if (tools.length === 0) {
@@ -193,8 +193,7 @@ server.registerTool(
       const sections: string[] = [];
       for (const [cat, catTools] of byCategory) {
         const lines = catTools.map(
-          (t) =>
-            `  - ${t.name}${t.installed ? "" : " (not installed)"}: ${t.description}`,
+          (t) => `  - ${t.name}: ${t.description}`,
         );
         sections.push(`**${cat}**\n${lines.join("\n")}`);
       }
