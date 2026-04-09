@@ -27,6 +27,9 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .cache
 *.tsbuildinfo
 
+# embedding cache (regenerated on first run)
+tool-registry/data/embeddings-cache.json
+
 # IntelliJ based IDEs
 .idea
 
