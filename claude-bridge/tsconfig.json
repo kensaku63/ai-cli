@@ -11,5 +11,6 @@
     "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "../engine.ts", "../tool-registry/**/*.ts"]
+  "include": ["src/**/*.ts", "../engine.ts", "../tool-registry/**/*.ts"],
+  "exclude": ["../**/*.test.ts"]
 }
