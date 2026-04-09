@@ -9,6 +9,9 @@
 import { parseArgs } from "node:util";
 import { isatty } from "node:tty";
 import { spawn } from "node:child_process";
+import { mkdir, appendFile } from "node:fs/promises";
+import { homedir } from "node:os";
+import { join } from "node:path";
 import { Registry, searchTools } from "./tool-registry/index.js";
 import type { SearchResult } from "./tool-registry/index.js";
 
@@ -126,6 +129,19 @@ function runCommand(
   });
 }
 
+const FEEDBACK_PATH = join(homedir(), ".ai-cli", "feedback.jsonl");
+
+async function saveFeedback(intent: string, got: string): Promise<void> {
+  const dir = join(homedir(), ".ai-cli");
+  await mkdir(dir, { recursive: true });
+  const entry = {
+    timestamp: new Date().toISOString(),
+    intent,
+    got,
+  };
+  await appendFile(FEEDBACK_PATH, JSON.stringify(entry) + "\n", "utf-8");
+}
+
 function printHelp(): void {
   console.log(`\
 ai-cli — Natural language → tool discovery → command → execute
@@ -135,11 +151,14 @@ Usage:
   cat data.csv | ai-cli "aggregate by month"
   ai-cli --dry "list running docker containers"
   ai-cli --discover "compress a PDF"
+  ai-cli --feedback "intended action" --got "actual result"
 
 Options:
   --dry          Show generated command without executing
   --show         Show command on stderr, then execute
   --discover     Only show discovered tools, don't execute
+  --feedback     Report a translation error (what you intended)
+  --got          What actually happened (used with --feedback)
   --retry N      Max retries on failure (default: 2)
   -h, --help     Show this help
 
@@ -156,6 +175,8 @@ async function main(): Promise<void> {
       dry:      { type: "boolean", default: false },
       show:     { type: "boolean", default: false },
       discover: { type: "boolean", default: false },
+      feedback: { type: "string" },
+      got:      { type: "string" },
       retry:    { type: "string", default: "2" },
       help:     { type: "boolean", short: "h", default: false },
     },
@@ -163,6 +184,17 @@ async function main(): Promise<void> {
   });
 
   if (values.help) { printHelp(); return; }
+
+  if (values.feedback) {
+    if (!values.got) {
+      console.error("Error: --feedback requires --got to describe what actually happened.");
+      console.error('Usage: ai-cli --feedback "intended action" --got "actual result"');
+      process.exit(1);
+    }
+    await saveFeedback(values.feedback, values.got);
+    console.log(`Feedback saved to ${FEEDBACK_PATH}`);
+    return;
+  }
 
   const prompt = positionals.join(" ");
   if (!prompt) {
