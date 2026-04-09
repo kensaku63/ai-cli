@@ -6,7 +6,7 @@
  * to rank tools by relevance to a natural language query.
  */
 
-import type { ToolMetadata, SearchResult } from "./schema";
+import type { ToolMetadata, SearchResult } from "./schema.js";
 
 /** Tokenize text into lowercase words, removing punctuation */
 function tokenize(text: string): string[] {

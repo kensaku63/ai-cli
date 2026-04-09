@@ -2,13 +2,13 @@
  * Tool Registry — Public API
  */
 
-export { Registry } from "./registry";
-export { searchTools } from "./search";
+export { Registry } from "./registry.js";
+export { searchTools } from "./search.js";
 export type {
   ToolMetadata,
   ToolType,
   InstallInfo,
   Subcommand,
   SearchResult,
-} from "./schema";
-export type { SearchOptions } from "./search";
+} from "./schema.js";
+export type { SearchOptions } from "./search.js";

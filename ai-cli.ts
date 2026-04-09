@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 /**
  * ai-cli — Natural language → tool discovery → command → execute.
  *
@@ -8,8 +8,9 @@
 
 import { parseArgs } from "node:util";
 import { isatty } from "node:tty";
-import { Registry, searchTools } from "./tool-registry";
-import type { SearchResult } from "./tool-registry";
+import { spawn } from "node:child_process";
+import { Registry, searchTools } from "./tool-registry/index.js";
+import type { SearchResult } from "./tool-registry/index.js";
 
 const DEFAULT_TIMEOUT_MS = 30_000;
 
@@ -75,6 +76,54 @@ async function ask(
   const data = (await res.json()) as { content: [{ text: string }] };
   const raw = data.content[0].text.trim();
   return raw.replace(/^```\w*\n([\s\S]*?)```$/g, "$1").trim();
+}
+
+/** Read all stdin data (non-blocking if no pipe) */
+async function readStdin(): Promise<string> {
+  if (isatty(0)) return "";
+  const chunks: Buffer[] = [];
+  for await (const chunk of process.stdin) {
+    chunks.push(chunk);
+  }
+  return Buffer.concat(chunks).toString("utf-8");
+}
+
+/** Run a shell command and capture output */
+function runCommand(
+  code: string,
+  stdinData: string,
+  timeoutMs: number,
+): Promise<{ exitCode: number; stdout: string; stderr: string } | "timeout"> {
+  return new Promise((resolve) => {
+    const proc = spawn("bash", ["-c", code], { stdio: ["pipe", "pipe", "pipe"] });
+
+    const stdoutChunks: Buffer[] = [];
+    const stderrChunks: Buffer[] = [];
+
+    proc.stdout.on("data", (chunk: Buffer) => stdoutChunks.push(chunk));
+    proc.stderr.on("data", (chunk: Buffer) => stderrChunks.push(chunk));
+
+    if (stdinData) {
+      proc.stdin.write(stdinData);
+      proc.stdin.end();
+    } else {
+      proc.stdin.end();
+    }
+
+    const timer = setTimeout(() => {
+      proc.kill();
+      resolve("timeout");
+    }, timeoutMs);
+
+    proc.on("close", (exitCode) => {
+      clearTimeout(timer);
+      resolve({
+        exitCode: exitCode ?? 1,
+        stdout: Buffer.concat(stdoutChunks).toString("utf-8"),
+        stderr: Buffer.concat(stderrChunks).toString("utf-8"),
+      });
+    });
+  });
 }
 
 function printHelp(): void {
@@ -151,13 +200,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  let stdinData = "";
-  if (!isatty(0)) {
-    stdinData = await Promise.race([
-      Bun.file(0).text(),
-      new Promise<string>((r) => setTimeout(() => r(""), 100)),
-    ]);
-  }
+  const stdinData = await readStdin();
 
   let userMsg = "";
   if (stdinData) {
@@ -185,8 +228,9 @@ async function main(): Promise<void> {
 
   const isRefusal = /^echo\s+"REFUSED:/.test(code);
   if (isRefusal) {
-    Bun.spawn(["bash", "-c", code], { stdout: "inherit", stderr: "inherit" });
-    process.exit(1);
+    const proc = spawn("bash", ["-c", code], { stdio: "inherit" });
+    proc.on("close", () => process.exit(1));
+    return;
   }
 
   if (values.show) console.error(code);
@@ -194,19 +238,9 @@ async function main(): Promise<void> {
   const timeoutMs = parseInt(process.env.AI_TIMEOUT ?? String(DEFAULT_TIMEOUT_MS), 10);
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const proc = Bun.spawn(["bash", "-c", code], {
-      stdin: stdinData ? new Response(stdinData) : undefined,
-      stdout: "pipe",
-      stderr: "pipe",
-    });
+    const result = await runCommand(code, stdinData, timeoutMs);
 
-    const timeout = new Promise<"timeout">((r) => setTimeout(() => r("timeout"), timeoutMs));
-    const exited = proc.exited.then((c) => c as number);
-    const race = await Promise.race([exited, timeout]);
-
-    if (race === "timeout") {
-      proc.kill();
-      await proc.exited;
+    if (result === "timeout") {
       if (attempt >= maxRetries) {
         console.error(`Command timed out after ${timeoutMs / 1000}s. Last command:\n${code}`);
         process.exit(124);
@@ -221,21 +255,15 @@ async function main(): Promise<void> {
       continue;
     }
 
-    const [stdout, stderr] = await Promise.all([
-      new Response(proc.stdout).text(),
-      new Response(proc.stderr).text(),
-    ]);
-    const exitCode = race;
-
-    if (exitCode === 0) {
-      process.stdout.write(stdout);
+    if (result.exitCode === 0) {
+      process.stdout.write(result.stdout);
       return;
     }
 
     if (attempt >= maxRetries) {
       console.error(`Failed after ${maxRetries + 1} attempts.`);
-      if (stderr) console.error(stderr);
-      process.exit(exitCode || 1);
+      if (result.stderr) console.error(result.stderr);
+      process.exit(result.exitCode || 1);
     }
 
     if (values.show) console.error(`[retry ${attempt + 1}/${maxRetries}]`);
@@ -243,14 +271,11 @@ async function main(): Promise<void> {
     const mainCmd = code.split(/[\s|;&]/)[0];
     let helpText = "";
     try {
-      const helpProc = Bun.spawn(["bash", "-c", `${mainCmd} --help 2>&1 | head -40`], {
-        stdout: "pipe", stderr: "pipe",
-      });
-      helpText = (await new Response(helpProc.stdout).text()).trim();
-      await helpProc.exited;
+      const helpResult = await runCommand(`${mainCmd} --help 2>&1 | head -40`, "", 5000);
+      if (helpResult !== "timeout") helpText = helpResult.stdout.trim();
     } catch {}
 
-    let retryMsg = `Script failed (exit ${exitCode}):\nstdout: ${stdout.slice(0, 500)}\nstderr: ${stderr.slice(0, 500)}`;
+    let retryMsg = `Script failed (exit ${result.exitCode}):\nstdout: ${result.stdout.slice(0, 500)}\nstderr: ${result.stderr.slice(0, 500)}`;
     if (helpText) retryMsg += `\n\n${mainCmd} --help:\n${helpText}`;
     retryMsg += `\nFix it. Output ONLY the corrected bash.`;
 
