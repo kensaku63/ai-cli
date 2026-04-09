@@ -13,8 +13,8 @@ before(async () => {
 });
 
 describe("Registry", () => {
-  it("loads all 117 builtin tools", () => {
-    assert.equal(tools.length, 117);
+  it("loads all 137 builtin tools", () => {
+    assert.equal(tools.length, 137);
   });
 
   it("each tool has required fields", () => {
@@ -311,6 +311,44 @@ describe("Search — new tools: monitoring/system", () => {
     const results = searchTools("generate SSL certificate", tools);
     assert.ok(results.length > 0);
     assert.equal(results[0]!.tool.id, "openssl");
+  });
+});
+
+describe("Search — niche/LLM-unknown tools", () => {
+  it("'リポジトリを整理して管理したい' finds ghq", () => {
+    const results = searchTools("リポジトリを整理して管理したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "ghq");
+  });
+
+  it("'scan container image for vulnerabilities' finds trivy", () => {
+    const results = searchTools("scan container image for vulnerabilities", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "trivy");
+  });
+
+  it("'CSVをSQLで分析したい' finds duckdb", () => {
+    const results = searchTools("CSVをSQLで分析したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "duckdb");
+  });
+
+  it("'deploy to Cloudflare Workers' finds wrangler", () => {
+    const results = searchTools("deploy to Cloudflare Workers", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "wrangler");
+  });
+
+  it("'benchmark command execution time' finds hyperfine", () => {
+    const results = searchTools("benchmark command execution time", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "hyperfine");
+  });
+
+  it("'count lines of code' finds tokei", () => {
+    const results = searchTools("count lines of code", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "tokei");
   });
 });
 

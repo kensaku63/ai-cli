@@ -1,0 +1,25 @@
+{
+  "id": "peco",
+  "name": "peco",
+  "type": "cli",
+  "categories": ["text-processing", "interactive"],
+  "tags": ["filter", "interactive", "selection", "pipe", "fuzzy", "japanese"],
+  "description": "Simplistic interactive filtering tool — pipe any list into peco for fuzzy selection",
+  "description_ja": "シンプルな対話型フィルタリングツール — リストをパイプしてfuzzy選択",
+  "install": {
+    "brew": "peco",
+    "go": "github.com/peco/peco/cmd/peco@latest",
+    "check": "peco --version"
+  },
+  "subcommands": [
+    { "name": "filter", "description": "Interactively filter stdin", "usage": "command | peco" },
+    { "name": "query", "description": "Start with initial query", "usage": "command | peco --query '<text>'" }
+  ],
+  "intents": [
+    "リストから対話的に選択したい", "コマンドの出力をフィルタしたい", "履歴からインクリメンタル検索したい",
+    "interactively select from list", "filter command output",
+    "incremental search from history", "fuzzy find from piped input"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

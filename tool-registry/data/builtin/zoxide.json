@@ -1,0 +1,28 @@
+{
+  "id": "zoxide",
+  "name": "zoxide",
+  "type": "cli",
+  "categories": ["system", "navigation"],
+  "tags": ["cd", "directory", "navigation", "frecency", "rust", "jump"],
+  "description": "Smarter cd command — learn your habits and jump to frequently used directories instantly",
+  "description_ja": "よりスマートなcdコマンド — 使用習慣を学習して頻繁に使うディレクトリに即座にジャンプ",
+  "install": {
+    "brew": "zoxide",
+    "cargo": "zoxide",
+    "check": "zoxide --version"
+  },
+  "subcommands": [
+    { "name": "query", "description": "Jump to a directory", "usage": "z <keyword>" },
+    { "name": "interactive", "description": "Interactive directory selection", "usage": "zi" },
+    { "name": "add", "description": "Add a directory to the database", "usage": "zoxide add <path>" },
+    { "name": "remove", "description": "Remove a directory from the database", "usage": "zoxide remove <path>" }
+  ],
+  "intents": [
+    "よく使うディレクトリに素早く移動したい", "ディレクトリ移動を効率化したい",
+    "cdの代わりにスマートなジャンプをしたい",
+    "quickly jump to frequently used directory", "smart cd replacement",
+    "navigate directories faster", "autojump to directory"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

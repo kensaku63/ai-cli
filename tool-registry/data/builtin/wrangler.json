@@ -1,0 +1,30 @@
+{
+  "id": "wrangler",
+  "name": "wrangler",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["cloudflare", "workers", "edge", "serverless", "kv", "r2", "d1"],
+  "description": "Cloudflare Workers CLI — develop, test, and deploy serverless functions, KV, R2, and D1",
+  "description_ja": "Cloudflare Workers CLI — サーバーレス関数、KV、R2、D1の開発・テスト・デプロイ",
+  "install": {
+    "npm": "wrangler",
+    "check": "wrangler --version"
+  },
+  "subcommands": [
+    { "name": "dev", "description": "Start a local development server", "usage": "wrangler dev" },
+    { "name": "deploy", "description": "Deploy a Worker to Cloudflare", "usage": "wrangler deploy" },
+    { "name": "init", "description": "Initialize a new Worker project", "usage": "wrangler init <name>" },
+    { "name": "kv", "description": "Manage Workers KV storage", "usage": "wrangler kv key put --binding <ns> <key> <value>" },
+    { "name": "r2", "description": "Manage R2 object storage", "usage": "wrangler r2 object put <bucket>/<key> --file <path>" },
+    { "name": "d1", "description": "Manage D1 SQL database", "usage": "wrangler d1 execute <db> --command 'SELECT ...'" },
+    { "name": "tail", "description": "Stream real-time Worker logs", "usage": "wrangler tail" }
+  ],
+  "intents": [
+    "Cloudflare Workersにデプロイしたい", "エッジでサーバーレス関数を動かしたい",
+    "Workers KVを操作したい", "D1データベースにクエリしたい", "R2にファイルをアップロードしたい",
+    "deploy to Cloudflare Workers", "run serverless on edge",
+    "manage Workers KV", "query D1 database", "upload to R2 storage"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -21,7 +21,10 @@
     "ポートを使っているプロセスを調べたい", "開いているファイルを確認したい",
     "ネットワーク接続を一覧したい",
     "find process using port", "list open files", "check network connections",
-    "which process is using this file"
+    "which process is using this file",
+    "ポートが空いているか確認したい", "ポートを使っているプロセスを停止したい",
+    "check if port is in use", "kill process on a specific port",
+    "find what is using a port and stop it"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

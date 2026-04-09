@@ -26,7 +26,10 @@
     "特定ユーザーのプロセスを確認したい",
     "list running processes", "check process status", "find a specific process",
     "get process ID", "sort processes by memory usage", "show process tree",
-    "check what processes are running"
+    "check what processes are running",
+    "メモリ使用量が多いプロセスを上位N件表示したい", "CPU使用率の高いプロセスを探したい",
+    "show the most memory-intensive processes", "show top processes by CPU",
+    "find processes consuming the most resources", "list top N processes by memory"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

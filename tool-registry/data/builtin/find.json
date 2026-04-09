@@ -15,7 +15,13 @@
     "ファイルを名前で探したい", "大きいファイルを見つけたい", "特定の拡張子のファイルを探したい",
     "古いファイルを見つけたい", "空のディレクトリを探したい",
     "find files by name", "find large files", "find files by extension",
-    "find old files", "find empty directories", "search filesystem"
+    "find old files", "find empty directories", "search filesystem",
+    "カレントディレクトリのファイル数を数えたい", "ファイル一覧を表示したい",
+    "最近変更されたファイルを探したい", "ファイルの拡張子一覧を取得したい",
+    "count the number of files in a directory", "list all files recursively",
+    "show recently modified files", "find all unique file extensions",
+    "find files modified in the last 24 hours", "get total size of files by type",
+    "archive files modified recently"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

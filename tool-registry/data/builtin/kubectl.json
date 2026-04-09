@@ -18,13 +18,15 @@
     { "name": "logs", "description": "Print logs for a pod", "usage": "kubectl logs <pod>" },
     { "name": "exec", "description": "Execute a command in a container", "usage": "kubectl exec -it <pod> -- <cmd>" },
     { "name": "describe", "description": "Show details of a resource", "usage": "kubectl describe <resource> <name>" },
-    { "name": "scale", "description": "Set a new size for a resource", "usage": "kubectl scale --replicas=<n> <resource>" }
+    { "name": "scale", "description": "Set a new size for a resource", "usage": "kubectl scale --replicas=<n> <resource>" },
+    { "name": "deploy", "description": "Deploy application to Kubernetes cluster", "usage": "kubectl apply -f <manifest>" }
   ],
   "intents": [
     "Podの状態を確認したい", "Kubernetesにデプロイしたい", "Podのログを見たい",
     "コンテナに入りたい", "デプロイメントをスケールしたい", "リソースを削除したい",
-    "get kubernetes pods", "deploy to kubernetes", "view pod logs",
-    "exec into container", "scale deployment", "apply kubernetes manifest"
+    "get kubernetes pods", "deploy to kubernetes", "deploy application to kubernetes",
+    "view pod logs", "exec into container", "scale deployment",
+    "apply kubernetes manifest"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

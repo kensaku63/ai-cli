@@ -1,0 +1,30 @@
+{
+  "id": "supabase",
+  "name": "supabase",
+  "type": "cli",
+  "categories": ["cloud", "database"],
+  "tags": ["supabase", "postgres", "auth", "storage", "realtime", "baas"],
+  "description": "Supabase CLI — manage Supabase projects, run local dev, migrations, and edge functions",
+  "description_ja": "Supabase CLI — Supabaseプロジェクトの管理、ローカル開発、マイグレーション、Edge Functions",
+  "install": {
+    "brew": "supabase/tap/supabase",
+    "npm": "supabase",
+    "check": "supabase --version"
+  },
+  "subcommands": [
+    { "name": "start", "description": "Start local Supabase development stack", "usage": "supabase start" },
+    { "name": "db", "description": "Manage database migrations", "usage": "supabase db push" },
+    { "name": "functions", "description": "Manage Edge Functions", "usage": "supabase functions deploy <name>" },
+    { "name": "gen", "description": "Generate TypeScript types from schema", "usage": "supabase gen types typescript" },
+    { "name": "migration", "description": "Create a new migration", "usage": "supabase migration new <name>" },
+    { "name": "link", "description": "Link to a remote Supabase project", "usage": "supabase link --project-ref <ref>" }
+  ],
+  "intents": [
+    "Supabaseをローカルで起動したい", "データベースマイグレーションを実行したい",
+    "Edge Functionsをデプロイしたい", "TypeScript型を生成したい",
+    "start local Supabase", "run database migration",
+    "deploy edge functions", "generate TypeScript types from database"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

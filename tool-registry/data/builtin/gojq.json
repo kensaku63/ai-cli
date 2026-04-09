@@ -1,0 +1,26 @@
+{
+  "id": "gojq",
+  "name": "gojq",
+  "type": "cli",
+  "categories": ["text-processing", "data"],
+  "tags": ["json", "query", "jq", "golang", "yaml", "japanese"],
+  "description": "Pure Go implementation of jq — JSON/YAML processor with enhanced features and better error messages",
+  "description_ja": "jqのPure Go実装 — 拡張機能とより良いエラーメッセージを持つJSON/YAMLプロセッサ",
+  "install": {
+    "brew": "gojq",
+    "go": "github.com/itchyny/gojq/cmd/gojq@latest",
+    "check": "gojq --version"
+  },
+  "subcommands": [
+    { "name": "query", "description": "Process JSON with a jq expression", "usage": "echo '{\"a\":1}' | gojq '.a'" },
+    { "name": "yaml", "description": "Process YAML input", "usage": "gojq --yaml-input '.key' file.yaml" },
+    { "name": "file", "description": "Run filter from a file", "usage": "gojq -f filter.jq input.json" }
+  ],
+  "intents": [
+    "JSONをjq互換で処理したい", "YAMLを直接クエリしたい", "jqの代替で速いのを使いたい",
+    "process JSON with jq-compatible syntax", "query YAML files directly",
+    "faster jq alternative", "parse JSON with better errors"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
