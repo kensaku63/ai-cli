@@ -1,0 +1,22 @@
+{
+  "id": "ssh",
+  "name": "ssh",
+  "type": "cli",
+  "categories": ["network", "remote"],
+  "tags": ["remote", "shell", "secure", "tunnel", "port-forwarding", "server"],
+  "description": "OpenSSH client for secure remote login and command execution over encrypted connections",
+  "description_ja": "暗号化された接続でリモートログイン・コマンド実行を行うSSHクライアント",
+  "install": {
+    "apt": "openssh-client",
+    "check": "ssh -V"
+  },
+  "subcommands": [],
+  "intents": [
+    "リモートサーバーに接続したい", "SSHでログインしたい", "ポートフォワーディングしたい",
+    "SSHトンネルを張りたい", "リモートでコマンドを実行したい",
+    "connect to remote server", "SSH login", "port forwarding",
+    "SSH tunnel", "execute remote command"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

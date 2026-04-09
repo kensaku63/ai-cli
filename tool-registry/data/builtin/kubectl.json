@@ -1,0 +1,31 @@
+{
+  "id": "kubectl",
+  "name": "kubectl",
+  "type": "cli",
+  "categories": ["container", "devops", "kubernetes"],
+  "tags": ["kubernetes", "k8s", "cluster", "pod", "deployment", "service", "orchestration"],
+  "description": "Kubernetes command-line tool for managing clusters, deployments, pods, and services",
+  "description_ja": "Kubernetesクラスタの管理ツール。デプロイメント・Pod・サービスの操作",
+  "install": {
+    "brew": "kubectl",
+    "choco": "kubernetes-cli",
+    "check": "kubectl version --client"
+  },
+  "subcommands": [
+    { "name": "get", "description": "Display resources", "usage": "kubectl get <resource>" },
+    { "name": "apply", "description": "Apply a configuration to a resource", "usage": "kubectl apply -f <file>" },
+    { "name": "delete", "description": "Delete resources", "usage": "kubectl delete <resource> <name>" },
+    { "name": "logs", "description": "Print logs for a pod", "usage": "kubectl logs <pod>" },
+    { "name": "exec", "description": "Execute a command in a container", "usage": "kubectl exec -it <pod> -- <cmd>" },
+    { "name": "describe", "description": "Show details of a resource", "usage": "kubectl describe <resource> <name>" },
+    { "name": "scale", "description": "Set a new size for a resource", "usage": "kubectl scale --replicas=<n> <resource>" }
+  ],
+  "intents": [
+    "Podの状態を確認したい", "Kubernetesにデプロイしたい", "Podのログを見たい",
+    "コンテナに入りたい", "デプロイメントをスケールしたい", "リソースを削除したい",
+    "get kubernetes pods", "deploy to kubernetes", "view pod logs",
+    "exec into container", "scale deployment", "apply kubernetes manifest"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

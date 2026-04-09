@@ -1,0 +1,30 @@
+{
+  "id": "terraform",
+  "name": "terraform",
+  "type": "cli",
+  "categories": ["infrastructure", "devops"],
+  "tags": ["iac", "infrastructure-as-code", "cloud", "provisioning", "aws", "gcp", "azure"],
+  "description": "Infrastructure as Code tool for building, changing, and versioning cloud infrastructure",
+  "description_ja": "クラウドインフラをコードで定義・構築・管理するIaCツール",
+  "install": {
+    "brew": "terraform",
+    "choco": "terraform",
+    "check": "terraform --version"
+  },
+  "subcommands": [
+    { "name": "init", "description": "Initialize a Terraform working directory", "usage": "terraform init" },
+    { "name": "plan", "description": "Generate and show an execution plan", "usage": "terraform plan" },
+    { "name": "apply", "description": "Apply the changes required to reach the desired state", "usage": "terraform apply" },
+    { "name": "destroy", "description": "Destroy Terraform-managed infrastructure", "usage": "terraform destroy" },
+    { "name": "fmt", "description": "Rewrite config files to canonical format", "usage": "terraform fmt" },
+    { "name": "validate", "description": "Validate the configuration files", "usage": "terraform validate" }
+  ],
+  "intents": [
+    "インフラをプロビジョニングしたい", "Terraformの実行計画を確認したい",
+    "インフラの変更を適用したい", "インフラを破棄したい",
+    "provision infrastructure", "plan terraform changes", "apply infrastructure changes",
+    "destroy infrastructure", "initialize terraform"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

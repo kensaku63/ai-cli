@@ -1,0 +1,31 @@
+{
+  "id": "npm",
+  "name": "npm",
+  "type": "cli",
+  "categories": ["package-manager", "javascript"],
+  "tags": ["node", "javascript", "package", "install", "dependency", "registry"],
+  "description": "Node.js package manager for installing, sharing, and managing JavaScript dependencies",
+  "description_ja": "JavaScript/Node.jsのパッケージマネージャ。依存関係のインストール・管理",
+  "install": {
+    "brew": "node",
+    "apt": "npm",
+    "choco": "nodejs",
+    "check": "npm --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install a package and its dependencies", "usage": "npm install [<pkg>]" },
+    { "name": "run", "description": "Run a script defined in package.json", "usage": "npm run <script>" },
+    { "name": "init", "description": "Create a new package.json file", "usage": "npm init [-y]" },
+    { "name": "publish", "description": "Publish a package to the registry", "usage": "npm publish" },
+    { "name": "update", "description": "Update installed packages", "usage": "npm update [<pkg>]" },
+    { "name": "uninstall", "description": "Remove a package", "usage": "npm uninstall <pkg>" }
+  ],
+  "intents": [
+    "パッケージをインストールしたい", "npm scriptsを実行したい", "依存関係を更新したい",
+    "プロジェクトを初期化したい", "パッケージを公開したい",
+    "install npm package", "run npm script", "update dependencies",
+    "initialize node project", "publish package"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

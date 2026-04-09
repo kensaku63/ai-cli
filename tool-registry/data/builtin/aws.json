@@ -1,0 +1,31 @@
+{
+  "id": "aws",
+  "name": "aws",
+  "type": "cli",
+  "categories": ["cloud", "aws"],
+  "tags": ["aws", "amazon", "cloud", "s3", "ec2", "lambda", "iam"],
+  "description": "AWS Command Line Interface for managing Amazon Web Services resources",
+  "description_ja": "Amazon Web Servicesのリソースを管理するCLIツール",
+  "install": {
+    "brew": "awscli",
+    "pip": "awscli",
+    "choco": "awscli",
+    "check": "aws --version"
+  },
+  "subcommands": [
+    { "name": "s3", "description": "Manage Amazon S3 buckets and objects", "usage": "aws s3 <command>" },
+    { "name": "ec2", "description": "Manage EC2 instances", "usage": "aws ec2 <command>" },
+    { "name": "lambda", "description": "Manage AWS Lambda functions", "usage": "aws lambda <command>" },
+    { "name": "iam", "description": "Manage IAM users, roles, and policies", "usage": "aws iam <command>" },
+    { "name": "sts", "description": "Get temporary security credentials", "usage": "aws sts get-caller-identity" },
+    { "name": "configure", "description": "Configure AWS CLI settings", "usage": "aws configure" }
+  ],
+  "intents": [
+    "S3にファイルをアップロードしたい", "EC2インスタンスを確認したい",
+    "Lambda関数をデプロイしたい", "AWSの設定をしたい", "IAMユーザーを管理したい",
+    "upload to S3", "list EC2 instances", "deploy lambda function",
+    "configure AWS", "check AWS identity"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

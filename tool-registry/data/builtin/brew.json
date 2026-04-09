@@ -1,0 +1,28 @@
+{
+  "id": "brew",
+  "name": "brew",
+  "type": "cli",
+  "categories": ["package-manager", "system"],
+  "tags": ["homebrew", "macos", "linux", "package", "install", "formula", "cask"],
+  "description": "The missing package manager for macOS (or Linux) — install CLI tools and desktop apps",
+  "description_ja": "macOS/Linux用パッケージマネージャ。CLIツールやデスクトップアプリをインストール",
+  "install": {
+    "check": "brew --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install a formula or cask", "usage": "brew install <formula>" },
+    { "name": "uninstall", "description": "Uninstall a formula or cask", "usage": "brew uninstall <formula>" },
+    { "name": "update", "description": "Fetch the newest version of Homebrew", "usage": "brew update" },
+    { "name": "upgrade", "description": "Upgrade outdated formulae and casks", "usage": "brew upgrade [<formula>]" },
+    { "name": "search", "description": "Search for formulae and casks", "usage": "brew search <text>" },
+    { "name": "list", "description": "List all installed formulae", "usage": "brew list" }
+  ],
+  "intents": [
+    "ツールをインストールしたい", "Homebrewで検索したい", "パッケージを更新したい",
+    "インストール済みのものを確認したい", "ソフトウェアをアンインストールしたい",
+    "install software with homebrew", "search for packages", "update packages",
+    "list installed packages", "upgrade outdated packages"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

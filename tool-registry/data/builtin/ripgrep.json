@@ -1,0 +1,25 @@
+{
+  "id": "ripgrep",
+  "name": "rg",
+  "type": "cli",
+  "categories": ["search", "text"],
+  "tags": ["grep", "search", "regex", "text", "find", "pattern", "code-search"],
+  "description": "Recursively search directories for a regex pattern, respecting gitignore rules",
+  "description_ja": "ディレクトリを再帰的に正規表現パターンで検索。gitignoreを自動尊重",
+  "install": {
+    "brew": "ripgrep",
+    "apt": "ripgrep",
+    "cargo": "ripgrep",
+    "choco": "ripgrep",
+    "check": "rg --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイル内のテキストを検索したい", "コードを検索したい", "正規表現でgrepしたい",
+    "ディレクトリ内を再帰検索したい", "特定の文字列を含むファイルを探したい",
+    "search text in files", "grep recursively", "find files containing text",
+    "search code for pattern", "regex search in directory"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

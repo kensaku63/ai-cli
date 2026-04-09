@@ -1,0 +1,24 @@
+{
+  "id": "jq",
+  "name": "jq",
+  "type": "cli",
+  "categories": ["data", "json"],
+  "tags": ["json", "filter", "transform", "parse", "query", "pipe"],
+  "description": "Lightweight command-line JSON processor for filtering, transforming, and querying JSON data",
+  "description_ja": "JSONデータのフィルタリング・変換・クエリを行う軽量コマンドラインツール",
+  "install": {
+    "brew": "jq",
+    "apt": "jq",
+    "choco": "jq",
+    "check": "jq --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "JSONをパースしたい", "JSONからフィールドを抽出したい", "JSONを整形したい",
+    "JSONデータをフィルタリングしたい", "JSONを変換したい",
+    "parse JSON", "extract fields from JSON", "pretty print JSON",
+    "filter JSON data", "transform JSON"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

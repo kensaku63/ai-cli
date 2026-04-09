@@ -1,0 +1,22 @@
+{
+  "id": "scp",
+  "name": "scp",
+  "type": "cli",
+  "categories": ["network", "remote", "file-transfer"],
+  "tags": ["remote", "copy", "secure", "file-transfer", "upload", "download"],
+  "description": "Secure copy — transfer files between hosts over SSH",
+  "description_ja": "SSH経由でホスト間のファイルを安全にコピー",
+  "install": {
+    "apt": "openssh-client",
+    "check": "which scp"
+  },
+  "subcommands": [],
+  "intents": [
+    "リモートサーバーにファイルを転送したい", "サーバーからファイルをダウンロードしたい",
+    "SSH経由でコピーしたい", "ファイルをアップロードしたい",
+    "copy files to remote server", "download files from server",
+    "transfer files over SSH", "secure file copy"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

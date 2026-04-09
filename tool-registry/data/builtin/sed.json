@@ -1,0 +1,22 @@
+{
+  "id": "sed",
+  "name": "sed",
+  "type": "cli",
+  "categories": ["text", "editor"],
+  "tags": ["stream-editor", "text", "replace", "substitute", "transform", "regex", "filter"],
+  "description": "Stream editor for filtering and transforming text — find and replace, delete lines, and more",
+  "description_ja": "テキストのフィルタリング・変換を行うストリームエディタ。置換・行削除等",
+  "install": {
+    "apt": "sed",
+    "check": "sed --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "テキストを置換したい", "ファイル内の文字列を一括置換したい", "特定の行を削除したい",
+    "正規表現で置換したい", "テキストを変換したい",
+    "find and replace text", "substitute string in file", "delete lines matching pattern",
+    "regex replace in file", "transform text stream"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

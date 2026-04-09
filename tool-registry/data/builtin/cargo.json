@@ -1,0 +1,28 @@
+{
+  "id": "cargo",
+  "name": "cargo",
+  "type": "cli",
+  "categories": ["package-manager", "rust"],
+  "tags": ["rust", "package", "build", "compile", "dependency", "crate"],
+  "description": "Rust package manager and build system for compiling, testing, and managing Rust projects",
+  "description_ja": "Rustのパッケージマネージャ兼ビルドシステム。コンパイル・テスト・依存管理",
+  "install": {
+    "check": "cargo --version"
+  },
+  "subcommands": [
+    { "name": "build", "description": "Compile the current package", "usage": "cargo build [--release]" },
+    { "name": "run", "description": "Build and run the current package", "usage": "cargo run" },
+    { "name": "test", "description": "Run the tests", "usage": "cargo test" },
+    { "name": "new", "description": "Create a new Cargo package", "usage": "cargo new <name>" },
+    { "name": "add", "description": "Add a dependency to Cargo.toml", "usage": "cargo add <crate>" },
+    { "name": "publish", "description": "Publish the package to crates.io", "usage": "cargo publish" }
+  ],
+  "intents": [
+    "Rustプロジェクトをビルドしたい", "Rustのテストを実行したい",
+    "Rustプロジェクトを作成したい", "crateを追加したい",
+    "build rust project", "run rust tests", "create new rust project",
+    "add rust dependency", "compile rust code"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
