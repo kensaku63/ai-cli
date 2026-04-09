@@ -1,0 +1,38 @@
+{
+  "id": "git",
+  "name": "git",
+  "type": "cli",
+  "categories": ["vcs", "development"],
+  "tags": ["version-control", "source-code", "repository", "diff", "merge", "branch", "commit"],
+  "description": "Distributed version control system for tracking changes in source code",
+  "description_ja": "ソースコードの変更を追跡する分散バージョン管理システム",
+  "install": {
+    "brew": "git",
+    "apt": "git",
+    "choco": "git",
+    "check": "git --version"
+  },
+  "subcommands": [
+    { "name": "clone", "description": "Clone a repository into a new directory", "usage": "git clone <url> [<dir>]" },
+    { "name": "commit", "description": "Record changes to the repository", "usage": "git commit [-m <msg>]" },
+    { "name": "push", "description": "Update remote refs along with associated objects", "usage": "git push [<remote>] [<branch>]" },
+    { "name": "pull", "description": "Fetch from and integrate with another repository or branch", "usage": "git pull [<remote>] [<branch>]" },
+    { "name": "status", "description": "Show the working tree status", "usage": "git status" },
+    { "name": "diff", "description": "Show changes between commits, commit and working tree, etc", "usage": "git diff [<path>...]" },
+    { "name": "log", "description": "Show commit logs", "usage": "git log [--oneline] [--graph]" },
+    { "name": "branch", "description": "List, create, or delete branches", "usage": "git branch [<name>]" },
+    { "name": "checkout", "description": "Switch branches or restore working tree files", "usage": "git checkout <branch>" },
+    { "name": "merge", "description": "Join two or more development histories together", "usage": "git merge <branch>" },
+    { "name": "stash", "description": "Stash changes in a dirty working directory away", "usage": "git stash [push|pop|list]" },
+    { "name": "rebase", "description": "Reapply commits on top of another base tip", "usage": "git rebase <branch>" }
+  ],
+  "intents": [
+    "リポジトリをクローンしたい", "変更をコミットしたい", "ブランチを切り替えたい",
+    "差分を確認したい", "コミット履歴を見たい", "変更をプッシュしたい",
+    "変更をプルしたい", "ブランチを作りたい", "マージしたい", "変更を一時退避したい",
+    "clone a repository", "commit changes", "check diff", "view commit history",
+    "push changes", "pull latest", "create branch", "switch branch", "merge branches"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

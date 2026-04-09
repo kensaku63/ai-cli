@@ -1,0 +1,23 @@
+{
+  "id": "rsync",
+  "name": "rsync",
+  "type": "cli",
+  "categories": ["file-transfer", "backup"],
+  "tags": ["sync", "copy", "backup", "incremental", "remote", "mirror"],
+  "description": "Fast, versatile file copying tool for local and remote incremental transfers",
+  "description_ja": "高速で柔軟なファイル同期ツール。ローカル・リモート間の差分転送に対応",
+  "install": {
+    "brew": "rsync",
+    "apt": "rsync",
+    "check": "rsync --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルを同期したい", "ディレクトリをバックアップしたい", "差分コピーしたい",
+    "リモートとファイルを同期したい", "ミラーリングしたい",
+    "sync files", "backup directory", "incremental copy",
+    "sync with remote server", "mirror directory"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

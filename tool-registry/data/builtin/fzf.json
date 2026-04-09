@@ -1,0 +1,24 @@
+{
+  "id": "fzf",
+  "name": "fzf",
+  "type": "cli",
+  "categories": ["search", "interactive"],
+  "tags": ["fuzzy-finder", "search", "interactive", "filter", "select", "picker"],
+  "description": "General-purpose command-line fuzzy finder for interactive filtering and selection",
+  "description_ja": "インタラクティブなあいまい検索・選択を行う汎用コマンドラインツール",
+  "install": {
+    "brew": "fzf",
+    "apt": "fzf",
+    "choco": "fzf",
+    "check": "fzf --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルをあいまい検索で選びたい", "インタラクティブに選択したい",
+    "リストからフィルタリングしたい", "履歴をあいまい検索したい",
+    "fuzzy find files", "interactive selection", "filter list interactively",
+    "search and select", "fuzzy search history"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

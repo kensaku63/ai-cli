@@ -1,0 +1,35 @@
+{
+  "id": "docker",
+  "name": "docker",
+  "type": "cli",
+  "categories": ["container", "devops"],
+  "tags": ["container", "image", "virtualization", "deployment", "microservices"],
+  "description": "Platform for building, sharing, and running containerized applications",
+  "description_ja": "コンテナ化アプリケーションの構築・共有・実行プラットフォーム",
+  "install": {
+    "brew": "docker",
+    "apt": "docker.io",
+    "choco": "docker-desktop",
+    "check": "docker --version"
+  },
+  "subcommands": [
+    { "name": "build", "description": "Build an image from a Dockerfile", "usage": "docker build -t <tag> <path>" },
+    { "name": "run", "description": "Create and run a new container from an image", "usage": "docker run [options] <image>" },
+    { "name": "ps", "description": "List running containers", "usage": "docker ps [-a]" },
+    { "name": "images", "description": "List images", "usage": "docker images" },
+    { "name": "pull", "description": "Download an image from a registry", "usage": "docker pull <image>" },
+    { "name": "stop", "description": "Stop one or more running containers", "usage": "docker stop <container>" },
+    { "name": "rm", "description": "Remove one or more containers", "usage": "docker rm <container>" },
+    { "name": "compose", "description": "Run multi-container applications with Docker Compose", "usage": "docker compose up [-d]" },
+    { "name": "logs", "description": "Fetch the logs of a container", "usage": "docker logs <container>" },
+    { "name": "exec", "description": "Execute a command in a running container", "usage": "docker exec -it <container> <cmd>" }
+  ],
+  "intents": [
+    "コンテナを起動したい", "コンテナを停止したい", "Dockerイメージをビルドしたい",
+    "実行中のコンテナを確認したい", "コンテナのログを見たい", "Docker Composeで起動したい",
+    "run a container", "build docker image", "list running containers",
+    "view container logs", "stop container", "docker compose up"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

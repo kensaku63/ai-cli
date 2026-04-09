@@ -1,0 +1,28 @@
+{
+  "id": "pip",
+  "name": "pip",
+  "type": "cli",
+  "categories": ["package-manager", "python"],
+  "tags": ["python", "package", "install", "dependency", "pypi"],
+  "description": "Python package installer for installing packages from PyPI and other indexes",
+  "description_ja": "Pythonパッケージインストーラ。PyPIからパッケージをインストール・管理",
+  "install": {
+    "apt": "python3-pip",
+    "check": "pip --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install packages", "usage": "pip install <pkg>" },
+    { "name": "uninstall", "description": "Uninstall packages", "usage": "pip uninstall <pkg>" },
+    { "name": "list", "description": "List installed packages", "usage": "pip list" },
+    { "name": "freeze", "description": "Output installed packages in requirements format", "usage": "pip freeze > requirements.txt" },
+    { "name": "search", "description": "Search PyPI for packages", "usage": "pip search <query>" }
+  ],
+  "intents": [
+    "Pythonパッケージをインストールしたい", "pipで依存関係を管理したい",
+    "requirements.txtを生成したい", "インストール済みパッケージを確認したい",
+    "install python package", "manage python dependencies",
+    "generate requirements.txt", "list installed python packages"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

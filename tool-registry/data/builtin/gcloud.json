@@ -1,0 +1,30 @@
+{
+  "id": "gcloud",
+  "name": "gcloud",
+  "type": "cli",
+  "categories": ["cloud", "gcp"],
+  "tags": ["gcp", "google-cloud", "cloud", "compute", "storage", "kubernetes"],
+  "description": "Google Cloud CLI for managing GCP resources, projects, and services",
+  "description_ja": "Google Cloud Platformのリソース・プロジェクト・サービスを管理するCLI",
+  "install": {
+    "brew": "google-cloud-sdk",
+    "choco": "gcloudsdk",
+    "check": "gcloud --version"
+  },
+  "subcommands": [
+    { "name": "compute", "description": "Manage Compute Engine resources", "usage": "gcloud compute <command>" },
+    { "name": "storage", "description": "Manage Cloud Storage buckets and objects", "usage": "gcloud storage <command>" },
+    { "name": "run", "description": "Manage Cloud Run services", "usage": "gcloud run <command>" },
+    { "name": "functions", "description": "Manage Cloud Functions", "usage": "gcloud functions <command>" },
+    { "name": "auth", "description": "Manage authentication", "usage": "gcloud auth login" },
+    { "name": "config", "description": "Manage SDK configuration", "usage": "gcloud config set <property> <value>" }
+  ],
+  "intents": [
+    "GCPのリソースを管理したい", "GCEインスタンスを確認したい", "Cloud Runにデプロイしたい",
+    "GCPの認証をしたい", "Cloud Storageにアップロードしたい",
+    "manage GCP resources", "deploy to Cloud Run", "authenticate with Google Cloud",
+    "list compute instances", "upload to Cloud Storage"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

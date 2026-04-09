@@ -1,0 +1,22 @@
+{
+  "id": "find",
+  "name": "find",
+  "type": "cli",
+  "categories": ["search", "filesystem"],
+  "tags": ["find", "search", "files", "directory", "filter", "name", "type", "size"],
+  "description": "Search for files and directories in a directory hierarchy based on name, type, size, and more",
+  "description_ja": "名前・種類・サイズ等の条件でディレクトリ階層内のファイルを検索",
+  "install": {
+    "apt": "findutils",
+    "check": "find --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルを名前で探したい", "大きいファイルを見つけたい", "特定の拡張子のファイルを探したい",
+    "古いファイルを見つけたい", "空のディレクトリを探したい",
+    "find files by name", "find large files", "find files by extension",
+    "find old files", "find empty directories", "search filesystem"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

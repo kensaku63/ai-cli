@@ -1,0 +1,24 @@
+{
+  "id": "curl",
+  "name": "curl",
+  "type": "cli",
+  "categories": ["network", "http"],
+  "tags": ["http", "request", "api", "download", "upload", "rest", "web"],
+  "description": "Command line tool for transferring data with URLs, supporting HTTP, HTTPS, FTP, and more",
+  "description_ja": "URLを使ったデータ転送ツール。HTTP/HTTPS/FTP等に対応",
+  "install": {
+    "brew": "curl",
+    "apt": "curl",
+    "choco": "curl",
+    "check": "curl --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "APIにリクエストを送りたい", "URLからダウンロードしたい", "HTTPリクエストを送りたい",
+    "REST APIを叩きたい", "POSTリクエストを送りたい", "ヘッダーを付けてリクエストしたい",
+    "send HTTP request", "download from URL", "call REST API",
+    "POST request with JSON", "check if URL is reachable"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

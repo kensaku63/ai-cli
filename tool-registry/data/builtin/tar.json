@@ -1,0 +1,22 @@
+{
+  "id": "tar",
+  "name": "tar",
+  "type": "cli",
+  "categories": ["archive", "compression"],
+  "tags": ["archive", "compress", "extract", "gzip", "bzip2", "zip", "backup"],
+  "description": "Archive utility for creating and extracting tar archives, with optional compression",
+  "description_ja": "tarアーカイブの作成・展開ユーティリティ。gzip/bzip2等の圧縮に対応",
+  "install": {
+    "apt": "tar",
+    "check": "tar --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルをアーカイブしたい", "tar.gzを展開したい", "圧縮ファイルを作りたい",
+    "アーカイブの中身を確認したい", "ディレクトリを圧縮したい",
+    "create tar archive", "extract tar.gz", "compress directory",
+    "list archive contents", "create compressed backup"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
