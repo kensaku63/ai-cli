@@ -1,0 +1,25 @@
+{
+  "id": "less",
+  "name": "less",
+  "type": "cli",
+  "categories": ["text-processing"],
+  "tags": ["pager", "viewer", "text", "file", "scroll"],
+  "description": "Terminal pager — view and navigate large text files with scrolling and search",
+  "description_ja": "ターミナルページャ — スクロールと検索で大きなテキストファイルを閲覧・ナビゲート",
+  "install": {
+    "apt": "less",
+    "check": "less --version"
+  },
+  "subcommands": [
+    { "name": "view", "description": "View a file", "usage": "less <file>" },
+    { "name": "line", "description": "Start at a specific line", "usage": "less +<N> <file>" },
+    { "name": "search", "description": "Start with a search pattern", "usage": "less +/<pattern> <file>" }
+  ],
+  "intents": [
+    "大きなファイルを閲覧したい", "ファイルをスクロールして見たい", "ページャで表示したい",
+    "view large file with paging", "scroll through file contents",
+    "browse file with search"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "rustc",
+  "name": "rustc",
+  "type": "cli",
+  "categories": ["compiler", "development"],
+  "tags": ["rust", "compiler", "systems", "programming", "wasm"],
+  "description": "Rust compiler — compile Rust source code into executables and libraries",
+  "description_ja": "Rustコンパイラ — Rustソースコードを実行ファイルやライブラリにコンパイル",
+  "install": {
+    "brew": "rust",
+    "check": "rustc --version"
+  },
+  "subcommands": [
+    { "name": "compile", "description": "Compile a Rust source file", "usage": "rustc <file.rs>" },
+    { "name": "edition", "description": "Specify Rust edition", "usage": "rustc --edition 2021 <file.rs>" }
+  ],
+  "intents": [
+    "Rustのコードをコンパイルしたい", "Rustプログラムをビルドしたい",
+    "compile Rust code", "build Rust program",
+    "Rust compiler version"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

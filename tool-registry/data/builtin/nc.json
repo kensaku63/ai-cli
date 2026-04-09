@@ -1,0 +1,27 @@
+{
+  "id": "nc",
+  "name": "nc",
+  "type": "cli",
+  "categories": ["network"],
+  "tags": ["netcat", "tcp", "udp", "port", "network", "debugging"],
+  "description": "Netcat — read/write data across network connections using TCP or UDP",
+  "description_ja": "Netcat — TCPまたはUDPを使用してネットワーク接続を介してデータを読み書き",
+  "install": {
+    "apt": "netcat-openbsd",
+    "brew": "netcat",
+    "check": "nc -h 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "listen", "description": "Listen for incoming connections", "usage": "nc -l <port>" },
+    { "name": "connect", "description": "Connect to a host and port", "usage": "nc <host> <port>" },
+    { "name": "scan", "description": "Port scanning", "usage": "nc -zv <host> <port-range>" },
+    { "name": "transfer", "description": "File transfer over network", "usage": "nc -l <port> > file" }
+  ],
+  "intents": [
+    "ポートが開いているか確認したい", "TCP接続をテストしたい", "ネットワークでデータを送りたい",
+    "test if port is open", "test TCP connection", "transfer file over network",
+    "listen on a port", "port scan with netcat"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "tmux",
+  "name": "tmux",
+  "type": "cli",
+  "categories": ["system", "development"],
+  "tags": ["terminal", "multiplexer", "session", "window", "split"],
+  "description": "Terminal multiplexer — manage multiple terminal sessions, windows, and panes",
+  "description_ja": "ターミナルマルチプレクサ — 複数のターミナルセッション、ウィンドウ、ペインを管理",
+  "install": {
+    "brew": "tmux",
+    "apt": "tmux",
+    "check": "tmux -V"
+  },
+  "subcommands": [
+    { "name": "new", "description": "Create a new session", "usage": "tmux new -s <name>" },
+    { "name": "attach", "description": "Attach to an existing session", "usage": "tmux attach -t <name>" },
+    { "name": "list", "description": "List sessions", "usage": "tmux ls" },
+    { "name": "kill", "description": "Kill a session", "usage": "tmux kill-session -t <name>" },
+    { "name": "split", "description": "Split window into panes", "usage": "tmux split-window [-v|-h]" }
+  ],
+  "intents": [
+    "ターミナルを分割したい", "tmuxセッションを作成したい", "セッションにアタッチしたい",
+    "split terminal", "create tmux session", "attach to tmux session",
+    "manage terminal sessions", "terminal multiplexer"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

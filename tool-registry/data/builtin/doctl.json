@@ -1,0 +1,27 @@
+{
+  "id": "doctl",
+  "name": "doctl",
+  "type": "cli",
+  "categories": ["cloud", "devops"],
+  "tags": ["digitalocean", "cloud", "droplets", "kubernetes", "hosting"],
+  "description": "DigitalOcean CLI for managing droplets, Kubernetes, databases, and other resources",
+  "description_ja": "DigitalOceanのDroplet、Kubernetes、データベース等を管理するCLI",
+  "install": {
+    "brew": "doctl",
+    "check": "doctl version"
+  },
+  "subcommands": [
+    { "name": "compute", "description": "Manage compute resources (droplets, images, etc.)", "usage": "doctl compute droplet create <name>" },
+    { "name": "kubernetes", "description": "Manage Kubernetes clusters", "usage": "doctl kubernetes cluster create <name>" },
+    { "name": "databases", "description": "Manage databases", "usage": "doctl databases create <name>" },
+    { "name": "apps", "description": "Manage App Platform apps", "usage": "doctl apps create" },
+    { "name": "auth", "description": "Manage authentication", "usage": "doctl auth init" }
+  ],
+  "intents": [
+    "DigitalOceanのDropletを作成したい", "DOのKubernetesを管理したい",
+    "create DigitalOcean droplet", "manage DO Kubernetes",
+    "create DigitalOcean database", "deploy to DigitalOcean"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

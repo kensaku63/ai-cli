@@ -1,0 +1,30 @@
+{
+  "id": "helm",
+  "name": "helm",
+  "type": "cli",
+  "categories": ["container", "devops"],
+  "tags": ["kubernetes", "helm", "charts", "package-manager", "deployment"],
+  "description": "Kubernetes package manager — install, upgrade, and manage Helm charts",
+  "description_ja": "Kubernetesパッケージマネージャ — Helmチャートのインストール・アップグレード・管理",
+  "install": {
+    "brew": "helm",
+    "choco": "kubernetes-helm",
+    "check": "helm version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install a Helm chart", "usage": "helm install <release> <chart>" },
+    { "name": "upgrade", "description": "Upgrade a release", "usage": "helm upgrade <release> <chart>" },
+    { "name": "list", "description": "List releases", "usage": "helm list" },
+    { "name": "repo", "description": "Manage chart repositories", "usage": "helm repo add <name> <url>" },
+    { "name": "uninstall", "description": "Uninstall a release", "usage": "helm uninstall <release>" },
+    { "name": "template", "description": "Render chart templates locally", "usage": "helm template <release> <chart>" }
+  ],
+  "intents": [
+    "Helmチャートをインストールしたい", "Kubernetesにアプリをデプロイしたい",
+    "Helmリリースをアップグレードしたい", "チャートリポジトリを追加したい",
+    "install Helm chart", "deploy app to Kubernetes with Helm",
+    "upgrade Helm release", "manage Kubernetes packages"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

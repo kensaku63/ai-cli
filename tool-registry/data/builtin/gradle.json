@@ -1,0 +1,28 @@
+{
+  "id": "gradle",
+  "name": "gradle",
+  "type": "cli",
+  "categories": ["build", "development"],
+  "tags": ["java", "kotlin", "android", "build", "dependencies"],
+  "description": "Build automation tool for Java, Kotlin, Android, and polyglot projects",
+  "description_ja": "Java、Kotlin、Android、多言語プロジェクト向けビルド自動化ツール",
+  "install": {
+    "brew": "gradle",
+    "choco": "gradle",
+    "check": "gradle --version"
+  },
+  "subcommands": [
+    { "name": "build", "description": "Build the project", "usage": "gradle build" },
+    { "name": "test", "description": "Run tests", "usage": "gradle test" },
+    { "name": "run", "description": "Run the application", "usage": "gradle run" },
+    { "name": "clean", "description": "Clean build outputs", "usage": "gradle clean" },
+    { "name": "dependencies", "description": "Show dependency tree", "usage": "gradle dependencies" }
+  ],
+  "intents": [
+    "Gradleでビルドしたい", "Javaプロジェクトをビルドしたい", "Androidアプリをビルドしたい",
+    "build with Gradle", "build Java project", "build Android app",
+    "run Gradle tests", "show dependency tree"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

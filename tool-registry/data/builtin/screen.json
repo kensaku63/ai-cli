@@ -1,0 +1,27 @@
+{
+  "id": "screen",
+  "name": "screen",
+  "type": "cli",
+  "categories": ["system"],
+  "tags": ["terminal", "multiplexer", "session", "detach", "remote"],
+  "description": "Terminal multiplexer — run persistent terminal sessions that survive disconnection",
+  "description_ja": "ターミナルマルチプレクサ — 切断後も維持される永続的ターミナルセッションの実行",
+  "install": {
+    "apt": "screen",
+    "brew": "screen",
+    "check": "screen --version"
+  },
+  "subcommands": [
+    { "name": "new", "description": "Create a new session", "usage": "screen -S <name>" },
+    { "name": "list", "description": "List existing sessions", "usage": "screen -ls" },
+    { "name": "reattach", "description": "Reattach to a session", "usage": "screen -r <name>" },
+    { "name": "detach", "description": "Detach from current session", "usage": "Ctrl-a d" }
+  ],
+  "intents": [
+    "screenセッションを作成したい", "セッションを再接続したい", "バックグラウンドで実行したい",
+    "create screen session", "reattach to screen",
+    "run command in background session", "persistent terminal session"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

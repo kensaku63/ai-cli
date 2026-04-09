@@ -1,0 +1,22 @@
+{
+  "id": "base64",
+  "name": "base64",
+  "type": "cli",
+  "categories": ["text-processing", "security"],
+  "tags": ["encoding", "decoding", "base64", "binary", "text"],
+  "description": "Encode or decode data in Base64 format",
+  "description_ja": "Base64形式でデータをエンコードまたはデコード",
+  "install": {
+    "check": "base64 --version 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "encode", "description": "Encode data to Base64", "usage": "echo 'data' | base64" },
+    { "name": "decode", "description": "Decode Base64 data", "usage": "echo 'encoded' | base64 -d" }
+  ],
+  "intents": [
+    "Base64でエンコードしたい", "Base64をデコードしたい", "バイナリをテキストに変換したい",
+    "encode to Base64", "decode Base64", "convert binary to text encoding"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

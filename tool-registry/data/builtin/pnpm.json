@@ -1,0 +1,28 @@
+{
+  "id": "pnpm",
+  "name": "pnpm",
+  "type": "cli",
+  "categories": ["package-manager", "development"],
+  "tags": ["javascript", "npm", "package-manager", "node", "fast", "disk-efficient"],
+  "description": "Fast, disk-efficient JavaScript package manager using content-addressable storage",
+  "description_ja": "コンテンツアドレス可能ストレージを使用する高速でディスク効率の良いJavaScriptパッケージマネージャ",
+  "install": {
+    "npm": "pnpm",
+    "brew": "pnpm",
+    "check": "pnpm --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install all dependencies", "usage": "pnpm install" },
+    { "name": "add", "description": "Add a package", "usage": "pnpm add <package>" },
+    { "name": "remove", "description": "Remove a package", "usage": "pnpm remove <package>" },
+    { "name": "run", "description": "Run a script", "usage": "pnpm run <script>" },
+    { "name": "exec", "description": "Execute a command in a package scope", "usage": "pnpm exec <command>" }
+  ],
+  "intents": [
+    "pnpmでパッケージをインストールしたい", "pnpmで依存関係を追加したい",
+    "install package with pnpm", "add dependency with pnpm",
+    "run pnpm script", "fast npm alternative"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

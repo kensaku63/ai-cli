@@ -1,0 +1,28 @@
+{
+  "id": "tcpdump",
+  "name": "tcpdump",
+  "type": "cli",
+  "categories": ["network", "monitoring"],
+  "tags": ["packet", "capture", "network", "debugging", "sniffing", "pcap"],
+  "description": "Capture and analyze network packets — dump traffic on a network interface",
+  "description_ja": "ネットワークパケットのキャプチャと解析 — ネットワークインターフェース上のトラフィックをダンプ",
+  "install": {
+    "apt": "tcpdump",
+    "brew": "tcpdump",
+    "check": "tcpdump --version"
+  },
+  "subcommands": [
+    { "name": "interface", "description": "Capture on a specific interface", "usage": "tcpdump -i <interface>" },
+    { "name": "filter", "description": "Capture with BPF filter", "usage": "tcpdump 'port 80'" },
+    { "name": "write", "description": "Write capture to a file", "usage": "tcpdump -w <file.pcap>" },
+    { "name": "read", "description": "Read from a capture file", "usage": "tcpdump -r <file.pcap>" }
+  ],
+  "intents": [
+    "ネットワークパケットをキャプチャしたい", "通信内容を解析したい",
+    "特定ポートのトラフィックを見たい",
+    "capture network packets", "analyze network traffic",
+    "sniff packets on interface", "save packet capture"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

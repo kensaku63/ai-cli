@@ -1,0 +1,29 @@
+{
+  "id": "ansible",
+  "name": "ansible",
+  "type": "cli",
+  "categories": ["devops", "automation"],
+  "tags": ["automation", "configuration", "provisioning", "infrastructure", "agentless"],
+  "description": "Agentless IT automation — configure systems, deploy applications, and orchestrate workflows",
+  "description_ja": "エージェントレスIT自動化 — システム設定、アプリデプロイ、ワークフローオーケストレーション",
+  "install": {
+    "pip": "ansible",
+    "brew": "ansible",
+    "apt": "ansible",
+    "check": "ansible --version"
+  },
+  "subcommands": [
+    { "name": "playbook", "description": "Run an Ansible playbook", "usage": "ansible-playbook <playbook.yml>" },
+    { "name": "ping", "description": "Ping all hosts in inventory", "usage": "ansible all -m ping" },
+    { "name": "galaxy", "description": "Manage Ansible roles and collections", "usage": "ansible-galaxy install <role>" },
+    { "name": "vault", "description": "Encrypt/decrypt secrets", "usage": "ansible-vault encrypt <file>" },
+    { "name": "adhoc", "description": "Run ad-hoc commands on hosts", "usage": "ansible <hosts> -a '<command>'" }
+  ],
+  "intents": [
+    "サーバーを自動設定したい", "Ansibleプレイブックを実行したい", "インフラを自動化したい",
+    "configure servers automatically", "run Ansible playbook",
+    "automate infrastructure", "manage server configuration"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "apt",
+  "name": "apt",
+  "type": "cli",
+  "categories": ["package-manager", "system"],
+  "tags": ["debian", "ubuntu", "linux", "package-manager", "install"],
+  "description": "Debian/Ubuntu package manager for installing, updating, and removing system packages",
+  "description_ja": "Debian/Ubuntuのシステムパッケージのインストール・更新・削除を行うパッケージマネージャ",
+  "install": {
+    "check": "apt --version"
+  },
+  "subcommands": [
+    { "name": "install", "description": "Install a package", "usage": "apt install <package>" },
+    { "name": "update", "description": "Update package lists", "usage": "apt update" },
+    { "name": "upgrade", "description": "Upgrade installed packages", "usage": "apt upgrade" },
+    { "name": "remove", "description": "Remove a package", "usage": "apt remove <package>" },
+    { "name": "search", "description": "Search for packages", "usage": "apt search <query>" },
+    { "name": "list", "description": "List packages", "usage": "apt list --installed" }
+  ],
+  "intents": [
+    "パッケージをインストールしたい", "パッケージを更新したい", "Linuxにソフトをインストールしたい",
+    "install system package", "update packages on Ubuntu",
+    "search for apt packages", "remove installed package"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "dmesg",
+  "name": "dmesg",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["kernel", "hardware", "logs", "linux", "debugging", "boot"],
+  "description": "Display kernel ring buffer messages — hardware events, driver messages, boot diagnostics",
+  "description_ja": "カーネルリングバッファメッセージの表示 — ハードウェアイベント、ドライバメッセージ、起動診断",
+  "install": {
+    "check": "dmesg --version"
+  },
+  "subcommands": [
+    { "name": "follow", "description": "Follow new kernel messages", "usage": "dmesg -w" },
+    { "name": "human", "description": "Display with human-readable timestamps", "usage": "dmesg -T" },
+    { "name": "level", "description": "Filter by log level", "usage": "dmesg --level=err" }
+  ],
+  "intents": [
+    "カーネルメッセージを見たい", "ハードウェアのエラーを確認したい", "起動ログを見たい",
+    "view kernel messages", "check hardware errors", "boot diagnostics",
+    "kernel ring buffer"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

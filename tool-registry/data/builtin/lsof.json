@@ -1,0 +1,28 @@
+{
+  "id": "lsof",
+  "name": "lsof",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["files", "process", "network", "debugging", "ports"],
+  "description": "List open files — show which processes have files, sockets, or ports open",
+  "description_ja": "オープンファイルの一覧 — どのプロセスがファイル、ソケット、ポートを開いているかを表示",
+  "install": {
+    "apt": "lsof",
+    "brew": "lsof",
+    "check": "lsof -v 2>&1 | head -1"
+  },
+  "subcommands": [
+    { "name": "port", "description": "List processes using a specific port", "usage": "lsof -i :<port>" },
+    { "name": "user", "description": "List files opened by a user", "usage": "lsof -u <user>" },
+    { "name": "process", "description": "List files opened by a process", "usage": "lsof -p <pid>" },
+    { "name": "network", "description": "List network connections", "usage": "lsof -i" }
+  ],
+  "intents": [
+    "ポートを使っているプロセスを調べたい", "開いているファイルを確認したい",
+    "ネットワーク接続を一覧したい",
+    "find process using port", "list open files", "check network connections",
+    "which process is using this file"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

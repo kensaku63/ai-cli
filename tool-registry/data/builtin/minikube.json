@@ -1,0 +1,30 @@
+{
+  "id": "minikube",
+  "name": "minikube",
+  "type": "cli",
+  "categories": ["container", "devops"],
+  "tags": ["kubernetes", "local", "development", "cluster", "minikube"],
+  "description": "Run a local Kubernetes cluster for development and testing",
+  "description_ja": "開発・テスト用のローカルKubernetesクラスタを実行するツール",
+  "install": {
+    "brew": "minikube",
+    "choco": "minikube",
+    "check": "minikube version"
+  },
+  "subcommands": [
+    { "name": "start", "description": "Start a local Kubernetes cluster", "usage": "minikube start" },
+    { "name": "stop", "description": "Stop the cluster", "usage": "minikube stop" },
+    { "name": "delete", "description": "Delete the cluster", "usage": "minikube delete" },
+    { "name": "dashboard", "description": "Open the Kubernetes dashboard", "usage": "minikube dashboard" },
+    { "name": "service", "description": "Access a service URL", "usage": "minikube service <name>" },
+    { "name": "status", "description": "Show cluster status", "usage": "minikube status" }
+  ],
+  "intents": [
+    "ローカルKubernetesを起動したい", "minikubeクラスタを開始したい",
+    "Kubernetesダッシュボードを開きたい",
+    "start local Kubernetes cluster", "run minikube",
+    "open Kubernetes dashboard", "local K8s development"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

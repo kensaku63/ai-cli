@@ -1,0 +1,25 @@
+{
+  "id": "mongosh",
+  "name": "mongosh",
+  "type": "cli",
+  "categories": ["database"],
+  "tags": ["mongodb", "nosql", "database", "document", "query"],
+  "description": "MongoDB Shell for connecting to and querying MongoDB databases",
+  "description_ja": "MongoDBデータベースへの接続とクエリ実行を行うシェル",
+  "install": {
+    "brew": "mongosh",
+    "npm": "mongosh",
+    "check": "mongosh --version"
+  },
+  "subcommands": [
+    { "name": "connect", "description": "Connect to a MongoDB instance", "usage": "mongosh <connection-string>" },
+    { "name": "eval", "description": "Evaluate a JavaScript expression", "usage": "mongosh --eval 'db.collection.find()'" }
+  ],
+  "intents": [
+    "MongoDBに接続したい", "MongoDBのクエリを実行したい", "ドキュメントを検索したい",
+    "connect to MongoDB", "run MongoDB query", "find documents in MongoDB",
+    "create MongoDB collection"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "vagrant",
+  "name": "vagrant",
+  "type": "cli",
+  "categories": ["devops", "development"],
+  "tags": ["vm", "virtualization", "development", "environment", "provisioning"],
+  "description": "Build and manage portable development environments using virtual machines",
+  "description_ja": "仮想マシンを使用したポータブルな開発環境の構築・管理",
+  "install": {
+    "brew": "vagrant",
+    "choco": "vagrant",
+    "check": "vagrant --version"
+  },
+  "subcommands": [
+    { "name": "up", "description": "Start and provision the VM", "usage": "vagrant up" },
+    { "name": "ssh", "description": "SSH into the VM", "usage": "vagrant ssh" },
+    { "name": "halt", "description": "Stop the VM", "usage": "vagrant halt" },
+    { "name": "destroy", "description": "Destroy the VM", "usage": "vagrant destroy" },
+    { "name": "init", "description": "Initialize a new Vagrant environment", "usage": "vagrant init <box>" }
+  ],
+  "intents": [
+    "仮想マシンを起動したい", "開発環境を構築したい", "VMにSSH接続したい",
+    "start virtual machine", "create development environment",
+    "SSH into VM", "provision development VM"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

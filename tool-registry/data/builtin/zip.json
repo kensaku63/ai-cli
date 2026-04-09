@@ -1,0 +1,27 @@
+{
+  "id": "zip",
+  "name": "zip",
+  "type": "cli",
+  "categories": ["archive"],
+  "tags": ["compression", "archive", "zip", "backup", "packaging"],
+  "description": "Create ZIP archives — compress files and directories into .zip format",
+  "description_ja": "ZIPアーカイブの作成 — ファイルとディレクトリを.zip形式に圧縮",
+  "install": {
+    "apt": "zip",
+    "brew": "zip",
+    "check": "zip --version"
+  },
+  "subcommands": [
+    { "name": "create", "description": "Create a ZIP archive", "usage": "zip <archive.zip> <files...>" },
+    { "name": "recursive", "description": "ZIP a directory recursively", "usage": "zip -r <archive.zip> <dir>" },
+    { "name": "encrypt", "description": "Create encrypted ZIP", "usage": "zip -e <archive.zip> <files...>" },
+    { "name": "unzip", "description": "Extract ZIP archive", "usage": "unzip <archive.zip>" }
+  ],
+  "intents": [
+    "ファイルをZIPに圧縮したい", "ZIPを解凍したい", "ディレクトリをアーカイブしたい",
+    "compress files to ZIP", "extract ZIP archive", "create ZIP from directory",
+    "unzip files"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "vercel",
+  "name": "vercel",
+  "type": "cli",
+  "categories": ["cloud", "deployment"],
+  "tags": ["vercel", "serverless", "frontend", "deployment", "hosting", "nextjs"],
+  "description": "CLI for deploying and managing Vercel projects (serverless, edge, frontend)",
+  "description_ja": "Vercelプロジェクト（サーバーレス・エッジ・フロントエンド）のデプロイ・管理CLI",
+  "install": {
+    "npm": "vercel",
+    "check": "vercel --version"
+  },
+  "subcommands": [
+    { "name": "deploy", "description": "Deploy the current project to Vercel", "usage": "vercel deploy [--prod]" },
+    { "name": "dev", "description": "Start a local development server", "usage": "vercel dev" },
+    { "name": "env", "description": "Manage environment variables", "usage": "vercel env add <key>" },
+    { "name": "domains", "description": "Manage domains for a project", "usage": "vercel domains add <domain>" },
+    { "name": "logs", "description": "Display runtime logs", "usage": "vercel logs <url>" },
+    { "name": "pull", "description": "Pull environment variables and project settings", "usage": "vercel pull" }
+  ],
+  "intents": [
+    "Vercelにデプロイしたい", "Vercelのプレビューを確認したい", "フロントエンドをデプロイしたい",
+    "deploy to Vercel", "preview deployment", "deploy frontend app",
+    "deploy Next.js app", "manage Vercel domains"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mysql",
+  "name": "mysql",
+  "type": "cli",
+  "categories": ["database"],
+  "tags": ["mysql", "database", "sql", "query", "relational"],
+  "description": "MySQL command-line client for connecting to and querying MySQL databases",
+  "description_ja": "MySQLデータベースへの接続とクエリ実行を行うコマンドラインクライアント",
+  "install": {
+    "brew": "mysql-client",
+    "apt": "mysql-client",
+    "check": "mysql --version"
+  },
+  "subcommands": [
+    { "name": "connect", "description": "Connect to a MySQL server", "usage": "mysql -h <host> -u <user> -p <dbname>" },
+    { "name": "execute", "description": "Execute a SQL statement", "usage": "mysql -e 'SELECT ...' <dbname>" },
+    { "name": "import", "description": "Import SQL from a file", "usage": "mysql <dbname> < dump.sql" }
+  ],
+  "intents": [
+    "MySQLに接続したい", "MySQLでクエリを実行したい", "MySQLデータベースを作成したい",
+    "connect to MySQL", "run MySQL query", "create MySQL database",
+    "import SQL dump into MySQL"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

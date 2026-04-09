@@ -1,0 +1,29 @@
+{
+  "id": "redis-cli",
+  "name": "redis-cli",
+  "type": "cli",
+  "categories": ["database", "cache"],
+  "tags": ["redis", "cache", "key-value", "database", "in-memory"],
+  "description": "Redis command-line interface for interacting with Redis key-value store",
+  "description_ja": "Redisキーバリューストアと対話するコマンドラインインターフェース",
+  "install": {
+    "brew": "redis",
+    "apt": "redis-tools",
+    "check": "redis-cli --version"
+  },
+  "subcommands": [
+    { "name": "connect", "description": "Connect to a Redis server", "usage": "redis-cli -h <host> -p <port>" },
+    { "name": "get", "description": "Get the value of a key", "usage": "redis-cli GET <key>" },
+    { "name": "set", "description": "Set a key-value pair", "usage": "redis-cli SET <key> <value>" },
+    { "name": "monitor", "description": "Monitor all commands received by the server", "usage": "redis-cli MONITOR" },
+    { "name": "info", "description": "Get server information and statistics", "usage": "redis-cli INFO" }
+  ],
+  "intents": [
+    "Redisに接続したい", "Redisのキーを取得したい", "キャッシュの中身を確認したい",
+    "Redisサーバーの状態を見たい",
+    "connect to Redis", "get Redis key value", "check cache contents",
+    "monitor Redis commands", "Redis server info"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
