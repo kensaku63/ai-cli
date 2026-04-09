@@ -1,12 +1,15 @@
 /**
- * Tool Registry — Semantic search engine
+ * Tool Registry — Search engine
  *
- * P0 implementation: token-based text similarity scoring.
- * Combines exact name matching, intent matching, and keyword overlap
- * to rank tools by relevance to a natural language query.
+ * Two-stage search (MCP-Zero inspired):
+ *   Stage 1: Semantic embedding retrieval via all-MiniLM-L6-v2 (ONNX)
+ *   Stage 2: Re-rank with TF-IDF token-based scoring
+ *
+ * Falls back to TF-IDF only when the embedding model is unavailable.
  */
 
 import type { ToolMetadata, SearchResult } from "./schema.js";
+import { EmbeddingIndex } from "./embeddings.js";
 
 /** Tokenize text into lowercase words, removing punctuation */
 function tokenize(text: string): string[] {
@@ -155,4 +158,124 @@ export function searchTools(
 
   results.sort((a, b) => b.score - a.score);
   return results.slice(0, limit);
+}
+
+// ─── SearchEngine (hybrid: semantic + TF-IDF) ───
+
+export class SearchEngine {
+  private embeddingIndex: EmbeddingIndex | null = null;
+  private semanticReady = false;
+
+  /** Whether semantic search is available */
+  get isSemanticReady(): boolean {
+    return this.semanticReady;
+  }
+
+  /**
+   * Initialize the embedding model and build the semantic index.
+   * Returns true if semantic search is ready, false if falling back to TF-IDF.
+   */
+  async initSemantic(
+    tools: ToolMetadata[],
+    options?: { cachePath?: string },
+  ): Promise<boolean> {
+    try {
+      this.embeddingIndex = new EmbeddingIndex();
+      await this.embeddingIndex.build(tools);
+      this.semanticReady = true;
+      return true;
+    } catch {
+      this.embeddingIndex = null;
+      this.semanticReady = false;
+      return false;
+    }
+  }
+
+  /**
+   * Search with 2-stage hybrid scoring when semantic is available,
+   * otherwise fall back to TF-IDF only.
+   */
+  async search(
+    query: string,
+    tools: ToolMetadata[],
+    options: SearchOptions = {},
+  ): Promise<SearchResult[]> {
+    if (!this.embeddingIndex || !this.semanticReady) {
+      return searchTools(query, tools, options);
+    }
+    return this.hybridSearch(query, tools, options);
+  }
+
+  /**
+   * 2-stage hybrid search:
+   *   1. Semantic embedding retrieval (cosine similarity)
+   *   2. Re-rank by blending semantic + TF-IDF scores
+   */
+  private async hybridSearch(
+    query: string,
+    tools: ToolMetadata[],
+    options: SearchOptions = {},
+  ): Promise<SearchResult[]> {
+    const { limit = 5 } = options;
+
+    // Stage 1: Semantic retrieval — broad candidate set
+    const candidateCount = Math.max(limit * 3, 15);
+    const semanticHits = await this.embeddingIndex!.search(
+      query,
+      candidateCount,
+    );
+
+    // Pre-compute TF-IDF scores for all tools
+    const tfidfAll = searchTools(query, tools, {
+      limit: tools.length,
+      threshold: 0,
+    });
+    const tfidfMap = new Map(tfidfAll.map((r) => [r.tool.id, r]));
+
+    // Normalization factors
+    const maxSemantic = semanticHits[0]?.score ?? 1;
+    const maxTfidf = tfidfAll[0]?.score ?? 1;
+
+    // Stage 2: Blend scores — 70% semantic, 30% TF-IDF
+    const SEMANTIC_WEIGHT = 0.7;
+    const TFIDF_WEIGHT = 0.3;
+
+    const toolMap = new Map(tools.map((t) => [t.id, t]));
+    const results: SearchResult[] = [];
+
+    for (const hit of semanticHits) {
+      const tool = toolMap.get(hit.toolId);
+      if (!tool) continue;
+
+      const normSemantic =
+        maxSemantic > 0 ? hit.score / maxSemantic : 0;
+      const tfidf = tfidfMap.get(hit.toolId);
+      const normTfidf =
+        tfidf && maxTfidf > 0 ? tfidf.score / maxTfidf : 0;
+
+      const blended =
+        normSemantic * SEMANTIC_WEIGHT + normTfidf * TFIDF_WEIGHT;
+
+      const matchedOn = ["semantic"];
+      if (tfidf) matchedOn.push(...tfidf.matchedOn);
+
+      results.push({ tool, score: blended, matchedOn });
+    }
+
+    // Also include high TF-IDF results not in semantic candidates
+    // (handles exact name match edge cases)
+    const semanticIds = new Set(semanticHits.map((h) => h.toolId));
+    for (const tr of tfidfAll.slice(0, limit)) {
+      if (semanticIds.has(tr.tool.id)) continue;
+      const normTfidf = maxTfidf > 0 ? tr.score / maxTfidf : 0;
+      results.push({
+        tool: tr.tool,
+        score: normTfidf * TFIDF_WEIGHT,
+        matchedOn: tr.matchedOn,
+      });
+    }
+
+    results.sort((a, b) => b.score - a.score);
+    return results.slice(0, limit);
+  }
 }
