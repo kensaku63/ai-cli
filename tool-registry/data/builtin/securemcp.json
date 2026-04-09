@@ -1,0 +1,25 @@
+{
+  "id": "securemcp",
+  "name": "securemcp",
+  "type": "cli",
+  "categories": ["mcp", "security"],
+  "tags": ["mcp", "security", "audit", "verification", "safety", "2026"],
+  "description": "MCP security verification tool — audit and validate MCP server configurations for safety and compliance",
+  "description_ja": "MCP安全性検証ツール — MCPサーバー設定の監査と安全性・コンプライアンスの検証",
+  "install": {
+    "npm": "securemcp",
+    "check": "securemcp --version"
+  },
+  "subcommands": [
+    { "name": "audit", "description": "Audit an MCP server configuration", "usage": "securemcp audit <config-path>" },
+    { "name": "scan", "description": "Scan for security issues", "usage": "securemcp scan <server-url>" },
+    { "name": "verify", "description": "Verify server compliance", "usage": "securemcp verify <config>" }
+  ],
+  "intents": [
+    "MCPサーバーの安全性を検証したい", "MCPの設定を監査したい", "MCPのセキュリティをチェックしたい",
+    "verify MCP server security", "audit MCP configuration",
+    "check MCP server safety", "MCP security compliance"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

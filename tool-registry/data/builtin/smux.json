@@ -1,0 +1,26 @@
+{
+  "id": "smux",
+  "name": "smux",
+  "type": "cli",
+  "categories": ["ai", "automation"],
+  "tags": ["tmux", "multi-agent", "orchestration", "ai", "parallel", "2026"],
+  "description": "tmux-based multi-agent orchestration — run multiple AI coding agents in parallel across tmux panes",
+  "description_ja": "tmuxベースのマルチエージェントオーケストレーション — 複数のAIコーディングエージェントをtmuxペインで並行実行",
+  "install": {
+    "npm": "smux",
+    "check": "smux --version"
+  },
+  "subcommands": [
+    { "name": "start", "description": "Start multi-agent session", "usage": "smux start <config>" },
+    { "name": "run", "description": "Run agents in parallel", "usage": "smux run --agents <n> '<prompt>'" },
+    { "name": "status", "description": "Check agent status", "usage": "smux status" }
+  ],
+  "intents": [
+    "複数のAIエージェントを同時に動かしたい", "tmuxでエージェントを並行実行したい",
+    "マルチエージェントを管理したい",
+    "run multiple AI agents in parallel", "orchestrate coding agents",
+    "multi-agent tmux session", "parallel AI coding"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cc-connect",
+  "name": "cc-connect",
+  "type": "cli",
+  "categories": ["development", "design"],
+  "tags": ["code-connect", "figma", "design-system", "components", "mapping", "2026"],
+  "description": "Code Connect CLI — map design components to code implementations, bridging design systems and codebases",
+  "description_ja": "Code Connect CLI — デザインコンポーネントとコード実装をマッピングし、デザインシステムとコードベースを接続",
+  "install": {
+    "npm": "cc-connect",
+    "check": "cc-connect --version"
+  },
+  "subcommands": [
+    { "name": "connect", "description": "Map a design component to code", "usage": "cc-connect map <component> <code-path>" },
+    { "name": "sync", "description": "Sync design-code mappings", "usage": "cc-connect sync" },
+    { "name": "status", "description": "Show mapping status", "usage": "cc-connect status" }
+  ],
+  "intents": [
+    "デザインとコードのマッピングを管理したい", "デザインシステムとコードを接続したい",
+    "map design components to code", "sync design system with codebase",
+    "bridge design and code", "Code Connect mapping"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

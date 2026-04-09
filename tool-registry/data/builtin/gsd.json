@@ -1,0 +1,26 @@
+{
+  "id": "gsd",
+  "name": "gsd",
+  "type": "cli",
+  "categories": ["productivity", "ai"],
+  "tags": ["task", "management", "todo", "ai", "productivity", "2026"],
+  "description": "AI-powered task management CLI (\"Get Stuff Done\") — manage tasks, break down projects, and track progress from the terminal",
+  "description_ja": "AI搭載タスク管理CLI（\"Get Stuff Done\"） — タスク管理、プロジェクト分解、進捗追跡をターミナルで",
+  "install": {
+    "npm": "gsd-cli",
+    "check": "gsd --version"
+  },
+  "subcommands": [
+    { "name": "add", "description": "Add a new task", "usage": "gsd add '<task description>'" },
+    { "name": "list", "description": "List tasks", "usage": "gsd list" },
+    { "name": "done", "description": "Mark a task as completed", "usage": "gsd done <id>" },
+    { "name": "plan", "description": "AI-powered project planning", "usage": "gsd plan '<goal>'" }
+  ],
+  "intents": [
+    "タスクをCLIで管理したい", "AIでタスクを整理したい", "TODOリストをターミナルで管理したい",
+    "manage tasks from terminal", "AI task management",
+    "CLI todo list", "plan project with AI"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

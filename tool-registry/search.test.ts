@@ -13,8 +13,8 @@ before(async () => {
 });
 
 describe("Registry", () => {
-  it("loads all 128 builtin tools", () => {
-    assert.equal(tools.length, 128);
+  it("loads all 137 builtin tools", () => {
+    assert.equal(tools.length, 137);
   });
 
   it("each tool has required fields", () => {

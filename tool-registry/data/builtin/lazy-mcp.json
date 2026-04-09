@@ -1,0 +1,25 @@
+{
+  "id": "lazy-mcp",
+  "name": "lazy-mcp",
+  "type": "cli",
+  "categories": ["mcp", "development"],
+  "tags": ["mcp", "lazy-loading", "performance", "startup", "server", "2026"],
+  "description": "Lazy loading proxy for MCP servers — eliminates startup delay by loading servers on-demand",
+  "description_ja": "MCPサーバーのlazy loadingプロキシ — オンデマンドロードで起動遅延を解消",
+  "install": {
+    "npm": "lazy-mcp",
+    "check": "lazy-mcp --version"
+  },
+  "subcommands": [
+    { "name": "start", "description": "Start the lazy-loading proxy", "usage": "lazy-mcp start" },
+    { "name": "config", "description": "Configure MCP server mappings", "usage": "lazy-mcp config" }
+  ],
+  "intents": [
+    "MCPサーバーの起動を高速化したい", "MCPのlazy loadingを設定したい",
+    "MCPサーバーの遅延を解消したい",
+    "speed up MCP server startup", "lazy load MCP servers",
+    "reduce MCP initialization time"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
