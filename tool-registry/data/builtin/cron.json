@@ -1,0 +1,34 @@
+{
+  "id": "cron",
+  "name": "cron",
+  "type": "cli",
+  "categories": ["system", "automation"],
+  "tags": ["schedule", "cron", "crontab", "periodic", "timer", "job"],
+  "description": "Schedule commands to run periodically using cron jobs",
+  "description_ja": "cronジョブを使ってコマンドを定期実行するスケジューラ",
+  "install": {
+    "apt": "cron",
+    "check": "crontab -l"
+  },
+  "subcommands": [
+    { "name": "crontab -l", "description": "List current user's cron jobs", "usage": "crontab -l" },
+    { "name": "crontab -e", "description": "Edit current user's cron jobs", "usage": "crontab -e" },
+    { "name": "crontab -r", "description": "Remove all cron jobs for current user", "usage": "crontab -r" }
+  ],
+  "intents": [
+    "定期的にコマンドを実行したい",
+    "cronジョブを設定したい",
+    "スケジュールされたタスクを確認したい",
+    "バックアップを毎日自動実行したい",
+    "crontabを編集したい",
+    "定期実行のジョブを削除したい",
+    "schedule a command to run periodically",
+    "set up a cron job",
+    "list scheduled cron jobs",
+    "run a script every day",
+    "edit crontab entries",
+    "schedule a task"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "diff",
+  "name": "diff",
+  "type": "cli",
+  "categories": ["text", "development"],
+  "tags": ["compare", "difference", "file", "merge", "patch"],
+  "description": "Compare files line by line and show differences",
+  "description_ja": "ファイルを行ごとに比較して差分を表示",
+  "install": {
+    "apt": "diffutils",
+    "check": "diff --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "2つのファイルの差分を確認したい",
+    "ファイルの違いを比較したい",
+    "ディレクトリ間の差分を見たい",
+    "変更箇所をunified形式で表示したい",
+    "パッチファイルを作成したい",
+    "ファイルが同じか確認したい",
+    "compare two files",
+    "show differences between files",
+    "compare directories",
+    "create a patch file",
+    "check if files are identical",
+    "view unified diff output"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

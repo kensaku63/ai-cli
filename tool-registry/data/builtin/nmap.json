@@ -1,0 +1,31 @@
+{
+  "id": "nmap",
+  "name": "nmap",
+  "type": "cli",
+  "categories": ["network", "security"],
+  "tags": ["scan", "port", "network", "security", "host", "discovery"],
+  "description": "Network exploration tool and security/port scanner",
+  "description_ja": "ネットワーク探索およびセキュリティ・ポートスキャナ",
+  "install": {
+    "brew": "nmap",
+    "apt": "nmap",
+    "check": "nmap --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "開いているポートをスキャンしたい",
+    "ネットワーク上のホストを発見したい",
+    "特定ポートが開いているか確認したい",
+    "サービスのバージョンを検出したい",
+    "ネットワークのセキュリティスキャンをしたい",
+    "ホストのOSを特定したい",
+    "scan open ports on a host",
+    "discover hosts on a network",
+    "check if a port is open",
+    "detect service versions",
+    "run a network security scan",
+    "identify operating system of a host"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

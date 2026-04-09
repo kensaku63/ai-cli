@@ -1,0 +1,34 @@
+{
+  "id": "awk",
+  "name": "awk",
+  "type": "cli",
+  "categories": ["text", "data"],
+  "tags": ["text", "pattern", "column", "processing", "filter", "transform"],
+  "description": "Pattern scanning and text processing language for extracting and transforming data",
+  "description_ja": "データの抽出や変換を行うパターンスキャンおよびテキスト処理言語",
+  "install": {
+    "brew": "gawk",
+    "apt": "gawk",
+    "check": "awk --version"
+  },
+  "subcommands": [
+    { "name": "'{print}'", "description": "Print all lines", "usage": "awk '{print}' <file>" },
+    { "name": "'{print $N}'", "description": "Print specific column(s)", "usage": "awk '{print $1, $3}' <file>" },
+    { "name": "-F", "description": "Set field separator", "usage": "awk -F',' '{print $1}' <file>" },
+    { "name": "/pattern/", "description": "Filter lines matching a pattern", "usage": "awk '/pattern/ {print}' <file>" },
+    { "name": "NR", "description": "Print line numbers", "usage": "awk '{print NR, $0}' <file>" },
+    { "name": "BEGIN/END", "description": "Execute before/after processing", "usage": "awk 'BEGIN{...} {...} END{...}' <file>" },
+    { "name": "-f", "description": "Read program from file", "usage": "awk -f <program.awk> <file>" },
+    { "name": "sum", "description": "Sum values in a column", "usage": "awk '{sum+=$1} END{print sum}' <file>" }
+  ],
+  "intents": [
+    "特定のカラムを抽出したい", "テキストデータをフィルタリングしたい", "CSVを処理したい",
+    "列の合計を計算したい", "パターンに一致する行を抽出したい", "区切り文字を指定してデータを処理したい",
+    "テキストを変換したい", "ログファイルから特定のフィールドを取り出したい",
+    "extract specific columns", "filter text data", "process CSV files",
+    "sum values in a column", "print specific fields", "set field separator",
+    "transform text data", "parse log files with awk"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

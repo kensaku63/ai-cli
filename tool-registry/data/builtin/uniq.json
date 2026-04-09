@@ -1,0 +1,28 @@
+{
+  "id": "uniq",
+  "name": "uniq",
+  "type": "cli",
+  "categories": ["text", "utility"],
+  "tags": ["unique", "duplicate", "filter", "count", "repeated"],
+  "description": "Report or filter out repeated lines in a file",
+  "description_ja": "ファイル内の重複行を検出・除去・カウント",
+  "install": {
+    "apt": "coreutils",
+    "check": "uniq --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "重複行を削除したい",
+    "重複している行を表示したい",
+    "各行の出現回数を数えたい",
+    "ユニークな行だけを抽出したい",
+    "連続する重複行をフィルタしたい",
+    "remove duplicate lines",
+    "show only unique lines",
+    "count occurrences of each line",
+    "find repeated lines in a file",
+    "filter out duplicates"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

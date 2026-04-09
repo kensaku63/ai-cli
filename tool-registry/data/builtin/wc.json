@@ -1,0 +1,30 @@
+{
+  "id": "wc",
+  "name": "wc",
+  "type": "cli",
+  "categories": ["text", "utility"],
+  "tags": ["count", "word", "line", "character", "byte", "file"],
+  "description": "Count words, lines, characters, and bytes in files",
+  "description_ja": "ファイルの単語数・行数・文字数・バイト数をカウント",
+  "install": {
+    "apt": "coreutils",
+    "check": "wc --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ファイルの行数を数えたい",
+    "ファイルの単語数をカウントしたい",
+    "ファイルの文字数を確認したい",
+    "ファイルのバイト数を調べたい",
+    "複数ファイルの行数を比較したい",
+    "コードの行数を確認したい",
+    "count lines in a file",
+    "count words in a file",
+    "check file character count",
+    "get byte size of a file",
+    "count lines of code",
+    "how many lines in this file"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

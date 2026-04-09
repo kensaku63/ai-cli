@@ -1,0 +1,32 @@
+{
+  "id": "make",
+  "name": "make",
+  "type": "cli",
+  "categories": ["build", "development"],
+  "tags": ["build", "makefile", "compile", "automation"],
+  "description": "GNU Make build automation tool that executes commands defined in Makefiles",
+  "description_ja": "Makefileに定義されたコマンドを実行するビルド自動化ツール",
+  "install": {
+    "brew": "make",
+    "apt": "make",
+    "check": "make --version"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Build the default target", "usage": "make" },
+    { "name": "<target>", "description": "Build a specific target", "usage": "make <target>" },
+    { "name": "-f", "description": "Use a specific Makefile", "usage": "make -f <file>" },
+    { "name": "-j", "description": "Run jobs in parallel", "usage": "make -j <num>" },
+    { "name": "-n", "description": "Dry run (print commands without executing)", "usage": "make -n" },
+    { "name": "clean", "description": "Clean build artifacts (common target)", "usage": "make clean" },
+    { "name": "install", "description": "Install built software (common target)", "usage": "make install" }
+  ],
+  "intents": [
+    "プロジェクトをビルドしたい", "Makefileを実行したい", "ビルドターゲットを指定したい",
+    "並列ビルドしたい", "ビルド成果物をクリーンしたい", "ドライランで確認したい",
+    "makeでインストールしたい",
+    "build a project", "run a Makefile", "compile with make",
+    "clean build artifacts", "parallel build", "dry run make", "install with make"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

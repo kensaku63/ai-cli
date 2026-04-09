@@ -1,0 +1,30 @@
+{
+  "id": "xargs",
+  "name": "xargs",
+  "type": "cli",
+  "categories": ["utility", "shell"],
+  "tags": ["pipe", "stdin", "batch", "parallel", "exec", "command"],
+  "description": "Build and execute command lines from standard input",
+  "description_ja": "標準入力からコマンドラインを構築して実行",
+  "install": {
+    "apt": "findutils",
+    "check": "xargs --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "標準入力からコマンドを組み立てて実行したい",
+    "パイプで受け取ったデータを引数にしてコマンドを実行したい",
+    "複数ファイルに対してまとめてコマンドを実行したい",
+    "並列でコマンドを実行したい",
+    "findの結果に対してコマンドを適用したい",
+    "バッチ処理でコマンドを一括実行したい",
+    "build commands from stdin",
+    "pipe output to another command as arguments",
+    "run a command on multiple files",
+    "execute commands in parallel",
+    "apply a command to find results",
+    "batch execute commands from input"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "traceroute",
+  "name": "traceroute",
+  "type": "cli",
+  "categories": ["network", "diagnostic"],
+  "tags": ["trace", "route", "network", "hops", "latency", "path"],
+  "description": "Print the route packets take to a network host",
+  "description_ja": "ネットワークホストまでのパケット経路を表示",
+  "install": {
+    "brew": "traceroute",
+    "apt": "traceroute",
+    "check": "traceroute --version"
+  },
+  "subcommands": [],
+  "intents": [
+    "ネットワークの経路を確認したい",
+    "パケットのルートを追跡したい",
+    "ホストまでのホップ数を調べたい",
+    "ネットワーク遅延の原因を特定したい",
+    "通信経路を表示したい",
+    "どのルーターを経由しているか確認したい",
+    "trace the route to a host",
+    "check network path to a server",
+    "find where network latency occurs",
+    "see how many hops to a destination",
+    "diagnose network routing issues",
+    "trace packet route"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

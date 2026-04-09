@@ -1,0 +1,32 @@
+{
+  "id": "node",
+  "name": "node",
+  "type": "cli",
+  "categories": ["language", "development"],
+  "tags": ["node", "javascript", "runtime", "server"],
+  "description": "Node.js JavaScript runtime for executing JavaScript outside the browser",
+  "description_ja": "ブラウザ外でJavaScriptを実行するNode.jsランタイム",
+  "install": {
+    "brew": "node",
+    "apt": "nodejs",
+    "check": "node --version"
+  },
+  "subcommands": [
+    { "name": "<script>", "description": "Run a JavaScript file", "usage": "node <script.js>" },
+    { "name": "-e", "description": "Evaluate a JavaScript expression", "usage": "node -e '<code>'" },
+    { "name": "(repl)", "description": "Start interactive REPL", "usage": "node" },
+    { "name": "--inspect", "description": "Start with debugger attached", "usage": "node --inspect <script.js>" },
+    { "name": "--watch", "description": "Run in watch mode (restart on file changes)", "usage": "node --watch <script.js>" },
+    { "name": "--test", "description": "Run built-in test runner", "usage": "node --test <test.js>" }
+  ],
+  "intents": [
+    "JavaScriptファイルを実行したい", "Node.jsのREPLを起動したい", "サーバーを起動したい",
+    "デバッガを使いたい", "ファイル変更を監視して自動再起動したい", "Node.jsのバージョンを確認したい",
+    "テストを実行したい",
+    "run a JavaScript file", "start Node.js REPL", "start a server with Node",
+    "debug a Node.js app", "watch mode for development", "check Node.js version",
+    "run Node.js tests"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "kill",
+  "name": "kill",
+  "type": "cli",
+  "categories": ["system", "process"],
+  "tags": ["process", "signal", "terminate", "stop", "pid"],
+  "description": "Send signals to processes to terminate, stop, or control their behavior",
+  "description_ja": "プロセスにシグナルを送信して終了、停止、制御を行うツール",
+  "install": {
+    "brew": null,
+    "apt": null,
+    "check": "kill -l"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Send SIGTERM to a process", "usage": "kill <pid>" },
+    { "name": "-9", "description": "Force kill a process (SIGKILL)", "usage": "kill -9 <pid>" },
+    { "name": "-15", "description": "Gracefully terminate (SIGTERM)", "usage": "kill -15 <pid>" },
+    { "name": "-STOP", "description": "Suspend a process", "usage": "kill -STOP <pid>" },
+    { "name": "-CONT", "description": "Resume a suspended process", "usage": "kill -CONT <pid>" },
+    { "name": "-HUP", "description": "Send hangup signal (reload config)", "usage": "kill -HUP <pid>" },
+    { "name": "-l", "description": "List available signals", "usage": "kill -l" }
+  ],
+  "intents": [
+    "プロセスを終了したい", "プロセスを強制終了したい", "プロセスを停止したい",
+    "プロセスを一時停止したい", "プロセスを再開したい", "シグナル一覧を確認したい",
+    "応答しないプロセスを殺したい",
+    "kill a process", "force kill a process", "terminate a process",
+    "stop a running process", "suspend a process", "resume a paused process",
+    "send signal to a process"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

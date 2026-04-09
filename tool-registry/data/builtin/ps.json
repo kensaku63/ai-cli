@@ -1,0 +1,33 @@
+{
+  "id": "ps",
+  "name": "ps",
+  "type": "cli",
+  "categories": ["system", "process"],
+  "tags": ["process", "status", "pid", "running", "list"],
+  "description": "Report a snapshot of current running processes and their status",
+  "description_ja": "現在実行中のプロセスのスナップショットとステータスを表示するツール",
+  "install": {
+    "brew": "procps",
+    "apt": "procps",
+    "check": "ps --version"
+  },
+  "subcommands": [
+    { "name": "aux", "description": "Show all processes with detailed info", "usage": "ps aux" },
+    { "name": "-ef", "description": "Show all processes in full format", "usage": "ps -ef" },
+    { "name": "-p", "description": "Show info for a specific PID", "usage": "ps -p <pid>" },
+    { "name": "-u", "description": "Show processes for a specific user", "usage": "ps -u <user>" },
+    { "name": "--sort", "description": "Sort output by a field", "usage": "ps aux --sort=-%mem" },
+    { "name": "-o", "description": "Specify custom output columns", "usage": "ps -eo pid,comm,%cpu,%mem" },
+    { "name": "--forest", "description": "Show process tree", "usage": "ps --forest" }
+  ],
+  "intents": [
+    "実行中のプロセスを確認したい", "プロセス一覧を表示したい", "特定のプロセスを探したい",
+    "PIDを調べたい", "メモリ使用量の多いプロセスを確認したい", "プロセスツリーを見たい",
+    "特定ユーザーのプロセスを確認したい",
+    "list running processes", "check process status", "find a specific process",
+    "get process ID", "sort processes by memory usage", "show process tree",
+    "check what processes are running"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

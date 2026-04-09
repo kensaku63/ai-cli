@@ -1,0 +1,33 @@
+{
+  "id": "du",
+  "name": "du",
+  "type": "cli",
+  "categories": ["system", "filesystem"],
+  "tags": ["disk", "usage", "size", "directory", "space"],
+  "description": "Estimate and display file and directory disk usage",
+  "description_ja": "ファイルやディレクトリのディスク使用量を推定・表示するツール",
+  "install": {
+    "brew": null,
+    "apt": null,
+    "check": "du --version"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Show disk usage for current directory", "usage": "du" },
+    { "name": "-h", "description": "Human-readable sizes", "usage": "du -h <path>" },
+    { "name": "-s", "description": "Show only total for each argument", "usage": "du -sh <path>" },
+    { "name": "-d", "description": "Limit directory depth", "usage": "du -h -d <depth> <path>" },
+    { "name": "--max-depth", "description": "Set maximum directory depth", "usage": "du --max-depth=<n> <path>" },
+    { "name": "-a", "description": "Show all files, not just directories", "usage": "du -ah <path>" },
+    { "name": "-c", "description": "Show grand total", "usage": "du -ch <path>" }
+  ],
+  "intents": [
+    "ディレクトリのサイズを確認したい", "ファイルのサイズを調べたい", "容量を食っているフォルダを探したい",
+    "ディスク使用量を確認したい", "フォルダごとのサイズを比較したい",
+    "大きなファイルやフォルダを見つけたい", "ディレクトリの合計サイズを知りたい",
+    "check directory size", "find large directories", "check disk usage per folder",
+    "find what is taking up disk space", "show folder sizes", "estimate disk usage",
+    "check total size of a directory"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

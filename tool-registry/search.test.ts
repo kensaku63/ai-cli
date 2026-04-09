@@ -13,8 +13,8 @@ before(async () => {
 });
 
 describe("Registry", () => {
-  it("loads all 20 builtin tools", () => {
-    assert.equal(tools.length, 20);
+  it("loads all 50 builtin tools", () => {
+    assert.equal(tools.length, 50);
   });
 
   it("each tool has required fields", () => {
@@ -139,6 +139,100 @@ describe("Search — natural language (Japanese)", () => {
     const results = searchTools("APIにリクエストを送りたい", tools);
     assert.ok(results.length > 0);
     assert.equal(results[0]!.tool.id, "curl");
+  });
+});
+
+describe("Search — new tools (English)", () => {
+  it("'create pull request' finds gh", () => {
+    const results = searchTools("create pull request", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "gh");
+  });
+
+  it("'build project with make' finds make", () => {
+    const results = searchTools("build project with make", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "make");
+  });
+
+  it("'run python script' finds python", () => {
+    const results = searchTools("run python script", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "python");
+  });
+
+  it("'download file from URL' finds wget", () => {
+    const results = searchTools("download file from URL", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "wget");
+  });
+
+  it("'check disk space' finds df", () => {
+    const results = searchTools("check disk space", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "df");
+  });
+
+  it("'scan network ports' finds nmap", () => {
+    const results = searchTools("scan network ports", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "nmap");
+  });
+
+  it("'compare two files' finds diff", () => {
+    const results = searchTools("compare two files", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "diff");
+  });
+
+  it("'kill a process' finds kill", () => {
+    const results = searchTools("kill a process", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "kill");
+  });
+
+  it("'DNS lookup' finds dig", () => {
+    const results = searchTools("DNS lookup", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "dig");
+  });
+
+  it("'count lines in file' finds wc", () => {
+    const results = searchTools("count lines in file", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "wc");
+  });
+});
+
+describe("Search — new tools (Japanese)", () => {
+  it("'PRを作成したい' finds gh", () => {
+    const results = searchTools("PRを作成したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "gh");
+  });
+
+  it("'ディスク容量を確認したい' finds df", () => {
+    const results = searchTools("ディスク容量を確認したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "df");
+  });
+
+  it("'プロセスを終了したい' finds kill", () => {
+    const results = searchTools("プロセスを終了したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "kill");
+  });
+
+  it("'ネットワークのポートをスキャンしたい' finds nmap", () => {
+    const results = searchTools("ネットワークのポートをスキャンしたい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "nmap");
+  });
+
+  it("'ファイルの権限を変更したい' finds chmod", () => {
+    const results = searchTools("ファイルの権限を変更したい", tools);
+    assert.ok(results.length > 0);
+    assert.equal(results[0]!.tool.id, "chmod");
   });
 });
 

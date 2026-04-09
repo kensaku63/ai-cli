@@ -1,0 +1,32 @@
+{
+  "id": "df",
+  "name": "df",
+  "type": "cli",
+  "categories": ["system", "filesystem"],
+  "tags": ["disk", "space", "usage", "filesystem", "storage"],
+  "description": "Report file system disk space usage and availability",
+  "description_ja": "ファイルシステムのディスク使用量と空き容量を表示するツール",
+  "install": {
+    "brew": null,
+    "apt": null,
+    "check": "df --version"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Show disk space usage for all filesystems", "usage": "df" },
+    { "name": "-h", "description": "Human-readable sizes (KB, MB, GB)", "usage": "df -h" },
+    { "name": "-T", "description": "Show filesystem type", "usage": "df -T" },
+    { "name": "-i", "description": "Show inode usage", "usage": "df -i" },
+    { "name": "<path>", "description": "Show usage for filesystem containing path", "usage": "df <path>" },
+    { "name": "--total", "description": "Show grand total", "usage": "df --total" }
+  ],
+  "intents": [
+    "ディスク空き容量を確認したい", "ディスク使用量を確認したい", "ストレージの残りを確認したい",
+    "ファイルシステムの種類を確認したい", "inode使用量を確認したい",
+    "ディスクがいっぱいか確認したい", "マウントポイントの容量を調べたい",
+    "check disk space", "check free disk space", "check storage usage",
+    "show filesystem type", "check inode usage", "see how much disk is left",
+    "check if disk is full"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

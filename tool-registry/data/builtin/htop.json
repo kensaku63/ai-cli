@@ -1,0 +1,32 @@
+{
+  "id": "htop",
+  "name": "htop",
+  "type": "cli",
+  "categories": ["system", "monitoring"],
+  "tags": ["process", "monitor", "cpu", "memory", "interactive"],
+  "description": "Interactive process viewer for monitoring system resources and managing processes",
+  "description_ja": "システムリソースの監視とプロセス管理を行う対話型プロセスビューア",
+  "install": {
+    "brew": "htop",
+    "apt": "htop",
+    "check": "htop --version"
+  },
+  "subcommands": [
+    { "name": "(default)", "description": "Launch interactive process viewer", "usage": "htop" },
+    { "name": "-u", "description": "Show processes for a specific user", "usage": "htop -u <user>" },
+    { "name": "-p", "description": "Show only specific PIDs", "usage": "htop -p <pid1,pid2,...>" },
+    { "name": "-t", "description": "Show process tree", "usage": "htop -t" },
+    { "name": "-s", "description": "Sort by a specific column", "usage": "htop -s <column>" },
+    { "name": "-d", "description": "Set update delay in tenths of seconds", "usage": "htop -d <delay>" }
+  ],
+  "intents": [
+    "プロセスを監視したい", "CPU使用率を確認したい", "メモリ使用量を確認したい",
+    "重いプロセスを見つけたい", "プロセスツリーを表示したい", "特定ユーザーのプロセスを確認したい",
+    "システムリソースをリアルタイムで監視したい",
+    "monitor system processes", "check CPU usage", "check memory usage",
+    "find resource-heavy processes", "view process tree", "interactive process manager",
+    "monitor system resources in real time"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
