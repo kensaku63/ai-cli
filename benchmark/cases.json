@@ -1,0 +1,713 @@
+[
+  {
+    "id": "simple-en-001",
+    "query": "list files in current directory",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "find",
+    "expected_patterns": ["ls"],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-002",
+    "query": "show current date and time",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "date",
+    "expected_patterns": ["date"],
+    "category": "system"
+  },
+  {
+    "id": "simple-en-003",
+    "query": "check disk usage",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "df",
+    "expected_patterns": ["df"],
+    "category": "system"
+  },
+  {
+    "id": "simple-en-004",
+    "query": "show running processes",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ps",
+    "expected_patterns": ["ps"],
+    "category": "system"
+  },
+  {
+    "id": "simple-en-005",
+    "query": "print working directory",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "env",
+    "expected_patterns": ["pwd"],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-006",
+    "query": "show system info",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "uname",
+    "expected_patterns": ["uname"],
+    "category": "system"
+  },
+  {
+    "id": "simple-en-007",
+    "query": "create a directory called test",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "mkdir",
+    "expected_patterns": ["mkdir.*test"],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-en-008",
+    "query": "download a file from https://example.com/file.txt",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "curl",
+    "expected_patterns": ["curl|wget"],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-009",
+    "query": "show git log",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "git",
+    "expected_patterns": ["git log"],
+    "category": "vcs"
+  },
+  {
+    "id": "simple-en-010",
+    "query": "check who is using port 3000",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "lsof",
+    "expected_patterns": ["lsof.*3000|netstat.*3000|ss.*3000"],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-011",
+    "query": "ping google.com",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "ping",
+    "expected_patterns": ["ping.*google\\.com"],
+    "category": "network"
+  },
+  {
+    "id": "simple-en-012",
+    "query": "compress the logs directory into a tar.gz",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "tar",
+    "expected_patterns": ["tar.*czf|tar.*-czf"],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-001",
+    "query": "ファイル一覧を表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "find",
+    "expected_patterns": ["ls"],
+    "category": "filesystem"
+  },
+  {
+    "id": "simple-ja-002",
+    "query": "現在の日時を表示して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "date",
+    "expected_patterns": ["date"],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-003",
+    "query": "ディスク使用量を確認したい",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "df",
+    "expected_patterns": ["df"],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-004",
+    "query": "実行中のプロセスを見せて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "ps",
+    "expected_patterns": ["ps"],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-005",
+    "query": "gitの状態を確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "git",
+    "expected_patterns": ["git status"],
+    "category": "vcs"
+  },
+  {
+    "id": "simple-ja-006",
+    "query": "dockerのコンテナ一覧を見せて",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "docker",
+    "expected_patterns": ["docker ps|docker container ls"],
+    "category": "container"
+  },
+  {
+    "id": "simple-ja-007",
+    "query": "npmパッケージをインストールして: express",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "npm",
+    "expected_patterns": ["npm install.*express|npm i.*express"],
+    "category": "package"
+  },
+  {
+    "id": "simple-ja-008",
+    "query": "ファイルをコピーしたい: src.txt → dest.txt",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "cp",
+    "expected_patterns": ["cp.*src\\.txt.*dest\\.txt"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-001",
+    "query": "find all TypeScript files larger than 1MB",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*\\.ts.*size|find.*-name.*\\.ts"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-002",
+    "query": "show the last 50 lines of /var/log/syslog",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "tail",
+    "expected_patterns": ["tail.*-n\\s*50|tail.*-50"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-003",
+    "query": "search for TODO comments in all JavaScript files",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "grep",
+    "expected_patterns": ["grep.*TODO.*\\.js|rg.*TODO.*\\.js"],
+    "category": "search"
+  },
+  {
+    "id": "compound-en-004",
+    "query": "create a git branch called feature/login and switch to it",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "git",
+    "expected_patterns": ["git checkout -b feature/login|git switch -c feature/login"],
+    "category": "vcs"
+  },
+  {
+    "id": "compound-en-005",
+    "query": "run a docker container from nginx image on port 8080",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "docker",
+    "expected_patterns": ["docker run.*-p.*8080.*nginx"],
+    "category": "container"
+  },
+  {
+    "id": "compound-en-006",
+    "query": "set file permissions to 755 for deploy.sh",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "chmod",
+    "expected_patterns": ["chmod.*755.*deploy\\.sh"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-007",
+    "query": "show directory sizes sorted by size in the current folder",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "du",
+    "expected_patterns": ["du.*sort"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-en-008",
+    "query": "send a POST request to localhost:3000/api/users with JSON body {\"name\": \"test\"}",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "curl",
+    "expected_patterns": ["curl.*-X\\s*POST|curl.*--data|curl.*-d"],
+    "category": "network"
+  },
+  {
+    "id": "compound-en-009",
+    "query": "kill the process running on port 8080",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "kill",
+    "expected_patterns": ["kill|lsof.*8080|fuser.*8080"],
+    "category": "system"
+  },
+  {
+    "id": "compound-en-010",
+    "query": "clone the repo git@github.com:user/project.git into ./myproject",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "git",
+    "expected_patterns": ["git clone.*user/project.*myproject"],
+    "category": "vcs"
+  },
+  {
+    "id": "compound-ja-001",
+    "query": "100MB以上のファイルを探して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*size.*100M|find.*-size\\s*\\+100"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-002",
+    "query": "syslogの最後の100行を表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "tail",
+    "expected_patterns": ["tail.*-n\\s*100|tail.*-100"],
+    "category": "filesystem"
+  },
+  {
+    "id": "compound-ja-003",
+    "query": "全てのPythonファイルからimport requestsを含む行を検索して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "grep",
+    "expected_patterns": ["grep.*import requests.*\\.py|rg.*import requests.*\\.py"],
+    "category": "search"
+  },
+  {
+    "id": "compound-ja-004",
+    "query": "ポート3000を使っているプロセスを特定して停止して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "lsof",
+    "expected_patterns": ["lsof.*3000|kill|fuser.*3000"],
+    "category": "system"
+  },
+  {
+    "id": "compound-ja-005",
+    "query": "redisサーバーに接続してキー一覧を表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "redis-cli",
+    "expected_patterns": ["redis-cli.*KEYS|redis-cli.*keys"],
+    "category": "database"
+  },
+  {
+    "id": "compound-ja-006",
+    "query": "dockerイメージをビルドしてmyapp:latestとタグ付けして",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "docker",
+    "expected_patterns": ["docker build.*-t.*myapp"],
+    "category": "container"
+  },
+  {
+    "id": "compound-ja-007",
+    "query": "SSH鍵を生成して（ed25519で）",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "ssh",
+    "expected_patterns": ["ssh-keygen.*ed25519"],
+    "category": "security"
+  },
+  {
+    "id": "compound-ja-008",
+    "query": "カレントディレクトリのサイズを人間が読める形式で表示して",
+    "language": "ja",
+    "difficulty": "compound",
+    "expected_tool": "du",
+    "expected_patterns": ["du.*-h|du.*--human"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-001",
+    "query": "count the number of files in the current directory",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": ["ls.*wc|find.*wc"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-002",
+    "query": "show the top 10 largest files in this directory",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "du",
+    "expected_patterns": ["sort|head.*10|du"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-003",
+    "query": "find all unique file extensions in this project",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*sort.*uniq|awk.*sort.*uniq"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-004",
+    "query": "show how many times each HTTP status code appears in access.log",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "awk",
+    "expected_patterns": ["awk|cut|sort.*uniq.*-c"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-005",
+    "query": "list all git branches sorted by last commit date",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "git",
+    "expected_patterns": ["git branch.*sort|git for-each-ref.*sort"],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-en-006",
+    "query": "extract all email addresses from contacts.txt",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "grep",
+    "expected_patterns": ["grep.*-[oEP].*@|awk.*@"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-007",
+    "query": "show the 5 most memory-intensive processes",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "ps",
+    "expected_patterns": ["ps.*sort|top.*-n"],
+    "category": "system"
+  },
+  {
+    "id": "pipe-en-008",
+    "query": "find duplicate lines in data.csv",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "sort",
+    "expected_patterns": ["sort.*uniq.*-d"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-en-009",
+    "query": "get the total size of all .log files",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*\\.log|du.*\\.log|wc"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-en-010",
+    "query": "show the most recently modified files in this directory",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": ["ls.*-t|find.*sort|stat"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-ja-001",
+    "query": "カレントディレクトリのファイル数を数えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "find",
+    "expected_patterns": ["ls.*wc|find.*wc"],
+    "category": "filesystem"
+  },
+  {
+    "id": "pipe-ja-002",
+    "query": "access.logからステータスコード500のリクエストだけ抽出して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "grep",
+    "expected_patterns": ["grep.*500.*access\\.log|awk.*500"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-003",
+    "query": "実行中のdockerコンテナのメモリ使用量順に並べて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "docker",
+    "expected_patterns": ["docker stats|docker ps.*sort"],
+    "category": "container"
+  },
+  {
+    "id": "pipe-ja-004",
+    "query": "このプロジェクトの全ファイルの行数を合計して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "wc",
+    "expected_patterns": ["wc.*-l|find.*wc|cloc"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-005",
+    "query": "package.jsonの依存パッケージ名だけ一覧表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "jq",
+    "expected_patterns": ["jq.*dependencies|cat.*package\\.json.*jq"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-006",
+    "query": "CSVファイルの2列目だけ取り出してユニークな値を数えて",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "cut",
+    "expected_patterns": ["cut.*-f.*2|awk.*\\$2|sort.*uniq"],
+    "category": "text"
+  },
+  {
+    "id": "pipe-ja-007",
+    "query": "gitの変更ファイルの中で.tsファイルだけ表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "git",
+    "expected_patterns": ["git diff.*\\.ts|git status.*grep.*\\.ts"],
+    "category": "vcs"
+  },
+  {
+    "id": "pipe-ja-008",
+    "query": "環境変数の中からPATHに含まれるディレクトリを一行ずつ表示して",
+    "language": "ja",
+    "difficulty": "pipe",
+    "expected_tool": "env",
+    "expected_patterns": ["echo.*PATH.*tr.*:|printenv.*PATH.*tr"],
+    "category": "system"
+  },
+  {
+    "id": "conditional-en-001",
+    "query": "check if node is installed, if not show how to install it",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "node",
+    "expected_patterns": ["node.*--version|which.*node|command.*-v.*node"],
+    "category": "runtime"
+  },
+  {
+    "id": "conditional-en-002",
+    "query": "if the dist directory exists, delete it and rebuild with npm run build",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "rm",
+    "expected_patterns": ["rm.*dist|\\[.*-d.*dist|test.*-d.*dist"],
+    "category": "build"
+  },
+  {
+    "id": "conditional-en-003",
+    "query": "backup the database dump if it exists, then create a fresh dump",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "pg_dump",
+    "expected_patterns": ["pg_dump|mysqldump|cp.*\\.sql|mv.*\\.sql"],
+    "category": "database"
+  },
+  {
+    "id": "conditional-en-004",
+    "query": "check if docker daemon is running, start it if not",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "docker",
+    "expected_patterns": ["docker.*info|systemctl.*docker|service.*docker"],
+    "category": "container"
+  },
+  {
+    "id": "conditional-en-005",
+    "query": "rename all .jpeg files to .jpg in current directory",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "mv",
+    "expected_patterns": ["mv.*\\.jpeg.*\\.jpg|rename.*jpeg.*jpg|for.*\\.jpeg"],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-en-006",
+    "query": "watch the /var/log/syslog file for errors and alert when found",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "tail",
+    "expected_patterns": ["tail.*-f.*syslog.*grep|tail.*-F.*error"],
+    "category": "monitoring"
+  },
+  {
+    "id": "conditional-en-007",
+    "query": "deploy to production only if all tests pass",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "npm",
+    "expected_patterns": ["npm test.*&&|npm run test.*&&"],
+    "category": "build"
+  },
+  {
+    "id": "conditional-en-008",
+    "query": "find all files modified in the last 24 hours and archive them",
+    "language": "en",
+    "difficulty": "conditional",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*-mtime.*0|find.*-mmin.*1440|find.*-newer"],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-001",
+    "query": "nodeがインストールされているか確認して、バージョンも表示して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "node",
+    "expected_patterns": ["node.*--version|node.*-v"],
+    "category": "runtime"
+  },
+  {
+    "id": "conditional-ja-002",
+    "query": "distフォルダを削除してからnpm run buildを実行して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "rm",
+    "expected_patterns": ["rm.*dist.*&&.*npm run build|rm.*-rf.*dist"],
+    "category": "build"
+  },
+  {
+    "id": "conditional-ja-003",
+    "query": "ポート3000が空いているか確認して、使われていたらプロセスを停止して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "lsof",
+    "expected_patterns": ["lsof.*3000|netstat.*3000|kill|fuser"],
+    "category": "network"
+  },
+  {
+    "id": "conditional-ja-004",
+    "query": ".envファイルが存在しなければ.env.exampleからコピーして",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "cp",
+    "expected_patterns": ["cp.*\\.env\\.example.*\\.env|test.*-f|\\.env"],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-005",
+    "query": "昨日から今日までに変更されたファイルを一覧表示して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "find",
+    "expected_patterns": ["find.*-mtime|find.*-newer|find.*-mmin"],
+    "category": "filesystem"
+  },
+  {
+    "id": "conditional-ja-006",
+    "query": "全てのgitサブモジュールを最新に更新して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "git",
+    "expected_patterns": ["git submodule.*update|git submodule.*foreach"],
+    "category": "vcs"
+  },
+  {
+    "id": "conditional-ja-007",
+    "query": "全テストを実行して、失敗したら差分をgitで確認して",
+    "language": "ja",
+    "difficulty": "conditional",
+    "expected_tool": "npm",
+    "expected_patterns": ["npm test|npm run test|git diff"],
+    "category": "build"
+  },
+  {
+    "id": "compound-en-011",
+    "query": "generate a self-signed SSL certificate",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "openssl",
+    "expected_patterns": ["openssl.*req.*-x509|openssl.*genrsa"],
+    "category": "security"
+  },
+  {
+    "id": "compound-en-012",
+    "query": "connect to PostgreSQL database mydb as user admin",
+    "language": "en",
+    "difficulty": "compound",
+    "expected_tool": "psql",
+    "expected_patterns": ["psql.*-U.*admin.*mydb|psql.*mydb.*admin"],
+    "category": "database"
+  },
+  {
+    "id": "pipe-en-011",
+    "query": "show the IP addresses with most connections in netstat",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "netstat",
+    "expected_patterns": ["netstat|ss|awk.*sort.*uniq"],
+    "category": "network"
+  },
+  {
+    "id": "pipe-en-012",
+    "query": "convert a JSON file to a sorted pretty-printed version",
+    "language": "en",
+    "difficulty": "pipe",
+    "expected_tool": "jq",
+    "expected_patterns": ["jq.*-S|jq.*sort"],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-013",
+    "query": "encode this string in base64: hello world",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "base64",
+    "expected_patterns": ["base64|echo.*base64"],
+    "category": "text"
+  },
+  {
+    "id": "simple-en-014",
+    "query": "check DNS records for example.com",
+    "language": "en",
+    "difficulty": "simple",
+    "expected_tool": "dig",
+    "expected_patterns": ["dig.*example\\.com|nslookup.*example\\.com|host.*example\\.com"],
+    "category": "network"
+  },
+  {
+    "id": "simple-ja-009",
+    "query": "システムのホスト名を確認して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "uname",
+    "expected_patterns": ["hostname|uname.*-n"],
+    "category": "system"
+  },
+  {
+    "id": "simple-ja-010",
+    "query": "tmuxの新しいセッションを作成して",
+    "language": "ja",
+    "difficulty": "simple",
+    "expected_tool": "tmux",
+    "expected_patterns": ["tmux.*new|tmux.*new-session"],
+    "category": "terminal"
+  }
+]
