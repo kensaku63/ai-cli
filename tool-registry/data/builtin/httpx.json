@@ -1,0 +1,27 @@
+{
+  "id": "httpx",
+  "name": "httpx",
+  "type": "cli",
+  "categories": ["network", "security"],
+  "tags": ["http", "probe", "discovery", "recon", "web", "fast"],
+  "description": "Fast multi-purpose HTTP toolkit — probe URLs for status, titles, tech detection, and more",
+  "description_ja": "高速多目的HTTPツールキット — URLのステータス、タイトル、技術検出等をプローブ",
+  "install": {
+    "brew": "httpx",
+    "go": "github.com/projectdiscovery/httpx/cmd/httpx@latest",
+    "check": "httpx -version"
+  },
+  "subcommands": [
+    { "name": "probe", "description": "Probe URLs for HTTP response", "usage": "echo <url> | httpx" },
+    { "name": "title", "description": "Extract page titles", "usage": "cat urls.txt | httpx -title" },
+    { "name": "status", "description": "Show status codes", "usage": "cat urls.txt | httpx -status-code" },
+    { "name": "tech", "description": "Detect technologies", "usage": "echo <url> | httpx -tech-detect" }
+  ],
+  "intents": [
+    "URLの生存確認をしたい", "Webサイトの技術スタックを検出したい", "HTTPレスポンスを一括確認したい",
+    "probe URLs for HTTP response", "detect web technologies",
+    "bulk HTTP status check", "web reconnaissance"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

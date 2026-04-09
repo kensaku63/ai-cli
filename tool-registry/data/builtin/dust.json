@@ -1,0 +1,27 @@
+{
+  "id": "dust",
+  "name": "dust",
+  "type": "cli",
+  "categories": ["system", "file-management"],
+  "tags": ["disk", "usage", "du", "visualization", "rust"],
+  "description": "More intuitive version of du — visualize disk usage with a bar chart and smart defaults",
+  "description_ja": "duのより直感的なバージョン — バーチャートとスマートなデフォルトでディスク使用量を視覚化",
+  "install": {
+    "brew": "dust",
+    "cargo": "du-dust",
+    "check": "dust --version"
+  },
+  "subcommands": [
+    { "name": "scan", "description": "Show disk usage for current directory", "usage": "dust" },
+    { "name": "depth", "description": "Limit depth of output", "usage": "dust -d <N>" },
+    { "name": "reverse", "description": "Show smallest first", "usage": "dust -r" }
+  ],
+  "intents": [
+    "ディスク使用量を視覚的に確認したい", "どのディレクトリが容量を使っているか調べたい",
+    "duの代わりにわかりやすく容量を表示したい",
+    "visualize disk usage", "find large directories",
+    "du alternative with bar chart"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

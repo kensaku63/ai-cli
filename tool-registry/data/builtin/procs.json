@@ -1,0 +1,28 @@
+{
+  "id": "procs",
+  "name": "procs",
+  "type": "cli",
+  "categories": ["monitoring", "system"],
+  "tags": ["process", "ps", "replacement", "rust", "tree", "colorized"],
+  "description": "Modern replacement for ps — colorized process listing with tree view, search, and Docker awareness",
+  "description_ja": "psの最新代替 — カラー表示、ツリービュー、検索、Docker対応のプロセス一覧",
+  "install": {
+    "brew": "procs",
+    "cargo": "procs",
+    "check": "procs --version"
+  },
+  "subcommands": [
+    { "name": "list", "description": "List all processes", "usage": "procs" },
+    { "name": "search", "description": "Search processes by keyword", "usage": "procs <keyword>" },
+    { "name": "tree", "description": "Show process tree", "usage": "procs --tree" },
+    { "name": "watch", "description": "Watch mode", "usage": "procs --watch" }
+  ],
+  "intents": [
+    "プロセスを見やすく一覧したい", "プロセスをキーワードで検索したい",
+    "psの代わりにカラフルな一覧を見たい",
+    "list processes with colors", "search processes by name",
+    "ps alternative with tree view"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

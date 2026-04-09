@@ -1,0 +1,27 @@
+{
+  "id": "hyperfine",
+  "name": "hyperfine",
+  "type": "cli",
+  "categories": ["development", "monitoring"],
+  "tags": ["benchmark", "performance", "timing", "comparison", "rust"],
+  "description": "Command-line benchmarking tool — measure and compare execution times with statistical analysis",
+  "description_ja": "コマンドラインベンチマークツール — 統計分析付きで実行時間を計測・比較",
+  "install": {
+    "brew": "hyperfine",
+    "cargo": "hyperfine",
+    "check": "hyperfine --version"
+  },
+  "subcommands": [
+    { "name": "run", "description": "Benchmark a command", "usage": "hyperfine '<command>'" },
+    { "name": "compare", "description": "Compare two commands", "usage": "hyperfine '<cmd1>' '<cmd2>'" },
+    { "name": "warmup", "description": "Run with warmup", "usage": "hyperfine --warmup 3 '<command>'" },
+    { "name": "export", "description": "Export results", "usage": "hyperfine '<cmd>' --export-json results.json" }
+  ],
+  "intents": [
+    "コマンドの実行時間を計測したい", "2つのコマンドの速度を比較したい", "ベンチマークを取りたい",
+    "benchmark command execution time", "compare command performance",
+    "measure execution speed", "performance benchmarking"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

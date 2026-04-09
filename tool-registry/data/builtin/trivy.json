@@ -1,0 +1,31 @@
+{
+  "id": "trivy",
+  "name": "trivy",
+  "type": "cli",
+  "categories": ["security", "devops"],
+  "tags": ["vulnerability", "scanner", "container", "iac", "sbom", "compliance"],
+  "description": "Comprehensive security scanner — find vulnerabilities in container images, filesystems, Git repos, and IaC",
+  "description_ja": "包括的セキュリティスキャナ — コンテナイメージ、ファイルシステム、Gitリポジトリ、IaCの脆弱性を検出",
+  "install": {
+    "brew": "trivy",
+    "apt": "trivy",
+    "check": "trivy --version"
+  },
+  "subcommands": [
+    { "name": "image", "description": "Scan a container image for vulnerabilities", "usage": "trivy image <image-name>" },
+    { "name": "fs", "description": "Scan a local filesystem", "usage": "trivy fs <path>" },
+    { "name": "repo", "description": "Scan a remote Git repository", "usage": "trivy repo <url>" },
+    { "name": "config", "description": "Scan IaC files for misconfigurations", "usage": "trivy config <path>" },
+    { "name": "sbom", "description": "Generate SBOM for a target", "usage": "trivy sbom <image>" },
+    { "name": "k8s", "description": "Scan Kubernetes cluster", "usage": "trivy k8s --report summary" }
+  ],
+  "intents": [
+    "コンテナイメージの脆弱性をスキャンしたい", "セキュリティスキャンを実行したい",
+    "Dockerイメージの脆弱性を確認したい", "IaCの設定ミスを検出したい", "SBOMを生成したい",
+    "scan container image for vulnerabilities", "security scan",
+    "check Docker image vulnerabilities", "scan IaC misconfigurations",
+    "generate software bill of materials"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "tokei",
+  "name": "tokei",
+  "type": "cli",
+  "categories": ["development"],
+  "tags": ["code", "statistics", "lines", "languages", "count", "rust"],
+  "description": "Count lines of code by language — fast code statistics with support for 200+ languages",
+  "description_ja": "言語別コード行数カウント — 200以上の言語に対応した高速コード統計",
+  "install": {
+    "brew": "tokei",
+    "cargo": "tokei",
+    "check": "tokei --version"
+  },
+  "subcommands": [
+    { "name": "count", "description": "Count lines of code", "usage": "tokei" },
+    { "name": "sort", "description": "Sort by a specific column", "usage": "tokei --sort code" },
+    { "name": "type", "description": "Show only specific languages", "usage": "tokei -t Rust,TypeScript" }
+  ],
+  "intents": [
+    "コードの行数を数えたい", "プロジェクトの言語比率を見たい", "コード統計を確認したい",
+    "count lines of code", "code statistics by language",
+    "project language breakdown"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
