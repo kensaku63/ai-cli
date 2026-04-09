@@ -1,0 +1,26 @@
+{
+  "id": "rtk",
+  "name": "rtk",
+  "type": "cli",
+  "categories": ["development"],
+  "tags": ["rust", "toolkit", "utilities", "multi-tool", "fast", "2026"],
+  "description": "Rust-based developer toolkit — collection of fast CLI utilities for common development tasks",
+  "description_ja": "Rust製開発者ツールキット — よくある開発タスク向けの高速CLIユーティリティ集",
+  "install": {
+    "cargo": "rtk",
+    "check": "rtk --version"
+  },
+  "subcommands": [
+    { "name": "encode", "description": "Encode/decode data (base64, URL, etc.)", "usage": "rtk encode base64 '<data>'" },
+    { "name": "hash", "description": "Compute hashes", "usage": "rtk hash sha256 '<data>'" },
+    { "name": "uuid", "description": "Generate UUIDs", "usage": "rtk uuid" },
+    { "name": "time", "description": "Time format conversion", "usage": "rtk time now" }
+  ],
+  "intents": [
+    "開発用のユーティリティをまとめて使いたい", "UUIDを生成したい", "ハッシュを計算したい",
+    "developer utility toolkit", "generate UUID from terminal",
+    "compute hash from CLI", "fast Rust development tools"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

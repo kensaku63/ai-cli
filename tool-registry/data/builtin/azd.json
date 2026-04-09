@@ -1,0 +1,30 @@
+{
+  "id": "azd",
+  "name": "azd",
+  "type": "cli",
+  "categories": ["cloud", "devops"],
+  "tags": ["azure", "developer", "deployment", "templates", "infrastructure", "2026"],
+  "description": "Azure Developer CLI v2 — accelerate Azure app development with templates, provisioning, and deployment in one workflow",
+  "description_ja": "Azure Developer CLI v2 — テンプレート、プロビジョニング、デプロイを一体化したAzureアプリ開発の加速",
+  "install": {
+    "brew": "azure/azd/azd",
+    "choco": "azd",
+    "check": "azd version"
+  },
+  "subcommands": [
+    { "name": "init", "description": "Initialize a new project from a template", "usage": "azd init --template <template>" },
+    { "name": "up", "description": "Provision and deploy in one step", "usage": "azd up" },
+    { "name": "provision", "description": "Provision Azure resources", "usage": "azd provision" },
+    { "name": "deploy", "description": "Deploy application code", "usage": "azd deploy" },
+    { "name": "down", "description": "Delete all Azure resources", "usage": "azd down" },
+    { "name": "monitor", "description": "Open monitoring dashboard", "usage": "azd monitor" }
+  ],
+  "intents": [
+    "Azureアプリを一発でデプロイしたい", "Azureテンプレートからプロジェクトを始めたい",
+    "Azureリソースのプロビジョニングとデプロイを同時にしたい",
+    "deploy Azure app in one step", "initialize from Azure template",
+    "provision and deploy to Azure", "Azure developer workflow"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

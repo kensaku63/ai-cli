@@ -1,0 +1,24 @@
+{
+  "id": "opencode",
+  "name": "opencode",
+  "type": "cli",
+  "categories": ["ai", "development"],
+  "tags": ["ai", "coding", "assistant", "terminal", "open-source", "2026"],
+  "description": "Open-source terminal AI assistant — interactive coding helper with multi-model support",
+  "description_ja": "オープンソースのターミナルAIアシスタント — マルチモデル対応の対話型コーディングヘルパー",
+  "install": {
+    "go": "github.com/opencode-ai/opencode@latest",
+    "check": "opencode --version"
+  },
+  "subcommands": [
+    { "name": "chat", "description": "Start interactive AI session", "usage": "opencode" },
+    { "name": "run", "description": "Run a prompt", "usage": "opencode run '<prompt>'" }
+  ],
+  "intents": [
+    "OSSのAIアシスタントをターミナルで使いたい", "AIコーディングをCLIでしたい",
+    "open source AI coding in terminal", "terminal AI assistant",
+    "CLI AI coding helper"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}

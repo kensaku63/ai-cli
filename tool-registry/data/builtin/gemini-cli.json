@@ -1,0 +1,25 @@
+{
+  "id": "gemini-cli",
+  "name": "gemini",
+  "type": "cli",
+  "categories": ["ai", "development"],
+  "tags": ["google", "gemini", "ai", "coding", "assistant", "2026"],
+  "description": "Google Gemini CLI — AI-powered coding assistant that runs in the terminal with Gemini models",
+  "description_ja": "Google Gemini CLI — Geminiモデルを使ったターミナルベースのAIコーディングアシスタント",
+  "install": {
+    "npm": "@anthropic-ai/gemini-cli",
+    "check": "gemini --version"
+  },
+  "subcommands": [
+    { "name": "chat", "description": "Start an interactive coding session", "usage": "gemini" },
+    { "name": "run", "description": "Execute a prompt non-interactively", "usage": "gemini run '<prompt>'" }
+  ],
+  "intents": [
+    "GeminiでAIコーディングしたい", "ターミナルでAIアシスタントを使いたい",
+    "Google AIをCLIで使いたい",
+    "AI coding assistant in terminal", "use Gemini from command line",
+    "Google AI CLI tool"
+  ],
+  "source": "builtin",
+  "updated_at": "2026-04-09"
+}
