@@ -24,7 +24,11 @@
     "Dockerイメージの脆弱性を確認したい", "IaCの設定ミスを検出したい", "SBOMを生成したい",
     "scan container image for vulnerabilities", "security scan",
     "check Docker image vulnerabilities", "scan IaC misconfigurations",
-    "generate software bill of materials"
+    "generate software bill of materials",
+    "scan container vulnerabilities", "security audit docker image",
+    "コンテナのセキュリティ診断をしたい", "依存パッケージの脆弱性をチェックしたい",
+    "Kubernetes環境のセキュリティを確認したい", "find CVEs in container image",
+    "audit filesystem for vulnerabilities", "脆弱性のあるパッケージを特定したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

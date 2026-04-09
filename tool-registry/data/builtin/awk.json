@@ -31,7 +31,15 @@
     "ログの各ステータスコードの出現回数を集計したい", "HTTPステータスコードの統計を出したい",
     "count occurrences of each value in a log file",
     "show how many times each status code appears",
-    "aggregate log data by field", "analyze access log statistics"
+    "aggregate log data by field", "analyze access log statistics",
+    "extract column from file",
+    "CSVの特定列を取り出したい",
+    "process structured text",
+    "テキストから特定のフィールドだけ取り出したい",
+    "calculate sum or average of a column",
+    "スペース区切りのデータを加工したい",
+    "split line into fields and process each",
+    "行ごとにデータを集計したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -16,7 +16,15 @@
   "intents": [
     "出力をファイルと画面の両方に送りたい", "パイプの途中でファイルに保存したい",
     "write output to file and screen", "pipe output to both file and stdout",
-    "save command output while displaying it"
+    "save command output while displaying it",
+    "save output to file while displaying",
+    "画面とファイルの両方に出力したい",
+    "split output stream",
+    "コマンドの結果をファイルに保存しつつ表示したい",
+    "log output to file and terminal simultaneously",
+    "パイプの途中で出力を分岐させたい",
+    "write to multiple files at once",
+    "出力を記録しながら確認したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -22,7 +22,11 @@
     "Lambda関数をデプロイしたい", "サーバーレスアプリをローカルでテストしたい",
     "AWS SAMプロジェクトを作成したい",
     "deploy Lambda function", "test serverless app locally",
-    "create SAM project", "deploy serverless to AWS"
+    "create SAM project", "deploy serverless to AWS",
+    "deploy serverless app", "SAMでLambdaをデプロイしたい", "AWS serverless build",
+    "SAMテンプレートでインフラを構築したい", "Lambdaをローカルで実行したい",
+    "sam build and deploy", "AWSサーバーレスアプリをビルドしたい",
+    "invoke Lambda function locally with SAM"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

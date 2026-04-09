@@ -25,7 +25,11 @@
     "ディスクがいっぱいか確認したい", "マウントポイントの容量を調べたい",
     "check disk space", "check free disk space", "check storage usage",
     "show filesystem type", "check inode usage", "see how much disk is left",
-    "check if disk is full"
+    "check if disk is full",
+    "filesystem usage", "ディスク空き容量を確認したい", "パーティションの使用率を見たい",
+    "disk space remaining on server", "容量不足を調べたい",
+    "show mounted filesystem sizes", "ボリュームの空き容量を確認したい",
+    "how much free space on disk"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

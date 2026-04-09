@@ -20,7 +20,11 @@
     "ディスク使用量を視覚的に確認したい", "どのディレクトリが容量を使っているか調べたい",
     "duの代わりにわかりやすく容量を表示したい",
     "visualize disk usage", "find large directories",
-    "du alternative with bar chart"
+    "du alternative with bar chart",
+    "visual disk usage tree", "which folders are biggest",
+    "どのフォルダが一番大きいか調べたい", "ディスク容量を食っているフォルダを特定したい",
+    "ディレクトリごとのサイズをツリーで見たい", "show directory sizes visually",
+    "disk space usage breakdown", "容量不足の原因を調べたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

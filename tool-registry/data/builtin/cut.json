@@ -22,7 +22,14 @@
     "get fields from a CSV file",
     "split lines by delimiter and select columns",
     "extract columns from tab-separated data",
-    "cut characters by position"
+    "cut characters by position",
+    "split text by delimiter",
+    "フィールドを切り出したい",
+    "extract fields from CSV/TSV",
+    "カンマ区切りデータから列を選びたい",
+    "get a specific column from output",
+    "コロン区切りのファイルからフィールドを抽出したい",
+    "pick columns from delimited text"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

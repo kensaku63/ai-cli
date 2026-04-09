@@ -17,7 +17,11 @@
   "intents": [
     "OSの情報を確認したい", "カーネルバージョンを見たい", "アーキテクチャを確認したい",
     "check OS version", "show kernel version", "system architecture info",
-    "what OS am I running"
+    "what OS am I running",
+    "show OS info", "カーネルバージョンを確認したい", "check architecture",
+    "マシンのアーキテクチャを調べたい", "Linuxのバージョン情報を表示したい",
+    "print system name and version", "check if running arm64 or x86",
+    "ホスト名を確認したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

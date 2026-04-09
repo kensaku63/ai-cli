@@ -23,7 +23,11 @@
     "動画を変換したい", "音声を抽出したい", "動画をリサイズしたい",
     "動画をGIFに変換したい", "動画をトリミングしたい",
     "convert video format", "extract audio from video", "resize video",
-    "create GIF from video", "trim video clip"
+    "create GIF from video", "trim video clip",
+    "MP4をAVIに変換したい", "動画の解像度を変更したい", "音声ファイルの形式を変えたい",
+    "transcode video to different codec", "compress video file size",
+    "merge multiple video files", "動画からサムネイルを生成したい",
+    "add subtitles to video"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

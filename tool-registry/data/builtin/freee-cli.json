@@ -18,7 +18,11 @@
   "intents": [
     "freeeの取引データを取得したい", "freeeの請求書を管理したい", "freee会計をCLIで操作したい",
     "export freee accounting data", "manage freee invoices",
-    "freee API from command line"
+    "freee API from command line",
+    "freee APIにアクセスしたい", "会計データを取得したい", "freeeの口座情報を確認したい",
+    "freeeで経理処理をしたい", "freee取引一覧をエクスポートしたい",
+    "access freee accounting API", "list freee deals and transactions",
+    "freeeの請求書を発行したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

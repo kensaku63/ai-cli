@@ -29,7 +29,14 @@
     "ログからエラー行だけ抽出したい", "メールアドレスをテキストから抽出したい",
     "特定のステータスコードのリクエストを抽出したい",
     "extract email addresses from a file", "extract lines matching a pattern",
-    "filter log entries by status code", "search for TODO comments in source files"
+    "filter log entries by status code", "search for TODO comments in source files",
+    "search for text pattern in files",
+    "ファイル内の文字列を検索したい",
+    "find lines containing keyword",
+    "テキストから特定の文字列を探したい",
+    "look for a word in multiple files",
+    "ソースコード内の関数名を検索したい",
+    "find all occurrences of a string in a directory"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

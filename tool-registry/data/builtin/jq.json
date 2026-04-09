@@ -21,7 +21,15 @@
     "package.jsonの依存パッケージ名を一覧したい", "JSONをソートして整形したい",
     "list dependency names from package.json",
     "convert JSON to sorted pretty-printed format",
-    "query JSON file with jq"
+    "query JSON file with jq",
+    "parse JSON",
+    "JSONからフィールドを抽出したい",
+    "query JSON data",
+    "filter JSON output",
+    "JSONの中身を見やすく表示したい",
+    "APIレスポンスのJSONから値を取り出したい",
+    "process JSON from command output",
+    "select specific keys from JSON"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -21,7 +21,11 @@
     "ネットワークパケットをキャプチャしたい", "通信内容を解析したい",
     "特定ポートのトラフィックを見たい",
     "capture network packets", "analyze network traffic",
-    "sniff packets on interface", "save packet capture"
+    "sniff packets on interface", "save packet capture",
+    "sniff traffic", "ネットワークのトラブルシューティングをしたい",
+    "パケットキャプチャをファイルに保存したい", "通信の中身を確認したい",
+    "HTTP通信の内容をキャプチャしたい", "monitor network connections",
+    "debug network issues with packet capture", "pcapファイルを読み込みたい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -19,7 +19,11 @@
   "intents": [
     "Javaプログラムを実行したい", "Javaをコンパイルしたい", "JARファイルを実行したい",
     "run Java program", "compile Java code", "execute JAR file",
-    "check Java version"
+    "check Java version",
+    "run jar file", "Javaアプリケーションを起動したい", "javacでソースをコンパイルしたい",
+    "compile java source", "JVMのバージョンを確認したい",
+    "execute Java class with main method", "Javaのクラスパスを指定して実行したい",
+    "run Java application with arguments"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -19,7 +19,11 @@
   "intents": [
     "JSONをjq互換で処理したい", "YAMLを直接クエリしたい", "jqの代替で速いのを使いたい",
     "process JSON with jq-compatible syntax", "query YAML files directly",
-    "faster jq alternative", "parse JSON with better errors"
+    "faster jq alternative", "parse JSON with better errors",
+    "JSON処理をGoで高速にしたい", "jq互換でJSONをフィルタしたい", "process JSON with gojq",
+    "gojqでJSONデータを加工したい", "YAMLファイルをjq構文でクエリしたい",
+    "filter JSON output with gojq", "JSONをコマンドラインで整形したい",
+    "transform JSON data using jq syntax"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

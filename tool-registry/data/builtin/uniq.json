@@ -21,7 +21,11 @@
     "show only unique lines",
     "count occurrences of each line",
     "find repeated lines in a file",
-    "filter out duplicates"
+    "filter out duplicates",
+    "count unique occurrences", "重複を除いて行を数えたい",
+    "テキストの重複行を取り除きたい", "どの行が何回出現しているか調べたい",
+    "ログから重複エントリを除外したい", "deduplicate lines in output",
+    "find most frequent lines", "ソート済みデータから重複を消したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

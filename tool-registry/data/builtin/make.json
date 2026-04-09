@@ -25,7 +25,11 @@
     "並列ビルドしたい", "ビルド成果物をクリーンしたい", "ドライランで確認したい",
     "makeでインストールしたい",
     "build a project", "run a Makefile", "compile with make",
-    "clean build artifacts", "parallel build", "dry run make", "install with make"
+    "clean build artifacts", "parallel build", "dry run make", "install with make",
+    "run Makefile target", "ビルドを実行したい", "compile project with make",
+    "Makefileのターゲット一覧を確認したい", "make cleanでビルドをリセットしたい",
+    "run make with specific target", "ソースコードをコンパイルしたい",
+    "execute build automation"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

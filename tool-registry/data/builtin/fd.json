@@ -21,7 +21,11 @@
   "intents": [
     "ファイルを高速に検索したい", "findの代わりを使いたい", "拡張子でファイルを探したい",
     "fast file search", "find alternative", "search files by extension",
-    "find files matching pattern"
+    "find files matching pattern",
+    "fast file search that respects gitignore", "find alternative that respects gitignore",
+    "ファイル名でファイルを探したい", "gitignoreを考慮してファイルを検索したい",
+    "ディレクトリだけを検索したい", "locate files quickly",
+    "search for files by name", "特定の拡張子のファイルを一覧したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

@@ -33,7 +33,11 @@
     "restart a service",
     "enable a service at boot",
     "disable a service",
-    "list running services"
+    "list running services",
+    "start stop restart service", "サービスの起動停止を管理したい",
+    "systemdのユニットファイルをリロードしたい", "デーモンの状態を確認したい",
+    "enable service at boot", "check if service is active",
+    "reload systemd daemon configuration"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

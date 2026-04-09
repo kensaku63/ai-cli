@@ -23,7 +23,11 @@
     "Helmチャートをインストールしたい", "Kubernetesにアプリをデプロイしたい",
     "Helmリリースをアップグレードしたい", "チャートリポジトリを追加したい",
     "install Helm chart", "deploy app to Kubernetes with Helm",
-    "upgrade Helm release", "manage Kubernetes packages"
+    "upgrade Helm release", "manage Kubernetes packages",
+    "Kubernetesにパッケージをデプロイしたい", "Helmリリースの一覧を確認したい",
+    "チャートのテンプレートをレンダリングしたい", "Helmでアプリをアンインストールしたい",
+    "list helm releases", "render helm chart template locally",
+    "add helm chart repository", "manage releases with helm"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

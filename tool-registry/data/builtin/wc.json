@@ -26,7 +26,11 @@
     "how many lines in this file",
     "プロジェクトの全ファイルの行数を合計したい", "ファイル数を数えたい",
     "count total lines across all files", "count the number of files",
-    "sum up all lines in a project"
+    "sum up all lines in a project",
+    "how many lines in file", "count words",
+    "ファイル内の文字数を数えたい", "テキストの単語数を調べたい",
+    "このファイルは何行あるか", "how many words in this document",
+    "get line count", "ログファイルの行数を確認したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

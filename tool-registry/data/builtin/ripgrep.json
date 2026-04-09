@@ -18,7 +18,11 @@
     "ファイル内のテキストを検索したい", "コードを検索したい", "正規表現でgrepしたい",
     "ディレクトリ内を再帰検索したい", "特定の文字列を含むファイルを探したい",
     "search text in files", "grep recursively", "find files containing text",
-    "search code for pattern", "regex search in directory"
+    "search code for pattern", "regex search in directory",
+    "fast recursive grep", "search code files",
+    "コードベース全体から文字列を検索したい", "高速にgrepしたい",
+    "ソースコード内の関数名を探したい", "search across all source files",
+    "find string in project", "gitignoreを尊重してgrep検索したい"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

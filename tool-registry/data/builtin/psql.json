@@ -21,7 +21,11 @@
     "PostgreSQLに接続したい", "SQLクエリを実行したい", "データベースの一覧を見たい",
     "テーブルを作成したい", "PostgreSQLのデータをエクスポートしたい",
     "connect to PostgreSQL", "run SQL query", "list databases",
-    "create table in Postgres", "export PostgreSQL data"
+    "create table in Postgres", "export PostgreSQL data",
+    "database shell", "SQLを実行したい", "Postgresのテーブル一覧を確認したい",
+    "psqlでデータベースに接続したい", "execute SQL file against PostgreSQL",
+    "PostgreSQLのスキーマを確認したい", "import SQL dump into Postgres",
+    "query PostgreSQL from command line"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

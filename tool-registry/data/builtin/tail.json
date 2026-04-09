@@ -19,7 +19,14 @@
     "tail a log file", "watch file for changes",
     "syslogの最後のN行を表示したい", "ログファイルをリアルタイム監視してエラーを検知したい",
     "show last N lines of syslog", "watch log file for errors",
-    "monitor log file and filter by keyword"
+    "monitor log file and filter by keyword",
+    "ログをリアルタイムで監視したい",
+    "watch file changes as they happen",
+    "ファイルの最後の部分だけ確認したい",
+    "stream new lines added to a file",
+    "continuously watch a growing log file",
+    "アプリのログを追いかけたい",
+    "print the end of a file"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

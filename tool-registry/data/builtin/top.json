@@ -17,7 +17,12 @@
   "intents": [
     "CPU使用率を確認したい", "メモリ使用量を監視したい", "プロセスの負荷を見たい",
     "check CPU usage", "monitor memory usage", "view process load",
-    "top resource consuming processes"
+    "top resource consuming processes",
+    "monitor CPU memory usage live", "リアルタイムでプロセスを監視したい",
+    "システムの負荷状況をリアルタイムで見たい", "どのプロセスがCPUを使っているか確認したい",
+    "live system resource monitor", "see running processes sorted by CPU",
+    "メモリを大量に使っているプロセスを特定したい",
+    "real-time process monitoring"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"
