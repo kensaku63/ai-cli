@@ -23,7 +23,10 @@
     "reverse sort order",
     "sort and remove duplicates",
     "sort by a specific column",
-    "sort file contents"
+    "sort file contents",
+    "重複行を見つけたい", "データを並べ替えてから重複を検出したい",
+    "find duplicate lines in a file", "sort and deduplicate data",
+    "sort output by size or count"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

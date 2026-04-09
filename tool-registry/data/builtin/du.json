@@ -26,7 +26,10 @@
     "大きなファイルやフォルダを見つけたい", "ディレクトリの合計サイズを知りたい",
     "check directory size", "find large directories", "check disk usage per folder",
     "find what is taking up disk space", "show folder sizes", "estimate disk usage",
-    "check total size of a directory"
+    "check total size of a directory",
+    "一番大きいファイルやフォルダを表示したい", "サイズ順に並べて表示したい",
+    "show the top largest files sorted by size", "show largest files in directory",
+    "list directories sorted by size", "find biggest folders"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

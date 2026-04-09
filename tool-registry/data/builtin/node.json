@@ -25,7 +25,9 @@
     "テストを実行したい",
     "run a JavaScript file", "start Node.js REPL", "start a server with Node",
     "debug a Node.js app", "watch mode for development", "check Node.js version",
-    "run Node.js tests"
+    "run Node.js tests",
+    "nodeがインストールされているか確認したい",
+    "check if node is installed", "verify node installation"
   ],
   "source": "builtin",
   "updated_at": "2026-04-09"

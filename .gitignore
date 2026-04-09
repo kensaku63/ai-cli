@@ -30,6 +30,9 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # embedding cache (regenerated on first run)
 tool-registry/data/embeddings-cache.json
 
+# benchmark results (generated on each run)
+benchmark/results.json
+
 # IntelliJ based IDEs
 .idea
 
