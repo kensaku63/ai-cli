@@ -209,6 +209,7 @@ export class AiCliEngine {
   private async ensureInitialized(): Promise<void> {
     if (this.initialized) return;
     await this.registry.loadBuiltin();
+    await this.registry.loadAuto();
     this.initialized = true;
   }
 

@@ -9,6 +9,7 @@ import type { ToolMetadata } from "./schema.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BUILTIN_DIR = join(__dirname, "data", "builtin");
+const AUTO_JSONL = join(__dirname, "data", "auto", "tools.jsonl");
 
 export class Registry {
   private tools: Map<string, ToolMetadata> = new Map();
@@ -21,6 +22,23 @@ export class Registry {
       const raw = await readFile(join(BUILTIN_DIR, entry), "utf-8");
       const meta: ToolMetadata = JSON.parse(raw);
       this.tools.set(meta.id, meta);
+    }
+  }
+
+  /** Load auto-generated tool metadata from data/auto/tools.jsonl */
+  async loadAuto(): Promise<void> {
+    try {
+      const content = await readFile(AUTO_JSONL, "utf-8");
+      for (const line of content.split("\n")) {
+        if (!line.trim()) continue;
+        const meta: ToolMetadata = JSON.parse(line);
+        // Builtin takes priority — don't overwrite
+        if (!this.tools.has(meta.id)) {
+          this.tools.set(meta.id, meta);
+        }
+      }
+    } catch {
+      // auto/tools.jsonl doesn't exist yet — that's fine
     }
   }
 
