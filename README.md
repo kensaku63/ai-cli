@@ -15,6 +15,32 @@ $ cat data.csv | ai "aggregate sales by month"
 # → awk -F',' 'NR>1{split($1,d,"-");m=d[1]"-"d[2];s[m]+=$2}END{for(k in s)print k,s[k]}' | sort
 ```
 
+## Vision
+
+> **AIの知性に、人類のソフトウェア全てを繋ぐ。**
+> *Bridge AI's intelligence to all of humanity's software.*
+
+The `bash` tool gave AI unlimited execution power. But AI only knows a few hundred of the millions of programs humanity has built — an utilization rate below **0.01%**. The ceiling is not intelligence. It is knowing **what tools exist and how to combine them**.
+
+ai-cli closes that gap. It connects AI's reasoning to the entire universe of CLI programs, packages, and Unix composition — and exposes that power through plain language.
+
+```
+AI's intelligence
+  × Humanity's software  (millions of programs)
+  × Unix composition     (pipes, scripts)
+  = The ability to solve any problem
+```
+
+### What ai-cli stands for
+
+- **Essence** — *AIの知性に、人類のソフトウェア全てを繋ぐ* — Bridge AI's intelligence to all of humanity's software.
+- **Experience** — *意図を伝えれば、最適なツールの組み合わせが動く* — Describe your intent; the optimal combination of tools runs itself.
+- **Structure** — *Unix哲学の完成形 — 合成の力を、自然言語で解放する* — The Unix philosophy, completed: composition unleashed through natural language.
+- **Speed** — *昨日公開されたCLIを、今日AIが使いこなす* — A CLI released yesterday is wielded by AI today — no retraining required.
+- **Ecosystem** — *個人開発者のツールが、AIを介して数億人に届く* — A solo developer's tool reaches hundreds of millions through AI.
+
+For the full adopted visions, hypotheses, and design principles, see [`docs/vision/`](docs/vision/).
+
 ## Why
 
 Every developer has the same moment: you know *what* you want, but not the exact flags, syntax, or pipe chain to get there. You open a browser, search, scan Stack Overflow, copy-paste, tweak, retry.
