@@ -329,6 +329,8 @@ export class AiCliEngine {
   private async ensureInitialized(): Promise<void> {
     if (this.initialized) return;
     await this.registry.loadBuiltin();
+    // Load auto-generated tools (from aCLImatise-style --help parsing).
+    // Non-fatal: if the directory is missing or empty, 0 are loaded.
     await this.registry.loadAuto();
     // Initialize semantic search — fail-soft; falls back to TF-IDF if model unavailable
     await this.searchEngine.initSemantic(this.registry.all());

@@ -170,6 +170,14 @@ function scoreTool(
     if (!matchedOn.includes("description")) matchedOn.push("description");
   }
 
+  // Auto-generated tools (from --help parsing) are less reliable than
+  // hand-curated builtin definitions. Apply a discount so they do not
+  // out-rank builtin tools on incidental text matches, but can still win
+  // when directly queried by name.
+  if (tool.source === "auto") {
+    score *= 0.4;
+  }
+
   return { score, matchedOn };
 }
 
