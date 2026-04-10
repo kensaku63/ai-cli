@@ -216,6 +216,12 @@ export function searchTools(
 export class SearchEngine {
   private embeddingIndex: EmbeddingIndex | null = null;
   private semanticReady = false;
+  /**
+   * Precomputed inverse index from lowercased tool id / name → tool.
+   * Used by hybridSearch Stage 0 for O(1) exact-name match lookup instead
+   * of scanning every tool on every query. Rebuilt on each initSemantic call.
+   */
+  private nameIndex: Map<string, ToolMetadata> = new Map();
 
   /** Whether semantic search is available */
   get isSemanticReady(): boolean {
@@ -225,11 +231,24 @@ export class SearchEngine {
   /**
    * Initialize the embedding model and build the semantic index.
    * Returns true if semantic search is ready, false if falling back to TF-IDF.
+   * The name index is always rebuilt, even if the embedding model fails.
    */
   async initSemantic(
     tools: ToolMetadata[],
     options?: { cachePath?: string },
   ): Promise<boolean> {
+    // Always rebuild the name index, even if semantic init later fails.
+    this.nameIndex.clear();
+    for (const tool of tools) {
+      const idL = tool.id.toLowerCase();
+      const nameL = tool.name.toLowerCase();
+      // id is authoritative — set it first.
+      if (!this.nameIndex.has(idL)) this.nameIndex.set(idL, tool);
+      if (nameL !== idL && !this.nameIndex.has(nameL)) {
+        this.nameIndex.set(nameL, tool);
+      }
+    }
+
     try {
       this.embeddingIndex = new EmbeddingIndex();
       await this.embeddingIndex.build(tools);
@@ -277,63 +296,77 @@ export class SearchEngine {
   ): Promise<SearchResult[]> {
     const { limit = 5 } = options;
 
-    // Stage 0: Name match — highest priority.
+    // Stage 0: Name match via precomputed nameIndex (O(1) lookup).
     // Blending TF-IDF into [0,1] space dilutes exact matches, so we surface
-    // name-matched tools explicitly before the semantic stage. This covers:
+    // name-matched tools explicitly before the semantic stage. Covers:
     //   - query == tool.name/id  (e.g. "git" → git)
     //   - query starts with tool.name as a standalone token  (e.g. "git status" → git)
-    // so that a semantically similar but wrong tool (e.g. "exa" for "git status")
-    // cannot outrank the user's explicit tool reference.
+    // Replaces the previous O(N) scan over every tool on every query.
     const q = query.trim().toLowerCase();
     const queryTokens = tokenize(query);
     const firstToken = queryTokens[0] ?? "";
     const exactMatches: SearchResult[] = [];
     const exactIds = new Set<string>();
-    for (const tool of tools) {
-      const nameL = tool.name.toLowerCase();
-      const idL = tool.id.toLowerCase();
-      let matched = false;
-      let score = 0;
-      if (q === nameL || q === idL) {
-        score = 2.0;
-        matched = true;
-      } else if (
-        (firstToken === nameL || firstToken === idL) &&
-        nameL.length >= 2
-      ) {
-        // Tool name appears as the first token of the query — strong signal
-        score = 1.5;
-        matched = true;
-      }
-      if (matched) {
-        exactMatches.push({ tool, score, matchedOn: ["exact_name"] });
-        exactIds.add(tool.id);
+
+    // Full-query exact match (e.g. query "git" → git tool)
+    const fullHit = this.nameIndex.get(q);
+    if (fullHit) {
+      exactMatches.push({ tool: fullHit, score: 2.0, matchedOn: ["exact_name"] });
+      exactIds.add(fullHit.id);
+    }
+
+    // First-token match (e.g. query "git status" → git tool)
+    if (
+      firstToken &&
+      firstToken !== q &&
+      firstToken.length >= 2
+    ) {
+      const tokenHit = this.nameIndex.get(firstToken);
+      if (tokenHit && !exactIds.has(tokenHit.id)) {
+        exactMatches.push({
+          tool: tokenHit,
+          score: 1.5,
+          matchedOn: ["exact_name"],
+        });
+        exactIds.add(tokenHit.id);
       }
     }
 
     // Stage 1: Semantic retrieval — broad candidate set
-    const candidateCount = Math.max(limit * 3, 15);
+    const candidateCount = Math.max(limit * 4, 20);
     const semanticHits = await this.embeddingIndex!.search(
       query,
       candidateCount,
     );
 
-    // Pre-compute TF-IDF scores for all tools
-    const tfidfAll = searchTools(query, tools, {
-      limit: tools.length,
+    // Stage 2a: TF-IDF re-rank ONLY on semantic candidates.
+    // This replaces the previous full-table `searchTools(query, tools, ...)`
+    // scan, which scaled O(N*M) with tool count. At 10K+ tools that became
+    // the dominant cost; restricting to semantic Top-K keeps it O(K*M).
+    // The Stage 0 nameIndex already catches explicit tool references that
+    // semantic might miss, so we do not need a fallback scan over every tool.
+    const toolMap = new Map(tools.map((t) => [t.id, t]));
+    const semanticTools: ToolMetadata[] = [];
+    for (const hit of semanticHits) {
+      const t = toolMap.get(hit.toolId);
+      if (t) semanticTools.push(t);
+    }
+    const tfidfCandidates = searchTools(query, semanticTools, {
+      limit: semanticTools.length,
       threshold: 0,
     });
-    const tfidfMap = new Map(tfidfAll.map((r) => [r.tool.id, r]));
+    const tfidfMap = new Map(
+      tfidfCandidates.map((r) => [r.tool.id, r]),
+    );
 
     // Normalization factors
     const maxSemantic = semanticHits[0]?.score ?? 1;
-    const maxTfidf = tfidfAll[0]?.score ?? 1;
+    const maxTfidf = tfidfCandidates[0]?.score ?? 1;
 
     // Stage 2: Blend scores — 70% semantic, 30% TF-IDF
     const SEMANTIC_WEIGHT = 0.7;
     const TFIDF_WEIGHT = 0.3;
 
-    const toolMap = new Map(tools.map((t) => [t.id, t]));
     const results: SearchResult[] = [...exactMatches];
 
     for (const hit of semanticHits) {
@@ -354,19 +387,6 @@ export class SearchEngine {
       if (tfidf) matchedOn.push(...tfidf.matchedOn);
 
       results.push({ tool, score: blended, matchedOn });
-    }
-
-    // Also include high TF-IDF results not in semantic candidates
-    // (handles exact name match edge cases)
-    const semanticIds = new Set(semanticHits.map((h) => h.toolId));
-    for (const tr of tfidfAll.slice(0, limit)) {
-      if (semanticIds.has(tr.tool.id) || exactIds.has(tr.tool.id)) continue;
-      const normTfidf = maxTfidf > 0 ? tr.score / maxTfidf : 0;
-      results.push({
-        tool: tr.tool,
-        score: normTfidf * TFIDF_WEIGHT,
-        matchedOn: tr.matchedOn,
-      });
     }
 
     results.sort((a, b) => b.score - a.score);
