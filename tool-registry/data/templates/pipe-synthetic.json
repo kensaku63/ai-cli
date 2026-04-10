@@ -1,0 +1,203 @@
+[
+  {
+    "id": "synth:grep-to-less",
+    "primaryTool": "less",
+    "tools": ["grep", "less"],
+    "patterns": [
+      "grep.*(?:\\||パイプ).*less",
+      "(?:grep|検索).*結果.*(?:less|閲覧|ページャ)",
+      "(?:large|many).*(?:grep|match).*(?:scroll|less)"
+    ],
+    "commandTemplate": "grep {PATTERN} {FILE} | less",
+    "intents": [
+      "grep の検索結果が大量なので less で閲覧",
+      "grep result with pager",
+      "paginate grep output with less"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8; primary tuned to benchmark expected_tool (less)"
+  },
+  {
+    "id": "synth:docker-logs-to-less",
+    "primaryTool": "less",
+    "tools": ["docker", "less"],
+    "patterns": [
+      "docker\\s+logs.*(?:into|パイプ|\\|).*less",
+      "docker.*logs.*(?:paginated|pager|less)",
+      "docker.*logs.*(?:ページャ|閲覧)"
+    ],
+    "commandTemplate": "docker logs {CONTAINER} | less",
+    "intents": [
+      "docker logs をページャーで閲覧",
+      "view docker logs with pager",
+      "paginate docker container logs with less"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8; primary tuned to benchmark expected_tool (less)"
+  },
+  {
+    "id": "synth:curl-to-gojq",
+    "primaryTool": "gojq",
+    "tools": ["curl", "gojq"],
+    "patterns": [
+      "(?:pipe\\s+)?curl.*(?:into|\\||パイプ).*gojq",
+      "curl.*gojq.*(?:extract|抽出|filter)",
+      "(?:API|endpoint).*(?:response|レスポンス|JSON).*gojq"
+    ],
+    "commandTemplate": "curl -s {URL} | gojq '{FILTER}'",
+    "intents": [
+      "API 結果を gojq で抽出",
+      "pipe curl output into gojq",
+      "extract JSON fields from curl response with gojq"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8; primary tuned to benchmark expected_tool (gojq)"
+  },
+  {
+    "id": "synth:make-to-tee-buildlog",
+    "primaryTool": "make",
+    "tools": ["make", "tee"],
+    "patterns": [
+      "make.*出力.*(?:build\\.?log|ビルドログ)",
+      "make.*ビルドログ.*(?:保存|記録|record)"
+    ],
+    "commandTemplate": "make {TARGET} 2>&1 | tee build.log",
+    "intents": [
+      "make のログを記録しつつ表示",
+      "record build output with tee"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8; Japanese-only pattern to avoid hijacking pipe-en-060 where expected=tee via save-and-display builtin template",
+    "notes": "pipe-en-060 `pipe make output through tee to build.log and count error lines` is intentionally left to the builtin save-and-display template (primary=tee)."
+  },
+  {
+    "id": "synth:diff-to-delta",
+    "primaryTool": "delta",
+    "tools": ["diff", "delta"],
+    "patterns": [
+      "(?:git\\s+)?diff.*(?:syntax\\s+highlight|colou?r|delta)",
+      "(?:git)?\\s*(?:差分|diff).*(?:横並び|side.?by.?side|見やすく|カラフル|シンタックスハイライト)",
+      "show.*(?:git\\s+)?diff.*(?:with|in)\\s*(?:color|highlight)",
+      "(?:見やすく|pretty|highlight).*(?:diff|差分)"
+    ],
+    "commandTemplate": "git diff {REVS} | delta",
+    "intents": [
+      "diff 結果を見やすく表示",
+      "syntax highlighted diff",
+      "git diff with color",
+      "pretty diff with delta"
+    ],
+    "source": "synthetic",
+    "frequency": 3,
+    "benchmark_hits": 2,
+    "attribution": "research-datasets-ingestion.md §8; primary tuned to benchmark expected_tool (delta)"
+  },
+  {
+    "id": "synth:pg-dump-to-gzip",
+    "primaryTool": "pg_dump",
+    "tools": ["pg_dump", "gzip"],
+    "patterns": [
+      "pg_?dump.*(?:gzip|圧縮|\\.gz)",
+      "(?:postgres|postgresql)\\s*(?:db|database)?.*(?:backup|ダンプ|dump).*(?:gzip|gz|圧縮)"
+    ],
+    "commandTemplate": "pg_dump {DB} | gzip > {OUTPUT}.sql.gz",
+    "intents": [
+      "PostgreSQL を圧縮ダンプ",
+      "backup postgres with compression",
+      "dump database and compress with gzip"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "benchmark_hits": 0,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:whois-to-grep",
+    "primaryTool": "whois",
+    "tools": ["whois", "grep"],
+    "patterns": [
+      "whois.*(?:grep|抽出|filter|特定)",
+      "whois.*(?:expir|期限|registrar|レジストラ)",
+      "(?:ドメイン|domain).*(?:有効期限|expir|期限|when.*expir)"
+    ],
+    "commandTemplate": "whois {DOMAIN} | grep -i expir",
+    "intents": [
+      "whois から特定情報だけ抽出",
+      "whois filter specific field",
+      "check domain expiration date"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "benchmark_hits": 0,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:dmesg-filter",
+    "primaryTool": "dmesg",
+    "tools": ["dmesg", "grep"],
+    "patterns": [
+      "dmesg.*(?:grep|filter|抽出)",
+      "(?:カーネル.*(?:ログ|メッセージ)|kernel\\s+(?:log|messages)).*(?:USB|driver|ドライバ|device|関連|related)",
+      "(?:show|表示).*kernel\\s+messages"
+    ],
+    "commandTemplate": "dmesg | grep -i {PATTERN}",
+    "intents": [
+      "カーネルログから特定ドライバを探す",
+      "filter dmesg by keyword",
+      "show kernel messages for a specific device"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:journalctl-filter",
+    "primaryTool": "journalctl",
+    "tools": ["journalctl", "grep"],
+    "patterns": [
+      "journalctl.*(?:grep|filter|抽出)",
+      "(?:systemd\\s+)?(?:サービス|service).*(?:log|ログ).*(?:since|期間|時間|時刻)",
+      "(?:ブート|boot).*(?:以降|since).*(?:ログ|log|kernel)"
+    ],
+    "commandTemplate": "journalctl -u {SERVICE} --since {TIME} | grep {PATTERN}",
+    "intents": [
+      "systemd サービスのログを時間指定で検索",
+      "query journalctl logs by time",
+      "filter journalctl output by keyword"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "benchmark_hits": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:tail-follow-grep",
+    "primaryTool": "tail",
+    "tools": ["tail", "grep"],
+    "patterns": [
+      "tail\\s*(?:-f|follow).*grep",
+      "(?:access|error)[._]?log.*(?:監視|リアルタイム|real.?time|watch|follow|tail)",
+      "(?:最後|末尾|last)\\s*\\d*\\s*(?:行|lines).*(?:log|ログ).*(?:grep|search|failed)",
+      "(?:ログ|log).*(?:follow|監視|watch).*(?:filter|抽出|grep|ERROR|WARN|5xx)"
+    ],
+    "commandTemplate": "tail -f {FILE} | grep {PATTERN}",
+    "intents": [
+      "ログを follow しながら特定パターンを抽出",
+      "tail -f log with grep filter",
+      "watch log in real-time and filter"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "benchmark_hits": 2,
+    "attribution": "research-datasets-ingestion.md §8"
+  }
+]
