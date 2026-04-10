@@ -1,0 +1,170 @@
+[
+  {
+    "id": "synth:grep-to-less",
+    "primaryTool": "less",
+    "tools": ["grep", "less"],
+    "patterns": [
+      "grep.*(?:\\||パイプ).*less",
+      "(?:grep|検索).*結果.*(?:less|閲覧|ページャ)"
+    ],
+    "intents": [
+      "grep の検索結果が大量なので less で閲覧",
+      "grep result with pager"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:docker-logs-to-less",
+    "primaryTool": "less",
+    "tools": ["docker", "less"],
+    "patterns": [
+      "docker\\s+logs.*(?:into|パイプ|\\|).*less",
+      "docker.*logs.*(?:paginated|pager|less)",
+      "docker.*logs.*(?:ページャ|閲覧)"
+    ],
+    "intents": [
+      "docker logs をページャーで閲覧",
+      "view docker logs with pager"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:curl-to-gojq",
+    "primaryTool": "gojq",
+    "tools": ["curl", "gojq"],
+    "patterns": [
+      "(?:pipe\\s+)?curl.*(?:into|\\||パイプ).*gojq",
+      "curl.*gojq.*(?:extract|抽出|filter)"
+    ],
+    "intents": [
+      "API 結果を gojq で抽出",
+      "pipe curl output into gojq"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:make-to-tee-buildlog",
+    "primaryTool": "make",
+    "tools": ["make", "tee"],
+    "patterns": [
+      "make.*出力.*(?:build\\.?log|ビルドログ)",
+      "make.*ビルドログ.*(?:保存|記録|record)"
+    ],
+    "intents": [
+      "make のログを記録しつつ表示",
+      "record build output with tee"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "attribution": "research-datasets-ingestion.md §8",
+    "notes": "Japanese-only to avoid matching pipe-en-060 'pipe make output through tee to build.log and count error lines' where expected=tee via save-and-display builtin template."
+  },
+  {
+    "id": "synth:diff-to-delta",
+    "primaryTool": "delta",
+    "tools": ["diff", "delta"],
+    "patterns": [
+      "(?:git\\s+)?diff.*(?:syntax\\s+highlight|colou?r|delta)",
+      "(?:git)?\\s*(?:差分|diff).*(?:横並び|side.?by.?side|見やすく|カラフル|シンタックスハイライト)",
+      "show.*(?:git\\s+)?diff.*(?:with|in)\\s*(?:color|highlight)"
+    ],
+    "intents": [
+      "diff 結果を見やすく表示",
+      "syntax highlighted diff",
+      "git diff with color"
+    ],
+    "source": "synthetic",
+    "frequency": 3,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:pg-dump-to-gzip",
+    "primaryTool": "pg_dump",
+    "tools": ["pg_dump", "gzip"],
+    "patterns": [
+      "pg_?dump.*(?:gzip|圧縮|\\.gz)",
+      "(?:postgres|postgresql).*(?:backup|ダンプ).*(?:gzip|圧縮)"
+    ],
+    "intents": [
+      "PostgreSQL を圧縮ダンプ",
+      "backup postgres with compression"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:whois-to-grep",
+    "primaryTool": "whois",
+    "tools": ["whois", "grep"],
+    "patterns": [
+      "whois.*(?:grep|抽出|filter|特定)",
+      "whois.*(?:expir|期限|registrar|レジストラ)"
+    ],
+    "intents": [
+      "whois から特定情報だけ抽出",
+      "whois filter specific field"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:dmesg-filter",
+    "primaryTool": "dmesg",
+    "tools": ["dmesg", "grep"],
+    "patterns": [
+      "dmesg.*(?:grep|filter|抽出)",
+      "(?:カーネル.*(?:ログ|メッセージ)|kernel\\s+(?:log|messages)).*(?:USB|driver|ドライバ|device|関連|related)",
+      "(?:show|表示).*kernel\\s+messages"
+    ],
+    "intents": [
+      "カーネルログから特定ドライバを探す",
+      "filter dmesg by keyword"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:journalctl-filter",
+    "primaryTool": "journalctl",
+    "tools": ["journalctl", "grep"],
+    "patterns": [
+      "journalctl.*(?:grep|filter|抽出)",
+      "(?:systemd\\s+)?(?:サービス|service).*(?:log|ログ).*(?:since|期間|時間|時刻)",
+      "(?:ブート|boot).*(?:以降|since).*(?:ログ|log|kernel)"
+    ],
+    "intents": [
+      "systemd サービスのログを時間指定で検索",
+      "query journalctl logs by time"
+    ],
+    "source": "synthetic",
+    "frequency": 1,
+    "attribution": "research-datasets-ingestion.md §8"
+  },
+  {
+    "id": "synth:tail-follow-grep",
+    "primaryTool": "tail",
+    "tools": ["tail", "grep"],
+    "patterns": [
+      "tail\\s*(?:-f|follow).*grep",
+      "(?:access|error)[._]?log.*(?:監視|リアルタイム|real.?time|watch|follow|tail)",
+      "(?:最後|末尾|last)\\s*\\d*\\s*(?:行|lines).*(?:log|ログ).*(?:grep|search|failed)",
+      "(?:ログ|log).*(?:follow|監視|watch).*(?:filter|抽出|grep|ERROR|WARN|5xx)"
+    ],
+    "intents": [
+      "ログを follow しながら特定パターンを抽出",
+      "tail -f log with grep filter"
+    ],
+    "source": "synthetic",
+    "frequency": 2,
+    "attribution": "research-datasets-ingestion.md §8"
+  }
+]

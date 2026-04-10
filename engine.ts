@@ -5,6 +5,9 @@
  */
 
 import { spawn } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Registry, SearchEngine } from "./tool-registry/index.js";
 import type {
   ToolMetadata,
@@ -72,10 +75,65 @@ interface PipeTemplate {
 }
 
 /**
+ * Synthetic templates loaded from tool-registry/data/templates/pipe-synthetic.json.
+ *
+ * These come from research-datasets-ingestion.md §8 (synthetic-knowledge Phase A).
+ * They target pipe queries that the builtin templates below do not cover —
+ * specifically cases where the primary tool should be the "downstream"
+ * consumer (less, delta, gojq) rather than the producer.
+ *
+ * Loaded at module init with a try/catch so an absent file degrades gracefully
+ * to an empty array (useful for isolated unit tests and fresh clones).
+ */
+interface SyntheticTemplateJson {
+  id: string;
+  patterns: string[];
+  primaryTool: string;
+  tools: string[];
+  intents?: string[];
+  source?: string;
+  frequency?: number;
+  benchmark_hits?: number;
+  commandTemplate?: string;
+  attribution?: string;
+  notes?: string;
+}
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const SYNTHETIC_TEMPLATES_PATH = join(
+  __dirname,
+  "tool-registry",
+  "data",
+  "templates",
+  "pipe-synthetic.json",
+);
+
+function loadSyntheticTemplates(): PipeTemplate[] {
+  try {
+    const raw = readFileSync(SYNTHETIC_TEMPLATES_PATH, "utf-8");
+    const data = JSON.parse(raw) as SyntheticTemplateJson[];
+    return data.map((t) => ({
+      id: t.id,
+      patterns: t.patterns.map((p) => new RegExp(p, "i")),
+      primaryTool: t.primaryTool,
+      tools: t.tools,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+const SYNTHETIC_TEMPLATES: PipeTemplate[] = loadSyntheticTemplates();
+
+/**
  * Frequently occurring pipe patterns identified from 527-case benchmark.
  * When a query matches, the primary tool is boosted to ensure correct discovery.
+ *
+ * Synthetic templates from synthetic-knowledge are placed first so they
+ * take precedence over the broader builtin regex below when both match.
  */
 const PIPE_TEMPLATES: PipeTemplate[] = [
+  ...SYNTHETIC_TEMPLATES,
   {
     id: "count-files",
     patterns: [
