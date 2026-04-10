@@ -1,282 +1,416 @@
 /**
- * aCLImatise Adapter — Convert aCLImatise YAML data to ToolMetadata.
+ * aCLImatise-style Help Parser — Convert CLI --help output to ToolMetadata.
  *
- * aCLImatise (github.com/aCLImatise/BaseCamp) provides 3,145 structured
- * CLI tool definitions parsed from --help output using PEG grammar.
+ * Inspired by aCLImatise (github.com/aCLImatise/CliHelpParser), which uses
+ * a PEG parser to extract structured information from --help text.
  *
- * Note: BaseCamp tools are primarily bioinformatics (BioConda).
- * This adapter also provides a generic --help parser for general CLI tools.
+ * This module implements an independent parser in pure TypeScript so we can
+ * ingest any CLI that supports a conventional --help format, without taking
+ * on the GPL v3 licensing of the aCLImatise BaseCamp data set.
+ *
+ * Target help formats: commander, yargs, clap, cobra, argparse, click,
+ * GNU-style getopt, BSD-style.
  */
 
-import type { ToolMetadata, Subcommand } from "../tool-registry/schema.js";
+import type {
+  InstallInfo,
+  Subcommand,
+  ToolMetadata,
+} from "../tool-registry/schema.js";
 
-// ─── aCLImatise YAML Schema Types ───
+// ─── Parsed Help ───
 
-interface ACliFlag {
-  synonyms: string[];
-  description: string;
-  optional: boolean;
-  args: { _type?: string; name?: string; names?: string[] };
-}
-
-interface ACliPositional {
+export interface ParsedFlag {
+  /** Long form, e.g. "--output" */
   name: string;
+  /** Short form, e.g. "-o" */
+  short?: string;
   description: string;
-  position: number;
-  optional: boolean;
+  /** Argument name if any, e.g. "FILE" in "-o, --output FILE" */
+  arg?: string;
 }
 
-interface ACliCommand {
-  command: string[];
-  positional: ACliPositional[];
-  named: ACliFlag[];
-  subcommands: ACliCommand[];
-  help_text: string;
-  docker_image?: string;
+export interface ParsedHelp {
+  description: string;
+  usage?: string;
+  subcommands: Subcommand[];
+  flags: ParsedFlag[];
+}
+
+// ─── Parser ───
+
+/**
+ * Parse generic --help output into structured data.
+ * Handles common CLI conventions: Usage, Commands/Subcommands, Options/Flags.
+ */
+export function parseHelpOutput(helpText: string): ParsedHelp {
+  const text = stripAnsi(helpText);
+  const lines = text.split("\n");
+  const description = extractDescription(text);
+  const usage = extractUsage(text);
+  const subcommands: Subcommand[] = [];
+  const flags: ParsedFlag[] = [];
+
+  let section: "none" | "commands" | "options" = "none";
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+    const trimmed = raw.trim();
+
+    // Section headers (handle both "Commands:" and "COMMANDS")
+    if (
+      /^(Commands|COMMANDS|Subcommands|SUBCOMMANDS|Available Commands)\s*:?\s*$/i.test(
+        trimmed,
+      )
+    ) {
+      section = "commands";
+      continue;
+    }
+    if (
+      /^(Options|OPTIONS|Flags|FLAGS|Global Options|GLOBAL OPTIONS|Arguments|ARGUMENTS)\s*:?\s*$/i.test(
+        trimmed,
+      )
+    ) {
+      section = "options";
+      continue;
+    }
+
+    if (!trimmed) continue;
+
+    if (section === "commands") {
+      const cmd = parseCommandLine(raw);
+      if (cmd) subcommands.push(cmd);
+    } else if (section === "options") {
+      const flag = parseFlagLine(raw);
+      if (flag) flags.push(flag);
+    }
+  }
+
+  return { description, ...(usage ? { usage } : {}), subcommands, flags };
+}
+
+/** Strip ANSI color escape sequences from help output */
+function stripAnsi(text: string): string {
+  // eslint-disable-next-line no-control-regex
+  return text.replace(/\x1b\[[0-9;]*[a-zA-Z]/g, "");
+}
+
+/** Extract a Usage: line if present */
+function extractUsage(text: string): string | undefined {
+  const match = text.match(/^[\s]*[Uu]sage:\s*(.+)$/m);
+  return match ? match[1].trim() : undefined;
 }
 
 /**
- * Convert a parsed aCLImatise YAML command to ToolMetadata.
+ * Extract the first paragraph of prose description.
+ * Skips Usage lines, command name lines, and stops at the next section.
  */
-export function convertACliCommand(cmd: ACliCommand): ToolMetadata {
-  const toolName = cmd.command[0] ?? "unknown";
-
-  // Extract subcommands
-  const subcommands: Subcommand[] = cmd.subcommands
-    .slice(0, 20)
-    .map((sub) => {
-      const subName = sub.command[sub.command.length - 1] ?? "";
-      const desc = extractFirstLine(sub.help_text) || subName;
-      return { name: subName, description: desc };
-    })
-    .filter((s) => s.name);
-
-  // Extract description from help_text
-  const description = extractDescription(cmd.help_text) || toolName;
-
-  // Build tags from flag names and subcommand names
-  const tags = buildTags(cmd);
-
-  return {
-    id: toolName,
-    name: toolName,
-    type: "cli",
-    categories: inferCategories(toolName, description, tags),
-    tags,
-    description,
-    install: {
-      check: `${toolName} --version`,
-    },
-    subcommands,
-    intents: [],
-    source: "auto",
-    updated_at: new Date().toISOString().slice(0, 10),
-  };
-}
-
-/** Extract first meaningful line from help text */
-function extractFirstLine(helpText: string): string {
-  if (!helpText) return "";
-  const lines = helpText.split("\n").filter((l) => l.trim());
-  // Skip lines that are just the command name or usage
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith("Usage:")) continue;
-    if (trimmed.startsWith("usage:")) continue;
-    if (trimmed.length < 5) continue;
-    if (trimmed.startsWith("-")) continue;
-    return trimmed.slice(0, 200);
-  }
-  return lines[0]?.trim().slice(0, 200) ?? "";
-}
-
-/** Extract description from help text (first paragraph) */
-function extractDescription(helpText: string): string {
-  if (!helpText) return "";
-  const lines = helpText.split("\n");
+export function extractDescription(helpText: string): string {
+  const text = stripAnsi(helpText);
+  const lines = text.split("\n");
   const descLines: string[] = [];
   let started = false;
 
   for (const line of lines) {
     const trimmed = line.trim();
-    // Skip initial empty lines and usage lines
     if (!started) {
       if (!trimmed) continue;
-      if (trimmed.startsWith("Usage:") || trimmed.startsWith("usage:")) continue;
-      if (trimmed.match(/^[\w-]+\s+\[/)) continue; // "tool [options]"
+      if (/^[Uu]sage:/i.test(trimmed)) continue;
+      // Skip "toolname [OPTIONS]" style command name lines
+      if (/^[\w./-]+\s+\[/.test(trimmed)) continue;
+      // Skip version strings like "git version 2.39.2"
+      if (/^\w+\s+version\s+[\d.]/.test(trimmed)) continue;
       started = true;
     }
 
     if (started) {
-      if (!trimmed) break; // End of first paragraph
-      if (trimmed.startsWith("-")) break; // Start of options
-      if (trimmed.startsWith("Options:")) break;
-      if (trimmed.startsWith("Commands:")) break;
+      if (!trimmed) break;
+      if (
+        /^(Options|Commands|Subcommands|Arguments|Flags|Global Options|Available Commands)\s*:/i.test(
+          trimmed,
+        )
+      ) {
+        break;
+      }
+      // Indented lines are usually sub-lists — stop collecting
+      if (/^\s{2,}/.test(line) && descLines.length > 0) break;
       descLines.push(trimmed);
+      if (descLines.join(" ").length > 280) break;
     }
   }
 
   return descLines.join(" ").slice(0, 300);
 }
 
-/** Build tags from command structure */
-function buildTags(cmd: ACliCommand): string[] {
-  const tags = new Set<string>();
-
-  // Add subcommand names as tags
-  for (const sub of cmd.subcommands.slice(0, 10)) {
-    const name = sub.command[sub.command.length - 1];
-    if (name && name.length > 2) tags.add(name);
-  }
-
-  // Add key flag indicators
-  for (const flag of cmd.named) {
-    for (const syn of flag.synonyms) {
-      if (syn === "--json") tags.add("json");
-      if (syn === "--verbose") tags.add("verbose");
-      if (syn === "--output" || syn === "-o") tags.add("output");
-      if (syn === "--recursive" || syn === "-r" || syn === "-R") tags.add("recursive");
-    }
-  }
-
-  return Array.from(tags).slice(0, 10);
-}
-
-/** Infer categories from tool name and description */
-function inferCategories(name: string, description: string, tags: string[]): string[] {
-  const desc = description.toLowerCase();
-  const cats: string[] = [];
-
-  if (desc.includes("git") || name.startsWith("git")) cats.push("version-control");
-  if (desc.includes("docker") || desc.includes("container")) cats.push("container");
-  if (desc.includes("test") || desc.includes("spec")) cats.push("testing");
-  if (desc.includes("build") || desc.includes("compile")) cats.push("build");
-  if (desc.includes("lint") || desc.includes("format")) cats.push("development");
-  if (desc.includes("network") || desc.includes("http") || desc.includes("curl")) cats.push("network");
-  if (desc.includes("file") || desc.includes("directory")) cats.push("file");
-  if (desc.includes("process") || desc.includes("daemon")) cats.push("process");
-  if (desc.includes("search") || desc.includes("find") || desc.includes("grep")) cats.push("search");
-  if (desc.includes("json") || desc.includes("csv") || desc.includes("data")) cats.push("data");
-  if (desc.includes("database") || desc.includes("sql")) cats.push("database");
-  if (desc.includes("monitor") || desc.includes("metric")) cats.push("monitoring");
-  if (desc.includes("security") || desc.includes("encrypt") || desc.includes("auth")) cats.push("security");
-  if (desc.includes("shell") || desc.includes("terminal")) cats.push("shell");
-  if (desc.includes("text") || desc.includes("string")) cats.push("text");
-  if (desc.includes("package") || desc.includes("install")) cats.push("package");
-  if (desc.includes("cloud") || desc.includes("aws") || desc.includes("gcp")) cats.push("cloud");
-
-  return cats.length > 0 ? cats.slice(0, 3) : ["development"];
-}
-
-// ─── Generic --help Parser ───
-
-interface ParsedHelp {
-  description: string;
-  subcommands: Subcommand[];
-  flags: Array<{ name: string; short?: string; description: string }>;
-}
-
 /**
- * Parse generic --help output into structured data.
- * Works with common CLI frameworks: commander, yargs, clap, cobra, argparse, click.
+ * Parse a single "Commands:" section line into a Subcommand.
+ * Expected formats:
+ *   "  commit                         Record changes"
+ *   "  deploy [environment]           deploy to a target"
+ *   "  checkout <branch>              switch branches"
  */
-export function parseHelpOutput(helpText: string): ParsedHelp {
-  const lines = helpText.split("\n");
-  const description = extractDescription(helpText);
-  const subcommands: Subcommand[] = [];
-  const flags: Array<{ name: string; short?: string; description: string }> = [];
-
-  let section: "none" | "commands" | "options" = "none";
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    // Detect sections
-    if (/^(Commands|COMMANDS|Subcommands|SUBCOMMANDS):/i.test(trimmed)) {
-      section = "commands";
-      continue;
-    }
-    if (/^(Options|OPTIONS|Flags|FLAGS|Arguments|ARGUMENTS):/i.test(trimmed)) {
-      section = "options";
-      continue;
-    }
-    // Empty line may end a section
-    if (!trimmed) {
-      continue;
-    }
-
-    // Parse commands section
-    if (section === "commands") {
-      const cmdMatch = trimmed.match(/^(\S+)\s{2,}(.+)/);
-      if (cmdMatch) {
-        subcommands.push({
-          name: cmdMatch[1],
-          description: cmdMatch[2].trim(),
-        });
-      }
-    }
-
-    // Parse options section
-    if (section === "options") {
-      const flagMatch = trimmed.match(
-        /^(-\w),?\s*(--[\w-]+)(?:\s+\S+)?\s{2,}(.+)/,
-      );
-      if (flagMatch) {
-        flags.push({
-          short: flagMatch[1],
-          name: flagMatch[2],
-          description: flagMatch[3].trim(),
-        });
-        continue;
-      }
-      const longFlagMatch = trimmed.match(
-        /^(--[\w-]+)(?:\s+\S+)?\s{2,}(.+)/,
-      );
-      if (longFlagMatch) {
-        flags.push({
-          name: longFlagMatch[1],
-          description: longFlagMatch[2].trim(),
-        });
-      }
-    }
-  }
-
-  return { description, subcommands, flags };
+function parseCommandLine(raw: string): Subcommand | null {
+  // Must be indented (commands are always indented under "Commands:")
+  if (!/^\s{2,}/.test(raw)) return null;
+  const trimmed = raw.trim();
+  // Subcommand name optionally followed by one or more [arg] / <arg> placeholders,
+  // then two-or-more spaces, then the description.
+  const match = trimmed.match(
+    /^([a-zA-Z][\w-]*)(?:\s+(?:\[[^\]]+\]|<[^>]+>))*\s{2,}(.+)$/,
+  );
+  if (!match) return null;
+  const name = match[1];
+  const description = match[2].trim();
+  if (description.length < 3) return null;
+  return { name, description: description.slice(0, 200) };
 }
 
 /**
- * Convert parsed --help output to ToolMetadata.
+ * Parse a flag/option line.
+ * Handles common formats:
+ *   -s, --long <ARG>      Description
+ *   -s, --long <path>     Description
+ *   --long-only=<arg>     Description
+ *   -s                    Description
+ *   -s, --long            Description
+ */
+function parseFlagLine(raw: string): ParsedFlag | null {
+  if (!/^\s{2,}/.test(raw)) return null;
+  const trimmed = raw.trim();
+
+  // Argument placeholder: <something>, [something], =<something>, or a
+  // bare UPPERCASE word following a space. Accept lower/upper.
+  const argPattern = /(?:[=\s](?:<([^>]+)>|\[([^\]]+)\]|([A-Za-z_][\w-]*)))?/;
+
+  // Short + long combined: -s, --long [arg]  Description
+  const combinedRe = new RegExp(
+    `^(-\\w),\\s*(--[\\w-]+)${argPattern.source}\\s{2,}(.+)$`,
+  );
+  const combined = trimmed.match(combinedRe);
+  if (combined) {
+    const arg = combined[3] || combined[4] || combined[5];
+    return {
+      short: combined[1],
+      name: combined[2],
+      ...(arg ? { arg } : {}),
+      description: combined[6].trim().slice(0, 200),
+    };
+  }
+
+  // Long only: --long [arg]  Description
+  const longOnlyRe = new RegExp(
+    `^(--[\\w-]+)${argPattern.source}\\s{2,}(.+)$`,
+  );
+  const longOnly = trimmed.match(longOnlyRe);
+  if (longOnly) {
+    const arg = longOnly[2] || longOnly[3] || longOnly[4];
+    return {
+      name: longOnly[1],
+      ...(arg ? { arg } : {}),
+      description: longOnly[5].trim().slice(0, 200),
+    };
+  }
+
+  // Short only: -s [arg]  Description
+  const shortOnlyRe = new RegExp(
+    `^(-\\w)${argPattern.source}\\s{2,}(.+)$`,
+  );
+  const shortOnly = trimmed.match(shortOnlyRe);
+  if (shortOnly) {
+    const arg = shortOnly[2] || shortOnly[3] || shortOnly[4];
+    return {
+      name: shortOnly[1],
+      short: shortOnly[1],
+      ...(arg ? { arg } : {}),
+      description: shortOnly[5].trim().slice(0, 200),
+    };
+  }
+
+  return null;
+}
+
+// ─── ToolMetadata Generation ───
+
+export interface HelpToMetadataOptions {
+  /** Tool id/name to use (defaults to inferring from usage) */
+  id?: string;
+  /** Additional install hints */
+  install?: Partial<InstallInfo>;
+}
+
+/**
+ * Convert parsed --help output into a ToolMetadata entry.
  */
 export function helpToToolMetadata(
   toolName: string,
   helpText: string,
-  installInfo?: { npm?: string; brew?: string; apt?: string; pip?: string },
+  options: HelpToMetadataOptions = {},
 ): ToolMetadata {
   const parsed = parseHelpOutput(helpText);
+  const subcommands = parsed.subcommands.slice(0, 20);
+  const description = parsed.description || toolName;
+  const categories = inferCategories(toolName, description);
+  const tags = buildTags(toolName, parsed);
+  const intents = generateIntents(toolName, description, subcommands);
+  const install: InstallInfo = {
+    ...inferInstallInfo(toolName),
+    ...options.install,
+  };
 
   return {
-    id: toolName,
+    id: options.id ?? toolName,
     name: toolName,
     type: "cli",
-    categories: inferCategories(toolName, parsed.description, []),
-    tags: buildTagsFromHelp(parsed),
-    description: parsed.description || toolName,
-    install: {
-      ...installInfo,
-      check: `${toolName} --version`,
-    },
-    subcommands: parsed.subcommands.slice(0, 20),
-    intents: [],
+    categories,
+    tags,
+    description,
+    install,
+    subcommands,
+    intents,
     source: "auto",
     updated_at: new Date().toISOString().slice(0, 10),
   };
 }
 
-/** Build tags from parsed help */
-function buildTagsFromHelp(parsed: ParsedHelp): string[] {
+// ─── Category inference ───
+
+const CATEGORY_RULES: Array<{ pattern: RegExp; category: string }> = [
+  { pattern: /\bgit\b|version.?control|vcs|repository/i, category: "vcs" },
+  { pattern: /\bdocker\b|container|podman|kubernetes|k8s\b/i, category: "container" },
+  { pattern: /\btest|spec\b|assert|bench/i, category: "testing" },
+  { pattern: /\bbuild\b|compile|make\b|linker/i, category: "build" },
+  { pattern: /\blint|format|prettier|eslint/i, category: "development" },
+  { pattern: /\bnetwork|http|curl|wget|dns|tcp\b|udp\b|ip\b|socket/i, category: "network" },
+  { pattern: /\bfile|directory|path|copy|move|archive/i, category: "file" },
+  { pattern: /\bprocess|daemon|service|systemd|pid\b/i, category: "process" },
+  { pattern: /\bsearch|find\b|grep|locate|fuzzy/i, category: "search" },
+  { pattern: /\bjson|csv|yaml|data|transform|parse/i, category: "data" },
+  { pattern: /\bdatabase|sql|mysql|postgres|mongo|sqlite|redis/i, category: "database" },
+  { pattern: /\bmonitor|metric|log\b|observe|trace/i, category: "monitoring" },
+  { pattern: /\bsecurity|encrypt|decrypt|auth|cert|ssl|tls|crypto/i, category: "security" },
+  { pattern: /\bshell|terminal|bash|zsh|tmux\b/i, category: "shell" },
+  { pattern: /\btext|string|regex|stream/i, category: "text" },
+  { pattern: /\bpackage|install|pip\b|npm\b|brew\b|cargo/i, category: "package" },
+  { pattern: /\bcloud|aws|gcp|azure|deploy/i, category: "cloud" },
+  { pattern: /\bimage|video|audio|media|pdf\b/i, category: "media" },
+  { pattern: /\bcompress|archive|zip|tar\b|gzip/i, category: "archive" },
+];
+
+function inferCategories(name: string, description: string): string[] {
+  const text = `${name} ${description}`.toLowerCase();
+  const cats: string[] = [];
+
+  for (const rule of CATEGORY_RULES) {
+    if (rule.pattern.test(text)) {
+      cats.push(rule.category);
+      if (cats.length >= 3) break;
+    }
+  }
+
+  return cats.length > 0 ? cats : ["development"];
+}
+
+// ─── Tag generation ───
+
+function buildTags(toolName: string, parsed: ParsedHelp): string[] {
   const tags = new Set<string>();
+
   for (const sub of parsed.subcommands.slice(0, 10)) {
     if (sub.name.length > 2) tags.add(sub.name);
   }
+
+  const flagNames = new Set(parsed.flags.map((f) => f.name));
+  if (flagNames.has("--json")) tags.add("json");
+  if (flagNames.has("--output")) tags.add("output");
+  if (flagNames.has("--format")) tags.add("format");
+  if (flagNames.has("--recursive")) tags.add("recursive");
+  if (flagNames.has("--verbose")) tags.add("verbose");
+  if (flagNames.has("--quiet")) tags.add("quiet");
+
   return Array.from(tags).slice(0, 10);
+}
+
+// ─── Intent generation ───
+
+/**
+ * Generate intents so the tool is discoverable via natural-language search.
+ * Tools with empty intents score poorly in the current SearchEngine — this is
+ * the single biggest lever for auto-generated tools to be found correctly.
+ */
+function generateIntents(
+  toolName: string,
+  description: string,
+  subcommands: Subcommand[],
+): string[] {
+  const intents: string[] = [];
+
+  if (description && description !== toolName) {
+    // Keep the description itself as an intent (English prose)
+    intents.push(description.slice(0, 120));
+
+    const action = extractAction(description);
+    if (action) intents.push(`${action} with ${toolName}`);
+  }
+
+  intents.push(`use ${toolName}`);
+  intents.push(`run ${toolName}`);
+
+  for (const sub of subcommands.slice(0, 8)) {
+    intents.push(`${toolName} ${sub.name}`);
+    if (sub.description && sub.description.length > 5) {
+      intents.push(`${sub.description.toLowerCase()} (${toolName})`);
+    }
+  }
+
+  // Deduplicate while preserving order
+  return Array.from(new Set(intents)).slice(0, 15);
+}
+
+/**
+ * Extract a verb-phrase action from a description, e.g.
+ * "Command line tool for transferring data with URLs" -> "transferring data"
+ */
+function extractAction(description: string): string | null {
+  const forMatch = description.match(
+    /\bfor\s+(\w+(?:ing)?(?:\s+\w+){0,3})/i,
+  );
+  if (forMatch) return forMatch[1].toLowerCase();
+
+  const toMatch = description.match(/\bto\s+(\w+(?:\s+\w+){0,3})/i);
+  if (toMatch) return toMatch[1].toLowerCase();
+
+  return null;
+}
+
+// ─── Install info ───
+
+const KNOWN_INSTALL: Record<string, InstallInfo> = {
+  bzip2: { brew: "bzip2", apt: "bzip2", check: "bzip2 --version" },
+  xz: { brew: "xz", apt: "xz-utils", check: "xz --version" },
+  zstd: { brew: "zstd", apt: "zstd", check: "zstd --version" },
+  bc: { brew: "bc", apt: "bc", check: "bc --version" },
+  expect: { brew: "expect", apt: "expect", check: "expect -v" },
+  jp2a: { brew: "jp2a", apt: "jp2a", check: "jp2a --version" },
+  qrencode: { brew: "qrencode", apt: "qrencode", check: "qrencode --version" },
+  ncdu: { brew: "ncdu", apt: "ncdu", check: "ncdu --version" },
+  glances: { brew: "glances", apt: "glances", check: "glances --version" },
+  iftop: { apt: "iftop", brew: "iftop", check: "iftop -h" },
+  iotop: { apt: "iotop", check: "iotop --version" },
+  dstat: { apt: "dstat", check: "dstat --version" },
+  mtr: { apt: "mtr-tiny", brew: "mtr", check: "mtr --version" },
+  socat: { apt: "socat", brew: "socat", check: "socat -V" },
+  ipcalc: { apt: "ipcalc", check: "ipcalc --version" },
+  parallel: { apt: "parallel", brew: "parallel", check: "parallel --version" },
+  entr: { apt: "entr", brew: "entr", check: "entr -v" },
+  watch: { apt: "procps", check: "watch --version" },
+  tree: { apt: "tree", brew: "tree", check: "tree --version" },
+  unzip: { apt: "unzip", brew: "unzip", check: "unzip -v" },
+  p7zip: { apt: "p7zip-full", brew: "p7zip", check: "7z i" },
+  rar: { apt: "rar", check: "rar --help" },
+  unrar: { apt: "unrar", check: "unrar --help" },
+};
+
+function inferInstallInfo(toolName: string): InstallInfo {
+  if (KNOWN_INSTALL[toolName]) return { ...KNOWN_INSTALL[toolName] };
+  return { check: `command -v ${toolName}` };
 }

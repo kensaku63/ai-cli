@@ -9,7 +9,7 @@ import type { ToolMetadata } from "./schema.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BUILTIN_DIR = join(__dirname, "data", "builtin");
-const AUTO_JSONL = join(__dirname, "data", "auto", "tools.jsonl");
+const AUTO_DIR = join(__dirname, "data", "auto");
 
 export class Registry {
   private tools: Map<string, ToolMetadata> = new Map();
@@ -25,21 +25,48 @@ export class Registry {
     }
   }
 
-  /** Load auto-generated tool metadata from data/auto/tools.jsonl */
-  async loadAuto(): Promise<void> {
+  /**
+   * Load auto-generated tool metadata from data/auto/*.jsonl.
+   *
+   * Conflict resolution: builtin entries always win. Auto entries are only
+   * added for ids that are not already present. This matches the
+   * "builtin優先" rule from the auto-knowledge design doc (PROJECT.md v2).
+   *
+   * Silently returns 0 if the directory does not exist (the auto pipeline
+   * is optional — a fresh checkout without generated data still works).
+   */
+  async loadAuto(): Promise<number> {
+    let entries: string[];
     try {
-      const content = await readFile(AUTO_JSONL, "utf-8");
-      for (const line of content.split("\n")) {
-        if (!line.trim()) continue;
-        const meta: ToolMetadata = JSON.parse(line);
-        // Builtin takes priority — don't overwrite
-        if (!this.tools.has(meta.id)) {
-          this.tools.set(meta.id, meta);
-        }
-      }
+      entries = await readdir(AUTO_DIR);
     } catch {
-      // auto/tools.jsonl doesn't exist yet — that's fine
+      return 0;
     }
+
+    let loaded = 0;
+    for (const entry of entries) {
+      if (!entry.endsWith(".jsonl")) continue;
+      const raw = await readFile(join(AUTO_DIR, entry), "utf-8");
+      for (const line of raw.split("\n")) {
+        const trimmed = line.trim();
+        if (!trimmed) continue;
+        let meta: ToolMetadata;
+        try {
+          meta = JSON.parse(trimmed) as ToolMetadata;
+        } catch {
+          continue;
+        }
+        if (!meta.id) continue;
+        // builtin wins over auto
+        if (this.tools.has(meta.id)) {
+          const existing = this.tools.get(meta.id)!;
+          if (existing.source === "builtin") continue;
+        }
+        this.tools.set(meta.id, meta);
+        loaded++;
+      }
+    }
+    return loaded;
   }
 
   /** Register a single tool (for dynamic/community additions) */
