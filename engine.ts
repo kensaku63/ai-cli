@@ -5,7 +5,7 @@
  */
 
 import { spawn } from "node:child_process";
-import { Registry, searchTools } from "./tool-registry/index.js";
+import { Registry, SearchEngine } from "./tool-registry/index.js";
 import type {
   ToolMetadata,
   SearchResult,
@@ -260,16 +260,20 @@ function decomposeIntent(query: string): string[] {
 
 export class AiCliEngine {
   private registry: Registry;
+  private searchEngine: SearchEngine;
   private initialized = false;
 
   constructor() {
     this.registry = new Registry();
+    this.searchEngine = new SearchEngine();
   }
 
   private async ensureInitialized(): Promise<void> {
     if (this.initialized) return;
     await this.registry.loadBuiltin();
     await this.registry.loadAuto();
+    // Initialize semantic search — fail-soft; falls back to TF-IDF if model unavailable
+    await this.searchEngine.initSemantic(this.registry.all());
     this.initialized = true;
   }
 
@@ -288,7 +292,7 @@ export class AiCliEngine {
       const primaryMeta = allTools.find((t) => t.id === template.primaryTool);
       if (primaryMeta) {
         // Get normal search results, then boost the primary tool to top
-        const results = searchTools(query, allTools, { limit: topK + 5 });
+        const results = await this.searchEngine.search(query, allTools, { limit: topK + 5 });
         const boosted: ToolCandidate[] = [{
           tool: primaryMeta,
           confidence: 15, // High confidence for template match
@@ -308,9 +312,9 @@ export class AiCliEngine {
       }
     }
 
-    // Default: standard search first
+    // Default: standard search first (hybrid: semantic + TF-IDF when available)
     const allTools = this.registry.all();
-    const results = searchTools(query, allTools, { limit: topK });
+    const results = await this.searchEngine.search(query, allTools, { limit: topK });
     const standard = results.map((r) => ({
       tool: r.tool,
       confidence: r.score,
@@ -319,12 +323,21 @@ export class AiCliEngine {
 
     // Phase 2: If standard search confidence is low, try intent decomposition
     // as a fallback to find better-matching tools via sub-queries.
-    const LOW_CONFIDENCE = 6;
+    //
+    // Threshold note: SearchEngine.search returns blended scores in [0, 1] range
+    // when semantic is ready, and raw TF-IDF scores (can exceed 10) when falling
+    // back. We pick a threshold that works in both regimes: 0.5 triggers the
+    // decomposition fallback on moderate-confidence hybrid results while still
+    // catching the low-confidence TF-IDF-only case (where raw scores are also
+    // routinely under 0.5 for ambiguous queries).
+    const LOW_CONFIDENCE = this.searchEngine.isSemanticReady ? 0.5 : 6;
     if (standard.length > 0 && standard[0].confidence < LOW_CONFIDENCE) {
       const subIntents = decomposeIntent(query);
       if (subIntents.length > 1) {
-        const subResults = subIntents.map((sub) =>
-          searchTools(sub, allTools, { limit: topK }),
+        const subResults = await Promise.all(
+          subIntents.map((sub) =>
+            this.searchEngine.search(sub, allTools, { limit: topK }),
+          ),
         );
 
         // Merge: collect unique tools from all sub-intents

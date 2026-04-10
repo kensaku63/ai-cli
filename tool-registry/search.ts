@@ -246,6 +246,14 @@ export class SearchEngine {
     if (!this.embeddingIndex || !this.semanticReady) {
       return searchTools(query, tools, options);
     }
+    // The current embedding model (all-MiniLM-L6-v2) is English-only and
+    // produces degenerate vectors for non-ASCII queries. Empirically this
+    // cost ~30pt of Japanese Top-1 accuracy on the 527-case benchmark.
+    // Route non-ASCII queries through TF-IDF until we upgrade to a
+    // multilingual model (e.g. paraphrase-multilingual-MiniLM-L12-v2).
+    if (/[^\x00-\x7F]/.test(query)) {
+      return searchTools(query, tools, options);
+    }
     return this.hybridSearch(query, tools, options);
   }
 
@@ -260,6 +268,40 @@ export class SearchEngine {
     options: SearchOptions = {},
   ): Promise<SearchResult[]> {
     const { limit = 5 } = options;
+
+    // Stage 0: Name match — highest priority.
+    // Blending TF-IDF into [0,1] space dilutes exact matches, so we surface
+    // name-matched tools explicitly before the semantic stage. This covers:
+    //   - query == tool.name/id  (e.g. "git" → git)
+    //   - query starts with tool.name as a standalone token  (e.g. "git status" → git)
+    // so that a semantically similar but wrong tool (e.g. "exa" for "git status")
+    // cannot outrank the user's explicit tool reference.
+    const q = query.trim().toLowerCase();
+    const queryTokens = tokenize(query);
+    const firstToken = queryTokens[0] ?? "";
+    const exactMatches: SearchResult[] = [];
+    const exactIds = new Set<string>();
+    for (const tool of tools) {
+      const nameL = tool.name.toLowerCase();
+      const idL = tool.id.toLowerCase();
+      let matched = false;
+      let score = 0;
+      if (q === nameL || q === idL) {
+        score = 2.0;
+        matched = true;
+      } else if (
+        (firstToken === nameL || firstToken === idL) &&
+        nameL.length >= 2
+      ) {
+        // Tool name appears as the first token of the query — strong signal
+        score = 1.5;
+        matched = true;
+      }
+      if (matched) {
+        exactMatches.push({ tool, score, matchedOn: ["exact_name"] });
+        exactIds.add(tool.id);
+      }
+    }
 
     // Stage 1: Semantic retrieval — broad candidate set
     const candidateCount = Math.max(limit * 3, 15);
@@ -284,9 +326,10 @@ export class SearchEngine {
     const TFIDF_WEIGHT = 0.3;
 
     const toolMap = new Map(tools.map((t) => [t.id, t]));
-    const results: SearchResult[] = [];
+    const results: SearchResult[] = [...exactMatches];
 
     for (const hit of semanticHits) {
+      if (exactIds.has(hit.toolId)) continue;
       const tool = toolMap.get(hit.toolId);
       if (!tool) continue;
 
@@ -309,7 +352,7 @@ export class SearchEngine {
     // (handles exact name match edge cases)
     const semanticIds = new Set(semanticHits.map((h) => h.toolId));
     for (const tr of tfidfAll.slice(0, limit)) {
-      if (semanticIds.has(tr.tool.id)) continue;
+      if (semanticIds.has(tr.tool.id) || exactIds.has(tr.tool.id)) continue;
       const normTfidf = maxTfidf > 0 ? tr.score / maxTfidf : 0;
       results.push({
         tool: tr.tool,
