@@ -4,7 +4,7 @@ import {
   extractDescription,
   helpToToolMetadata,
   parseHelpOutput,
-} from "./aclimatise.js";
+} from "./helpparser.js";
 
 // ─── Sample help texts ────────────────────────────────────────────────────
 

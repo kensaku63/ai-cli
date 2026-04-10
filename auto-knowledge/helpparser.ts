@@ -1,12 +1,12 @@
 /**
- * aCLImatise-style Help Parser — Convert CLI --help output to ToolMetadata.
+ * Help Parser — Convert CLI --help output to ToolMetadata.
  *
- * Inspired by aCLImatise (github.com/aCLImatise/CliHelpParser), which uses
- * a PEG parser to extract structured information from --help text.
- *
- * This module implements an independent parser in pure TypeScript so we can
- * ingest any CLI that supports a conventional --help format, without taking
- * on the GPL v3 licensing of the aCLImatise BaseCamp data set.
+ * Technique reference: aCLImatise (github.com/aCLImatise/CliHelpParser)
+ * popularised the idea of using a PEG-style parser to extract structured
+ * information from --help text. This module is an **independent
+ * TypeScript implementation** of the same idea — we do not use the
+ * aCLImatise source code or the BaseCamp YAML dataset, both of which are
+ * GPL v3 and would pollute ai-cli's (intended) permissive licensing.
  *
  * Target help formats: commander, yargs, clap, cobra, argparse, click,
  * GNU-style getopt, BSD-style.

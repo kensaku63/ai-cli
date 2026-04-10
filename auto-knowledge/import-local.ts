@@ -4,7 +4,7 @@
  * For each candidate tool:
  *   1. Check if it is on $PATH (via `command -v`)
  *   2. Run `<tool> --help` (and fall back to `-h`, `help`) with a short timeout
- *   3. Parse the help text via aclimatise.parseHelpOutput()
+ *   3. Parse the help text via helpparser.parseHelpOutput()
  *   4. Generate ToolMetadata and append to tool-registry/data/auto/generated.jsonl
  *
  * Built-in tools already defined in tool-registry/data/builtin/ are skipped by
@@ -19,7 +19,7 @@ import { promisify } from "node:util";
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { helpToToolMetadata } from "./aclimatise.js";
+import { helpToToolMetadata } from "./helpparser.js";
 import type { ToolMetadata } from "../tool-registry/schema.js";
 
 const execFileP = promisify(execFile);
